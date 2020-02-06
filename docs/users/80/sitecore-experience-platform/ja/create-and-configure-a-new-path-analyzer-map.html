@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>新しい Path アナライザー マップを作成する &mdash; Sitecore オンラインマニュアル  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../../search.html" />
+    <link rel="next" title="ビジネスユーザー向け (Sitecore 9.3)" href="../../../93/index.html" />
+    <link rel="prev" title="Path フィルターを表示する" href="view-a-path-funnel.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Sitecore オンラインマニュアル
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目次</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">ビジネスユーザー向け (Sitecore 8.0)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="content-authoring.html">コンテンツ編集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="analyzing-and-reporting.html">分析とレポート</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="experience-analytics.html">エクスペリエンス アナリティクス</a></li>
+<li class="toctree-l3"><a class="reference internal" href="experience-optimization.html">エクスペリエンス オプティマイゼーション</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="path-analyzer.html">Path アナライザー</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="path-analyzer-glossary.html">Path アナライザーの用語集</a></li>
+<li class="toctree-l4"><a class="reference internal" href="path-analyzer-maps.html">Path アナライザーマップ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="view-a-path-funnel.html">Path フィルターを表示する</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">新しい Path アナライザー マップを作成する</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../93/index.html">ビジネスユーザー向け (Sitecore 9.3)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Sitecore オンラインマニュアル</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">ビジネスユーザー向け (Sitecore 8.0)</a> &raquo;</li>
+        
+          <li><a href="analyzing-and-reporting.html">分析とレポート</a> &raquo;</li>
+        
+          <li><a href="path-analyzer.html">Path アナライザー</a> &raquo;</li>
+        
+      <li>新しい Path アナライザー マップを作成する</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/users/80/sitecore-experience-platform/ja/create-and-configure-a-new-path-analyzer-map.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="path">
+<h1>新しい Path アナライザー マップを作成する<a class="headerlink" href="#path" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Path アナライザーはコンタクトが Web サイト中を移動する時に通過した様々なパスを表示するアプリケーションです。コンタクトがゴールをコンバートしたり、キャンペーンとインタラクトした時に通過したパスを確認することができます。これによって、最も高いエンゲージメント バリューを生成するパスと、効果が低く最適化が必要なパスについて把握することができます。</p>
+<p>コンタクトが特定のチャネルまたはキャンペーンに関連する訪問のみを含む Path や、特定のゴールやイベントにたどり着くまでに通過した Path を表示するように新しい Path アナライザー マップを作成することができます。また、Web サイトへの様々な種類の訪問をトラックするように Path アナライザーを設定できます。この情報は、コンタクトが Web サイトをどのように移動したのかを正確に把握する上で役立ちます。</p>
+<p>また、最も高いエンゲージメント バリューを作成したPath や、最適化の候補となる Path についても把握することができます。最適化の推奨は、マーケティング ストラテジーやコンタクトに対するコンテンツの表示方法を改善する上で有用です。これによって、より有意義な方法でコンテンツを配信することが可能になります。</p>
+<p>新しい Path アナライザー マップはマーケティング コントロール パネルで作成し設定します。</p>
+<ol class="arabic simple">
+<li><p>マーケティング管理パネルのコンテンツ ツリーで、 Path アナライザー ノードを展開します。</p></li>
+<li><p>[マップ] ノードを展開して、[Path エクスペリエンス マップ] をクリックします。[Path Experience Maps] ノードを展開して、以下の 4 つのカテゴリーの中から 1 つを選択して新しい Path アナライザー マップを作成します。</p></li>
+</ol>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 92%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>カテゴリー</p></th>
+<th class="head"><p>コメント</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>訪問数</p></td>
+<td><p>訪問マップは、アセット、キャンペーン、ゴールなどに基づかない、初回訪問などの、サイト上でコンタクトが体験した様々なエクスペリエンスを表示するマップです。</p></td>
+</tr>
+<tr class="row-odd"><td><p>ゴール</p></td>
+<td><p>特定のゴールコンバージョンの訪問に関連するマップです。ユーザーは、選択されたゴールをコンバートしたインタラクションをマップ上で確認したい場合にこのマップを使用できます。</p></td>
+</tr>
+<tr class="row-even"><td><p>アセット</p></td>
+<td><p>PDF または動画など、コンタクトが特定のデジタル アセットをダウンロードしたり、視聴するために通過した Path を表示するマップです。</p></td>
+</tr>
+<tr class="row-odd"><td><p>キャンペーン</p></td>
+<td><p>特定のキャンペーンから訪れたコンタクトの Path エクスペリエンスを表示するマップです。</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="3">
+<li><p>[ホーム] タブの [挿入] グループの中から作成するマップの種類を選択して、新しいPathマップを作成します。表示されるダイアログに、例えば [By Campaign] などの名前を付けて[OK]をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../../_images/blank.png"><img alt="空白" class="align-center" src="../../../../_images/blank.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>[コンテンツ] タブの [スコープ] セクションの [ターゲットゴール/アセット/キャンペーン] フィールドをクリックします。ドロップダウンツリーが表示されます。このマップに関連付けたいアイテムを選択します。</p></li>
+<li><p>[コンテンツ] タブの [スコープ] セクションで、マップの開始日と終了日を入力できます。</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>[開始] 配下にある [本日] をクリックして開始日を入力します。デフォルトでは現在の日付が設定されます。つまり、マップには現在の日付以降のすべての訪問が追加されます。別の日付を選択するには、ドロップダウンの矢印をクリックしてカレンダー ダイアログボックスを開き、カレンダーから日付を選択します。</p></li>
+<li><p>マップの終了日を入力するには、[終了] 配下にある [本日] をクリックします。別の日付を選択するには、ドロップダウンの矢印をクリックしてカレンダー ダイアログボックスを開き、カレンダーから日付を選択します。</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>[コンテンツ] タブの [スコープ] セクション配下で、[ルールを編集する] をクリックして [ルール設定エディター] を開きます。[ルール設定エディター] ダイアログ ボックスで、このエクスペリエンス マップに関連付けたいルールを選択します。ルールのアクションと条件を設定し終わったら [OK] をクリックします。この例では、新しいマップに [Facebook Like] ゴールを関連付けます。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../../_images/blank.png"><img alt="空白" class="align-center" src="../../../../_images/blank.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="7">
+<li><p>新しいマップを配置するには、[レビュー] タブの [ワークフロー] グループの [配置] をクリックして保存します。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>ワークフロー プロセスを使って新しいマップを配置します。新しいマップの配置が完了すると、xDB 内のシステム キューに入れられます。システムは新しいマップを 24 時間毎に処理するため、新しいマップが複数ある場合はワークボックスで配置アクションを使用して同時に配置させます。
+24 時間経過しても新しいマップが表示されない場合は、 Sitecore システム管理者にご連絡ください。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../93/index.html" class="btn btn-neutral float-right" title="ビジネスユーザー向け (Sitecore 9.3)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="view-a-path-funnel.html" class="btn btn-neutral float-left" title="Path フィルターを表示する" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sitecore Japan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

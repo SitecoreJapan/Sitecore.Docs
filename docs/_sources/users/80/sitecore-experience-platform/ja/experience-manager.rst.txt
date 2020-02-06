@@ -4,4 +4,4 @@ Experience Manager
 
 .. note::
 
-   翻訳準備中
+   移行作業中

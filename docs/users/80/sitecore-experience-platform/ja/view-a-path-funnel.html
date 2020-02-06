@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Path フィルターを表示する &mdash; Sitecore オンラインマニュアル  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../../search.html" />
+    <link rel="next" title="新しい Path アナライザー マップを作成する" href="create-and-configure-a-new-path-analyzer-map.html" />
+    <link rel="prev" title="Path アナライザーマップ" href="path-analyzer-maps.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Sitecore オンラインマニュアル
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目次</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">ビジネスユーザー向け (Sitecore 8.0)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="content-authoring.html">コンテンツ編集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="analyzing-and-reporting.html">分析とレポート</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="experience-analytics.html">エクスペリエンス アナリティクス</a></li>
+<li class="toctree-l3"><a class="reference internal" href="experience-optimization.html">エクスペリエンス オプティマイゼーション</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="path-analyzer.html">Path アナライザー</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="path-analyzer-glossary.html">Path アナライザーの用語集</a></li>
+<li class="toctree-l4"><a class="reference internal" href="path-analyzer-maps.html">Path アナライザーマップ</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Path フィルターを表示する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="create-and-configure-a-new-path-analyzer-map.html">新しい Path アナライザー マップを作成する</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../93/index.html">ビジネスユーザー向け (Sitecore 9.3)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Sitecore オンラインマニュアル</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">ビジネスユーザー向け (Sitecore 8.0)</a> &raquo;</li>
+        
+          <li><a href="analyzing-and-reporting.html">分析とレポート</a> &raquo;</li>
+        
+          <li><a href="path-analyzer.html">Path アナライザー</a> &raquo;</li>
+        
+      <li>Path フィルターを表示する</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/users/80/sitecore-experience-platform/ja/view-a-path-funnel.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="path">
+<h1>Path フィルターを表示する<a class="headerlink" href="#path" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Path フィルターを表示する</p>
+<p>Path アナライザーは、コンタクトが Web サイトを遷移する時に通過した様々な Path を表示するアプリケーションです。コンタクトがゴールをコンバートしたり、キャンペーンとインタラクトした時に通過した Path を確認することができます。これによって、コンバージョンごとに最も高いエンゲージメント バリューを生成する Path と、効果が低く最適化の候補となる Path について理解することができます。</p>
+<p>Path フィルターは、 Path を使用したコンタクトの数と、コンタクトが終了した特定のノードを表示します。Path フィルターからフィルター レポートにアクセスすることができます。フィルター レポートは、この Path 上の訪問、訪問毎のバリュー、そしてすべてのコンタクト エクスペリエンスの訪問毎のバリューを表示します。</p>
+<p>Path フィルターとフィルター レポートは、コンタクトが Web サイトを離脱した場所に関する有用な情報を提供するため、Web サイトのどこで潜在的にコンバージョンが失われていて、どのコンテンツ ストラテジーを最適化できるかを分析することができます。</p>
+<p>Path フィルターを表示するには、次の手順に従います：</p>
+<ol class="arabic simple">
+<li><p>Sitecore Launchad から、Path アナライザーを開きます。</p></li>
+<li><p>ドロップ ダウン メニューからサイト マップを選択します。</p></li>
+<li><p>マップで、フィルターに表示したい Path の終了ノードをクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../../_images/blank.png"><img alt="空白" class="align-center" src="../../../../_images/blank.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>[Path フィルター (訪問)] レポートを展開してそのパスのフィルターを表示します。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../../_images/blank.png"><img alt="空白" class="align-center" src="../../../../_images/blank.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>[フィルターをすべて表示] をクリックして、そのフィルターの [フィルター] レポートを表示します。フィルター レポートには、この Path でのすべてのエクスペリエンスの [バリュー] 、[訪問数] 、[訪問毎のバリュー] が表示されます。また、このエクスペリエンス フィルターからコンタクトがどこでこのパスから離れたのかも確認できます。Path フィルターをローカルに保存するには、[エクスポート イメージ] をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../../_images/blank.png"><img alt="空白" class="align-center" src="../../../../_images/blank.png" style="width: 400px;" /></a>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="create-and-configure-a-new-path-analyzer-map.html" class="btn btn-neutral float-right" title="新しい Path アナライザー マップを作成する" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="path-analyzer-maps.html" class="btn btn-neutral float-left" title="Path アナライザーマップ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sitecore Japan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
