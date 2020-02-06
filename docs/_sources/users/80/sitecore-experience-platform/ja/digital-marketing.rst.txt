@@ -16,7 +16,6 @@ Use the digital marketing tools in Sitecore to create and manage digital marketi
 
     digital-marketing-glossary
     marketing-automation
-    sitecore-forms
     marketing-taxonomies
     marketing-operations
     personalization

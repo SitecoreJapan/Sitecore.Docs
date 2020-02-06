@@ -7,7 +7,7 @@ Sitecore カスタマー エクスペリエンス マネージメント ソフ�
 .. toctree::
     :caption: 目次
     :titlesonly:
-    :maxdepth: 2
+    :maxdepth: 1
 
     sitecore-experience-platform/ja/content-authoring
     sitecore-experience-platform/ja/digital-marketing
