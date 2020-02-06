@@ -9,3 +9,11 @@
     :titlesonly:
     :maxdepth: 2
 
+    the-editing-tools
+    creating-and-editing-items
+    change-your-personal-settings
+    managing-items
+    media-items
+    explore-mode
+    publishing
+    searching
