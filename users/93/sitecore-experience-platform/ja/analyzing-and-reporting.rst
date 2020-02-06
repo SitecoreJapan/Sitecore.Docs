@@ -2,6 +2,10 @@
 分析とレポート
 ########################
 
+.. note::
+
+   翻訳準備中
+
 Sitecore Experience Analytics provides dashboards and reports for marketers and marketing analysts to identify patterns and trends in experience data collected from their websites and potentially other external data sources.
 
 The experience optimization features offer you a variety of methods to test content, ranging from page tests and basic content tests to component tests and personalization tests. You can see results for individual tests in the Experience Editor, and you can use reports and dashboards in Experience Optimization to analyze optimization data.

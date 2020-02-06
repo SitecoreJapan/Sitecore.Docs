@@ -7,16 +7,16 @@
 Sitecore オンラインマニュアル へようこそ
 #########################################
 
-ただいま移行、強化作業中です。正式公開までもう少しお待ちください。
+ただいま移行作業中です。正式公開までもう少しお待ちください。
 
 .. toctree::
     :caption: 目次
     :titlesonly:
+    :includehidden:
     :maxdepth: 1
 
-
-    users/93/index
     users/80/index
+    users/93/index
 
 ***************
 索引とテーブル

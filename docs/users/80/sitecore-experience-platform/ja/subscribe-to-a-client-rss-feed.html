@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>クライアントRSSフィードを購読する &mdash; Sitecore オンラインマニュアル  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../../search.html" />
+    <link rel="next" title="エクスペリエンス エディター" href="the-experience-editor.html" />
+    <link rel="prev" title="電子メール リマインダーを設定する" href="set-up-an-email-reminder.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Sitecore オンラインマニュアル
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目次</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">ビジネスユーザー向け (Sitecore 8.0)</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="content-authoring.html">コンテンツ編集</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="the-editing-tools.html">編集ツール</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="change-your-personal-settings.html">個人設定を変更する</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="the-content-editor.html">コンテンツ エディター</a></li>
+<li class="toctree-l4"><a class="reference internal" href="the-experience-editor.html">エクスペリエンス エディター</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="creating-and-editing-items.html">アイテムの作成と編集</a></li>
+<li class="toctree-l3"><a class="reference internal" href="managing-items.html">アイテムの管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="media-items.html">メディア アイテム</a></li>
+<li class="toctree-l3"><a class="reference internal" href="explore-mode.html">エクスプローラ モード</a></li>
+<li class="toctree-l3"><a class="reference internal" href="publishing.html">パブリッシュ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="searching.html">検索</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analyzing-and-reporting.html">分析とレポート</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../93/index.html">ビジネスユーザー向け (Sitecore 9.3)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Sitecore オンラインマニュアル</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">ビジネスユーザー向け (Sitecore 8.0)</a> &raquo;</li>
+        
+          <li><a href="content-authoring.html">コンテンツ編集</a> &raquo;</li>
+        
+          <li><a href="the-editing-tools.html">編集ツール</a> &raquo;</li>
+        
+          <li><a href="the-content-editor.html">コンテンツ エディター</a> &raquo;</li>
+        
+      <li>クライアントRSSフィードを購読する</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/users/80/sitecore-experience-platform/ja/subscribe-to-a-client-rss-feed.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rss">
+<h1>クライアントRSSフィードを購読する<a class="headerlink" href="#rss" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Sitcore でアイテムまたはワークフローの更新に関する情報を常に入手し続けるために、アイテムのクライアント RSS フィードを購読することができます。</p>
+<p>Sitecore には 3 つのクライアント RSS フィードがあります：</p>
+<ul class="simple">
+<li><p>アイテム フィード - アイテムまたはアイテム バージョンが通過するワークフロー状態についての最新情報を入手します。これは、特定のアイテムをトラッキングするコンテンツ編集者にとって便利なフィードです。</p></li>
+<li><p>ワークフロー フィード - ワークフロー全体の情報を入手します。これは、ワークフローに含まれるすべてのワークフロー状態へのアクセスがある管理者とスーパー ユーザーにとって便利なフィードです。</p></li>
+<li><p>ワークフロー状態フィード - このクライアント フィードは、特定のワークフロー状態に関する情報を入手します。これは、特定のワークフロー状態にのみアクセスできるコンテンツ編集者とマネージャーにとって便利なフィードです。</p></li>
+</ul>
+<p>この章では、以下について説明します：</p>
+<ul class="simple">
+<li><p>アイテム フィードを購読する</p></li>
+<li><p>ワークフロー フィードを購読する</p></li>
+<li><p>クライアント RSS フィードを確認する方法</p></li>
+</ul>
+<div class="section" id="id1">
+<h2>アイテム フィードを購読する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アイテム フィードを購読する場合、アイテムまたはアイテムのバージョンのワークフロー状態が変化する度に更新情報を受信することになります。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>アイテムがワークフローで管理されている場合のみ、RSS フィードは有用な情報を含みます。</p>
+</div>
+<p>アイテムのクライアント RSS フィードを購読するには、以下の手順に従います：</p>
+<ol class="arabic simple">
+<li><p>コンテンツ エディターで購読したいアイテムに移動します。</p></li>
+<li><p>[レビュー] タブをクリックし、[校正] グループの [RSS 購読]をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../../_images/blank.png"><img alt="空白" class="align-center" src="../../../../_images/blank.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>開かれた Web ページで、[このフィードを受信登録する] をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../../_images/blank.png"><img alt="空白" class="align-center" src="../../../../_images/blank.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>[このフィードの受信登録] ダイアログ ボックスで、適切なフィードの名前と作成先を入力して [お気に入りバーに追加する] チェック ボックスを選択し、[受信登録] をクリックします。</p></li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>ワークフロー フィードを購読する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ワークフロー フィードを購読する場合、以下の情報を受信します：</p>
+<ul class="simple">
+<li><p>アイテムの状態が変化する度にワークフロー フィードを受信します。</p></li>
+<li><p>アイテムのバージョンが特定のワークフロー状態になる度に、または特定のワークフロー状態から離れる度にワークフロー状態フィードを受信します。</p></li>
+</ul>
+<p>ワークフローフィードを購読するには、次の手順を実施します：</p>
+<ol class="arabic simple">
+<li><p>Launchpad からワークボックスをクリックします。
+または、コンテンツ エディター下部にあるページ バーからワークボックスを開くこともできます。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../../_images/blank.png"><img alt="空白" class="align-center" src="../../../../_images/blank.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>ワークボックスのリボンの [ワークフロー] グループで、購読したいワークフローを選択します。</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>ワークフロー フィードを購読するには、ワークフロー右横の [RSS フィード]をクリックします。</p></li>
+<li><p>ワークフロー状態フィードを購読するには、ワークフロー状態右横の [RSS フィード]をクリックします。</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>開かれた Web ページで、[このフィードを受信登録する] をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../../_images/blank.png"><img alt="空白" class="align-center" src="../../../../_images/blank.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>[このフィードの受信登録] ダイアログ ボックスにフィードの名前と作成先を入力し、[お気に入りバーに追加する] チェック ボックスを選択し、[受信登録] をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../../../_images/blank.png"><img alt="空白" class="align-center" src="../../../../_images/blank.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id3">
+<h2>クライアント RSS フィードを確認する方法<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>購読したすべてのクライアント RSS フィードはブラウザで確認することができます。Internet Explorer の場合は、[お気に入り] パネルの [フィード] タブをクリックし、アイテム フィードへのリンクをクリックします。</p>
+<a class="reference internal image-reference" href="../../../../_images/blank.png"><img alt="空白" class="align-center" src="../../../../_images/blank.png" style="width: 400px;" /></a>
+<p>この Web ページは、アイテムに関する以下の情報を含みます：</p>
+<ul class="simple">
+<li><p>アイテム名</p></li>
+<li><p>現在のワークフロー状態</p></li>
+<li><p>アイテムのワークフロー履歴</p></li>
+<li><p>アイテムの新しいバージョンと古いバージョンの違いを示す表</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../../../_images/blank.png"><img alt="空白" class="align-center" src="../../../../_images/blank.png" style="width: 400px;" /></a>
+<p>さらに、クライアント RSS フィードには、適切なアクセス権限があればワークフローでアイテムを移動させることが可能なワークフロー コマンドが含まれます。この例では、ユーザーは以下のことを実行できます：</p>
+<ul class="simple">
+<li><p>アイテムを承認または拒否する。</p></li>
+<li><p>アイテムを承認または拒否し、コメントを挿入する。</p></li>
+<li><p>アイテムを編集する。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>クライアント RSS フィードからタスクを実行したい場合は、適切なページに移動するために Sitecore にログインする認証情報を入力する必要があります。Sitecore ログイン ページで [Remember me] チェックボックスを選択した場合、Sitecore はログイン情報を記憶するため自動的にページに移動できます。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="the-experience-editor.html" class="btn btn-neutral float-right" title="エクスペリエンス エディター" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="set-up-an-email-reminder.html" class="btn btn-neutral float-left" title="電子メール リマインダーを設定する" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sitecore Japan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

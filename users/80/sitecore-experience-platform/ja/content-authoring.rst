@@ -7,5 +7,12 @@
 .. toctree::
     :caption: 目次
     :titlesonly:
-    :maxdepth: 2
+    :maxdepth: 3
 
+    the-editing-tools
+    creating-and-editing-items
+    managing-items
+    media-items
+    explore-mode
+    publishing
+    searching
