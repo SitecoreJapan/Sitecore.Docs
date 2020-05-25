@@ -2,9 +2,8 @@
 分析とレポート
 ########################
 
-.. note::
+.. note:: 翻訳中
 
-   翻訳準備中
 
 Sitecore Experience Analytics provides dashboards and reports for marketers and marketing analysts to identify patterns and trends in experience data collected from their websites and potentially other external data sources.
 

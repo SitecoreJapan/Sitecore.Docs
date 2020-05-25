@@ -19,6 +19,7 @@ Horizonをインストールすると、ランチャーパッドにHorizonタイ
 ランチャーパッド上のHorizonタイルをクリックすると、Horizonモジュールがページエディタモードで開きます。
 
 .. toctree::
+    :maxdepth: 1
     :hidden:
 
     the-horizon-editor
@@ -29,3 +30,4 @@ Horizonをインストールすると、ランチャーパッドにHorizonタイ
     preview-a-site-in-simulator-mode
     viewing-page-insights
     
+.. tip:: 英語版 https://doc.sitecore.com/users/93/sitecore-experience-platform/en/horizon.html

@@ -8,7 +8,9 @@ Horizonにフォルダを作成する
 
 1. 新しいフォルダを作成するフォルダを選択します。
 
-2. アクション メニュー 選択したフォルダのアクション メニュー アイコンをクリックします。
+2. アクション メニュー 選択したフォルダのアクション メニュー |icon1| をクリックします。
+
+.. |icon1| image:: images/15eafd351b1cc4.png
 
 3. フォルダの作成] をクリックします。
 
@@ -17,3 +19,5 @@ Horizonにフォルダを作成する
 5. [コンテンツ ツリーにフォルダが作成されます。
 
 コンテンツツリーで新しいページの名前を編集します。
+
+.. tip:: 英語版 https://doc.sitecore.com/users/93/sitecore-experience-platform/en/create-a-folder-in-horizon.html

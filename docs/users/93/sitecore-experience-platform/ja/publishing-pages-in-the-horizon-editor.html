@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
-    <link rel="next" title="シミュレータモードでサイトをプレビュー" href="preview-a-site-in-simulator-mode.html" />
-    <link rel="prev" title="Horizon エディタでページにレンダリングを追加する" href="add-a-rendering-to-a-page-in-the-horizon-editor.html" /> 
+    <link rel="next" title="Horizon エディタのワークフローでページを移動する" href="move-a-page-through-the-workflow-in-the-horizon-editor.html" />
+    <link rel="prev" title="Horizon ページ エディタでページからレンダリングを削除する" href="remove-a-rendering-from-a-page-in-the-horizon-page-editor.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,7 +88,10 @@
 <li class="toctree-l3"><a class="reference internal" href="create-a-page-in-horizon.html">Horizonでページを作成する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="edit-a-page-in-the-horizon-page-editor.html">Horizon ページエディタでページを編集する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="add-a-rendering-to-a-page-in-the-horizon-editor.html">Horizon エディタでページにレンダリングを追加する</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Horizon エディタでのページ発行</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Horizon エディタでのページ発行</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="move-a-page-through-the-workflow-in-the-horizon-editor.html">Horizon エディタのワークフローでページを移動する</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="preview-a-site-in-simulator-mode.html">シミュレータモードでサイトをプレビュー</a></li>
 <li class="toctree-l3"><a class="reference internal" href="viewing-page-insights.html">ページの閲覧</a></li>
 </ul>
@@ -175,6 +178,23 @@
             
   <div class="section" id="horizon">
 <h1>Horizon エディタでのページ発行<a class="headerlink" href="#horizon" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>ページがワークフロー内にある場合、そのページがワークフローの最終状態になると、ワークフロー パネルに [発行] ボタンが表示されます。</p>
+<p>ページがワークフローに含まれていない場合、[発行] ボタンが右側のペインに項目の詳細と共に表示されます。</p>
+<p>ページを発行] または [ページを発行] ボタンをクリックすると、現在の言語バージョンのページと関連するすべてのアイテムが発行されますが、サブアイテムは発行されません。</p>
+<p>関連項目には次のようなものがあります。</p>
+<ol class="arabic simple">
+<li><p>メディア ファイルやデータ ソースなど、ページで使用されているコンテンツ</p></li>
+<li><p>ページで使用されているレンダリング、レイアウト、テンプレート</p></li>
+<li><p>ページのクローンまたはエイリアス</p></li>
+</ol>
+<p>サブアイテムは、コンテンツ ツリーの現在のページの下に入れ子になっているアイテムです。</p>
+<p>Horizon エディタでは、スマートパブリッシュを使用しています。Smart publish を実行すると、Sitecore は、マスター データベース内の選択されたアイテムとターゲット データベース内の同等のアイテムを比較し、アイテムが変更されている場合には、そのアイテムがパブリッシュされます。単一のアイテムをパブリッシュする場合、Smart publishは、特定のアイテムとその関連アイテムに対するすべての変更を確実にパブリッシュするための手っ取り早い方法です。</p>
+<div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/publishing-pages-in-the-horizon-editor.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/publishing-pages-in-the-horizon-editor.html</a></p>
+</div>
 </div>
 
 
@@ -185,10 +205,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="preview-a-site-in-simulator-mode.html" class="btn btn-neutral float-right" title="シミュレータモードでサイトをプレビュー" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="move-a-page-through-the-workflow-in-the-horizon-editor.html" class="btn btn-neutral float-right" title="Horizon エディタのワークフローでページを移動する" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="add-a-rendering-to-a-page-in-the-horizon-editor.html" class="btn btn-neutral float-left" title="Horizon エディタでページにレンダリングを追加する" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="remove-a-rendering-from-a-page-in-the-horizon-page-editor.html" class="btn btn-neutral float-left" title="Horizon ページ エディタでページからレンダリングを削除する" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -8,14 +8,13 @@ Horizon のコンテンツ ツリーからページやフォルダを削除す�
 
 ページとそのすべてのバージョンとサブアイテムを削除するには、またはフォルダとその内容を削除します。
 
-1. Horizon のコンテンツ ツリーで、[アクション] メニュー 削除する項目のアクション メニュー アイコンをクリックします。
+1. Horizon のコンテンツ ツリーで、[アクション] メニュー |icon1| 削除する項目のアクション メニュー アイコンをクリックします。
 
-.. image:: images/15eafd351b1cc4.png
-   :align: center
-   :alt: Horizon エディタ
+.. |icon1| image:: images/15eafd351b1cc4.png
 
 2. [削除] をクリックします。
 3. [はい] をクリックして、アイテムとサブアイテムを削除することを確認します。
 
 ページまたはフォルダとそのすべてのサブアイテムがコンテンツ ツリーから削除され、ごみ箱に移動します。
 
+.. tip:: https://doc.sitecore.com/users/93/sitecore-experience-platform/en/delete-a-page-or-folder-in-horizon.html

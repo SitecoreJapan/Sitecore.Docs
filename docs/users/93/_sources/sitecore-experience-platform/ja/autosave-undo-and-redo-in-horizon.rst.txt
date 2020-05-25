@@ -6,18 +6,16 @@ Horizon エディタは、2 秒ごと、または編集中のフィールドか�
 
 変更を元に戻すには
 
-* ツールバーの [元に戻す] アイコンをクリックします。
+* ツールバーの [元に戻す] アイコンをクリックします。|icon1|
 
-.. image:: images/15eafd351a6f4f.png
-   :align: center
-   :alt: Horizon エディタ
+.. |icon1| image:: images/15eafd351a6f4f.png
 
 変更を元に戻すには
 
-* ツールバーで、[やり直し] アイコンをクリックします。
+* ツールバーで、[やり直し] アイコンをクリックします。|icon2|
 
-.. image:: images/15eafd351ac58f.png
-   :align: center
-   :alt: Horizon エディタ
+.. |icon2| image:: images/15eafd351ac58f.png
 
 ページから離れて移動する場合（別のページやシミュレータやインサイトへの移動など）、元に戻すとやり直しはリセットされ、ページの変更を元に戻したりやり直したりすることはできなくなります。
+
+.. tip:: 英語版 https://doc.sitecore.com/users/93/sitecore-experience-platform/en/autosave,-undo,-and-redo-in-horizon.html

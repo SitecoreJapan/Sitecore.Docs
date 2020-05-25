@@ -32,9 +32,7 @@
 リボンを表示するには、再度 [リボンの切り替え] ボタン をクリックします。
 
 .. toctree::
-    :caption: 関連トピック
-    :titlesonly:
-    :maxdepth: 1
+    :hidden:
 
     navigate-to-an-item-in-the-experience-editor
     customize_the_experience_editor_ribbon
