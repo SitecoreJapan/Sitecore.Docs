@@ -2,19 +2,17 @@
 分析とレポート
 ########################
 
-.. note:: 翻訳中
+Sitecore Experience Analyticsは、マーケターやマーケティングアナリスト向けにダッシュボードとレポートを提供し、自社のWebサイトや潜在的に他の外部データソースから収集したエクスペリエンスデータのパターンや傾向を特定します。
 
+エクスペリエンス最適化機能では、ページテストや基本的なコンテンツテストから、コンポーネントテストやパーソナライゼーションテストまで、さまざまな方法でコンテンツをテストすることができます。個々のテストの結果はエクスペリエンス エディタで確認でき、エクスペリエンス最適化ではレポートやダッシュボードを使用して最適化データを分析することができます。
 
-Sitecore Experience Analytics provides dashboards and reports for marketers and marketing analysts to identify patterns and trends in experience data collected from their websites and potentially other external data sources.
+パスアナライザーを使用して、コンタクトがコンテンツとどのように相互作用しているかを大規模に調査したり、ウェブサイトを介して最も頻繁に移動したパスを表示したりすることができます。
 
-The experience optimization features offer you a variety of methods to test content, ranging from page tests and basic content tests to component tests and personalization tests. You can see results for individual tests in the Experience Editor, and you can use reports and dashboards in Experience Optimization to analyze optimization data.
-
-You can use the Path Analyzer to study how contacts interact with your content on a large scale, and view the most frequently traveled paths through your website.
+.. tip:: 英語版 https://doc.sitecore.com/users/93/sitecore-experience-platform/en/analyzing-and-reporting.html
 
 .. toctree::
-    :caption: 目次
-    :titlesonly:
-    :maxdepth: 2
+    :hidden:
+    :maxdepth: 1
 
     experience-analytics
     experience-optimization
