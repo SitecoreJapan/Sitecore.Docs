@@ -18,3 +18,5 @@ Sitecore Experience Platformでのコンテンツの作成と管理を学びま�
     explore-mode
     publishing
     searching
+
+.. tip:: 英語版 https://doc.sitecore.com/users/93/sitecore-experience-platform/en/content-authoring.htm

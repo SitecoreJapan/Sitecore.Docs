@@ -7,17 +7,12 @@ Sitecore Experience Platformは、コンテンツ管理、デジタルマーケ�
 Sitecore XPを最大限に活用する方法をご紹介します。コンテンツエディタとエクスペリエンスエディタは、ウェブサイトのコンテンツの作成と管理に役立ちます。Sitecoreのデジタルマーケティングツールを使用して、デジタルマーケティングキャンペーンを作成・管理し、チャネルをまたいでパーソナライズされたエクスペリエンスを提供します。エクスペリエンスアナリティクスツールを使用すると、ウェブサイトに関する詳細なレポートを取得することができます。エクスペリエンスの最適化は、最高の結果を得るためにコンテンツやキャンペーンを改善するのに役立ちます。パスアナライザーを使用して、訪問者がどのようにウェブサイトをナビゲートしているかを調査することで、ウェブサイトをさらに最適化することができます。
 
 .. toctree::
+    :maxdepth: 1
+    :titlesonly:
     :hidden:
-    :maxdepth: 4
 
     sitecore-experience-platform/ja/content-authoring
     sitecore-experience-platform/ja/digital-marketing
     sitecore-experience-platform/ja/analyzing-and-reporting
 
-***************
-索引とテーブル
-***************
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. tip:: 英語版 https://doc.sitecore.com/users/93/sitecore-experience-platform/en/index-en.html

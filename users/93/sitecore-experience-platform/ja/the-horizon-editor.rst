@@ -4,7 +4,9 @@ Horizon エディタ
 
 Horizon のページ エディタでは、ページ テンプレートに基づいて新しいページを作成したり、既存のページを編集したりできます。
 
-ページ エディタは Horizon のデフォルト ビューです。ページ エディタ アイコンの WYSIWYG_icon.png をクリックすると、他の Horizon ビューからページ エディタに戻ることができます。
+ページ エディタは Horizon のデフォルト ビューです。ページ エディタ アイコンの |icon1| をクリックすると、他の Horizon ビューからページ エディタに戻ることができます。 
+
+.. |icon1| image:: images/15eafd35185847.png
 
 Horizon でページを編集している間に、異なるデバイスのレイアウトを切り替えて、異なるデバイスでページがどのように表示されるかを確認することができます。
 
@@ -31,7 +33,10 @@ C - 右側のペインには、選択したアイテムの基本情報のほか�
 
 .. toctree::
     :hidden:
-
+    :maxdepth: 1
+    
     customize-the-view-in-the-horizon-editor
     autosave-undo-and-redo-in-horizon
     delete-a-page-or-folder-in-horizon
+
+.. tip:: 英語版 https://doc.sitecore.com/users/93/sitecore-experience-platform/en/horizon.html

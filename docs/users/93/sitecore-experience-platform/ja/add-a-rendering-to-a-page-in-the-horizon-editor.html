@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
-    <link rel="next" title="Horizon エディタでのページ発行" href="publishing-pages-in-the-horizon-editor.html" />
-    <link rel="prev" title="Horizon ページエディタでページを編集する" href="edit-a-page-in-the-horizon-page-editor.html" /> 
+    <link rel="next" title="ページ、レンダリング、プレースホルダ、コンテンツ項目" href="pages-renderings-placeholders-and-content-items.html" />
+    <link rel="prev" title="Horizon で画像フィールドを編集する" href="edit-an-image-field-in-horizon.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,7 +87,12 @@
 <li class="toctree-l3"><a class="reference internal" href="the-horizon-editor.html">Horizon エディタ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create-a-page-in-horizon.html">Horizonでページを作成する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="edit-a-page-in-the-horizon-page-editor.html">Horizon ページエディタでページを編集する</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Horizon エディタでページにレンダリングを追加する</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Horizon エディタでページにレンダリングを追加する</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pages-renderings-placeholders-and-content-items.html">ページ、レンダリング、プレースホルダ、コンテンツ項目</a></li>
+<li class="toctree-l4"><a class="reference internal" href="assign-a-content-item-to-a-rendering-in-horizon.html">Horizon のレンダリングにコンテンツ アイテムを割り当てる</a></li>
+<li class="toctree-l4"><a class="reference internal" href="remove-a-rendering-from-a-page-in-the-horizon-page-editor.html">Horizon ページ エディタでページからレンダリングを削除する</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="publishing-pages-in-the-horizon-editor.html">Horizon エディタでのページ発行</a></li>
 <li class="toctree-l3"><a class="reference internal" href="preview-a-site-in-simulator-mode.html">シミュレータモードでサイトをプレビュー</a></li>
 <li class="toctree-l3"><a class="reference internal" href="viewing-page-insights.html">ページの閲覧</a></li>
@@ -175,6 +180,35 @@
             
   <div class="section" id="horizon">
 <h1>Horizon エディタでページにレンダリングを追加する<a class="headerlink" href="#horizon" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Horizon エディタでは、ページにレンダリングを追加することができます。ページの設定によって、レンダリングを挿入できる位置が異なります。</p>
+<ul class="simple">
+<li><p>空のプレースホルダで</p></li>
+<li><p>すでにページ上にあるレンダリングの前または後</p></li>
+</ul>
+<p>ページにレンダリングを追加するには</p>
+<ol class="arabic simple">
+<li><p>ページ エディタでページを開きます。</p></li>
+<li><p>コンテンツ ツリーの下で、[ページに追加] をクリックします。
+[ページに追加] パネルには、ページ上のプレースホルダと互換性のあるレンダリングが表示されます。</p></li>
+<li><p>ページに追加するレンダリングを選択し、ページ上の追加する場所にドラッグします。
+レンダリングをドラッグすると、カーソルが「禁止」アイコンに変わり、現在の位置にレンダリングを追加できないことを示します。</p></li>
+</ol>
+<img alt="ランディングページ" class="align-center" src="../../_images/15eafd351d3d47.png" />
+<p>レンダリングを互換性のあるプレースホルダにドラッグすると、カーソルが通常の状態に戻ります。</p>
+<img alt="プレースホルダ" class="align-center" src="../../_images/15eafd351d96dd.png" />
+<p>すでにページ上にあるレンダリングの上または下にレンダリングを挿入できる位置にレンダリングをドラッグすると、矢印付きの青いタブが表示されます。</p>
+<a class="reference internal image-reference" href="../../_images/15eafd351dec11.png"><img alt="管理画面" class="align-center" src="../../_images/15eafd351dec11.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>マウスボタンを離すと、指定した位置にレンダリングが挿入されます。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd351e5738.png"><img alt="管理画面" class="align-center" src="../../_images/15eafd351e5738.png" style="width: 400px;" /></a>
+<p>ページ上でレンダリングをローカルに編集したり、レンダリングにコンテンツ アイテムを割り当てることができます。</p>
+<div class="toctree-wrapper compound">
+</div>
+<div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/add-a-rendering-to-a-page-in-the-horizon-editor.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/add-a-rendering-to-a-page-in-the-horizon-editor.html</a></p>
+</div>
 </div>
 
 
@@ -185,10 +219,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="publishing-pages-in-the-horizon-editor.html" class="btn btn-neutral float-right" title="Horizon エディタでのページ発行" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pages-renderings-placeholders-and-content-items.html" class="btn btn-neutral float-right" title="ページ、レンダリング、プレースホルダ、コンテンツ項目" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="edit-a-page-in-the-horizon-page-editor.html" class="btn btn-neutral float-left" title="Horizon ページエディタでページを編集する" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="edit-an-image-field-in-horizon.html" class="btn btn-neutral float-left" title="Horizon で画像フィールドを編集する" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

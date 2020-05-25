@@ -8,7 +8,9 @@ Web サイトに新しいページを追加するには
 
 1. 左側のペインのコンテンツ ツリーで、新しいページを追加するページまたはフォルダを選択するか、新しいページと同じレベルのページまたはフォルダを選択します。
 
-2. アクション メニュー 選択したページまたはフォルダのアクション メニュー アイコンをクリックします。
+2. アクション メニュー 選択したページまたはフォルダのアクション メニュー |icon1| をクリックします。
+
+.. |icon1| image:: images/15eafd351b1cc4.png
 
 3. 選択したページのサブページとして新しいページを作成する場合は、[ページの作成] をクリックします。
    新しいページを選択したページまたはフォルダと同じレベルに作成する場合は、[同じレベルにページを作成] をクリックします。
@@ -23,7 +25,9 @@ Web サイトに新しいページを追加するには
 
 .. toctree::
     :hidden:
-
+    :maxdepth: 1
+    
     create-a-folder-in-horizon
     use-special-characters-in-a-page-name
 
+.. tip:: 英語版 https://doc.sitecore.com/users/93/sitecore-experience-platform/en/create-a-page-in-horizon.html

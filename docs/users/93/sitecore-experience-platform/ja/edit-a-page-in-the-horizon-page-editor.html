@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
-    <link rel="next" title="Horizon エディタでページにレンダリングを追加する" href="add-a-rendering-to-a-page-in-the-horizon-editor.html" />
+    <link rel="next" title="Horizon エディタでリッチ テキスト フィールドを編集する" href="edit-a-rich-text-field-in-the-horizon-editor.html" />
     <link rel="prev" title="ページ名に特殊文字を使用する" href="use-special-characters-in-a-page-name.html" /> 
 </head>
 
@@ -86,7 +86,12 @@
 <li class="toctree-l2 current"><a class="reference internal" href="horizon.html">Horizon</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="the-horizon-editor.html">Horizon エディタ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create-a-page-in-horizon.html">Horizonでページを作成する</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Horizon ページエディタでページを編集する</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Horizon ページエディタでページを編集する</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="edit-a-rich-text-field-in-the-horizon-editor.html">Horizon エディタでリッチ テキスト フィールドを編集する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="create-edit-or-remove-a-link-in-a-rich-text-field-in-horizon.html">Horizon のリッチ テキスト フィールド内のリンクの作成、編集、削除</a></li>
+<li class="toctree-l4"><a class="reference internal" href="edit-an-image-field-in-horizon.html">Horizon で画像フィールドを編集する</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="add-a-rendering-to-a-page-in-the-horizon-editor.html">Horizon エディタでページにレンダリングを追加する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="publishing-pages-in-the-horizon-editor.html">Horizon エディタでのページ発行</a></li>
 <li class="toctree-l3"><a class="reference internal" href="preview-a-site-in-simulator-mode.html">シミュレータモードでサイトをプレビュー</a></li>
@@ -175,6 +180,44 @@
             
   <div class="section" id="horizon">
 <h1>Horizon ページエディタでページを編集する<a class="headerlink" href="#horizon" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Horizonページエディタは、Webサイトのコンテンツをページ上で直接変更できるWYSIWYGエディタです。テキスト、グラフィック、ロゴ、リンクなど、ページに表示されているすべての項目を編集することができます。</p>
+<p>Horizon エディタでは、ページの最終バージョンを編集しているので、変更内容は以下のすべてに影響します。</p>
+<ul class="simple">
+<li><p>ページの最終レイアウト</p></li>
+<li><p>すべての言語のすべてのバージョンで共有されている共有フィールド</p></li>
+<li><p>同じ言語のすべてのバージョンで共有されているフィールドのうち、逆コンパイルされていないもの</p></li>
+<li><p>現在の言語のアイテムの現在のバージョンにのみ適用されるバージョン付きフィールド</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Horizon エディタでフィールドを編集する場合、フィールドに関連するコンテンツが含まれている場合、同じコンテンツを使用している他のページのコンテンツも変更されることに注意してください。</p>
+</div>
+<p>Horizon ページ エディタでページを編集するには</p>
+<ol class="arabic simple">
+<li><p>Horizon エディタにログインして、編集するページを開きます。</p></li>
+<li><p>異なる言語バージョンに切り替えるには、アプリケーション URL の言語パラメータを変更します。たとえば、URL に sc_lang=en が含まれている場合、英語版からフランス語版に切り替えるために en を fr に置き換えることができます。</p></li>
+<li><p>編集したいフィールドをクリックして、内容を入力します。編集するフィールドのタイプによって、異なるオプションがあります。</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>テキストフィールド (1 行または複数行): テキストのみを入力できます。入力したテキストに合わせてフィールドが自動的に展開されます。</p></li>
+<li><p>リッチテキストフィールド。フィールド内のテキストを編集したり、右側のペインに表示される書式設定ツールを使用してテキストに書式設定を適用することができます。</p></li>
+<li><p>画像フィールド。さまざまな種類の画像を挿入できます。</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>デバイススイッチャー <img alt="icon1" src="../../_images/15eafd3519c675.png" /> でデバイスの種類をクリックすると、別のデバイスでどのようなページが表示されているかを確認することができます。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>どのデバイスビューで行った変更も、すべてのデバイスに影響します。サイトに実装されているレスポンシブ動作によっては、異なるデバイスでレンダリングが移動したり、表示されたり、消えたりする場合があります。</p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p><a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/edit-a-page-in-the-horizon-page-editor.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/edit-a-page-in-the-horizon-page-editor.html</a></p>
+</div>
 </div>
 
 
@@ -185,7 +228,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="add-a-rendering-to-a-page-in-the-horizon-editor.html" class="btn btn-neutral float-right" title="Horizon エディタでページにレンダリングを追加する" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="edit-a-rich-text-field-in-the-horizon-editor.html" class="btn btn-neutral float-right" title="Horizon エディタでリッチ テキスト フィールドを編集する" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="use-special-characters-in-a-page-name.html" class="btn btn-neutral float-left" title="ページ名に特殊文字を使用する" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

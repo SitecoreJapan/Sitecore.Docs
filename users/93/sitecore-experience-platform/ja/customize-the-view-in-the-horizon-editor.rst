@@ -30,11 +30,9 @@ Horizon エディタでビューをカスタマイズする
 
 右ペインまたは左ペインを折りたたんだり展開したりするには
 
-* 対応する折りたたみ/拡大アイコンをクリックします。
+* 対応する折りたたみ/拡大アイコンをクリックします。 |icon1|
 
-.. image:: images/15eafd35197409.png
-   :align: center
-   :alt: Horizon エディタ
+.. |icon1| image:: images/15eafd35197409.png
 
 ===========================
 デバイスビューを切り替える
@@ -44,7 +42,7 @@ Sitecore は、サイト上のページにレスポンシブデザインを適�
 
 現在のページを異なるデバイスのレイアウトで表示するには、以下の手順に従います。
 
-* デバイス スイッチャーで、電話、タブレット、またはデスクトップのアイコンをクリックします。
+* デバイス スイッチャーで、電話、タブレット、またはデスクトップのアイコンをクリックします。 
 
 .. image:: images/15eafd3519c675.png
    :align: center
@@ -63,3 +61,6 @@ Sitecore は、サイト上のページにレスポンシブデザインを適�
 .. image:: images/15eafd351a197d.png
    :align: center
    :alt: Horizon エディタ
+
+
+.. tip:: 英語版 https://doc.sitecore.com/users/93/sitecore-experience-platform/en/customize-the-view-in-the-horizon-editor.html
