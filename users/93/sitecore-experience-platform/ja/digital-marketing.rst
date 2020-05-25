@@ -2,9 +2,9 @@
 デジタルマーケティング
 ########################
 
-.. note::
+Sitecoreのデジタルマーケティングツールを使用して、デジタルマーケティングキャンペーンを作成・管理し、チャネルをまたいでパーソナライズされた体験を提供します。
 
-   翻訳中
+.. tip:: 英語版 https://doc.sitecore.com/users/93/sitecore-experience-platform/en/digital-marketing.html
    
 
 .. toctree::

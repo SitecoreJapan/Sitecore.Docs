@@ -12,7 +12,6 @@ Sitecore Experience Platformでのコンテンツの作成と管理を学びま�
     horizon
     the-editing-tools
     creating-and-editing-items
-    change-your-personal-settings
     managing-items
     media-items
     explore-mode
