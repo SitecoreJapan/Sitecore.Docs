@@ -1,0 +1,214 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Core データベースの拡張 &mdash; Sitecore オンラインマニュアル  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Sitecore オンラインマニュアル
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目次</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../users/80/index.html">ビジネスユーザー向け (Sitecore 8.0)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../users/93/index.html">ビジネスユーザー向け (Sitecore 9.3)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Sitecore オンラインマニュアル</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Core データベースの拡張</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/manual/marketing/listmanager/updateCoreDB.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="core">
+<h1>Core データベースの拡張<a class="headerlink" href="#core" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>今回インポートをするデータとしては、名前、メールアドレス、言語を設定したリストをインポートします。この際、名前、メールアドレスに関しては標準で項目として用意されていますが、言語に関しては用意されていないため、この項目を追加します。なお、設定だけで追加できる項目に関しては、Sitecore の文書で公開されています。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://doc.sitecore.com/users/92/sitecore-experience-platform/en/configure-the-import-contacts-wizard-to-include-custom-contact-facets.html">Configure the Import contacts wizard to include custom contact facets</a></p></li>
+</ul>
+<div class="section" id="id1">
+<h2>Core データベースに切り替える<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ここからの作業は管理者の権限で進めていきます。「デスクトップ」ツールを起動して、右下にあるデータベースの項目で「Core」に切り替えてください。</p>
+<a class="reference internal image-reference" href="../../../_images/coredb01.png"><img alt="データベースの切り替え" class="align-center" src="../../../_images/coredb01.png" style="width: 400px;" /></a>
+<p>左下にある Sitecore メニューを開き、コンテンツエディターを起動します。</p>
+<a class="reference internal image-reference" href="../../../_images/coredb02.png"><img alt="コンテンツエディターの起動" class="align-center" src="../../../_images/coredb02.png" style="width: 400px;" /></a>
+<p>以下のアイテム <cite>/sitecore/client/Applications/List Manager/Dialogs/ImportWizardDialog/PageSettings/TabControl Parameters/Map/ImportModel</cite> を選択します。</p>
+<a class="reference internal image-reference" href="../../../_images/coredb03.png"><img alt="アイテムの選択" class="align-center" src="../../../_images/coredb03.png" style="width: 400px;" /></a>
+<p>アイテムを選択すると、追加できるアイテム一覧に「個人 - 優先言語」というテンプレートがあります。これを選択します。</p>
+<a class="reference internal image-reference" href="../../../_images/coredb04.png"><img alt="テンプレートの選択" class="align-center" src="../../../_images/coredb04.png" style="width: 400px;" /></a>
+<p>アイテム名として <cite>Personal - Preferred Language</cite> と設定します。</p>
+<a class="reference internal image-reference" href="../../../_images/coredb05.png"><img alt="アイテムの作成" class="align-center" src="../../../_images/coredb05.png" style="width: 400px;" /></a>
+<p>アイテムを保存します。このアイテムに関しては、日本語と英語のリソースがあるように、言語のコンテンツが不足している場合は追加してください。</p>
+<a class="reference internal image-reference" href="../../../_images/coredb06.png"><img alt="言語の確認" class="align-center" src="../../../_images/coredb06.png" style="width: 400px;" /></a>
+<p>アイテムの日本語と英語が揃っている形で準備が完了となります。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sitecore Japan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

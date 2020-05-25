@@ -1,0 +1,238 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Email Experience Manager の基本設定 &mdash; Sitecore オンラインマニュアル  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Sitecore オンラインマニュアル
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目次</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../users/80/index.html">ビジネスユーザー向け (Sitecore 8.0)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../users/93/index.html">ビジネスユーザー向け (Sitecore 9.3)</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Sitecore オンラインマニュアル</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Email Experience Manager の基本設定</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/manual/marketing/emailexperiencemanager/settings.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="email-experience-manager">
+<h1>Email Experience Manager の基本設定<a class="headerlink" href="#email-experience-manager" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>EXM で配信をする基本設定を、メールの作成前にしておきましょう。コンテンツエディターで、　<cite>/sitecore/content/Email</cite> のアイテムを選択してください。このアイテムが表示されていない場合は、一度 Email Experience Manager を立ち上げると、アイテムが作成されます。コンテンツタブを開くと、以下の項目を入力することができます。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 32%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>フィールド名</p></th>
+<th class="head"><p>設定値</p></th>
+<th class="head"><p>入力例 |</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ベース URL</p></td>
+<td><p>公開した際の URL</p></td>
+<td><p><a class="reference external" href="https://sample.com">https://sample.com</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>プレビュー ベース URL</p></td>
+<td><p>プレビュー用の URL</p></td>
+<td><p><a class="reference external" href="https://cms.sample.com">https://cms.sample.com</a></p></td>
+</tr>
+<tr class="row-even"><td><p>エンコーディング</p></td>
+<td><p>utf-8</p></td>
+<td><p>utf-8</p></td>
+</tr>
+<tr class="row-odd"><td><p>購読の管理</p></td>
+<td><p>配信停止などのページを指定</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>差出人の名前</p></td>
+<td><p>アドレスの名前</p></td>
+<td><p>Sitecore Mail Service</p></td>
+</tr>
+<tr class="row-odd"><td><p>差出人のアドレス</p></td>
+<td><p>メールアドレス</p></td>
+<td><p><a class="reference external" href="mailto:donotreply&#37;&#52;&#48;sitecore&#46;com">donotreply<span>&#64;</span>sitecore<span>&#46;</span>com</a></p></td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../../_images/exmsetting01.png"><img alt="設定" class="align-center" src="../../../_images/exmsetting01.png" style="width: 400px;" /></a>
+<p>上記の項目に関しては、利用する言語（今回は英語と日本語）に関して設定をしてください。</p>
+<a class="reference internal image-reference" href="../../../_images/exmsetting02.png"><img alt="日英" class="align-center" src="../../../_images/exmsetting02.png" style="width: 400px;" /></a>
+<p>今回はテスト用のため、既定のメッセージヘッダーだけでも設定をしておいてください。</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sitecore Japan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
