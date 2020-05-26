@@ -83,9 +83,7 @@ Windows Explorer のフォルダーと同じように Sitecore コンテンツ �
 * プロファイル カードの編集– アイテムに関連付けるプロファイル カードを変更します。この機能はマーケティング担当者に最も関連性があります。
 
 .. toctree::
-    :caption: 関連トピック
-    :titlesonly:
-    :maxdepth: 1
+    :hidden:
     
     the-application-options
     customize-the-content-editor
