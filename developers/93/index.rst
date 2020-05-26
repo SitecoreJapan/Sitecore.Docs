@@ -15,8 +15,9 @@
 
 * http://doc.sitecore.com/developers/ を参照してください
 
+************************
 Indices and tables
-==================
+************************
 
 * :ref:`genindex`
 * :ref:`modindex`
