@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -182,9 +182,35 @@
             
   <div class="section" id="id1">
 <h1>アイテムの作成と編集<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>アイテムは、Sitecoreウェブサイトの基本的な構成要素です。アイテムは、テキスト、メディアファイル、レイアウトなど、ウェブページを構成するあらゆる種類の情報を表すことができます。</p>
+<p>アイテムは常に名前と、そのアイテムを一意に識別するIDを持ち、アイテムに含まれるフィールドを定義するテンプレートに基づいています。また、アイテムは複数のバージョンと複数の言語バージョンを持つことができます。</p>
+<p>アイテムの編集、作成、挿入は、コンテンツ エディタまたはエクスペリエンス エディタを使用して行うことができます。</p>
+<ul>
+<li><p>コンテンツ エディタでは、ウェブサイト上のすべてのアイテムがコンテンツ ツリーに格納され、階層内の特定のアイテムに移動することができます。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>コンテンツ ツリーでは、アイテムと関連するアイテムの関係は以下の通りです。</p></li>
+<li><p>親 - アイテムの真上にあるアイテム</p></li>
+<li><p>シブリング - アイテムと同じレベルのアイテム</p></li>
+<li><p>小項目 - 項目の直下にある項目</p></li>
+<li><p>祖先 - 項目の上にあるすべての項目</p></li>
+<li><p>子孫 - アイテムの子孫となるすべてのアイテム</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/15eafd353ab4ff.png"><img alt="アイテムの作成と編集" class="align-center" src="../../_images/15eafd353ab4ff.png" style="width: 400px;" /></a>
+<ul class="simple">
+<li><p><a class="reference internal" href="the-experience-editor.html"><span class="doc">エクスペリエンス エディター</span></a> では、ウェブサイト上で見たままの項目が表示されます。エクスペリエンスエディタはWYSIWYG（What You See Is What You Get）エディタで、ページ上のアイテムを直接編集することができます。</p></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳準備中</p>
+<p>Sitecoreで項目を作成したり編集したりする方法は、セキュリティ設定やWebサイトの設定方法によって異なります。</p>
+</div>
+<p>コンテンツエディタとエクスペリエンスエディタの両方で、アイテムを編集するには、アイテムが編集状態になっていなければなりません。アイテムの編集を開始する前にアイテムをロックすることで、他のコンテンツ作成者が同時にアイテムの編集を行わないようにすることができます。</p>
+<div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/creating-and-editing-items.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/creating-and-editing-items.html</a></p>
 </div>
 <div class="toctree-wrapper compound">
 </div>
