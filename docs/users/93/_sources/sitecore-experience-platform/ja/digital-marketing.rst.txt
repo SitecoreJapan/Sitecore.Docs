@@ -8,9 +8,8 @@ Sitecoreのデジタルマーケティングツールを使用して、デジタ
    
 
 .. toctree::
-    :caption: 目次
-    :titlesonly:
-    :maxdepth: 2
+    :hidden:
+    :maxdepth: 1
 
     digital-marketing-glossary
     marketing-automation

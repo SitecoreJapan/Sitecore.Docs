@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -197,13 +197,69 @@
             
   <div class="section" id="id1">
 <h1>アイテムのロックとロック解除<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Sitecoreでは、他のユーザーが同じアイテムを同時に編集できないように、現在編集中のアイテムのバージョンをロックすることができます。編集したいアイテムが既にロックされている場合、編集することはできず、閲覧のみが可能です。アイテムの編集が完了したら、他のユーザーが再びアイテムを利用できるようにするには、アイテムのロックを解除する必要があります。</p>
+<p>Sitecoreのインストールの設定によっては、編集する前にアイテムをロックするように促されることがあります。(管理者または開発者は、アイテムのロックを設定することができます。)</p>
+<p>Sitecoreの管理者は、他のユーザーのロックされたアイテムを編集する権限を持つことができます。そのため、管理者と別のユーザーが同時にアイテムを編集することができます。あるユーザーがアイテムに変更を保存した後、別のユーザーが同じアイテムに変更を保存した場合、以前に保存した変更を上書きするかどうかを尋ねる通知が表示されます。</p>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>アイテムをロックしても公開されないようにすることはできません。あるアイテムで作業をしていて、それを公開しないようにしたい場合は、そのアイテムの公開制限を設定する必要があります。</p>
+</div>
+<div class="section" id="id2">
+<h2>ロックをかける<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アイテムを手動でロックするには</p>
+<ol class="arabic simple">
+<li><p>コンテンツ エディタまたはエクスペリエンス エディタで、編集する項目またはページに移動します。</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>コンテンツ エディタで、[ホーム] タブの [編集] をクリックしてアイテムをロックします。</p></li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="../../_images/15eafd353df40f.png"><img alt="ロックをかける" class="align-center" src="../../_images/15eafd353df40f.png" style="width: 400px;" /></a>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>コンテンツ ツリーでは、クイック アクションを使用して、ロックしたアイテムの概要を簡単に確認することができます。コンテンツ ツリーの左を右クリックして、[マイ ロックされたアイテム] を選択します。</p>
+<ul class="simple">
+<li><p>エクスペリエンス エディタの [ホーム] タブの [編集] グループで [ロック] をクリックします。</p></li>
+</ul>
 </div>
+<ol class="arabic simple" start="2">
+<li><p>アイテムの編集が終わったら、再度アイテムのロックを解除するようにしてください。</p></li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>アイテムのロックを解除する<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>多数のアイテムをロックして編集していると、そのアイテムを見失ってしまうことがあります。Sitecoreは、誰がロックしたか、誰がロックしたか、すべてのアイテムを記録しています。このようにして、1つ以上のアイテムを同時に簡単にロック解除することができます。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>アイテムをアンロックすると、関連するコンテンツもアンロックされます。</p>
+</div>
+<p>アイテムのロックを解除するには</p>
+<ol class="arabic simple">
+<li><p>自分でロックされているアイテムのリストを表示したり、1つまたは複数のアイテムのロックを解除したりするには、次の手順に従います。</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>コンテンツ エディタの [レビュー] タブの [ロック] グループで [マイ アイテム] をクリックします。</p></li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="../../_images/15eafd353ec326.png"><img alt="アイテムのロックを解除する" class="align-center" src="../../_images/15eafd353ec326.png" style="width: 400px;" /></a>
+<ul class="simple">
+<li><p>エクスペリエンスエディタで、[ホーム]タブの[編集]グループで[マイアイテム]をクリックします。</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/15eafd353f4013.png"><img alt="アイテムのロックを解除する" class="align-center" src="../../_images/15eafd353f4013.png" style="width: 400px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>リボンのマイアイテムボタンの横にある数字は、ロックしたアイテムの数を示しています。</p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>[マイアイテム] ダイアログ ボックスで、ロックを解除するアイテムを選択し、[ロックの解除] をクリックします。すべてのアイテムを同時にロック解除するには、[すべてのロックを解除] をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd35405fd1.png"><img alt="アイテムのロックを解除する" class="align-center" src="../../_images/15eafd35405fd1.png" style="width: 400px;" /></a>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/lock-and-unlock-an-item.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/lock-and-unlock-an-item.html</a></p>
+</div>
 </div>
 </div>
 

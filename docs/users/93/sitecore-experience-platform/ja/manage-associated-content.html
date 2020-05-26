@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -197,13 +197,67 @@
             
   <div class="section" id="id1">
 <h1>関連コンテンツの管理<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>関連付けられたコンテンツとは、別のアイテムに由来するページのコンテンツのことです。関連コンテンツを編集すると、同じアイテムから派生した他のページのコンテンツも変更されます。</p>
+<p>自分が関連コンテンツを編集しているかどうか、それによってサイト内の別の場所でもコンテンツを変更しているかどうかを確実に把握するために、ページ上のすべての関連コンテンツの概要を取得することができます。</p>
+<p>エクスペリエンスエディタでは、以下の方法で関連コンテンツの概要を取得できます。</p>
+<ul class="simple">
+<li><p>ページで使用されているすべての関連コンテンツの一覧を表示するには、[プレゼンテーション] タブの [コンテンツ] セクションで [関連コンテンツ] をクリックします。ドロップダウン リストの項目をクリックして、コンテンツ エディタで対応するコンテンツ項目を編集します。</p></li>
+<li><p>ページ上のどのコンポーネントとサブレイアウトに関連するコンテンツが含まれているかを確認するには、[表示] タブの [関連するコンテンツ] チェック ボックスをオンにします。これにより、ページ上の関連するコンテンツを含むすべてのコンポーネントとサブレイアウトが緑の点線で強調表示されます。</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>ページを公開する場合、ワークフローの最終状態ではないコンテンツ アイテムに由来する関連コンテンツは公開されません。関連付けられたコンテンツ] チェックボックスを選択してページを公開しようとすると、ページで使用されている 1 つ以上のアイテムが公開できない場合に通知が表示されます。</p>
+</div>
+<div class="section" id="id2">
+<h2>関連するコンテンツの表示と管理<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>1 つのコンポーネントまたはサブレイアウトの関連するコンテンツを表示して管理するには、次の手順に従います。</p>
+<ol class="arabic simple">
+<li><p>関連するコンテンツを含むコンポーネントまたはサブレイアウトをクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd354513a4.png"><img alt="関連するコンテンツの表示と管理" class="align-center" src="../../_images/15eafd354513a4.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>表示されるフローティング ツールバーには、コンテンツに関する以下の情報が表示されます。</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>ワークフロー - 関連するコンテンツが属するアイテムがワークフローの一部であるかどうか、またアイテムがまだ最終的な ワークフロー状態にないかどうかを示します。十分な権利を持っている場合は、[ワークフロー] をクリックして、次のワークフロー状態にアイテムを移動することができます。</p></li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="../../_images/15eafd35457753.png"><img alt="関連するコンテンツの表示と管理" class="align-center" src="../../_images/15eafd35457753.png" style="width: 400px;" /></a>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>ワークフローでアイテムを移動する際には、そのアイテムのコンテンツがサイトで使用されている他のすべてのページにも影響することを覚えておいてください。</p>
 </div>
+<ul class="simple">
+<li><p>[使用状況] - 関連するコンテンツを使用するアイテムの数を示します。関連するコンテンツの一般的な情報と、このコンテンツを使用するアイテムのリストを表示するには、[使用状況] をクリックします。</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/15eafd3545e036.png"><img alt="関連するコンテンツの表示と管理" class="align-center" src="../../_images/15eafd3545e036.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id3">
+<h2>関連するコンテンツの追加または変更<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>コンポーネントまたはサブレイアウトの関連するコンテンツを追加または変更するには、次の手順に従います。</p>
+<ol class="arabic simple">
+<li><p>エクスペリエンス エディタで、関連するコンテンツを追加または変更するコンポーネントまたはサブレイアウトをクリックします。</p></li>
+<li><p>フローティング ツールバーで</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>関連するコンテンツを変更するには、<img alt="icon1" src="../../_images/15eafd354664fc.png" /> をクリックしてから、[関連するコンテンツを変更]をクリックします。</p></li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="../../_images/15eafd3546cd7e.png"><img alt="関連するコンテンツの追加または変更" class="align-center" src="../../_images/15eafd3546cd7e.png" style="width: 400px;" /></a>
+<ul class="simple">
+<li><p>コンポーネントまたはサブレイアウトに新しい関連コンテンツを追加するには、<img alt="icon2" src="../../_images/15eafd35473cd3.png" /> をクリックして、関連コンテンツを追加します。</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/15eafd35479a89.png"><img alt="関連するコンテンツの追加または変更" class="align-center" src="../../_images/15eafd35479a89.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>関連付けられたコンテンツの選択 ダイアログ ボックスで、コンポーネントまたはサブレイアウトのソースとして使用するアイテムに移動するか、検索して OK をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd3548009d.png"><img alt="関連するコンテンツの追加または変更" class="align-center" src="../../_images/15eafd3548009d.png" style="width: 400px;" /></a>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/manage-associated-content.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/manage-associated-content.html</a></p>
+</div>
 </div>
 </div>
 

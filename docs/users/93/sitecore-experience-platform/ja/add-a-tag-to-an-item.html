@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/translations.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -121,7 +121,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">分析とレポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">アナリティクスとレポート</a></li>
 </ul>
 
             
@@ -194,13 +194,59 @@
             
   <div class="section" id="id1">
 <h1>アイテムにタグを追加する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>アイテムにタグを付けることは、アイテムを分類し、同じタグを持つアイテムを簡単に検索して見つけるのに最適な方法です。特に、アイテムバケツの中に何百万ものアイテムがある場合は、タグを使用することでアイテムを素早く見つけることができます。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>特定のタグが付いたアイテムを検索するには、Sitecoreの検索機能にある検索フィルター ( <a class="reference internal" href="filter-the-search-results.html"><span class="doc">検索結果を絞り込む</span></a> )「Search by Tag」を使用することができます。</p>
 </div>
+<div class="section" id="id2">
+<h2>コンテンツエディタで単一の項目にタグを追加する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アイテムにタグを追加するには</p>
+<ol class="arabic simple">
+<li><p>コンテンツ エディタのコンテンツ ツリーで、タグを追加するアイテムに移動します。</p></li>
+<li><p>コンテンツ エリアの [コンテンツ] タブで、[タグ付け] セクションを見つけて展開します。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>タグ付けセクションが表示されていない場合は、[表示] タブをクリックし、[表示] グループで [標準フィールド] チェックボックスを選択します。</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>[タグ付け] セクションでは、左側の利用可能なすべてのタグのリストで、検索フィールドで特定のタグを検索するか、手動でタグを選択することができます。複数のタグを選択するには、SHIFT または CTRL を使用できます。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd355c8754.png"><img alt="アイテムにタグを追加する" class="align-center" src="../../_images/15eafd355c8754.png" style="width: 400px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Sitecore管理者は、利用可能なタグを指定します。</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>アイテムに関連するタグを選択したら、右矢印 <img alt="icon1" src="../../_images/15eafd355cedaa.png" /> をクリックして、選択したタグのリストに移動します。</p></li>
+</ol>
+<ol class="arabic simple" start="5">
+<li><p>選択済みリストからタグを削除するには、左矢印 <img alt="icon2" src="../../_images/15eafd355d544f.png" /> をクリックするか、タグをダブルクリックして1つのフィールドから別のフィールドに移動します。</p></li>
+</ol>
+<ol class="arabic simple" start="6">
+<li><p>変更を保存します。</p></li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>検索操作で複数の項目にタグを追加する<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>検索操作を使って複数の項目に同時にタグを追加するには</p>
+<ol class="arabic simple">
+<li><p>コンテンツエディタまたはエクスペリエンスエディタで、タグを追加する項目の検索を作成します。</p></li>
+<li><p>検索結果に関連するすべての項目が表示されたら、検索フィールドの左にあるドロップダウン矢印 <img alt="icon3" src="../../_images/15eafd355db7ef.png" />  をクリックします。</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>ドロップダウンメニューで、[検索操作] をクリックし、[タグの追加] をクリックします。</p></li>
+<li><p>Sitecore アイテムの挿入］ダイアログボックスのコンテンツツリーで、すべての検索結果に追加するタグに移動するか、［リストビュー <img alt="icon4" src="../../_images/15eafd355e28e2.png" /> ］をクリックしてタグを検索します。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd355e8698.png"><img alt="検索操作で複数の項目にタグを追加する" class="align-center" src="../../_images/15eafd355e8698.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>検索に表示されているすべての項目にタグを追加するには、[挿入] をクリックします。</p></li>
+</ol>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/add-a-tag-to-an-item.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/add-a-tag-to-an-item.html</a></p>
+</div>
 </div>
 </div>
 
