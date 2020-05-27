@@ -28,6 +28,6 @@ Horizon エディタでページ上のリッチ テキスト フィールドを�
 
 .. |icon1| image:: images/15eafd351c371d.png
 
-リッチ テキスト フィールドにリンクを作成することもできます。 
+:doc:`リッチ テキスト フィールドにリンクを作成 <create-edit-or-remove-a-link-in-a-rich-text-field-in-horizon>` することもできます。 
 
 .. tip:: 英語版 https://doc.sitecore.com/users/93/sitecore-experience-platform/en/edit-a-rich-text-field-in-the-horizon-editor.html

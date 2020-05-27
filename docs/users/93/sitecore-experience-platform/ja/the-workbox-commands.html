@@ -117,7 +117,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">分析とレポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">アナリティクスとレポート</a></li>
 </ul>
 
             
@@ -190,10 +190,83 @@
             
   <div class="section" id="id1">
 <h1>ワークボックスのコマンド<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳中</p>
-</div>
+<p>コンテンツ アイテムを Web サイトに公開する前に、ワークボックス ( <a class="reference internal" href="workflows-and-the-workbox.html"><span class="doc">ワークフローとワークボックス</span></a> )のコマンドを使用して、 アイテムの異なるバージョンをプレビュー、オープン、または比較したり、コンテンツを承認または拒否したりすることができます。</p>
+<p>いくつかのコマンドは同時に多くのアイテムで実行でき、すべてのアイテムに対して特定のコマンドのみが表示されたり、 対応するワークフローの状態に設定されているワークフロー コマンドに応じて表示されたりします。</p>
+<p>ワークボックスの［ワークフロー］セクションでは、特定のワークフローのみを表示 ( <a class="reference internal" href="review-an-item-in-the-workbox.html"><span class="doc">ワークボックスの項目を確認する</span></a> ) するように設定することができます。</p>
+<p>次の表では、ワークボックスの各項目のコマンドについて説明します。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 34%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>コマンド</p></th>
+<th class="head" colspan="2"><p>説明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>プレビュー</p></td>
+<td colspan="2"><p>新しいウィンドウでアイテムをプレビューします。</p></td>
+</tr>
+<tr class="row-odd"><td><p>オープン</p></td>
+<td colspan="2"><p>コンテンツ エディタで新しいウィンドウで項目を開きます。</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>承認</p></td>
+<td colspan="2"><p>項目を承認し、次のワークフローの状態に移動します。</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>アイテムを承認すると、コメントの入力を求められます。この文章は、次のレビュアーへの通知として送信されます。</p></td>
+</tr>
+<tr class="row-even"><td><p>差異</p></td>
+<td colspan="2"><p>バージョンの比較ダイアログボックスを開いて、同じアイテムの2つのバージョンの違いを表示します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>却下</p></td>
+<td colspan="2"><p>ワークフローの初期状態にアイテムを移動します。</p></td>
+</tr>
+<tr class="row-even"><td><p>展開</p></td>
+<td colspan="2"><p>アイテムの公開</p></td>
+</tr>
+<tr class="row-odd"><td><p>テストの承認</p></td>
+<td colspan="2"><p>アイテムを承認し、ワークフローの次の状態に移動し、A/Bテストを開始します。</p></td>
+</tr>
+<tr class="row-even"><td><p>テスト以外を承認</p></td>
+<td colspan="2"><p>A/Bテストを行わずに承認し、ワークフローの次の状態に移行する。</p></td>
+</tr>
+<tr class="row-odd"><td><p>それ以外</p></td>
+<td colspan="2"><p>編集履歴と、そのアイテムに対して最後に行われたワークフローの変更の詳細を表示します。</p></td>
+</tr>
+</tbody>
+</table>
+<p>次の表では、バッチ処理ツールバーのコマンドについて説明します。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 29%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>コマンド</p></th>
+<th class="head" colspan="2"><p>説明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>承認（全て）</p></td>
+<td colspan="2"><p>事前に選択された項目のバッチを承認し、次のワークフローの状態に移動します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>却下（全て）</p></td>
+<td colspan="2"><p>事前に選択された項目のバッチを拒否し、ワークフローの初期段階に戻します。</p></td>
+</tr>
+<tr class="row-even"><td><p>展開（全て）</p></td>
+<td colspan="2"><p>事前に選択した項目を一括で公開します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>テストと承認（全て）</p></td>
+<td colspan="2"><p>事前に選択した項目を一括して承認し、A/Bテストを実行する。</p></td>
+</tr>
+<tr class="row-even"><td><p>テスト以外を承認（全て）</p></td>
+<td colspan="2"><p>A/Bテストを実行せずに、事前に選択した項目を一括して承認する。</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-workbox-commands.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-workbox-commands.html</a></p>

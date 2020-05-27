@@ -116,7 +116,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">分析とレポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">アナリティクスとレポート</a></li>
 </ul>
 
             
@@ -189,13 +189,127 @@
             
   <div class="section" id="rss">
 <h1>RSSフィードを設定する<a class="headerlink" href="#rss" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>コンテンツエディタでは、どのようなアイテムに対してもRSSフィードを設定することができますが、一般的には、ニュースアイテムやブログなど、定期的に更新されるアイテムに対して設定することになります。</p>
+<p>このチュートリアルでは、アイテムにRSSフィードを設定する方法と、その方法の概要について説明します。</p>
+<div class="section" id="id1">
+<h2>RSSフィード用のフォルダを作成する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>まず、RSSフィードの項目を保存するフォルダを作成する必要があります。</p>
+<p>フィード用のフォルダを作成するには</p>
+<ol class="arabic simple">
+<li><p>コンテンツエディタのコンテンツツリーで、ウェブサイトのホーム項目を選択します。</p></li>
+<li><p>[ホーム] タブの [挿入] グループで、ドロップダウン矢印をクリックし、[テンプレートから挿入] をクリックします。</p></li>
+<li><p>[参照] タブをクリックし、[テンプレート/コモン/フォルダ] に移動します。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd35729ac1.png"><img alt="RSSフィード用のフォルダを作成する" class="align-center" src="../../_images/15eafd35729ac1.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>新しいフォルダに名前を付けてください - RSSフィード。</p></li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>RSSフィードを作成する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>RSSフィードを保存するフォルダを作成したので、RSSフィードを作成して、RSSフィードに入れたい項目にリンクします。</p>
+<p>コンテンツエディタでRSSフィードを作成するには</p>
+<ol class="arabic simple">
+<li><p>コンテンツエディタで、先ほど作成したRSSフィードフォルダを選択します。</p></li>
+<li><p>[ホーム] タブの [挿入] グループで、[テンプレートから挿入] をクリックします。</p></li>
+<li><p>[テンプレートから挿入] ダイアログ ボックスで、[テンプレート/システム/フィード/] に移動し、[RSS フィード] を選択して、このテンプレートに基づいてフィードを作成します。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd35730607.png"><img alt="RSSフィードを作成する" class="align-center" src="../../_images/15eafd35730607.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>項目名フィールドに新しいフィードの名前を入力します。</p></li>
+<li><p>[挿入］をクリックすると、新しいフィード項目が作成され、コンテンツエディタで開きます。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd35736eeb.png"><img alt="RSSフィードを作成する" class="align-center" src="../../_images/15eafd35736eeb.png" style="width: 400px;" /></a>
+<p>新しいフィードは警告を表示し、フィードが空であることと、フィードに含める項目を選択する必要があることを知らせます。</p>
+<ol class="arabic simple" start="6">
+<li><p>[コンテンツ] タブの [データ] セクションの [アイテム] フィールドで [リンクの挿入] をクリックします。</p></li>
+<li><p>項目の挿入ダイアログボックスで、RSSフィードに含める項目をクリックし、挿入をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd3573d215.png"><img alt="RSSフィードを作成する" class="align-center" src="../../_images/15eafd3573d215.png" style="width: 400px;" /></a>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>サブアイテムがあるアイテムに対してのみRSSフィードを作成することができます。サブアイテムを持たないアイテムにRSSフィードを作成すると、Sitecoreはそのフィードが空であることを教えてくれます。</p>
 </div>
+<ol class="arabic simple" start="8">
+<li><p>[説明] フィールドに RSS フィードの説明を入力します。</p></li>
+<li><p>新しいフィード項目を保存します。</p></li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>RSSフィードの設定<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>さて、RSSフィードでフィード情報をどのように表示するかを設定する必要があります。フィードには、項目が更新されたことを購読者に伝えるのではなく、作成または更新された情報項目に関する情報が含まれている必要があります。</p>
+<p>RSS フィードの表示方法を設定するには、以下の手順に従います。</p>
+<ol class="arabic simple">
+<li><p>コンテンツ エディタで、RSS フィードをリンクした項目を展開し、そのサブ項目の 1 つをクリックします。</p></li>
+<li><p>[表示] タブの [フィード] グループで [デザイン] をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd35743842.png"><img alt="RSSフィードを作成する" class="align-center" src="../../_images/15eafd35743842.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>RSS フィードのデザイン ダイアログ ボックスで、この RSS フィードを購読しているユーザーにフィードをどのように表示するかを指定します。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd3574a070.png"><img alt="RSSフィードを作成する" class="align-center" src="../../_images/15eafd3574a070.png" style="width: 400px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>フィールド</p></th>
+<th class="head"><p>値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>タイトル</p></td>
+<td><p>フィードのタイトルに表示させたい項目欄です。</p></td>
+</tr>
+<tr class="row-odd"><td><p>本文</p></td>
+<td><p>フィードの本文に表示させたい項目欄です。</p></td>
+</tr>
+<tr class="row-even"><td><p>日付</p></td>
+<td><p>フィードに表示する日付フィールドです。これは、例えば、アイテムが作成された日付、更新された日付、ニュースが適用された日付などです。</p></td>
+</tr>
+<tr class="row-odd"><td><p>プレビュー</p></td>
+<td><p>上記の選択を元にしたフィードのプレビューです。</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="4">
+<li><p>これらのフィールドを入力したら、[OK]をクリックします。
+[プレゼンテーション]タブの[フィード]グループで、[デザイン]ボタンに緑色のチェックマーク <img alt="icon2" src="../../_images/15eafd3575008f.png" /> が表示されるようになりました 。</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>あるアイテムのデザインを指定すると、同じテンプレートに基づいている他のすべてのアイテムが同じようにフィードに表示されます。サブアイテムの一部が別のテンプレートに基づいている場合は、それらのアイテムがフィードでどのように表示されるかを指定し、RSSフィードのレンダリングを正しく設定する必要があります。</p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>コンテンツエディタで、変更内容を保存します。</p></li>
+</ol>
+<p>フィードの表示方法を設定すると、RSSフィード項目に警告が表示されなくなります。</p>
+</div>
+<div class="section" id="id4">
+<h2>あなたのウェブサイトにRSSフィードへのリンクを作成<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>RSSフィードを設定したら、親項目にフィードへのリンクを作成して、ユーザーが自分のウェブサイトからフィードを購読できるようにする必要があります。</p>
+<p>コンテンツ アイテムへのリンクを作成するには、以下の手順に従います。</p>
+<ol class="arabic simple">
+<li><p>コンテンツ エディタで、RSS フィードを作成した項目（例えば、「ニュース」など）を開きます。</p></li>
+<li><p>コンテンツ エリアの [コンテンツ] タブで、[ページ タイトルとテキスト] セクションを展開し、[エディタを表示] をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd3575615a.png"><img alt="RSSフィードを作成する" class="align-center" src="../../_images/15eafd3575615a.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>テキスト エディタでリンクのテキストを入力し、テキストを選択してから <img alt="icon1" src="../../_images/15eafd3575c3a3.png" /> をクリックします。</p></li>
+</ol>
+<ol class="arabic simple" start="4">
+<li><p>リンクの挿入］ダイアログボックスの［内部リンク］タブで、先に作成したRSSフィード項目に移動するか、［検索］タブでRSSフィードを検索します。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd35762102.png"><img alt="RSSフィードを作成する" class="align-center" src="../../_images/15eafd35762102.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>リンクをクリックしてリンクを作成します。</p></li>
+<li><p>変更内容を保存します。</p></li>
+</ol>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/setting-up-rss-feeds.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/setting-up-rss-feeds.html</a></p>
+</div>
 </div>
 </div>
 
