@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
-    <link rel="next" title="Path アナライザー" href="path-analyzer.html" />
-    <link rel="prev" title="エクスペリエンス アナリティクス" href="experience-analytics.html" />
+    <link rel="next" title="エクスペリエンス オプティマイゼーションとコンテンツテスト FAQ" href="experience-optimization-and-content-testing-faq.html" />
+    <link rel="prev" title="新しいルールを使用するためにカスタムフィルターを更新する" href="update-a-custom-filter-to-use-new-rules.html" />
  
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153234118-2"></script>
@@ -95,10 +95,19 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="content-authoring.html">コンテンツ編集</a></li>
 <li class="toctree-l1"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="analyzing-and-reporting.html">分析とレポート</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="analyzing-and-reporting.html">アナリティクスとレポート</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="experience-analytics.html">エクスペリエンス アナリティクス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">エクスペリエンス オプティマイゼーション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="path-analyzer.html">Path アナライザー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">エクスペリエンス オプティマイゼーション</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="experience-optimization-and-content-testing-faq.html">エクスペリエンス オプティマイゼーションとコンテンツテスト FAQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="experience-optimization-and-content-testing-glossary.html">エクスペリエンス オプティマイゼーションとコンテンツテストの用語集</a></li>
+<li class="toctree-l3"><a class="reference internal" href="creating-and-running-tests.html">テストの作成と実行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analyzing-and-optimizing-tests.html">テストの分析と最適化</a></li>
+<li class="toctree-l3"><a class="reference internal" href="personalization-suggestions.html">パーソナライゼーションの提案</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test-personalized-components.html">マーケティング タクソノミー</a></li>
+<li class="toctree-l3"><a class="reference internal" href="personalization-effect-tracking.html">パーソナライゼーション効果のトラッキング</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="the-path-analyzer.html">Path アナライザー</a></li>
 </ul>
 </li>
 </ul>
@@ -146,7 +155,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="analyzing-and-reporting.html">分析とレポート</a> &raquo;</li>
+          <li><a href="analyzing-and-reporting.html">アナリティクスとレポート</a> &raquo;</li>
         
       <li>エクスペリエンス オプティマイゼーション</li>
     
@@ -169,9 +178,45 @@
             
   <div class="section" id="id1">
 <h1>エクスペリエンス オプティマイゼーション<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>コンテンツテストでは、どのページ、コンポーネント、またはコンポーネントの組み合わせが訪問者にとって最も効果的であるかを調べるために、ウェブサイトのコンテンツの代替バリエーションをテストすることができます。テストで比較するコンテンツやコンポーネントは、同じ目標を達成するように設計されている必要があります。テスト結果を素早く評価して、訪問者に最も効果的に機能するコンテンツについての洞察を得ることができます。これにより、ゴールコンバージョン率の高いキャンペーンをより成功させることができます。</p>
+<p>Sitecoreでは、以下のテストをコンテンツのテストに利用できます。</p>
+<ul class="simple">
+<li><p>基本的なコンテンツテスト</p></li>
+<li><p>コンポーネントテスト</p></li>
+<li><p>ページテスト</p></li>
+</ul>
+<p>統計的に有意なデータを生成するために、テストを推奨された時間だけ実行させてから、エクスペリエンスエディタの最適化タブでページのテスト結果にアクセスすることができます。テストが終了したら、コンバージョン率を比較し、サイトで使用したいページやコンポーネントを選択することができます。</p>
+<div class="section" id="id2">
+<h2>基本的な内容のテスト<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>エクスペリエンス エディター でページを編集すると、Sitecore は新しいバージョンのページを作成します。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳準備中</p>
+<p>管理者権限を持つユーザは、ページを編集するためにロックする必要はありません。そのため、管理者権限を持つユーザーは、新しいバージョンを手動で作成する必要があります。</p>
+</div>
+<p>ページを保存して送信すると、Sitecoreはページの新旧バージョンの効果を比較するためのテストを提案します。テストをプレビューし、テストパラメータを編集し、必要に応じてテストを開始することができます。</p>
+<p>コンテンツエディタとエクスペリエンス エディターの両方で、基本的なコンテンツテストを作成することができます。エクスペリエンス エディターの方が、既存のコンテンツを利用したり、ウェブサイトから離れることなく新しいコンテンツを作成することができるので、より便利で柔軟なツールとして利用することができます。</p>
+</div>
+<div class="section" id="id3">
+<h2>コンポーネントテスト<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>異なるコンテンツ、デザイン、パーソナライズルールを持つコンポーネントのバリアントを作成することができます。コンポーネントのバリアントを作成することで、複雑なテストを作成することができます。</p>
+<ul class="simple">
+<li><p>1 つのコンポーネントの 2 つ以上のバリアントを互いにテストする。</p></li>
+<li><p>複数のコンポーネントを同時にテストし、コンポーネントの各バージョンを他のコンポーネントの各バージョンと組み合わせてテストすることができます。</p></li>
+</ul>
+<p>コンテンツ エディタとエクスペリエンス エディタの両方で <a class="reference internal" href="create-variants-of-a-component.html"><span class="doc">コンポーネントのバリアントを作成</span></a> することができますが、エクスペリエンス エディタの方が、既存のコンテンツを使用したり、ウェブサイトを離れることなく新しいコンテンツを作成することができるので、より便利で柔軟性の高いツールです。</p>
+<p>新しいコンテンツを作成するか、既存のコンテンツを複製して変更することで、代替のウェブサイトコンポーネントを定義することができます。<a class="reference internal" href="walkthrough--personalizing-components.html"><span class="doc">コンポーネントにパーソナライズルールを割り当てる</span></a> と、パーソナライズされたコンポーネントは、オリジナルのコンポーネントのバリエーションとしてコンポーネントテストに含まれます。</p>
+<p>変更内容を送信すると、Sitecoreはオリジナルと新しいバリアントの効果を比較するためのテストを提案します。<a class="reference internal" href="preview-and-start-a-content-test.html"><span class="doc">テストをプレビューしたり、テストパラメータを編集したり、テストを開始したり</span></a> することができます。</p>
+</div>
+<div class="section" id="id4">
+<h2>ページテスト<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ページテストは、完全なページを別のページに対してテストします。テスト対象のページは、同じページの異なるバージョンであったり、全く別のページであったりします。この形式のテストは、例えばランディングページなどに便利です。</p>
+<p>エクスペリエンス最適化で:doc:<cite>ページテストを作成 &lt;create-and-run-page-tests&gt;</cite> して実行することができます。</p>
+<div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/experience-optimization.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/experience-optimization.html</a></p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -183,10 +228,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="path-analyzer.html" class="btn btn-neutral float-right" title="Path アナライザー" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="experience-optimization-and-content-testing-faq.html" class="btn btn-neutral float-right" title="エクスペリエンス オプティマイゼーションとコンテンツテスト FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="experience-analytics.html" class="btn btn-neutral float-left" title="エクスペリエンス アナリティクス" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="update-a-custom-filter-to-use-new-rules.html" class="btn btn-neutral float-left" title="新しいルールを使用するためにカスタムフィルターを更新する" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

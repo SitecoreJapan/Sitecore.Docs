@@ -6,7 +6,7 @@ Sitecore Experience Analyticsは、マーケターやマーケティングアナ
 
 エクスペリエンス最適化機能では、ページテストや基本的なコンテンツテストから、コンポーネントテストやパーソナライゼーションテストまで、さまざまな方法でコンテンツをテストすることができます。個々のテストの結果はエクスペリエンス エディタで確認でき、エクスペリエンス最適化ではレポートやダッシュボードを使用して最適化データを分析することができます。
 
-パスアナライザーを使用して、コンタクトがコンテンツとどのように相互作用しているかを大規模に調査したり、ウェブサイトを介して最も頻繁に移動したパスを表示したりすることができます。
+Path アナライザーを使用して、コンタクトがコンテンツとどのように相互作用しているかを大規模に調査したり、ウェブサイトを介して最も頻繁に移動したパスを表示したりすることができます。
 
 .. tip:: 英語版 https://doc.sitecore.com/users/93/sitecore-experience-platform/en/analyzing-and-reporting.html
 
@@ -16,5 +16,5 @@ Sitecore Experience Analyticsは、マーケターやマーケティングアナ
 
     experience-analytics
     experience-optimization
-    path-analyzer
+    the-path-analyzer
     
