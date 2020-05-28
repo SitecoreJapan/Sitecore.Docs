@@ -6,7 +6,7 @@
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = .
-BUILDDIR      = ../../../docs/users/sxa/93
+BUILDDIR      = ../../../../../docs/users/sxa/93/sitecore-experience-accelerator/ja
 
 # Put it first so that "make" without argument is like "make help".
 help:
