@@ -5,9 +5,9 @@ Horizon
 
 Horizonは、Sitecore Experience Platformの次世代エディタです。Horizonには以下の機能が含まれています。
 
-* :doc:`the-horizon-editor` ウェブページの作成や編集に使うページエディタです。ページを編集すると、さまざまなデバイスでどのように表示されるかを確認することができます。
-* :doc:`preview-a-site-in-simulator-mode`　これは、異なる日付と異なるデバイスで表示されるウェブページをプレビューするために使用します。
-* :doc:`viewing-page-insights` あなたのウェブページの分析結果を見るために使用します。
+* :doc:`ページエディター <the-horizon-editor>` ウェブページの作成や編集に使うページエディタです。ページを編集すると、さまざまなデバイスでどのように表示されるかを確認することができます。
+* :doc:`シミュレーションモード <preview-a-site-in-simulator-mode>`　これは、異なる日付と異なるデバイスで表示されるウェブページをプレビューするために使用します。
+* :doc:`インサイトビュー <viewing-page-insights>` あなたのウェブページの分析結果を見るために使用します。
 
 Horizonをインストールすると、ランチャーパッドにHorizonタイルが表示されます。
 

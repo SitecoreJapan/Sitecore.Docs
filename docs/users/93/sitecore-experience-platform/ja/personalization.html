@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
-    <link rel="next" title="エクスペリエンス プロファイル" href="experience-profile.html" />
-    <link rel="prev" title="マーケティング オペレーション" href="marketing-operations.html" />
+    <link rel="next" title="Walkthrough: コンポーネントのパーソナライズ" href="walkthrough--personalizing-components.html" />
+    <link rel="prev" title="コンタクト行動プロファイル" href="the-contact-behavior-profile.html" />
  
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153234118-2"></script>
@@ -100,13 +100,21 @@
 <li class="toctree-l2"><a class="reference internal" href="sitecore-forms.html">Sitecore Forms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketing-taxonomies.html">マーケティング タクソノミー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketing-operations.html">マーケティング オペレーション</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">パーソナライズ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">パーソナライズ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="walkthrough--personalizing-components.html">Walkthrough: コンポーネントのパーソナライズ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="the-rule-set-editor.html">ルールセットエディタ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="the-personalization-conditions.html">パーソナライズの条件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ten-personalization-tactics.html">パーソナライゼーションの10の戦術</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conditional-renderings.html">条件付きレンダリング</a></li>
+<li class="toctree-l3"><a class="reference internal" href="the-personalized-experience-dialog-box.html">パーソナライズされたエクスペリエンスダイアログボックス</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="experience-profile.html">エクスペリエンス プロファイル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="list-manager.html">リスト マネージャー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experience-manager.html">Experience Manager</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">分析とレポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">アナリティクスとレポート</a></li>
 </ul>
 
             
@@ -175,9 +183,24 @@
             
   <div class="section" id="id1">
 <h1>パーソナライズ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳準備中</p>
+<p>パーソナライゼーションとは、所在地、性別、以前の訪問履歴などの連絡先の特性や行動に基づいて、ターゲットを絞った関連性の高いコンテンツを表示する方法です。パーソナライゼーションを使用すると、コンテンツの表示、非表示、調整などにより、適切なコンテンツを適切な連絡先に確実に届けることができます。</p>
+<p>特に、パーソナライゼーションを使用すると、以下のようなことが可能です。</p>
+<p>連絡先の地理的な場所に基づいて異なるコンテンツを表示する。</p>
+<p>以前にフォームに記入した連絡先から登録フォームを非表示にする。</p>
+<p>連絡先の参照サイトに基づいて、Web サイトのバナーのテキストを変更する。</p>
+<p>パーソナライゼーションを設定するには、 <a class="reference internal" href="the-rule-set-editor.html"><span class="doc">ルールセットエディタ</span></a> を使用して、Sitecoreの特定のコンポーネントにルールとアクションを追加します。ルールセットエディタは、これらのロジックベースのルールを使用して、コンタクトまたはセグメントが条件を満たしているかどうかを判断し、それに応じてコンテンツを変更します。</p>
+<a class="reference internal image-reference" href="../../_images/15eafd35e823bd.png"><img alt="パーソナライズ" class="align-center" src="../../_images/15eafd35e823bd.png" style="width: 400px;" /></a>
+<p>訪問者がサイト内を移動するページに基づいてコンテンツをパーソナライズするには、コンテンツの <a class="reference internal" href="content-profiling.html"><span class="doc">プロファイリング</span></a> を設定することができます。</p>
+<div class="section" id="id2">
+<h2>パーソナライゼーションの最適化<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Webサイトでコンテンツテストを行うと、Sitecoreが <a class="reference internal" href="personalization-suggestions.html"><span class="doc">パーソナライズ提案</span></a> を作成してくれます。提案を個別に確認し、適用することができます。パーソナライズ提案を適用すると、Sitecore は新しいパーソナライズルールを作成します。</p>
+<p><a class="reference internal" href="using-the-active-personalized-experiences-list.html"><span class="doc">Activeパーソナライズ</span></a> エクスペリエンスリストを使用して、すべてのサイトのパーソナライズ体験を持つすべてのページの概要を得ることができます。</p>
+<div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/personalization.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/personalization.html</a></p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -189,10 +212,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="experience-profile.html" class="btn btn-neutral float-right" title="エクスペリエンス プロファイル" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="walkthrough--personalizing-components.html" class="btn btn-neutral float-right" title="Walkthrough: コンポーネントのパーソナライズ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="marketing-operations.html" class="btn btn-neutral float-left" title="マーケティング オペレーション" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="the-contact-behavior-profile.html" class="btn btn-neutral float-left" title="コンタクト行動プロファイル" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

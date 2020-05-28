@@ -116,7 +116,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">分析とレポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">アナリティクスとレポート</a></li>
 </ul>
 
             
@@ -187,15 +187,44 @@
             
   <div class="section" id="rss">
 <h1>RSS フィード<a class="headerlink" href="#rss" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>RSS（Really Simple Syndication）とは、ブログ、ニュースの見出し、オーディオ、ビデオなど、頻繁に更新される素材を標準化されたフォーマットで公開することができるウェブフィードのことです。RSSフィードには、素材の全文または要約版のほか、発行日や著者名などのメタデータを含めることができます。</p>
+<div class="section" id="id1">
+<h2>RSSフィード<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>RSSフィードを使用すると、出版社は、最近追加されたコンテンツの要約や更新をウェブサイトの訪問者が利用できるようにすることができます。このようにして、訪問者はこれらのフィードを購読し、お気に入りのウェブサイトからの更新情報を自動的に受け取ることができます。</p>
+<p>訪問者はブラウザのRSSアイコンをクリックしてフィードを購読すると、購読プロセスが開始されます。RSSリーダーは、訪問者の購読したフィードを定期的にチェックして、ダウンロードする更新情報があるかどうかを確認し、訪問者にフィードを監視して読むためのインターフェイスを提供します。</p>
+</div>
+<div class="section" id="id2">
+<h2>クライアントのRSSフィード<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>コンテンツ エディターでは、クライアントの RSS フィードを使用して、興味のある項目についての情報 を得ることができます。通常の RSS フィードとは異なり、コンテンツ エディターでは、クライアントの RSS フィードを購読して、そのアイテムに加えられたすべての変更に関する更新情報を受け取ることができます。さらに、適切な権限を持っていれば、アイテムフィードから直接ワークフローコマンドを実行して、 <a class="reference internal" href="workflows-and-the-workbox.html"><span class="doc">ワークフロー</span></a> を通してアイテムを移動させることができます。</p>
+<p>Sitecoreには、コンテンツ作成者やSitecoreの他のユーザーが購読できる以下のクライアントRSSフィードが含まれています。</p>
+<ul class="simple">
+<li><p>アイテムフィード - アイテム全体の最新情報が得られ、コンテンツ制作者にとって便利です。</p></li>
+<li><p>ワークフローフィード - ワークフロー全体の最新情報を提供し、ワークフローに含まれるすべてのワークフロー状態にアクセ スできる管理者やスーパーユーザーに便利です。</p></li>
+<li><p>ワークフロー状態フィード - 特定のワークフロー状態の最新情報を提供します。これらのクライアントフィードは、特定のワークフロー状態にのみアクセスできるコンテンツ作成者や管理者に便利です。</p></li>
+</ul>
+<div class="section" id="id3">
+<h3>セキュリティとクライアントのRSSフィード<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>RSSテクノロジーは、RSSフィード内のリンクをたどったユーザーが、特定のアイテムに直接アクセスできるようにするものです。</p>
+<p>ほとんどのRSSリーダーは認証をサポートしていません。つまり、SitecoreクライアントのRSSフィードを購読しているユーザーは、RSSフィードのURLで指定されたアイテムに直接アクセスすることができ、Sitecoreセキュリティシステムに自分自身を識別する必要はありません。ただし、フィードに関連するアクションを実行しようとすると、Sitecoreセキュリティシステムは、そのユーザーが許可されたユーザーであるかどうかを確認します。</p>
+<p>認可されていないユーザーがRSSフィードのURLにアクセスした場合、そのユーザーはリンクをたどって、すべてのRSSフィードを閲覧することができます。</p>
+<ul class="simple">
+<li><p>権限のないユーザーがRSSフィードのURLにアクセスした場合：そのユーザーは、自分のセキュリティ権限がこのアイテムへのアクセスを許可していないにもかかわらず、リンクをたどってRSSフィードに含まれるすべてのコンテンツを閲覧することができます。</p></li>
+<li><p>コンテンツに対してアクションを実行することはできません。</p></li>
+<li><p>他のコンテンツを閲覧することはできません。</p></li>
+<li><p>RSSフィードの元の所有者のユーザー名やパスワードにアクセスできません。</p></li>
+<li><p>リンクを変更して他のコンテンツにアクセスすることはできません。</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>SitecoreユーザーはRSSフィードを共有してはいけません。</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/rss-feeds.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/rss-feeds.html</a></p>
 </div>
 <div class="toctree-wrapper compound">
+</div>
+</div>
 </div>
 </div>
 

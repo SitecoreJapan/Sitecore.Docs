@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
-    <link rel="next" title="アイテムをアイテムバケツに変換する" href="convert-an-item-into-an-item-bucket.html" />
+    <link rel="next" title="アイテムをアイテムバケットに変換する" href="convert-an-item-into-an-item-bucket.html" />
     <link rel="prev" title="バージョンがクローンに与える影響" href="the-impact-of-versions-on-clones.html" />
  
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -102,7 +102,7 @@
 <li class="toctree-l3"><a class="reference internal" href="workflows-and-the-workbox.html">ワークフローとワークボックス</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clones.html">クローン</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">アイテム バケット</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="convert-an-item-into-an-item-bucket.html">アイテムをアイテムバケツに変換する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="convert-an-item-into-an-item-bucket.html">アイテムをアイテムバケットに変換する</a></li>
 <li class="toctree-l4"><a class="reference internal" href="make-an-item-a-bucketable-item.html">アイテムをバケツ可能なアイテムにする</a></li>
 <li class="toctree-l4"><a class="reference internal" href="save-a-search-query-for-an-item-bucket.html">アイテムバケットの検索クエリを保存する</a></li>
 </ul>
@@ -117,7 +117,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">分析とレポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">アナリティクスとレポート</a></li>
 </ul>
 
             
@@ -188,15 +188,61 @@
             
   <div class="section" id="id1">
 <h1>アイテム バケット<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>アイテムバケットを使用すると、コンテンツツリー内の大量のアイテムを管理することができます。アイテムバケットとは、無数のアイテムを隠しておいても、それらのアイテムを簡単に取得して作業することができるコンテナのことです。バケットアイテムを見つける唯一の方法は、Sitecoreの検索エンジンを使用することです。</p>
+<p>コンテンツツリーが大きくなると、アイテムを見つけるのが難しくなり、パフォーマンスが低下することがあります。例えば、無数の製品を販売しているウェブサイトや、メディアファイルを使用しているウェブサイトの場合、アイテムを作成し続けると、コンテンツツリーは管理しきれなくなります。代わりにアイテムバケットを使ってアイテムを保存すれば、コンテンツツリーにアイテムを表示することなく、1つのコンテナに無制限にアイテムを保存することができます。</p>
+<p>アイテムバケットを使用すると、以下のような多くの利点があります。</p>
+<ul class="simple">
+<li><p>アイテムバケット内のすべてのコンテンツアイテムは自動的に論理的な形式で整理され、検索エンジンのパフォーマンスを向上させます。</p></li>
+<li><p>1つのアイテムバケットに何百万ものコンテンツアイテムを入れても、UIの速度を落としたり、コンテンツツリーを混雑させたりすることはありません。</p></li>
+<li><p>アイテムバケットは必要な数だけ持つことができます。これにより、アイテムバケットを論理的なコンテナに分割することができます。</p></li>
+</ul>
+<div class="section" id="id2">
+<h2>アイテムバケットにアイテムを貯める<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アイテムバケットには、通常のアイテムとバケット可能なアイテムの両方を格納することができます。</p>
+<ul class="simple">
+<li><p>通常のアイテム（構造化されたアイテム）はアイテムバケットに格納され、コンテンツツリーに表示され、先祖や子孫との親子関係を維持します。これらのアイテムは、アイテム・バケットをサポートしないテンプレートに基づいています。</p></li>
+<li><p>バケット可能なアイテム（構造化されていないアイテム）は、コンテンツ・ツリーに隠されており、親子関係は維持されません。これらのアイテムは、アイテム・バケットをサポートするテンプレートに基づいています。</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>通常のアイテムとバケツ可能なアイテムの両方をアイテムバケットに格納してはいけません。これは不必要な複雑さをもたらす可能性があります。</p>
+</div>
+<p>アイテムバケットにアイテムを格納すると、アイテム間の親子関係がなくなり、代わりにアイテムが作成された日時に応じてフォルダ構造で整理されます。したがって、アイテムバケット機能は、主に階層的に保存する必要のないコンテンツアイテムを保存するために設計されています。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>Sitecore開発者は、Sitecoreソリューションを設定して、アイテムバケット内のアイテムを、例えばグローバルに一意な識別子(GUID)によって、異なる方法で整理することができます。</p>
 </div>
+<p>アイテムをアイテムバケットにするかどうかを決めるには、アイテムの階層をコンテンツツリーに残す必要があるかどうかを決める必要があります。アイテムのサブアイテムを特定の方法で保存する必要がない場合や、アイテム数が多い場合は、アイテムバケットにすると良いでしょう。</p>
+</div>
+<div class="section" id="id3">
+<h2>アイテムバケットを同期させる<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アイテムバケット内のアイテムのバケット可能設定を変更するたびに、アイテムバケットを同期させて、すべてのアイテムがバケット可能かどうかに応じて非表示または表示されるようにする必要があります。</p>
+<p>アイテムバケットを同期する必要があるのは、以下の場合です。</p>
+<ul class="simple">
+<li><p>アイテムバケットに保存されている通常のアイテムを、バケット可能なアイテムにする。</p></li>
+<li><p>バケット可能なアイテムを通常のアイテムにする。</p></li>
+<li><p>テンプレートをバケット可能なアイテムにする。</p></li>
+<li><p>バケット可能なテンプレートを通常のテンプレートに変更する。</p></li>
+<li><p>アイテムバケットからアイテムを削除する。</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>隠しアイテムを探す<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>バケット可能なアイテムがアイテムバケットに格納されている場合、デフォルトではコンテンツツリーに非表示になっています。つまり、アイテムバケットに格納されているバケット可能なアイテムを操作したい場合は、Sitecoreの検索機能を使って検索結果のリストから検索して開く必要があります。</p>
+<p>アイテムをアイテムバケットに変換すると、編集ペインに「検索」タブが表示され、ここでアイテムバケット内のすべてのアイテムを検索することができます。&quot;隠れたバケット可能なアイテム &quot;なのか &quot;通常のアイテム &quot;なのかを問わず、アイテムバケット内のすべてのアイテムを検索することができます。Sitecoreには、検索フィルターや検索操作、ファセットなどが用意されており、探しているコンテンツアイテムを見つけやすくなっています。</p>
+<a class="reference internal image-reference" href="../../_images/15eafd356d5a0a.png"><img alt="隠しアイテムを探す" class="align-center" src="../../_images/15eafd356d5a0a.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id5">
+<h2>隠しアイテムを見る<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アイテムバケットに隠されているバケット可能なアイテムを表示する必要がある場合は、コンテンツエディタで「表示」タブをクリックし、「表示」グループで「バケット」チェックボックスを選択します。</p>
+<a class="reference internal image-reference" href="../../_images/15eafd356deadd.png"><img alt="隠しアイテムを探す" class="align-center" src="../../_images/15eafd356deadd.png" style="width: 400px;" /></a>
+<p>ただし、アイテムバケットを扱う場合は、バケットのチェックボックスをクリアする必要があります。これにより、システムがコンテンツ ツリー内のすべてのアイテムを不必要にロードしてパフォーマンスが低下するのを防ぐことができます。隠されたコンテンツアイテムは、アイテムバケットごとに利用できる検索タブで検索することで、まだ作業することができます。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/item-buckets.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/item-buckets.html</a></p>
 </div>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -208,7 +254,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="convert-an-item-into-an-item-bucket.html" class="btn btn-neutral float-right" title="アイテムをアイテムバケツに変換する" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="convert-an-item-into-an-item-bucket.html" class="btn btn-neutral float-right" title="アイテムをアイテムバケットに変換する" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="the-impact-of-versions-on-clones.html" class="btn btn-neutral float-left" title="バージョンがクローンに与える影響" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

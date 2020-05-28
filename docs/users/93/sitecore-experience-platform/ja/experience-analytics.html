@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
-    <link rel="next" title="エクスペリエンス オプティマイゼーション" href="experience-optimization.html" />
-    <link rel="prev" title="分析とレポート" href="analyzing-and-reporting.html" />
+    <link rel="next" title="マーケター向けのエクスペリエンスアナリティクスレポート" href="the-experience-analytics-reports-for-marketers.html" />
+    <link rel="prev" title="アナリティクスとレポート" href="analyzing-and-reporting.html" />
  
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153234118-2"></script>
@@ -95,10 +95,14 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="content-authoring.html">コンテンツ編集</a></li>
 <li class="toctree-l1"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="analyzing-and-reporting.html">分析とレポート</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">エクスペリエンス アナリティクス</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="analyzing-and-reporting.html">アナリティクスとレポート</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">エクスペリエンス アナリティクス</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="the-experience-analytics-reports-for-marketers.html">マーケター向けのエクスペリエンスアナリティクスレポート</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuring-experience-analytics-reports.html">エクスペリエンスアナリティクスレポートの設定</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="experience-optimization.html">エクスペリエンス オプティマイゼーション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="path-analyzer.html">Path アナライザー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the-path-analyzer.html">Path アナライザー</a></li>
 </ul>
 </li>
 </ul>
@@ -146,7 +150,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="analyzing-and-reporting.html">分析とレポート</a> &raquo;</li>
+          <li><a href="analyzing-and-reporting.html">アナリティクスとレポート</a> &raquo;</li>
         
       <li>エクスペリエンス アナリティクス</li>
     
@@ -169,9 +173,35 @@
             
   <div class="section" id="id1">
 <h1>エクスペリエンス アナリティクス<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Sitecore Experience Analyticsは、マーケティング担当者やマーケティングアナリスト向けに、ウェブサイトや潜在的に他の外部データソースから収集したエクスペリエンスデータのパターンや傾向を特定するための概要レポートと詳細レポートを提供しています。</p>
+<p>エクスペリエンスアナリティクスのダッシュボード</p>
+<a class="reference internal image-reference" href="../../_images/15eafd360d6e91.png"><img alt="エクスペリエンス アナリティクス" class="align-center" src="../../_images/15eafd360d6e91.png" style="width: 400px;" /></a>
+<p>初めてエクスペリエンスアナリティクスを開くと、エクスペリエンスデータの概要を提供するダッシュボードページが表示されます。メニューパネルには、レポートのいくつかのカテゴリがあり、それぞれに異なるチャートやグラフが含まれています。</p>
+<p>Experience Analyticsには、以下のカテゴリのレポートが含まれています。</p>
+<ul class="simple">
+<li><p>ダッシュボード - 選択したチャートやパフォーマンス指標を表示して、主要な分析の概要を提供します。</p></li>
+<li><p>オーディエンス - 訪問者が誰なのかを理解するのに役立ちます。</p></li>
+<li><p>獲得 - 何がウェブサイトへのトラフィックを促進しているかを表示します。例えば、キャンペーンや他のマーケティングチャンネルからのものなどです。</p></li>
+<li><p>行動 - 訪問者の行動を分析して、訪問者がコンテンツとどのように相互作用しているかを理解するのに役立ちます。</p></li>
+<li><p>コンバージョン - 特定の目標を達成した訪問者の割合。これは、マーケティングの取り組みがどれだけ効果を上げているかを理解するのに役立ちます。</p></li>
+</ul>
+<p>ページビュー、コンバージョン率、エンゲージメント値などのメトリクスを比較したり、日付範囲やウェブサイトごとにデータをフィルタリングすることができます。レポートを使用して、ウェブサイトのパフォーマンスや最適化、ウェブサイトの訪問者やコンタクトのコミットメントのレベルを分析することができます。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳準備中</p>
+<p>Sitecoreではマーケティング定義アイテムのサンプルを提供していますが、マーケティングプランやキャンペーンを開始する際には、マーケティング定義アイテムのタクソノミを独自に作成する必要があります。
+定義アイテムを作成した後は、それらをデプロイし、データを解釈するためのカスタムレポートを作成する必要があります。</p>
+</div>
+<p>より高度なタスクを実行するために、開発者はVisual StudioとSitecore Rocksを使用して、新しいレポートの作成、編集、チャートやグラフの追加、高度なフィルタの作成を行うことができます。</p>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>Experience Analyticsに付属している標準レポートを変更またはカスタマイズする場合は、既存のレポートをコピーし、カスタマイズしてから名前を変更することをお勧めします。
+これは、将来のバージョンのSitecoreにアップデートしたときに、カスタマイズした内容が上書きされてしまうリスクがあるためです。</p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/experience-analytics.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/experience-analytics.html</a></p>
 </div>
 </div>
 
@@ -183,10 +213,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="experience-optimization.html" class="btn btn-neutral float-right" title="エクスペリエンス オプティマイゼーション" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="the-experience-analytics-reports-for-marketers.html" class="btn btn-neutral float-right" title="マーケター向けのエクスペリエンスアナリティクスレポート" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="analyzing-and-reporting.html" class="btn btn-neutral float-left" title="分析とレポート" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="analyzing-and-reporting.html" class="btn btn-neutral float-left" title="アナリティクスとレポート" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

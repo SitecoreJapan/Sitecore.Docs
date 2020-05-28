@@ -116,7 +116,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">分析とレポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">アナリティクスとレポート</a></li>
 </ul>
 
             
@@ -189,10 +189,36 @@
             
   <div class="section" id="rss">
 <h1>サブアイテムのRSSフィードレンダリングを設定する<a class="headerlink" href="#rss" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳中</p>
-</div>
+<p>サブアイテムが異なるテンプレートに基づいているアイテムの RSS フィードを作成する場合は、これらのサブアイテムのそれぞれがフィードにどのように表示されるかを指定する必要があります。</p>
+<p>たとえば、Web サイトを使用してさまざまな製品を宣伝しているとします。コンテンツ ツリーでは、すべての異なる製品が親アイテム「製品」の下に格納されており、すべてが同じテンプレートに基づいているわけではありません。</p>
+<p>コンテンツツリーは次のようになります。</p>
+<img alt="サブアイテムのRSSフィードレンダリングを設定する" class="align-center" src="../../_images/15eafd35767c00.png" />
+<p>このように、異なるテンプレートを使用したサブアイテムを持つ商品ページにRSSフィードを作成する場合、それぞれのテンプレートのレンダリングが正しく設定されていることを確認する必要があります。</p>
+<p>テンプレートのRSSフィードのレンダリングを設定するには、以下の手順に従います。</p>
+<ol class="arabic simple">
+<li><p>コンテンツ エディタのコンテンツ ツリーで、該当するテンプレートに移動します。または、サブアイテムに移動して、そのベースとなっているテンプレートを特定し、そのアイテムからテンプレートを開くこともできます。</p></li>
+<li><p>関連するテンプレートを展開し、テンプレートの _標準値 アイテムをクリックします。</p></li>
+<li><p>[プレゼンテーション] タブの [レイアウト] セクションで、[詳細] をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd3576e0b3.png"><img alt="サブアイテムのRSSフィードレンダリングを設定する" class="align-center" src="../../_images/15eafd3576e0b3.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>[レイアウトの詳細］ダイアログボックスで、［フィード］セクションの <img alt="icon1" src="../../_images/15eafd357747f3.png" /> までスクロールして、 <img alt="icon2" src="../../_images/15eafd35779f43.png" /> をクリックします。</p></li>
+<li><p>[デバイスエディタ]ダイアログボックスで、[コントロール]をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd3577f4a7.png"><img alt="サブアイテムのRSSフィードレンダリングを設定する" class="align-center" src="../../_images/15eafd3577f4a7.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="6">
+<li><p>[追加] をクリックし、[レンダリングの選択] ダイアログ ボックスで、[レンダリング]、[システム]、[フィード]、[フィードレンダラ] の順にクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd35785492.png"><img alt="サブアイテムのRSSフィードレンダリングを設定する" class="align-center" src="../../_images/15eafd35785492.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="7">
+<li><p>選択をクリックすると、デバイスエディタダイアログボックスのコントロールのリストに FeedRenderer が表示されます。</p></li>
+<li><p>デバイスエディタダイアログボックスで、FeedRenderer をリストの最初のアイテムに移動させるには、リストの FeedRenderer アイテムを選択してから、リストの一番上に来るまで上に移動をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd3578b336.png"><img alt="サブアイテムのRSSフィードレンダリングを設定する" class="align-center" src="../../_images/15eafd3578b336.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="9">
+<li><p>OKをクリックして変更内容を保存します。</p></li>
+</ol>
+<p>ここで、親アイテムの下のアイテムに使用されているすべてのテンプレート（この場合は「商品」アイテム）に対して、この手順を繰り返します。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/set-up-rss-feed-renderings-for-subitems.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/set-up-rss-feed-renderings-for-subitems.html</a></p>

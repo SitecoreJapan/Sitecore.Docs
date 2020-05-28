@@ -117,7 +117,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">分析とレポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">アナリティクスとレポート</a></li>
 </ul>
 
             
@@ -188,15 +188,67 @@
             
   <div class="section" id="id1">
 <h1>クローン<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Sitecore では、クローンとは、元のアイテムの単なるコピーではなく、元のアイテムのフィールド値を継承したアイテムのことを指します。オリジナルのアイテムのフィールドを更新すると、クローンの対応するフィールドも更新されます。</p>
+<p>したがって、アイテムをクローンすることは、コンテンツアイテムを一元化する方法と考えることができます。クローンを使用すると、コンテンツ ツリー全体にアイテムを配置し、コンテンツ ツリー内の中央の一箇所からコンテンツを制御することができます。例えば、Sitecoreに複数のウェブサイトがあり、それぞれが異なる国に対応している場合、すべてのサイトに共通するコンテンツアイテムを含むマスターウェブサイトを作成することができます。そして、それぞれの国のウェブサイトに対して、マスターウェブサイトのクローンを作成し、オリジナルのアイテムとクローンの間に接続を確立します。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>クローンの更新やメンテナンスは、通常のアイテムを更新するよりもコストのかかる作業になります。そのため、パフォーマンスを向上させるために、アイテム構造はできるだけシンプルにしておくことをお勧めします。クローンのクローンを作成すると複雑なループが発生したり、リソースを消費したりする可能性があるため、可能な限りクローンの作成は避けるべきです。</p>
 </div>
+<p>クローン内のフィールドを編集した後、元のアイテムで同じフィールドを編集すると、競合が発生し、競合を解決する方法を示唆する通知が表示されます。</p>
+<div class="section" id="id2">
+<h2>例<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以下の例では、オリジナルアイテムとクローンアイテムの関係を説明します。</p>
+<ul class="simple">
+<li><p>元のアイテムのフィールドを編集して保存すると、クローンされたアイテムでこのフィールドが変更されていない場合、Sitecoreはクローンされたアイテムのすべてのフィールドを更新します。</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/15eafd35692200.png"><img alt="クローン" class="align-center" src="../../_images/15eafd35692200.png" style="width: 400px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>複製されたアイテムでは、値フィールドの横にある「元の値」のテキストは、元のアイテムから値が変更されていないことを示しています。</p>
+</div>
+<ul class="simple">
+<li><p>クローン内のフィールドを編集して保存すると、クローンのタイトルフィールドの横に[元の値]テキストが表示されなくなります。元のアイテムは変更されません。</p></li>
+<li><p>元のアイテムのフィールドを編集して、クローンでフィールドが変更されている場合、クローンの［内容］タブに元のアイテムのフィールドが変更されたことを示すメッセージが表示されます。</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/15eafd3569e212.png"><img alt="クローン" class="align-center" src="../../_images/15eafd3569e212.png" style="width: 400px;" /></a>
+<p>この葛藤を解決するためには、選択肢があります。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>元のアイテムを確認する
+元のアイテムを表示し、変更内容を確認することができます。</p></li>
+<li><p>変更を承認する
+元のアイテムのフィールドの値を、クローンの対応するフィールドにコピーします。フィールドのタイトルの横には、[元の値]のテキストが表示されます。</p></li>
+<li><p>変更を拒否する
+クローン内の既存のフィールド値を保持し、メッセージを非表示にします。</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>元のアイテムの下に小アイテムを作成すると、クローンの [コンテンツ] タブに、元のアイテムの下に新しい小アイテムが作成されたことを示す通知が表示されます。複製では、新しい小アイテムの複製を作成するかどうかを決定するための通知が表示されます。</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/15eafd356a3db4.png"><img alt="クローン" class="align-center" src="../../_images/15eafd356a3db4.png" style="width: 400px;" /></a>
+<ul class="simple">
+<li><p>クローンがあるアイテムを削除すると、以下のようなメッセージが表示されます。</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/15eafd356a9957.png"><img alt="クローン" class="align-center" src="../../_images/15eafd356a9957.png" style="width: 400px;" /></a>
+<p>メッセージの中で、Sitecore は、削除しようとしているアイテムのすべてのクローンと、もしあればサブアイテムのクローンをリストアップします。OK をクリックして元のアイテムを削除すると、クローンは現在のフィールド値を維持し、通常のコンテンツアイテムになります。</p>
+<ul class="simple">
+<li><p>ワークフロー内のアイテムをクローン化すると、ワークフローとワークフロー状態のプロパ ティがクローンにコピーされます。ワークフローのフィールド値がコピーされると、クローンのワークフロープロパティと元のアイテムのワークフロープロパティは接続されなくなります。そのため、元のアイテムのワークフロー状態を変更しても、クローンのワークフロー状態は変更されません。</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>元のアイテムへのパス<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>コンテンツ エディタのクローンでは、クローンの元のアイテムへのパスが表示されます。コンテンツ ツリーでクローンをクリックし、コンテンツ タブで、詳細設定セクションを展開し、__ソース フィールドを表示します。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>[詳細] セクションが表示されていない場合は、[表示] タブをクリックし、[標準フィールド] チェックボックスを選択します。</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/15eafd356af633.png"><img alt="クローン" class="align-center" src="../../_images/15eafd356af633.png" style="width: 400px;" /></a>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/clones.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/clones.html</a></p>
 </div>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
