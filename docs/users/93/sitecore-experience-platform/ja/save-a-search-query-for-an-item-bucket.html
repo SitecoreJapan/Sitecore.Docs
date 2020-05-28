@@ -102,7 +102,7 @@
 <li class="toctree-l3"><a class="reference internal" href="workflows-and-the-workbox.html">ワークフローとワークボックス</a></li>
 <li class="toctree-l3"><a class="reference internal" href="clones.html">クローン</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="item-buckets.html">アイテム バケット</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="convert-an-item-into-an-item-bucket.html">アイテムをアイテムバケツに変換する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="convert-an-item-into-an-item-bucket.html">アイテムをアイテムバケットに変換する</a></li>
 <li class="toctree-l4"><a class="reference internal" href="make-an-item-a-bucketable-item.html">アイテムをバケツ可能なアイテムにする</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">アイテムバケットの検索クエリを保存する</a></li>
 </ul>
@@ -117,7 +117,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">分析とレポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">アナリティクスとレポート</a></li>
 </ul>
 
             
@@ -190,10 +190,45 @@
             
   <div class="section" id="id1">
 <h1>アイテムバケットの検索クエリを保存する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>アイテムバケットを使用していると、同じアイテムバケットから定期的に同じ検索クエリを実行することがあります。コンテンツ エディターでは、アイテムバケットに検索を保存することができ、アイテムバケットをクリックするたびに、保存された検索クエリが自動的に実行されます。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>アイテムバケットに保存した検索クエリは、あなた自身のSitecoreアカウントに固有のものです。ただし、Sitecore管理者は、保存された検索をすべて設定し、特定のユーザーに利用できるようにするか、すべてのユーザーに利用できるようにするかを決定する必要があります。</p>
 </div>
+<p>アイテム バケットに検索クエリを保存するには</p>
+<ol class="arabic simple">
+<li><p>コンテンツ ツリーで、検索を保存するアイテム バケットに移動します。</p></li>
+<li><p>[ホーム] タブの [挿入] グループで [保存された検索] をクリックします。または、アイテム バケットを右クリックして、[挿入] をクリックし、[検索を保存] をクリックすることもできます。</p></li>
+<li><p>[メッセージ］ダイアログボックスで、保存した検索に適した名前を入力し、［OK］をクリックします。保存された検索項目は、項目バケットのサブ項目としてコンテンツ ツリーに追加されます。</p></li>
+<li><p>コンテンツ ツリーで、保存された検索アイテムをクリックし、[コンテンツ] タブで [アイテム バケット] セクションまでスクロールします。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>アイテム バケット セクションが表示されていない場合は、リボンの [表示] タブをクリックし、[表示] グループで [標準フィールド] チェックボックスを選択します。</p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>構築するクエリの上で、クエリの構築 をクリックします。
+次のいずれかをビルドできます。</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>既定のバケット クエリ - 検索タブを開くたびに検索フィールドに表示されるクエリ。必要に応じて、検索フィールドからクエリを削除することができます。デフォルトのクエリは text:* で、結果としてすべてを返します。</p></li>
+<li><p>Persistent Bucket Filter - 検索フィールドを開くたびに表示され、削除できないクエリ。デフォルトのクエリは、検索を実行する場所を示す location:{親アイテムのID}と、保存された検索テンプレートのIDを示す -template:{保存された検索テンプレートのID}で構成され、保存された検索テンプレートに基づくアイテムを表示しないようにします。</p></li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="../../_images/15eafd35714a76.png"><img alt="アイテムバケットの検索クエリを保存する" class="align-center" src="../../_images/15eafd35714a76.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="6">
+<li><p>[検索クエリの構築］ダイアログボックスの［検索］フィールドで、関連するフィルタと検索キーワードを追加して検索クエリを構築し、［OK］をクリックします。たとえば、以下のスクリーンショットの検索クエリは、場所と著者の永続的なバケット フィルタで構成されていますが、必要な数だけフィルタを入力することができます。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd3571cbdb.png"><img alt="アイテムバケットの検索クエリを保存する" class="align-center" src="../../_images/15eafd3571cbdb.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="7">
+<li><p>既定のバケット クエリまたは永続バケット フィルタ フィールドからクエリを削除するには、クリアするクエリ フィールドの上で [クリア] をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd357229d8.png"><img alt="アイテムバケットの検索クエリを保存する" class="align-center" src="../../_images/15eafd357229d8.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="8">
+<li><p>変更を保存します。</p></li>
+</ol>
+<p>これで、コンテンツツリーのアイテムバケットをクリックすると、自動的に検索が実行されるようになりました。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/save-a-search-query-for-an-item-bucket.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/save-a-search-query-for-an-item-bucket.html</a></p>

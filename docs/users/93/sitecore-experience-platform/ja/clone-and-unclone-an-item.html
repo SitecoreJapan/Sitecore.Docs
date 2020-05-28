@@ -117,7 +117,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">分析とレポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">アナリティクスとレポート</a></li>
 </ul>
 
             
@@ -190,13 +190,44 @@
             
   <div class="section" id="id1">
 <h1>アイテムのクローンとアンクローン<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>クローンとは、元のアイテムの単なるコピーではなく、元のアイテムからフィールドの値を継承したアイテムのことです。元のアイテムのフィールドを更新すると、クローンの対応するフィールドも更新されます。</p>
+<p>Sitecore では、アイテムのクローンや、アイテムのブランチ全体のクローンを作成することができます。ブランチとは、親アイテムとそのすべての子孫のことです。</p>
+<div class="section" id="id2">
+<h2>アイテムをクローンする<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アイテムのクローンを作成するには</p>
+<ol class="arabic simple">
+<li><p>コンテンツ ツリーで、クローンを作成するアイテムを選択します。</p></li>
+<li><p>[設定] タブの [クローン] グループで [クローン] をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd356b50c2.png"><img alt="アイテムをクローンする" class="align-center" src="../../_images/15eafd356b50c2.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>[クローン アイテム］ダイアログ ボックスで、クローンを保存する場所を選択します。参照] タブでコンテンツ ツリー内の場所に移動するか、[検索] タブで場所を検索することができます。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd356ba968.png"><img alt="アイテムをクローンする" class="align-center" src="../../_images/15eafd356ba968.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>クローンをクリックします。</p></li>
+</ol>
+<p>コンテンツ エディタでクローンアイテムを選択すると、フィールドのタイトルに [元の値] テキストが追加されていることに気づきます。これは、これらの値が元のアイテムの対応する値と一致し、元のアイテムのフィールドを編集した場合に更新されることを意味します。</p>
+<a class="reference internal image-reference" href="../../_images/15eafd356c1679.png"><img alt="アイテムをクローンする" class="align-center" src="../../_images/15eafd356c1679.png" style="width: 400px;" /></a>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>ワークフロー内のアイテムをクローンすると、ワークフローとワークフロー状態のプロパティがクローンアイテムにコピーされます。ワークフローフィールドのコピー後は、クローンのワークフロープロパティと元のアイテムのワークフロープロパティは接続されません。元のアイテムのワークフロー状態を変更しても、クローンのワークフロー状態は変わりません。</p>
 </div>
+</div>
+<div class="section" id="id3">
+<h2>アイテムのアンクローン<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>元のアイテムとクローンの間の接続を不要にしたい場合は、クローンアイテムのクローンを解除することができます。</p>
+<p>クローンアイテムのクローンを解除するには</p>
+<ol class="arabic simple">
+<li><p>クローンを解除するクローンを選択します。</p></li>
+<li><p>[設定] タブの [クローン] グループで、[クローンの解除] をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd356c7d5e.png"><img alt="アイテムをクローンする" class="align-center" src="../../_images/15eafd356c7d5e.png" style="width: 400px;" /></a>
+<p>クローンアイテムのフィールド値は変更されません。クローンと元のアイテムとの接続が解除され、クローンは通常のコンテンツアイテムになります。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/clone-and-unclone-an-item.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/clone-and-unclone-an-item.html</a></p>
+</div>
 </div>
 </div>
 

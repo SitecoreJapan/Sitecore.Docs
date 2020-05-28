@@ -16,6 +16,6 @@ Horizon でページ名に特殊文字を使用するには
 
 3. [名前の変更] をクリックして、特殊文字を使用した名前を入力します。
 
-.. note:: 名前変更コマンドは、表示名を変更するだけです。Horizon で項目名を変更することはできません。表示名は、ページが選択されているときにコンテンツ ツリーと右側のペインの上に表示されます。
+.. note:: 名前変更コマンドは、表示名を変更するだけです。Horizon でアイテム名を変更することはできません。表示名は、ページが選択されているときにコンテンツ ツリーと右側のペインの上に表示されます。
 
 .. tip:: https://doc.sitecore.com/users/93/sitecore-experience-platform/en/use-special-characters-in-a-page-name.html

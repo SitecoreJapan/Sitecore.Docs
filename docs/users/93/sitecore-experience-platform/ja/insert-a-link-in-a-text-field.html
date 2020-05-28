@@ -98,7 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="the-editing-tools.html">編集ツール</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="creating-and-editing-items.html">アイテムの作成と編集</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="create-an-item-in-the-content-editor.html">コンテンツエディタで項目を作成する</a></li>
-<li class="toctree-l3"><a class="reference internal" href="create-a-page-in-the-experience-editor.html">エクスペリエンスエディタでページを作成する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create-a-page-in-the-experience-editor.html">エクスペリエンス エディターでページを作成する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="copy-or-duplicate-an-item.html">アイテムをコピーまたは複製する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="editing.html">編集</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="linking.html">リンク</a><ul class="current">
@@ -117,7 +117,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">分析とレポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analyzing-and-reporting.html">アナリティクスとレポート</a></li>
 </ul>
 
             
@@ -190,13 +190,106 @@
             
   <div class="section" id="id1">
 <h1>テキストフィールドにリンクを挿入する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>リッチテキストフィールドでは、URLやメールアドレスの後にスペースや段落を入力することで、ウェブサイトやメールアドレスへのリンクを作成することができます。Sitecore は自動的にテキストをハイパーリンクとしてフォーマットします。</p>
+<p>このトピックでは、以下のタイプのリンクを作成する方法について説明します。</p>
+<ul class="simple">
+<li><p>内部リンク（Sitecoreのアイテムへのリンク）は、サイトコアリンクの挿入 <img alt="icon1" src="../../_images/15eafd3551e8de.png" /> 機能を使用して作成します。</p></li>
+</ul>
+<ul class="simple">
+<li><p>ハイパーリンク マネージャー <img alt="icon2" src="../../_images/15eafd35525cc3.png" /> を使用して、現在のページのブックマークへのリンク。</p></li>
+</ul>
+<ul class="simple">
+<li><p>ハイパーリンクマネージャー <img alt="icon2" src="../../_images/15eafd35525cc3.png" /> を使用して、画像から、またはURLや電子メールアドレスとは異なるテキスト文字列から、ウェブサイトや電子メールアドレ スへのリンクを設定します。</p></li>
+<li><p>Sitecore Link機能またはHyperlink Managerを使用して、メディアライブラリ内のメディアアイテムを表示します。</p></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>Insert Sitecore Link機能またはHyperlink Managerを使用して、Sitecoreアイテム（ページやメディアアイテムなど）へのリンクを作成する場合、リンクはアイテムIDを参照します。これにより、アイテムの名前を変更したり移動したりしてもリンクが維持されます。</p>
 </div>
+<div class="section" id="sitecore">
+<h2>Sitecoreのリンクを挿入する<a class="headerlink" href="#sitecore" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Sitecoreリンクを挿入すると、リッチテキストフィールドにリンクを挿入することができます。</p>
+<ul class="simple">
+<li><p>ウェブサイト上のアイテム - 例えば、ウェブサイト上の別のページへのリンク。</p></li>
+<li><p>メディア アイテム - 例えば、メディア ライブラリ内のビデオや PDF ファイルなど。</p></li>
+</ul>
+<p>リンクを挿入するには</p>
+<ol class="arabic simple">
+<li><p>コンテンツ エディタまたはエクスペリエンス エディタで、<a class="reference internal" href="navigate-to-an-item-in-the-experience-editor.html"><span class="doc">リンクを挿入するテキストフィールド</span></a> に移動します。</p></li>
+<li><p>リッチテキストエディタで、リンクにしたいテキストまたは画像を選択し、[Sitecoreリンクの挿入] <img alt="icon1" src="../../_images/15eafd3551e8de.png" /> をクリックします。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>エクスペリエンスエディタでは、ページ上に直接内部リンクを挿入することができます。フローティングツールバーのテキストフィールドにリンクを挿入する <img alt="icon3" src="../../_images/15eafd3552c72f.png" /> が表示されます。</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>[リンクの挿入］ダイアログで、リンク先の項目に移動します。
+リンクの挿入 ダイアログは、リッチ テキスト エディタから開くか、ページから直接開くかによって異なります。</p>
+<ul class="simple">
+<li><p>エクスペリエンス エディタでページから直接リンクの挿入を開いた場合は、コンテンツ ツリーでアイテムを見つけるか、リスト ビュー <img alt="icon4" src="../../_images/15eafd3553273a.png" /> をクリックしてアイテムを検索することができます。</p></li>
+</ul>
+</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd35538543.png"><img alt="Sitecoreのリンクを挿入する" class="align-center" src="../../_images/15eafd35538543.png" style="width: 400px;" /></a>
+<ul class="simple">
+<li><p>リッチテキストエディタから「リンクの挿入」を開くと、「内部リンク」タブや「メディアのアイテム」タブではツリー構造になっていて、「検索」タブではアイテムを検索することができます。</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/15eafd3553e106.png"><img alt="Sitecoreのリンクを挿入する" class="align-center" src="../../_images/15eafd3553e106.png" style="width: 400px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>アイテムバケットの中など、非表示になっているアイテムへのリンクを挿入したい場合は、検索機能を使用してアイテムを見つける必要があります。</p>
+</div>
+<p>リンクしたいアイテムを選択し、「挿入」をクリックします。</p>
+</div>
+<div class="section" id="id2">
+<h2>ハイパーリンクマネージャーを使用する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ハイパーリンクマネージャーでは、以下のリンクを挿入することができます。</p>
+<ul class="simple">
+<li><p>外部の Web サイト。</p></li>
+<li><p>メディア アイテム - たとえば、メディア ライブラリのビデオや PDF ファイルなど。</p></li>
+<li><p>同じテキスト フィールド内のアンカー - ページ内の特定のセクションにリンクするブックマーク。</p></li>
+<li><p>電子メール アドレス - 訪問者のデフォルトの電子メール プログラムで新しい電子メールを開き、作成するリンク。</p></li>
+</ul>
+<p>ハイパーリンク マネージャを使用してリンクを挿入するには。</p>
+<ol class="arabic simple">
+<li><p>コンテンツ エディタまたはエクスペリエンス エディタで、リンクを挿入するアイテムまたはページに移動し、リッチ テキスト エディタを開きます。</p></li>
+<li><p>テキスト エディタで、リンクにするテキストまたは画像を選択し、[ハイパーリンク マネージャ] <img alt="icon2" src="../../_images/15eafd35525cc3.png" /> をクリックします。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>エクスペリエンス エディタでは、フローティング ツールバーからページに直接外部リンクを挿入できます。</p>
+</div>
+<ol class="arabic" start="3">
+<li><p>ハイパーリンク マネージャ ダイアログ ボックスで、リンクを挿入するには、次のようにします。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>外部の Web サイト - [ハイパーリンク] タブの [URL] フィールドに、リンク先の Web サイトの URL を入力します。</p></li>
+<li><p>メディア アイテム - ハイパーリンク タブの [ドキュメント マネージャ] <img alt="icon5" src="../../_images/15eafd3553273a.png" /> をクリックし、[ドキュメント マネージャ] アイコンをクリックして、リンク先のメディア アイテムを選択します。ドキュメント マネージャから、新しいメディア ファイルをメディア ライブラリにアップロードすることもできます。</p></li>
+<li><p>既存のアンカー - [ハイパーリンク] タブの [既存のアンカー] フィールドで、リンク先のアンカーを選択します。適切なアンカーがない場合は、まず <a class="reference internal" href="create-an-anchor-and-link-to-it.html"><span class="doc">新しいアンカーを作成</span></a> する必要があります。</p></li>
+<li><p>電子メール アドレス - [電子メール] タブの [電子メール] に、電子メール メッセージを送信する電子メール アドレスを入力し、電子メールの件名に説明を入力します。</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/15eafd3554c35a.png"><img alt="ハイパーリンクマネージャーを使用する" class="align-center" src="../../_images/15eafd3554c35a.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../_images/15eafd35552480.png"><img alt="ハイパーリンクマネージャーを使用する" class="align-center" src="../../_images/15eafd35552480.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>ユーザーがリンク上にカーソルを移動したときに表示されるツールチップをハイパーリンクに持たせたい場合は、このテキストを [ツールチップ] フィールドに入力します。</p></li>
+<li><p>ハイパーリンクの場合、[ターゲット] フィールドで、ブラウザでリンクをどのように開くかを指定します。たとえば、リンクを同じウィンドウまたは新しいウィンドウで開くように指定します。</p></li>
+<li><p>[CSS クラス] フィールドにスタイル シートを指定します。</p></li>
+<li><p>[OK] をクリックします。</p></li>
+<li><p>リンクを削除するには、テキスト エディタでリンクを選択し、[リンクの削除] <img alt="icon6" src="../../_images/15eafd3555838a.png" /> をクリックします。リンクが削除され、テキストが通常のテキストに変わります。</p></li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>リンクの編集・削除<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>リッチ テキスト エディタでリンク テキストを編集することができます。</p>
+<p>既存のリンクを変更するには、リンクテキストを選択し、手順に従って新しいリンクを作成します。</p>
+<p>リンクを削除するには、テキスト エディタでリンクを選択し、リンクの削除 <img alt="icon6" src="../../_images/15eafd3555838a.png" /> をクリックします。リンクが削除され、テキストは通常のテキストになります。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/insert-a-link-in-a-text-field.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/insert-a-link-in-a-text-field.html</a></p>
+</div>
 </div>
 </div>
 
