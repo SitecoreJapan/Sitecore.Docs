@@ -1,0 +1,274 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Scriban のテンプレート &mdash; Sitecore Experience Accelerator  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="Scribanのコンテキストに埋め込まれたアイテムとオブジェクト" href="the-embedded-items-and-objects-in-the-scriban-context.html" />
+    <link rel="prev" title="スタイリングとスクリプト" href="styling-and-scripting.html" />
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153234118-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-153234118-2');
+</script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Sitecore Experience Accelerator
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="front-end.html">フロントエンド</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="themes.html">テーマ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="working-with-creative-exchange.html">Creative Exchange の連携</a></li>
+<li class="toctree-l2"><a class="reference internal" href="styling-and-scripting.html">スタイリングとスクリプト</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Scriban のテンプレート</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="the-embedded-items-and-objects-in-the-scriban-context.html">Scribanのコンテキストに埋め込まれたアイテムとオブジェクト</a></li>
+<li class="toctree-l3"><a class="reference internal" href="the-embedded-functions-for-the-scriban-template.html">Scribanテンプレートの組み込み機能</a></li>
+<li class="toctree-l3"><a class="reference internal" href="item-and-field-extensions.html">項目とフィールドの拡張子</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sitecore Experience Accelerator</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="front-end.html">フロントエンド</a> &raquo;</li>
+        
+      <li>Scriban のテンプレート</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/scriban-templates.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="scriban">
+<h1>Scriban のテンプレート<a class="headerlink" href="#scriban" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Scriban テンプレートは SXA レンダリングバリアントに保存され、追加のレンダラーとして利用できます。たとえば、フィールド レンダラー、セクション、タグなどです。Scriban テンプレートは他のレンダラーと共存できますが、既存のレンダリングバリアントを置き換えるために使用することもできます。</p>
+<a class="reference internal image-reference" href="_images/15ec25732a22f8.png"><img alt="Scriban のテンプレート" class="align-center" src="_images/15ec25732a22f8.png" style="width: 400px;" /></a>
+<p>Creative Exchange を使って Scriban テンプレートをエクスポートしたり、インポートしたりできます。これにより、フロントエンド開発者は、コンポーネントのマークアップと機能性について、より柔軟に対応することができます。Scriban テンプレートは、シンプルなトークンをレンダリングするものから、コンポーネントを完全に置き換えるものまで、さまざまなものがあります。たとえば、次のレンダリングバリアントは、Gallery コンポーネントのコンテンツをレンダリングします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span><span class="o">-</span>
+<span class="k">if</span> <span class="n">i_item</span><span class="o">.</span><span class="n">template_name</span> <span class="o">==</span> <span class="s2">&quot;Gallery Image&quot;</span>
+    <span class="n">sc_editframe</span> <span class="n">i_item</span> <span class="s1">&#39;Gallery Image&#39;</span> <span class="o">-</span><span class="p">}}</span>
+    <span class="o">&lt;</span><span class="n">a</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;field-image&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">a</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;{{ i_item.ImageTitle.raw }}&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ i_item.Image.media_url }}&quot;</span><span class="o">&gt;</span>
+    <span class="p">{{</span> <span class="n">i_item</span><span class="o">.</span><span class="n">Image</span> <span class="p">}}</span>
+    <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="p">{{</span>
+    <span class="n">sc_endeditframe</span>
+<span class="n">end</span> <span class="o">-</span><span class="p">}}</span>
+
+<span class="p">{{</span><span class="o">-</span>
+<span class="k">if</span> <span class="n">i_item</span><span class="o">.</span><span class="n">template_name</span> <span class="o">==</span> <span class="s2">&quot;Gallery Video&quot;</span>
+    <span class="n">sc_editframe</span> <span class="n">i_item</span> <span class="s1">&#39;Gallery Video&#39;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i_item</span><span class="o">.</span><span class="n">VideoID</span><span class="o">.</span><span class="n">raw</span> <span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">i_item</span><span class="o">.</span><span class="n">VideoThumbnail</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">-</span><span class="p">}}</span>
+    <span class="o">&lt;</span><span class="n">span</span><span class="o">&gt;</span><span class="p">[</span><span class="n">Edit</span> <span class="n">Gallery</span> <span class="n">Video</span> <span class="n">here</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span><span class="p">{{</span>
+    <span class="k">else</span> <span class="o">-</span><span class="p">}}</span>
+    <span class="o">&lt;</span><span class="n">a</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;{{i_item.VideoTitle.raw }}&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;http://www.youtube.com/watch?v={{ i_item.VideoID.raw }}&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;{{ o_model.thumbnail_url }}&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;{{ i_item.VideoDescription.raw }}&quot;</span>
+            <span class="n">data</span><span class="o">-</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;{{ i_item.VideoTitle.raw }}&quot;</span> <span class="n">data</span><span class="o">-</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;{{ i_item.VideoDescription.raw }}&quot;</span> <span class="o">&gt;&lt;/</span><span class="n">img</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="p">{{</span>
+    <span class="n">end</span>
+    <span class="n">sc_endeditframe</span>
+<span class="n">end</span> <span class="p">}}</span>
+</pre></div>
+</div>
+<p>この例では、アイテムテンプレートに基づいて HTML コードの一部を条件付きでレンダリングする方法、レンダリングする C# モデルにアクセスする方法、アイテムのプロパティだけでなくそのプロパティを呼び出す方法を示しています。また、編集体験を向上させるために、コンポーネントの領域を Edit フレームでラップしています。</p>
+<p>このセクションのトピックでは、Scriban テンプレート用の Sitecore 拡張機能について説明します。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="the-embedded-items-and-objects-in-the-scriban-context.html">Scribanのコンテキストに埋め込まれたアイテムとオブジェクト</a></li>
+<li class="toctree-l1"><a class="reference internal" href="the-embedded-functions-for-the-scriban-template.html">Scribanテンプレートの組み込み機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="item-and-field-extensions.html">項目とフィールドの拡張子</a></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p><a class="reference external" href="https://github.com/lunet-io/scriban">Scriban GitHub リポジトリ</a> には、<a class="reference external" href="https://github.com/lunet-io/scriban/blob/master/doc/language.md">テンプレート言語</a>  と <a class="reference external" href="https://github.com/lunet-io/scriban/blob/master/doc/builtins.md">組み込み関数</a> に関する一般的なドキュメントがあります。</p>
+</div>
+<p>Master Sitecoreのビデオシリーズから、Scribanの使い方を実演した動画をご覧いただけます。</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TcWXVrzhuTE" frameborder="0" allowfullscreen></iframe><div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p>英語版 <a class="reference external" href="https://doc.sitecore.com/developers/sxa/93/sitecore-experience-accelerator/en/scriban-templates.html">https://doc.sitecore.com/developers/sxa/93/sitecore-experience-accelerator/en/scriban-templates.html</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="the-embedded-items-and-objects-in-the-scriban-context.html" class="btn btn-neutral float-right" title="Scribanのコンテキストに埋め込まれたアイテムとオブジェクト" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="styling-and-scripting.html" class="btn btn-neutral float-left" title="スタイリングとスクリプト" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sitecore Japan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
