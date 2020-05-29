@@ -1,0 +1,960 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Scribanテンプレートの組み込み機能 &mdash; Sitecore Experience Accelerator  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="項目とフィールドの拡張子" href="item-and-field-extensions.html" />
+    <link rel="prev" title="Scribanのコンテキストに埋め込まれたアイテムとオブジェクト" href="the-embedded-items-and-objects-in-the-scriban-context.html" />
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153234118-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-153234118-2');
+</script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Sitecore Experience Accelerator
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="front-end.html">フロントエンド</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="themes.html">テーマ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="working-with-creative-exchange.html">Creative Exchange の連携</a></li>
+<li class="toctree-l2"><a class="reference internal" href="styling-and-scripting.html">スタイリングとスクリプト</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="scriban-templates.html">Scriban のテンプレート</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="the-embedded-items-and-objects-in-the-scriban-context.html">Scribanのコンテキストに埋め込まれたアイテムとオブジェクト</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Scribanテンプレートの組み込み機能</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sc-decorate">sc_decorate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sc-editframe-sc-enditframe">sc_editframe と sc_enditframe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sc-placeholder">sc_placeholder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sc-execute">sc_execute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sc-evaluate">sc_evaluate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sc-raw">sc_raw</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sc-field">sc_field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sc-follow">sc_follow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sc-followmany">sc_followmany</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sc-link">sc_link</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sc-medialink">sc_medialink</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sc-query">sc_query</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sc-parameter">sc_parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sc-translate">sc_translate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="item-and-field-extensions.html">項目とフィールドの拡張子</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sitecore Experience Accelerator</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="front-end.html">フロントエンド</a> &raquo;</li>
+        
+          <li><a href="scriban-templates.html">Scriban のテンプレート</a> &raquo;</li>
+        
+      <li>Scribanテンプレートの組み込み機能</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/the-embedded-functions-for-the-scriban-template.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="scriban">
+<h1>Scribanテンプレートの組み込み機能<a class="headerlink" href="#scriban" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このトピックでは、Scriban テンプレートの Sitecore 組み込み関数について説明します。</p>
+<div class="section" id="sc-decorate">
+<h2>sc_decorate<a class="headerlink" href="#sc-decorate" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Creative Exchange が必要とするスタイル、グリッドクラス、属性を持つコンポーネントの装飾を返します。</p>
+<p>このヘルパー関数は、MVC Razor ビューの &#64;Html.Sxa().Component() ヘルパー関数に相当します。この関数を使用して、Scriban テンプレート内のマークアップを制御することができます。この関数を使えば、Razorビューはほぼ空っぽになります。レンダリングバリアント機能を呼び出して sc_decorate ヘルパー関数を埋め込むことで、ユーザーが選択したスタイルやグリッドクラスをレンダリングパラメータに追加することができます。</p>
+<div class="section" id="id1">
+<h3>パラメーター<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 15%" />
+<col style="width: 18%" />
+<col style="width: 56%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>タイプ</p></td>
+<td><p>オプション</p></td>
+<td><p>サンプル</p></td>
+<td><p>使用方法</p></td>
+</tr>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>はい</p></td>
+<td><p><cite>hero promo</cite></p></td>
+<td><p>コンポーネントの装飾にクラスを追加します。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id2">
+<h3>サンプル<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>次の例は、Razor ビューを変更してマークアップを提供せず、レンダリングプロセスをバリアントに完全に委譲した場合に、Promo コンポーネントに使用できる Scriban テンプレートを示しています。このマークアップによるテンプレート出力は、デフォルトの Promo バリアントと同じです。例の最初の行では、sc_decorate 関数の使用方法を見ることができます。テンプレート内のタグに他の属性を直接追加することができます。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">div</span> <span class="p">{{</span> <span class="n">sc_decorate</span> <span class="s2">&quot;promo&quot;</span> <span class="p">}}</span> <span class="n">role</span><span class="o">=</span><span class="s2">&quot;banner&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;component-content&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;field-promoicon&quot;</span><span class="o">&gt;</span>
+            <span class="p">{{</span> <span class="n">i_item</span><span class="o">.</span><span class="n">PromoIcon</span> <span class="p">}}</span>
+        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;promo-text&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;field-promotext&quot;</span><span class="o">&gt;</span>
+                    <span class="p">{{</span> <span class="n">i_item</span><span class="o">.</span><span class="n">PromoText</span> <span class="p">}}</span>
+                <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;field-promolink&quot;</span><span class="o">&gt;</span>
+                <span class="p">{{</span> <span class="n">i_item</span><span class="o">.</span><span class="n">PromoLink</span> <span class="p">}}</span>
+            <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>1行目は、訪問者に対して以下のようにレンダリングされます。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;component promo col-12&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;banner&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Creative Exchange のクラス編集とスタイルのインポートを有効にします。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;component promo col-12 add-your-css-classes-here&quot;</span>
+<span class="na">data-pageid</span><span class="o">=</span><span class="s">&quot;{A25A4448-3319-4A52-93DE-B10A7A158DFD}&quot;</span>
+<span class="na">data-renderingid</span><span class="o">=</span><span class="s">&quot;{51C13F03-8364-4F61-B860-2EC6CA7439B3}&quot;</span>
+<span class="na">data-uniqueid</span><span class="o">=</span><span class="s">&quot;{8DED9C5D-5D8D-4C16-93A0-A78928B17656}&quot;</span>
+<span class="na">data-variantid</span><span class="o">=</span><span class="s">&quot;{D51080C1-C9A8-457A-88B1-EF3CF21DD6FF}&quot;</span>
+<span class="na">data-stylesfield</span><span class="o">=</span><span class="s">&quot;Styles&quot;</span>
+<span class="na">data-gridfield</span><span class="o">=</span><span class="s">&quot;GridParameters&quot;</span>
+<span class="na">data-renderingclass</span><span class="o">=</span><span class="s">&quot;promo&quot;</span>
+<span class="na">role</span><span class="o">=</span><span class="s">&quot;banner&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sc-editframe-sc-enditframe">
+<h2>sc_editframe と sc_enditframe<a class="headerlink" href="#sc-editframe-sc-enditframe" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>HTML の領域の周りに編集フレームを表示し、その領域内のコンテンツを編集するのに役立つエクスペリエンスボタンのセットを指定することができます。</p>
+<div class="section" id="id3">
+<h3>パラメーター<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 7%" />
+<col style="width: 12%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>タイプ</p></td>
+<td><p>オプション</p></td>
+<td><p>サンプル</p></td>
+<td><p>使用方法</p></td>
+</tr>
+<tr class="row-even"><td><p>Item</p></td>
+<td><p>いいえ</p></td>
+<td><p>i_item</p></td>
+<td><p>編集フレームがレンダリングされ、そのフィールドの編集が可能になる項目。</p></td>
+</tr>
+<tr class="row-odd"><td><p>string</p></td>
+<td><p>いいえ</p></td>
+<td><p>'Gallery   Image'</p></td>
+<td><p>コアデータベース内の/sitecore/content/Applications/WebEdit/Edit   Frame Buttons/パス下のEdit   Frameフォルダ項目の名前。</p></td>
+</tr>
+</tbody>
+</table>
+<p>sc_endeditframeはパラメータを含まず、ラップされた編集フレームの周辺を閉じるために使用されます。</p>
+</div>
+<div class="section" id="id4">
+<h3>サンプル<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>以下の例は、編集フレームを含むデフォルトのギャラリーコンポーネントのレンダリングバリアントを複製しています。デフォルトの設定については、以下を参照してください。/sitecore/system/Settings/Foundation/Experience Accelerator/Rendering Variants/Rendering Variants/Gallery/Default</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span><span class="o">-</span>
+<span class="k">if</span> <span class="n">i_item</span><span class="o">.</span><span class="n">template_name</span> <span class="o">==</span> <span class="s2">&quot;Gallery Image&quot;</span>
+    <span class="n">sc_editframe</span> <span class="n">i_item</span> <span class="s1">&#39;Gallery Image&#39;</span> <span class="o">-</span><span class="p">}}</span>
+    <span class="o">&lt;</span><span class="n">a</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;field-image&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">a</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;{{ i_item.ImageTitle.raw }}&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ i_item.Image.media_url }}&quot;</span><span class="o">&gt;</span>
+    <span class="p">{{</span> <span class="n">i_item</span><span class="o">.</span><span class="n">Image</span> <span class="p">}}</span>
+    <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="p">{{</span>
+    <span class="n">sc_endeditframe</span>
+<span class="n">end</span> <span class="o">-</span><span class="p">}}</span>
+
+<span class="p">{{</span><span class="o">-</span>
+<span class="k">if</span> <span class="n">i_item</span><span class="o">.</span><span class="n">template_name</span> <span class="o">==</span> <span class="s2">&quot;Gallery Video&quot;</span>
+    <span class="n">sc_editframe</span> <span class="n">i_item</span> <span class="s1">&#39;Gallery Video&#39;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i_item</span><span class="o">.</span><span class="n">VideoID</span><span class="o">.</span><span class="n">raw</span> <span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="p">(</span><span class="n">i_item</span><span class="o">.</span><span class="n">VideoThumbnail</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">-</span><span class="p">}}</span>
+    <span class="o">&lt;</span><span class="n">span</span><span class="o">&gt;</span><span class="p">[</span><span class="n">Edit</span> <span class="n">Gallery</span> <span class="n">Video</span> <span class="n">here</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span><span class="p">{{</span>
+    <span class="k">else</span> <span class="o">-</span><span class="p">}}</span>
+    <span class="o">&lt;</span><span class="n">a</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;{{i_item.VideoTitle.raw }}&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;http://www.youtube.com/watch?v={{ i_item.VideoID.raw }}&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;{{ o_model.thumbnail_url }}&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;{{ i_item.VideoDescription.raw }}&quot;</span>
+            <span class="n">data</span><span class="o">-</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;{{ i_item.VideoTitle.raw }}&quot;</span> <span class="n">data</span><span class="o">-</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;{{ i_item.VideoDescription.raw }}&quot;</span> <span class="o">&gt;&lt;/</span><span class="n">img</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="p">{{</span>
+    <span class="n">end</span>
+    <span class="n">sc_endeditframe</span>
+<span class="n">end</span> <span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sc-placeholder">
+<h2>sc_placeholder<a class="headerlink" href="#sc-placeholder" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>動的プレースホルダを、オプションのコンテキストスイッチでレンダリングします。</p>
+<div class="section" id="id5">
+<h3>パラメーター<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 9%" />
+<col style="width: 7%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>タイプ</p></td>
+<td><p>オプション</p></td>
+<td><p>サンプル</p></td>
+<td><p>使用方法</p></td>
+</tr>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>いいえ</p></td>
+<td><p>'mykey'</p></td>
+<td><p>プレースホルダキー。</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>Item</p></td>
+<td rowspan="2"><p>はい</p></td>
+<td rowspan="2"><p>i_item</p></td>
+<td><p>コンテキストを切り替えるオプションのアイテム。</p></td>
+</tr>
+<tr class="row-even"><td><p>item を指定すると、プレースホルダ内のコンポーネントは i_item   でレンダリングされたかのように動作します。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id6">
+<h3>サンプル１<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>次の例では、ダイナミック SXA プレースホルダをレンダリングする方法を示します。</p>
+</div>
+<div class="section" id="id7">
+<h3>サンプル2<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>次の例は、SXA プレースホルダをダイナミックにレンダリングし、そのコンテキストを関連する i_product アイテムに切り替える方法を示しています。このプレースホルダ内のコンポーネントは、レンダリングされたページが i_product であるかのように動作します。</p>
+</div>
+</div>
+<div class="section" id="sc-execute">
+<h2>sc_execute<a class="headerlink" href="#sc-execute" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Scriban テンプレートの下にあるレンダリングバリアントフィールドを実行します。</p>
+<p>SXA では、Scriban テンプレートの下にレンダリングバリアントフィールドを追加で埋め込むことができますが、sc_execute で明示的に呼び出さない限りレンダリングされません。</p>
+<p>runsc_execute i_item &quot;Item below template&quot; を実行すると、テンプレートエンジンに階層内の Item below template をレンダリングし、sc_execute 関数のある場所に貼り付けるように指示します。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 12%" />
+<col style="width: 21%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>タイプ</p></td>
+<td><p>オプション</p></td>
+<td><p>サンプル</p></td>
+<td><p>使用方法</p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>いいえ</p></td>
+<td><p>i_item</p></td>
+<td><p>レンダリングバリアント要素が実行されるコンテキスト内の項目。</p></td>
+</tr>
+<tr class="row-odd"><td><p>string</p></td>
+<td><p>いいえ</p></td>
+<td><p>'Responsive   Image'</p></td>
+<td><p>レンダリングバリアントフィールドの名前。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sc-evaluate">
+<h2>sc_evaluate<a class="headerlink" href="#sc-evaluate" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Scriban テンプレートの下に保存されているレンダリングバリアントルールを評価し、ルールの実行結果に基づいて評価値 (true または false) を返します。</p>
+<div class="section" id="id8">
+<h3>パラメーター<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 8%" />
+<col style="width: 14%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>タイプ</p></td>
+<td><p>オプション</p></td>
+<td><p>サンプル</p></td>
+<td><p>使用方法</p></td>
+</tr>
+<tr class="row-even"><td><p>Item</p></td>
+<td><p>いいえ</p></td>
+<td><p>i_item</p></td>
+<td><p>ルールが評価される項目。</p></td>
+</tr>
+<tr class="row-odd"><td><p>string</p></td>
+<td><p>いいえ</p></td>
+<td><p>'Responsive   Image'</p></td>
+<td><p>レンダリング処理中に評価されるレンダリングバリアントルール（Scriban テンプレートの下に保存されている）の名前。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id9">
+<h3>サンプル<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>レンダリングバリアントに Scriban タイプのレンダリングバリアントフィールドを追加することで、Scriban テンプレートでパーソナライズルールをレンダリングすることができます。たとえば、Promo コンポーネントのバリアントを作成し、Personalized Promo と名付けます。Scriban タイプのレンダリングバリアントフィールドを追加し、テンプレートという名前にします。次に Rule 型のレンダリング バリアント フィールドを追加した場合、次のコードを Template レンダリング バリアント フィールドに貼り付けると、パーソナライズ ルールがレンダリングされます。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;promo-text&quot;</span><span class="o">&gt;</span><span class="p">{{</span>
+<span class="k">if</span> <span class="n">sc_evaluate</span> <span class="n">i_datasource</span> <span class="s2">&quot;Personalization&quot;</span> <span class="o">-</span><span class="p">}}</span>
+    <span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="n">This</span> <span class="n">will</span> <span class="n">be</span> <span class="n">shown</span> <span class="n">when</span> <span class="n">the</span> <span class="n">personalization</span> <span class="n">rule</span> <span class="n">will</span> <span class="n">evaluate</span> <span class="n">to</span> <span class="n">TRUE</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span><span class="p">{{</span>
+<span class="k">else</span> <span class="o">-</span><span class="p">}}</span>
+    <span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="n">This</span> <span class="n">will</span> <span class="n">be</span> <span class="n">shown</span> <span class="n">when</span> <span class="n">the</span> <span class="n">personalization</span> <span class="n">rule</span> <span class="n">will</span> <span class="n">evaluate</span> <span class="n">to</span> <span class="n">FALSE</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span><span class="p">{{</span>
+<span class="n">end</span> <span class="o">-</span><span class="p">}}</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sc-raw">
+<h2>sc_raw<a class="headerlink" href="#sc-raw" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アイテムからフィールドの生の値を取得します。</p>
+<div class="section" id="id10">
+<h3>パラメーター<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 18%" />
+<col style="width: 20%" />
+<col style="width: 49%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>タイプ</p></td>
+<td><p>オプション</p></td>
+<td><p>サンプル</p></td>
+<td><p>使用方法</p></td>
+</tr>
+<tr class="row-even"><td><p>Item</p></td>
+<td><p>いいえ</p></td>
+<td><p>i_item</p></td>
+<td><p>フィールドの値を取得する項目。</p></td>
+</tr>
+<tr class="row-odd"><td><p>string</p></td>
+<td><p>いいえ</p></td>
+<td><p>'FieldName'</p></td>
+<td><p>取得したいフィールドの名前。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id11">
+<h3>サンプル１<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">sc_raw</span> <span class="n">i_page</span> <span class="s2">&quot;Title&quot;</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sc-field">
+<h2>sc_field<a class="headerlink" href="#sc-field" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>フィールドが空の場合にフォールバックが可能なSitecoreフィールドをレンダリングし、画像やリンクなどのタグにパラメータを追加することができます。</p>
+<div class="section" id="id12">
+<h3>パラメーター<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 5%" />
+<col style="width: 22%" />
+<col style="width: 64%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>タイプ</p></td>
+<td><p>オプション</p></td>
+<td><p>サンプル</p></td>
+<td><p>使用方法</p></td>
+</tr>
+<tr class="row-even"><td><p>Item</p></td>
+<td><p>no</p></td>
+<td><p>i_item</p></td>
+<td><p>フィールドの値を取得する項目です。</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><p>string or string[]</p></td>
+<td rowspan="3"><p>no</p></td>
+<td rowspan="3"><p>'FieldName'</p></td>
+<td><p>レンダリングされるフィールドの名前です。</p></td>
+</tr>
+<tr class="row-even"><td><p>あるいは、フィールド名の配列を指定することもできます。この場合、この関数は左から右へとリストをチェックし、空ではない最初のフィールドをレンダリングします。</p></td>
+</tr>
+<tr class="row-odd"><td><p>エクスペリエンスエディタでは、編集モードでは、空であっても常に最初のフィールドが使用されます。</p></td>
+</tr>
+<tr class="row-even"><td><p>string[][]</p></td>
+<td><p>no</p></td>
+<td><p>[['attribute1','value1'],   ['attribute2','value2']]</p></td>
+<td><p>リンクやイメージなどのフィールド上のフィールドレンダラに追加のパラメータを指定できるようにする、名前/値の文字列の配列。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id13">
+<h3>サンプル<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>例えば、以下のサンプルコードを使用して、sc_field関数を呼び出してアイテムのフィールドをレンダリングします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">sc_field</span> <span class="n">i_page</span> <span class="s1">&#39;Title&#39;</span> <span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>フィールドフォールバックの例<a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>著者が値を入力するためのフィールドを提供し、著者が値を入力しなかった場合でもフィールドが空にならないようにしたい場合は、sc_field関数で提供されているフィールドフォールバック機能を使用することができます。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">sc_field</span> <span class="n">i_page</span> <span class="p">[</span><span class="s1">&#39;NavigationTitle&#39;</span><span class="p">,</span> <span class="s1">&#39;Title&#39;</span><span class="p">,</span> <span class="s1">&#39;__Display Name&#39;</span><span class="p">]</span> <span class="p">}}</span>
+</pre></div>
+</div>
+<p>テンポラリエンジンは 'NavigationTitle' をレンダリングしようとし、その中に値が見つからない場合、'Title' フィールドに移動して試みを返し、失敗した場合は最終的に '__Display Name' にフォールバックします。</p>
+</div>
+<div class="section" id="id15">
+<h3>リンクと画像フィールドの書式設定とデータ属性<a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>リンクやイメージレンダリングフィールドのデフォルトのレンダリング動作を拡張したい場合は、以下の例のように、3番目のパラメータとしてSitecoreフィールドレンダラーに渡される追加の名前/値コレクションを指定することができます。</p>
+</div>
+<div class="section" id="id16">
+<h3>画像レンダラーの例<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>以下の例では、高さと幅が 50 に設定され、追加のデータ属性 data-purpose が設定された画像をレンダリングしています。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">sc_field</span> <span class="n">i_item</span> <span class="s1">&#39;PromoIcon&#39;</span> <span class="p">[[</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;50&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;50&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;data-purpose&#39;</span><span class="p">,</span> <span class="s1">&#39;Promo Icon&#39;</span><span class="p">]]</span> <span class="p">}}</span>
+</pre></div>
+</div>
+<p>上記のコードの結果、あなたのページには以下のようなHTMLが表示されます。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/-/media/MyImage.jpg?h=50&amp;amp;amp;iar=0&amp;amp;amp;w=50&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="na">data-purpose</span><span class="o">=</span><span class="s">&quot;Promo Icon&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>レンダリングされるフィールドでは、以下のパラメータが使用されます。追加のパラメータはデータ属性として使用されます。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 29%" />
+<col style="width: 15%" />
+<col style="width: 53%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>タイプ</p></td>
+<td><p>オプション</p></td>
+<td><p>サンプル</p></td>
+<td><p>使用方法</p></td>
+</tr>
+<tr class="row-even"><td><p>as</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>画像を元のサイズを超えて引き伸ばすことを許可する？</p></td>
+</tr>
+<tr class="row-odd"><td><p>bc</p></td>
+<td><p>Color   names (such as black or red) and HTML hex color codes (such as CE55E2)</p></td>
+<td><p>black</p></td>
+<td><p>画像が元のサイズを超えて引き伸ばされたときに追加されるボーダーの背景色（および   allowStretch=false）。</p></td>
+</tr>
+<tr class="row-even"><td><p>db</p></td>
+<td><p>Any   Sitecore database defined on the site.</p></td>
+<td><p>content   database of the current site</p></td>
+<td><p>画像をプルする Sitecore の名前。</p></td>
+</tr>
+<tr class="row-odd"><td><p>dmc</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>このリクエストのためにメディアキャッシュを無効にするか？true にすると、画像は常にデータベースから取得され、メディアキャッシュをバイパスします。</p></td>
+</tr>
+<tr class="row-even"><td><p>h</p></td>
+<td colspan="2"><p>Any positive integer</p></td>
+<td><p>画像の高さ。高さを元のサイズよりも大きくしたい場合は as=true を含めなければなりません。</p></td>
+</tr>
+<tr class="row-odd"><td><p>la</p></td>
+<td colspan="2"><p>Any valid language name</p></td>
+<td><p>アイテムの特定の言語バージョンから画像を取得します。</p></td>
+</tr>
+<tr class="row-even"><td><p>mh</p></td>
+<td colspan="2"><p>Any positive integer</p></td>
+<td><p>表示する画像の最大高さ。  必要に応じて、画像をこのサイズまで縮小します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>mw</p></td>
+<td colspan="2"><p>Any positive integer</p></td>
+<td><p>表示する画像の最大幅。  必要に応じて画像をこのサイズに縮小します。</p></td>
+</tr>
+<tr class="row-even"><td><p>sc</p></td>
+<td colspan="2"><p>Any positive floating point number using a dot as a   decimal point (such as 1.5, which corresponds to 150%)</p></td>
+<td><p>表示される画像の拡大縮小率。  画像を元のサイズよりも大きくする場合は、as=true を含める必要があります。</p></td>
+</tr>
+<tr class="row-odd"><td><p>thn</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>要求されたファイルのサムネイルを表示します。画像だけでな く 、 PDF やフ ラ ッ シ ュ な ど の他の メ デ ィ ア タ イ プに も有用です。</p></td>
+</tr>
+<tr class="row-even"><td><p>vs</p></td>
+<td colspan="2"><p>Any positive integer</p></td>
+<td><p>アイテムの特定のバージョンの画像を取得します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>w</p></td>
+<td colspan="2"><p>Any positive integer</p></td>
+<td><p>画像の幅。幅が元のサイズよりも大きくなる場合は as=true を含める必要があります。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id17">
+<h3>リンク レンダラーの例<a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>リンク フィールド レンダラーと同様に、リンク レンダラーでは、ニーズに応じて属性を追加することができます。次の例では、PromoLinkターゲットアイテムのタイトルを使用して、リンクにARIAアクセシビリティラベルを追加しています。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">sc_field</span> <span class="n">i_item</span> <span class="s1">&#39;PromoLink&#39;</span> <span class="p">[[</span><span class="s1">&#39;aria-label&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">i_item</span><span class="o">.</span><span class="n">PromoLink</span><span class="o">.</span><span class="n">Title</span><span class="o">.</span><span class="n">raw</span><span class="p">)]]</span> <span class="p">}}</span>
+</pre></div>
+</div>
+<p>上記の例では、以下のようなHTMLを生成できます。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;/Page&quot;</span> <span class="n">aria</span><span class="o">-</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Page Title&quot;</span><span class="o">&gt;</span><span class="n">Page</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sc-follow">
+<h2>sc_follow<a class="headerlink" href="#sc-follow" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>フィールドから選択された項目を返し、項目へのリンクを格納します。フィールドに複数の項目へのリンクを格納できる場合は、リストの最初の項目が返されます。フィールドが空の場合、この関数はヌル値を返します。</p>
+<div class="section" id="id18">
+<h3>パラメーター<a class="headerlink" href="#id18" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 14%" />
+<col style="width: 15%" />
+<col style="width: 47%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>タイプ</p></td>
+<td><p>オプション</p></td>
+<td><p>サンプル</p></td>
+<td><p>使用方法</p></td>
+</tr>
+<tr class="row-even"><td><p>Item</p></td>
+<td><p>いいえ</p></td>
+<td><p>i_item</p></td>
+<td><p>フィールドの値が取得される項目。</p></td>
+</tr>
+<tr class="row-odd"><td><p>string or string[]</p></td>
+<td><p>いいえ</p></td>
+<td><p>'FieldName'</p></td>
+<td><p>アイテムにリンクするフィールドの名前。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>より短い i_item.target 記法を使用することもできます。その場合、i_item.targetでは、'.'、','、ホワイトスペースなどの特殊文字を含むフィールドへのリンクを許可していないことに注意してください。</p>
+</div>
+</div>
+<div class="section" id="id19">
+<h3>サンプル<a class="headerlink" href="#id19" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Promo コンポーネントからリンクされた商品の詳細情報をレンダリングします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">sc_follow</span> <span class="n">i_item</span> <span class="s2">&quot;Promo Link&quot;</span> <span class="o">|</span> <span class="n">sc_field</span> <span class="s2">&quot;Title&quot;</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sc-followmany">
+<h2>sc_followmany<a class="headerlink" href="#sc-followmany" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アイテムへのリンクを格納できるフィールドで選択されたアイテムの配列を返します。フィールドが空の場合、この関数は空のリストを返します。</p>
+<div class="section" id="id20">
+<h3>パラメーター<a class="headerlink" href="#id20" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 14%" />
+<col style="width: 15%" />
+<col style="width: 47%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>タイプ</p></td>
+<td><p>オプション</p></td>
+<td><p>サンプル</p></td>
+<td><p>使用方法</p></td>
+</tr>
+<tr class="row-even"><td><p>Item</p></td>
+<td><p>いいえ</p></td>
+<td><p>i_item</p></td>
+<td><p>フィールドの値が取得される項目。</p></td>
+</tr>
+<tr class="row-odd"><td><p>string or string[]</p></td>
+<td><p>いいえ</p></td>
+<td><p>'FieldName'</p></td>
+<td><p>アイテムにリンクするフィールドの名前。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>より短い i_item.targets 記法を使用することができます。その場合、'.'、','、','、空白などの特殊文字を含むフィールドへのリンクは許可されないことに注意してください。</p>
+</div>
+</div>
+<div class="section" id="id21">
+<h3>サンプル１<a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>現在の製品に関連する製品をレンダリングする。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="k">for</span> <span class="n">i_product</span> <span class="ow">in</span> <span class="p">(</span><span class="n">sc_followmany</span> <span class="n">i_page</span> <span class="s2">&quot;Related Products&quot;</span><span class="p">)</span> <span class="p">}}</span>
+<span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">sc_field</span> <span class="n">i_product</span> <span class="s2">&quot;Title&quot;</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">b</span><span class="o">&gt;</span><span class="n">Content</span><span class="o">&lt;/</span><span class="n">b</span><span class="o">&gt;</span><span class="p">:{{</span> <span class="n">sc_field</span> <span class="n">i_product</span> <span class="s2">&quot;Content&quot;</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">end</span> <span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sc-link">
+<h2>sc_link<a class="headerlink" href="#sc-link" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>パラメータとして指定した項目のURL文字列を返します。項目が null の場合は # を返します。</p>
+<div class="section" id="id22">
+<h3>パラメーター<a class="headerlink" href="#id22" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 21%" />
+<col style="width: 18%" />
+<col style="width: 46%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>タイプ</p></td>
+<td><p>オプション</p></td>
+<td><p>サンプル</p></td>
+<td><p>使用方法</p></td>
+</tr>
+<tr class="row-even"><td><p>Item</p></td>
+<td><p>いいえ</p></td>
+<td><p>i_item</p></td>
+<td><p>リンクが生成された項目。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>より短い i_item.url 記法を使用することもできます。もし使用する場合は、'.'、','、ホワイトスペースなどの特殊文字を含むフィールドへのリンクを許可していないことに注意してください。</p>
+</div>
+</div>
+<div class="section" id="id23">
+<h3>サンプル<a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>データソース項目の表示名をリンクのテキストとして使用して、コンポーネントのデータソースへのリンクをレンダリングします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ sc_link i_datasource }}&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">i_datasource</span><span class="o">.</span><span class="n">display_name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sc-medialink">
+<h2>sc_medialink<a class="headerlink" href="#sc-medialink" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>パラメータとして指定された項目のメディアURL文字列を返します。アイテムがNULLの場合、この関数は#を返します。</p>
+<div class="section" id="id24">
+<h3>ファンクション パラメーター<a class="headerlink" href="#id24" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 19%" />
+<col style="width: 16%" />
+<col style="width: 53%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>タイプ</p></td>
+<td><p>オプション</p></td>
+<td><p>サンプル</p></td>
+<td><p>使用方法</p></td>
+</tr>
+<tr class="row-even"><td><p>Item</p></td>
+<td><p>いいえ</p></td>
+<td><p>i_item</p></td>
+<td><p>リンクが生成されるメディア項目。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>より短い i_item.media_url 記法を使用することもできます。その場合、'.'、','、ホワイトスペースなどの特殊文字を含むフィールドへのリンクは許可されないことに注意してください。</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">a</span> <span class="n">download</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ sc_follow i_datasource &#39;PromoIcon&#39; | sc_medialink }}&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">i_datasource</span><span class="o">.</span><span class="n">PromoIcon</span><span class="o">.</span><span class="n">name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sc-query">
+<h2>sc_query<a class="headerlink" href="#sc-query" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Sitecore クエリを実行し、結果の項目を配列として返します。</p>
+<div class="section" id="id25">
+<h3>パラメーター<a class="headerlink" href="#id25" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 16%" />
+<col style="width: 17%" />
+<col style="width: 56%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>タイプ</p></td>
+<td><p>オプション</p></td>
+<td><p>サンプル</p></td>
+<td><p>使用方法</p></td>
+</tr>
+<tr class="row-even"><td><p>Item</p></td>
+<td><p>いいえ</p></td>
+<td><p>i_item</p></td>
+<td><p>クエリが実行されるコンテキスト内の項目。</p></td>
+</tr>
+<tr class="row-odd"><td><p>string</p></td>
+<td><p>いいえ</p></td>
+<td><p>'query:./<a href="#id26"><span class="problematic" id="id27">*</span></a>'</p></td>
+<td><p>実行するクエリ。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id28">
+<h3>サンプル<a class="headerlink" href="#id28" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="k">for</span> <span class="n">i_child</span> <span class="ow">in</span> <span class="p">(</span><span class="n">sc_query</span> <span class="n">i_page</span> <span class="s1">&#39;query:./*&#39;</span><span class="p">)</span> <span class="p">}}</span>
+<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">i_child</span><span class="o">.</span><span class="n">Title</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="p">{{</span><span class="n">end</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sc-parameter">
+<h2>sc_parameter<a class="headerlink" href="#sc-parameter" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>レンダリングパラメータの値を取得します。</p>
+<div class="section" id="id29">
+<h3>パラメーター<a class="headerlink" href="#id29" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 19%" />
+<col style="width: 16%" />
+<col style="width: 52%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>タイプ</p></td>
+<td><p>オプション</p></td>
+<td><p>サンプル</p></td>
+<td><p>使用方法</p></td>
+</tr>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>いいえ</p></td>
+<td><p>ID</p></td>
+<td><p>値を取得するパラメータの名前。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span><span class="n">This</span> <span class="n">rendering</span> <span class="ow">is</span> <span class="ow">in</span> <span class="n">the</span> <span class="s1">&#39;{{ sc_parameter &#39;</span><span class="n">Placeholder</span><span class="s1">&#39; }}&#39;</span> <span class="n">placeholder</span><span class="o">.&lt;</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sc-translate">
+<h2>sc_translate<a class="headerlink" href="#sc-translate" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>入力された文字列とページがレンダリングされる現在の言語に応じたテキストを返します。翻訳は、サイトアイテムのルートにある辞書に保存されます。</p>
+<div class="section" id="id30">
+<h3>パラメーター<a class="headerlink" href="#id30" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 8%" />
+<col style="width: 7%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>タイプ</p></td>
+<td><p>オプション</p></td>
+<td><p>サンプル</p></td>
+<td><p>使用方法</p></td>
+</tr>
+<tr class="row-even"><td><p>string</p></td>
+<td><p>いいえ</p></td>
+<td><p>key</p></td>
+<td><p>サイト辞書からのキーです。</p></td>
+</tr>
+<tr class="row-odd"><td><p>string</p></td>
+<td><p>はい</p></td>
+<td><p>language</p></td>
+<td><p>リクエストコンテキストから言語を取得する代わりに、テキストを特定の言語に強制的に翻訳するための言語コードを提供します。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id31">
+<h3>サンプル<a class="headerlink" href="#id31" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">button</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;button cancel&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">sc_parameter</span> <span class="s1">&#39;Cancel&#39;</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p>英語版 <a class="reference external" href="https://doc.sitecore.com/developers/sxa/93/sitecore-experience-accelerator/en/the-embedded-functions-for-the-scriban-template.html">https://doc.sitecore.com/developers/sxa/93/sitecore-experience-accelerator/en/the-embedded-functions-for-the-scriban-template.html</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="item-and-field-extensions.html" class="btn btn-neutral float-right" title="項目とフィールドの拡張子" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="the-embedded-items-and-objects-in-the-scriban-context.html" class="btn btn-neutral float-left" title="Scribanのコンテキストに埋め込まれたアイテムとオブジェクト" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sitecore Japan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
