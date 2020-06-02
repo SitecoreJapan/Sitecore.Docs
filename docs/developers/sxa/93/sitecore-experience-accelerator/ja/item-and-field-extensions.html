@@ -99,7 +99,13 @@
 <li class="toctree-l2 current"><a class="reference internal" href="scriban-templates.html">Scriban のテンプレート</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="the-embedded-items-and-objects-in-the-scriban-context.html">Scribanのコンテキストに埋め込まれたアイテムとオブジェクト</a></li>
 <li class="toctree-l3"><a class="reference internal" href="the-embedded-functions-for-the-scriban-template.html">Scribanテンプレートの組み込み機能</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">項目とフィールドの拡張子</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">項目とフィールドの拡張子</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">アイテムプロパティ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">アイテムフィールドの取得とレンダリング</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">フィールド拡張プロパティ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id23">フィールドカスケードとフォールバックでの作業</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -174,13 +180,264 @@
             
   <div class="section" id="id1">
 <h1>項目とフィールドの拡張子<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このトピックでは、フィールド、アイテム プロパティ、およびフィールド プロパティに簡単にアクセスできるようにする SXA アイテム拡張機能について説明します。</p>
+<div class="section" id="id2">
+<h2>アイテムプロパティ<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="i-item-children">
+<h3>i_item.children<a class="headerlink" href="#i-item-children" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>アイテムの子をアイテムリストとして返します。</p>
+<div class="section" id="id3">
+<h4>サンプル<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>アイテムの子要素をリンクのリストとしてレンダリングします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="k">for</span> <span class="n">i_child</span> <span class="k">as</span> <span class="n">i_datasource</span><span class="o">.</span><span class="n">children</span> <span class="p">}}</span>
+<span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ i_child.url }}&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">i_child</span><span class="o">.</span><span class="n">Title</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+<span class="p">{{</span> <span class="n">end</span> <span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="i-item-display-name">
+<h3>i_item.display_name<a class="headerlink" href="#i-item-display-name" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>アイテムの表示名を返します。</p>
+<div class="section" id="id4">
+<h4>サンプル<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>データソース項目の表示名をリンクのテキストとして使用して、コンポーネントのデータソースへのリンクをレンダリングします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ i_datasource.url }}&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">i_datasource</span><span class="o">.</span><span class="n">display_name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="i-item-id">
+<h3>i_item.id<a class="headerlink" href="#i-item-id" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>アイテムのIDを返します。</p>
+<div class="section" id="id5">
+<h4>サンプル<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>アイテムのIDを出力します。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">i_item</span><span class="o">.</span><span class="n">id</span> <span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="i-item-has-children">
+<h3>i_item.has_children<a class="headerlink" href="#i-item-has-children" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>アイテムに子がある場合に true を返します。</p>
+<div class="section" id="id6">
+<h4>サンプル<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>現在のページに子がある場合、その子へのリンクをレンダリングします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span>
+    <span class="k">if</span> <span class="n">i_page</span><span class="o">.</span><span class="n">has_children</span>
+        <span class="k">for</span> <span class="n">i_child</span> <span class="ow">in</span> <span class="n">i_page</span><span class="o">.</span><span class="n">children</span>
+            <span class="p">}}</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ i_child.url }}&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">i_child</span><span class="o">.</span><span class="n">display_name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;</span><span class="n">br</span><span class="o">/&gt;</span><span class="p">{{</span>
+        <span class="n">end</span>
+    <span class="n">end</span>  <span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="i-item-has-layout">
+<h3>i_item.has_layout<a class="headerlink" href="#i-item-has-layout" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>項目にレイアウト情報がある場合に true を返します。</p>
+<div class="section" id="id7">
+<h4>サンプル<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>子を持つページの子をレンダリングします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span>
+    <span class="k">for</span> <span class="n">i_child</span> <span class="ow">in</span> <span class="n">i_page</span><span class="o">.</span><span class="n">children</span>
+        <span class="k">if</span> <span class="n">i_child</span><span class="o">.</span><span class="n">has_layout</span>
+            <span class="p">}}</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ i_child.url }}&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">i_child</span><span class="o">.</span><span class="n">display_name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;</span><span class="n">br</span><span class="o">/&gt;</span><span class="p">{{</span>
+        <span class="n">end</span>
+    <span class="n">end</span>
+<span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="i-item-language">
+<h3>i_item.language<a class="headerlink" href="#i-item-language" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>子を持つページの子をレンダリングします。</p>
+<div class="section" id="id8">
+<h4>サンプル<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>項目が英語でレンダリングされている場合は、その事実を示すテキストを出力します。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="k">if</span> <span class="n">i_page</span><span class="o">.</span><span class="n">language</span> <span class="o">==</span> <span class="s1">&#39;en&#39;</span> <span class="p">}}</span>
+<span class="n">This</span> <span class="n">page</span> <span class="ow">is</span> <span class="n">rendered</span> <span class="ow">in</span> <span class="n">English</span><span class="o">&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+<span class="p">{{</span> <span class="n">end</span> <span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="i-item-media-url">
+<h3>i_item.media_url<a class="headerlink" href="#i-item-media-url" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>アイテムのメディアURLを返します。</p>
+<div class="section" id="id9">
+<h4>サンプル<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Promo コンポーネント画像へのダウンロードリンクをレンダリングします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">a</span> <span class="n">download</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ i_datasource.PromoIcon.media_url }}&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">i_datasource</span><span class="o">.</span><span class="n">PromoIcon</span><span class="o">.</span><span class="n">name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="i-item-name">
+<h3>i_item.name<a class="headerlink" href="#i-item-name" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Promo コンポーネント画像へのダウンロードリンクをレンダリングします。</p>
+<div class="section" id="id10">
+<h4>サンプル<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>データ ソース項目の名前をリンクのテキストとして使用して、コンポーネントのデータ ソースへのリンクをレンダリングします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ i_datasource.url }}&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">i_datasource</span><span class="o">.</span><span class="n">name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="i-item-path">
+<h3>i_item.path<a class="headerlink" href="#i-item-path" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>アイテムのパスを返します。</p>
+<div class="section" id="id11">
+<h4>サンプル<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>アイテムへのリンクは、/sitecore/contentの下にある場合にのみレンダリングされます。</p>
+<blockquote>
+<div><p>{{ if string.starts_with i_item.path &quot;/sitecore/content&quot; }}
+&lt;a href=&quot;{{ i_item.url }}&quot;&gt;{{ i_item.Title }}&lt;/a&gt;&lt;br/&gt;
+{{ end }}</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="i-item-parent">
+<h3>i_item.parent<a class="headerlink" href="#i-item-parent" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>アイテムの親を返します。</p>
+<div class="section" id="id12">
+<h4>サンプル<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>データ ソース項目の親へのリンクをレンダリングします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ i_item.parent.url }}&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">i_item</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">Title</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;</span><span class="n">br</span><span class="o">/&gt;</span>
+<span class="p">{{</span> <span class="n">end</span> <span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="i-item-template-id">
+<h3>i_item.template_id<a class="headerlink" href="#i-item-template-id" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>アイテムテンプレートのIDを文字列で返します。</p>
+<div class="section" id="id13">
+<h4>サンプル<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>アイテムのIDを出力します。</p>
+<blockquote>
+<div><p>{{ i_item.template_id }}</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="i-item-template-name">
+<h3>i_item.template_name<a class="headerlink" href="#i-item-template-name" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>アイテムテンプレートの名前を文字列で返します。</p>
+<div class="section" id="id14">
+<h4>サンプル<a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>アイテムテンプレート名を返します。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="k">if</span> <span class="n">i_item</span><span class="o">.</span><span class="n">template_name</span> <span class="o">==</span> <span class="s2">&quot;Gallery Image&quot;</span> <span class="p">}}</span>
+<span class="o">...</span> <span class="n">render</span> <span class="n">HTML</span> <span class="k">for</span> <span class="n">Gallery</span> <span class="n">image</span>
+<span class="p">{{</span><span class="n">end</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="i-item-url">
+<h3>i_item.url<a class="headerlink" href="#i-item-url" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>サイトのLinkProviderを使用してアイテムのURLを返します。</p>
+<div class="section" id="id15">
+<h4>サンプル<a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>データソース項目の表示名をリンクのテキストとして使用して、コンポーネントのデータソースへのリンクをレンダリングします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ i_datasource.url }}&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">i_datasource</span><span class="o">.</span><span class="n">display_name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="i-item-version">
+<h3>i_item.version<a class="headerlink" href="#i-item-version" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>アイテムのバージョン番号を返します。</p>
+<div class="section" id="id16">
+<h4>サンプル<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>アイテムのバージョン番号を出力します。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">i_item</span><span class="o">.</span><span class="n">version</span> <span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id17">
+<h2>アイテムフィールドの取得とレンダリング<a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="i-item-fieldname">
+<h3>i_item.FieldName<a class="headerlink" href="#i-item-fieldname" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>テンプレート内のフィールドをレンダリングします。</p>
+<div class="section" id="id18">
+<h4>サンプル<a class="headerlink" href="#id18" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>アイテムオブジェクトにFieldNameを追加して、テンプレート内のフィールドをレンダリングします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">i_item</span><span class="o">.</span><span class="n">Title</span> <span class="p">}}</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>i_item.FieldNameは、'.'、','、','、空白などの特殊文字を含むフィールドの後続リンクを許可しません。また、データ属性やフィールドのフォールバックもサポートしていません。このような場合は、sc_field関数を使用してください。</p>
 </div>
+</div>
+</div>
+</div>
+<div class="section" id="id19">
+<h2>フィールド拡張プロパティ<a class="headerlink" href="#id19" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="i-item-field-raw">
+<h3>i_item.Field.raw<a class="headerlink" href="#i-item-field-raw" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>フィールドの生の値を返します。例えば、JavaScriptで使用する項目や編集できないはずのボタンにIDをレンダリングしたい場合などです。</p>
+<div class="section" id="id20">
+<h4>サンプル<a class="headerlink" href="#id20" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>ボタン上のテキストをレンダリングします。</p>
+<blockquote>
+<div><p>&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;{{ i_item.ButtonText.raw }}&lt;/button&gt;</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="i-item-field-target">
+<h3>i_item.Field.target<a class="headerlink" href="#i-item-field-target" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>アイテムへのリンクを格納できるフィールドで選択されたアイテムを返します。フィールドに複数の項目へのリンクを格納できる場合は、リストの最初の項目が返されます。フィールドが空の場合、この関数はヌル値を返します。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>i_item.Field.targetでは、'.'、','、空白などの特殊文字を含むフィールドへのリンクを許可していません。このような場合は、sc_follow関数を使用してください。</p>
+</div>
+<div class="section" id="id21">
+<h4>サンプル<a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Promoコンポーネントからリンクされた商品の詳細情報をレンダリングします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">i_linkedpage</span> <span class="o">=</span> <span class="n">i_item</span><span class="o">.</span><span class="n">PromoLink</span><span class="o">.</span><span class="n">target</span> <span class="p">}}</span>
+<span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">i_linkedpage</span><span class="o">.</span><span class="n">Title</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">b</span><span class="o">&gt;</span><span class="n">Content</span><span class="o">&lt;/</span><span class="n">b</span><span class="o">&gt;</span><span class="p">:{{</span> <span class="n">i_linkedpage</span><span class="o">.</span><span class="n">Content</span> <span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="i-page-field-targets">
+<h3>i_page.Field.targets<a class="headerlink" href="#i-page-field-targets" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>アイテムへのリンクを格納できるフィールドで選択されたアイテムの配列を返します。フィールドが空の場合、この関数は空のリストを返します。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>i_page.Field.targetでは、'.'、','、空白などの特殊文字を含むフィールドへのリンクを許可していません。このような場合は、sc_followmany関数を使用してください。</p>
+</div>
+<div class="section" id="id22">
+<h4>サンプル<a class="headerlink" href="#id22" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>現在の製品に関連する製品をレンダリングします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="k">for</span> <span class="n">i_product</span> <span class="ow">in</span> <span class="n">i_page</span><span class="o">.</span><span class="n">RelatedProducts</span><span class="o">.</span><span class="n">targets</span> <span class="p">}}</span>
+<span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">i_product</span><span class="o">.</span><span class="n">Title</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">b</span><span class="o">&gt;</span><span class="n">Content</span><span class="o">&lt;/</span><span class="n">b</span><span class="o">&gt;</span><span class="p">:{{</span> <span class="n">i_product</span><span class="o">.</span><span class="n">Content</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">end</span> <span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id23">
+<h2>フィールドカスケードとフォールバックでの作業<a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>流暢な記法でフィールドを使用する場合、フィールドのカスケードとフォールバックを使用して、より複雑なシナリオを簡素化することができます。.target ヘルパーを呼び出さなくても、流暢な記法でフィールドをカスケードリンクしてアイテムに到達することができます。例：i_item.FieldLinkingToItem.HelperOrFieldToRender。</p>
+<p>例えば、記事ページのFirstNameという名前のフィールドをレンダリングするには、Authorという名前のフィールドの一部であるAuthor Infoという名前のフィールドをレンダリングします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">記事の作成者</span> <span class="p">{{</span> <span class="n">i_page</span><span class="o">.</span><span class="n">Author</span><span class="o">.</span><span class="n">FirstName</span> <span class="p">}}</span>
+</pre></div>
+</div>
+<p>フィールド名を流暢な表記でカスケードすることで、複数のデータ テンプレートをサポートするテンプレートを作成できます。テンプレート化エンジンは、フィールドを左から右に解決してレンダリングしようとし、アイテム上で見つかった最初のフィールドをレンダリングします。</p>
+<p>例えば、ページにAuthorフィールドがない場合、テンプレートエンジンは、i_pageから直接FirstNameフィールドをレンダリングしようとします。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/developers/sxa/93/sitecore-experience-accelerator/en/the-embedded-items-and-objects-in-the-scriban-context.html">https://doc.sitecore.com/developers/sxa/93/sitecore-experience-accelerator/en/the-embedded-items-and-objects-in-the-scriban-context.html</a></p>
+</div>
 </div>
 </div>
 
