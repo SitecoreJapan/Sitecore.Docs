@@ -43,12 +43,11 @@ Creative Exchange を使って Scriban テンプレートをエクスポート�
 このセクションのトピックでは、Scriban テンプレート用の Sitecore 拡張機能について説明します。
 
 .. toctree::
-    :titlesonly:
-    :maxdepth: 1
+   :titlesonly:
 
-    the-embedded-items-and-objects-in-the-scriban-context
-    the-embedded-functions-for-the-scriban-template
-    item-and-field-extensions
+   the-embedded-items-and-objects-in-the-scriban-context
+   the-embedded-functions-for-the-scriban-template
+   item-and-field-extensions
 
 .. note:: `Scriban GitHub リポジトリ <https://github.com/lunet-io/scriban>`_ には、`テンプレート言語 <https://github.com/lunet-io/scriban/blob/master/doc/language.md>`_  と `組み込み関数 <https://github.com/lunet-io/scriban/blob/master/doc/builtins.md>`_ に関する一般的なドキュメントがあります。
 
