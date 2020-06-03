@@ -103,7 +103,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="publishing.html">パブリッシュ</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="validate-an-item.html">アイテムを検証する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="preview-a-webpage.html">ウェブページのプレビュー</a></li>
-<li class="toctree-l3"><a class="reference internal" href="publish-an-item-to-your-website.html">あなたのウェブサイトにアイテムを公開する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="publish-an-item-to-your-website.html">ウェブサイトにアイテムを公開する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="publish-a-website.html">ウェブサイトを公開する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="set-up-publishing-restrictions-for-an-item.html">アイテムの公開制限を設定する</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">プレビュー公開対象にアイテムを公開する</a></li>
@@ -184,13 +184,57 @@
             
   <div class="section" id="id1">
 <h1>プレビュー公開対象にアイテムを公開する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>デフォルトでは、ワークフロー内のアイテムは、<a class="reference external" href="workflows-and-the-workbox">ワークフロー</a> の最終状態にある場合にのみ公開することができます。しかし、ワークフローの最終状態に到達する前にアイテムをパブリッシュする必要がある場合、例えば、非シ テコア・ユーザにアイテムをレビューしてもらいたい場合、アイテムをプレビュー・パブリッシング・ターゲットにパブリッシ ングすることができます。</p>
+<p>プレビュー・パブリッシング・ターゲットは、1 つ以上のワークフロー状態に割り当てることができるパブリッシング・ターゲットで、そのワークフロー状態のアイテムをパブリッシュできるようにします。プレビュー パブリッシング ターゲットにパブリッシュすると、このプレビュー パブリッシング ターゲットが割り当てられたワークフロー状態にあるすべてのアイテムと、任意のワークフローの最終的なワークフロー状態にあるすべてのアイテムがパブリッシュされます。</p>
+<p>このようにして、ワークフローの最終状態ではない（したがって公開できない）アイテムは、社内サイトに公開してレビューを受けたり、特定のパートナーや顧客のみがアクセスできるアーリーリリース素材を持つセキュアなサイトに公開したりすることができます。</p>
+<div class="section" id="id3">
+<h2>プレビューパブリッシングのターゲットを作成する<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>プレビュー パブリッシング ターゲットを作成するには、以下の手順に従います。</p>
+<ol class="arabic">
+<li><p>コンテンツ エディタのコンテンツ ツリーで、［システム/パブリッシング ターゲット］に移動します。</p></li>
+<li><p>フォルダ］タブの［オプション］セクションで［パブリッシング ターゲット］をクリックして、新しいパブリッシング ターゲットを作成します。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a1ec8ce8.png"><img alt="プレビューパブリッシングのターゲットを作成する" class="align-center" src="_images/15ed64a1ec8ce8.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>表示されるシステム ダイアログ ボックスで、プレビュー パブリッシング ターゲットの名前を入力し、[OK] をクリックします。</p></li>
+<li><p>新しいパブリッシング ターゲットの［コンテンツ］タブで、ターゲット データベースの名前を入力し、［プレビュー パブリッシング ターゲット］チェック ボックスを選択します。</p>
+<blockquote>
+<div><div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>ターゲット データベースの名前が正しく入力されていることを確認して、プレビュー パブリッシング ターゲットにパブリッシュしようとしたときにエラーが発生しないようにしてください。</p>
+</div>
+<a class="reference internal image-reference" href="_images/15ed64a1ecd843.png"><img alt="プレビューパブリッシングのターゲットを作成する" class="align-center" src="_images/15ed64a1ecd843.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>保存をクリックします。</p></li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2>ワークフロー状態のアイテムをプレビューパブリッシング対象に発行する<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ワークフロー状態のアイテムをプレビュー パブリッシング ターゲットにパブリッシュできるようにするには、次の手順に従います。</p>
+<ol class="arabic">
+<li><p>[コンテンツ エディタ］のコンテンツ ツリーで［システム/ワークフロー］に移動し、プレビュー パブリッシング ターゲットを割り当てるワークフロー ステートを選択します。</p></li>
+<li><p>[データ］セクションで、このワークフロー状態に割り当てる1つまたは複数のプレビュー・パブリッシング・ターゲットを選択します。リストには、プレビュー パブリッシング ターゲットとして指定されたパブリッシ ング ターゲットのみが表示されます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a1ed18ad.png"><img alt="ワークフロー状態のアイテムをプレビューパブリッシング対象に発行する" class="align-center" src="_images/15ed64a1ed18ad.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>[保存］をクリックします。
+これで、プレビュー公開ターゲットが割り当てられたワークフロー状態のアイテムは、特定のアイテムがどのプレビュー公開ターゲットに公開できるかを知らせる通知とともに表示されます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a1ed5c6a.png"><img alt="ワークフロー状態のアイテムをプレビューパブリッシング対象に発行する" class="align-center" src="_images/15ed64a1ed5c6a.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+</ol>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>プレビュー公開対象に公開しても、項目に設定されている公開制限は有効です。</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/publishing-items-to-a-preview-publishing-target.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/publishing-items-to-a-preview-publishing-target.html</a></p>
+</div>
 </div>
 </div>
 
