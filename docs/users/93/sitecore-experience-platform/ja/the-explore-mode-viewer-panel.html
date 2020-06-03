@@ -37,7 +37,7 @@
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
     <link rel="next" title="エクスペリエンス エクスプローラで Google マップのエラーを解決する" href="resolve-google-maps-error-in-experience-explorer.html" />
-    <link rel="prev" title="エクスペリエンスモードの設定" href="the-explore-mode-settings.html" />
+    <link rel="prev" title="エクスプローラー モードの設定" href="the-explore-mode-settings.html" />
  
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153234118-2"></script>
@@ -102,7 +102,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="explore-mode.html">エクスプローラ モード</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="explore-mode---a-sample-visit.html">エクスプローラーモード - 訪問サンプル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create-an-explore-mode-preset.html">エクスプローラーモードのプリセットを作成する</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the-explore-mode-settings.html">エクスペリエンスモードの設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="the-explore-mode-settings.html">エクスプローラー モードの設定</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">エクスプローラモードのビューアパネル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resolve-google-maps-error-in-experience-explorer.html">エクスペリエンス エクスプローラで Google マップのエラーを解決する</a></li>
 </ul>
@@ -183,9 +183,72 @@
             
   <div class="section" id="id1">
 <h1>エクスプローラモードのビューアパネル<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>エクスペリエンスモードでは、ビューアパネルはウェブページの右側にあります。</p>
+<p>ビューアパネルのヘッダーが表示されます。</p>
+<ul class="simple">
+<li><p>訪問者体験のために選択したモード。ジャーニーモードと固定モードの2つのオプションがあります。</p></li>
+<li><p>現在のページビューの合計数。</p></li>
+<li><p>訪問中に蓄積されたエンゲージメントバリューポイントの現在の合計。</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/15ed64a1e4c206.png"><img alt="ビューアパネル" class="align-center" src="_images/15ed64a1e4c206.png" style="width: 400px;" /></a>
+<p>以下の表では、ビューアパネルで利用できる情報について説明します。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>この表に記載されているExploreモードのオプションは、Webサイトをどのように実装したかによって異なる場合があります。例えば、Sitecoreをインストールした場合、利用可能なプリセットはDefaultとAnonymousのみです。</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>セクション</p></td>
+<td><p>設定</p></td>
+<td><p>概要</p></td>
+</tr>
+<tr class="row-even"><td><p>エクスペリエンス</p></td>
+<td><p>プリセット</p></td>
+<td><p>選択したプリセットの名前を表示します。</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><p>Onsite Behavior</p></td>
+<td><p>プロファイル</p></td>
+<td><p>実装したプロファイリング戦略に応じて、どのプロファイリングパターンカードが、プリセットで訪問したページと最も密接に一致しているかを確認することができます。</p></td>
+</tr>
+<tr class="row-even"><td><p>ゴール</p></td>
+<td><p>訪問中にトリガーされたゴールを表示します。
+目標は、ジャーニーモードで蓄積されるか、固定モードでページ上に表示されます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>ページイベント</p></td>
+<td><p>この訪問中にトリガされたページイベントを表示します。</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><p>訪問者情報</p></td>
+<td><p>デバイス</p></td>
+<td><p>今回の訪問で選択したデフォルトのデバイスを表示します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>Geo IP</p></td>
+<td><p>設定パネルの訪問者情報セクションで最後に更新されたものに応じて、GoogleまたはBingの地図、国、またはIP情報を表示します。</p></td>
+</tr>
+<tr class="row-even"><td><p>タグ</p></td>
+<td><p>訪問者に関連付けられている現在のタグを表示します。</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>参照情報</p></td>
+<td><p>キャンペーン</p></td>
+<td><p>今回の訪問に関連したキャンペーンを表示します。</p></td>
+</tr>
+<tr class="row-even"><td><p>リファラル</p></td>
+<td><p>この訪問に関連した参照サイトや検索キーワードを表示します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>ページ設定</p></td>
+<td><p>ルールと条件設定</p></td>
+<td><p>現在のページに存在し、アクティブなルールと条件付きレンダリングが表示されます。
+ルールの上にマウスを置くと、ルールがどのように評価されるか、または前のルールが真ではない場合にどのように評価されるかが表示されます。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>[設定] パネルまたは [ビューア] パネルのセクションの順序を変更したい場合は、開発者または管理者に連絡してください。また、ロールベースのパーミッションを使用して、[設定] パネルまたは [ビューア] パネルの特定のセクションを非表示または表示にすることもできます。たとえば、Geo IP とキャンペーンのみにアクセスできる専用の Explore mode Marketer ロールを作成することができます。</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
@@ -204,7 +267,7 @@
         <a href="resolve-google-maps-error-in-experience-explorer.html" class="btn btn-neutral float-right" title="エクスペリエンス エクスプローラで Google マップのエラーを解決する" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="the-explore-mode-settings.html" class="btn btn-neutral float-left" title="エクスペリエンスモードの設定" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="the-explore-mode-settings.html" class="btn btn-neutral float-left" title="エクスプローラー モードの設定" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
