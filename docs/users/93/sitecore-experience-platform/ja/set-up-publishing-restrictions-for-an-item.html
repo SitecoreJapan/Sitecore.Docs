@@ -103,7 +103,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="publishing.html">パブリッシュ</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="validate-an-item.html">アイテムを検証する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="preview-a-webpage.html">ウェブページのプレビュー</a></li>
-<li class="toctree-l3"><a class="reference internal" href="publish-an-item-to-your-website.html">あなたのウェブサイトにアイテムを公開する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="publish-an-item-to-your-website.html">ウェブサイトにアイテムを公開する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="publish-a-website.html">ウェブサイトを公開する</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">アイテムの公開制限を設定する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="publishing-items-to-a-preview-publishing-target.html">プレビュー公開対象にアイテムを公開する</a></li>
@@ -184,13 +184,108 @@
             
   <div class="section" id="id1">
 <h1>アイテムの公開制限を設定する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>コンテンツ エディタとエクスペリエンス エディタでは、出版制限を使用してアイテムの出版を制限することができます。公開制限を使用すると、特定のアイテムまたはアイテムのバージョンを、特定の日付範囲内または無期限に公開または非公開にすることができます。このようにして、任意の時点で公開可能なアイテムやページを制御することができます。</p>
+<p>例えば、サイト全体が常に最新の状態であることを確認するために定期的にサイト全体を公開するようにSitecoreを設定している場合、公開したくない項目に公開制限を設けることができます。これには、まだ作成中のアイテムや、特定のキャンペーンが展開されたときにのみ公開したい完成品などが含まれます。公開制限機能を使用すると、アイテムの公開時期を簡単に管理できるので、適切なアイテムのみが公開されます。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>将来の日付からパブリッシュ可能な公開制限のあるページのバージョンでコンテンツ テストを開始した場合、テストは公開制限を上書きします。ページのバージョンは、公開制限に関係なく、テストの開始時に公開され、テストは直ちに有効になります。</p>
 </div>
+<div class="section" id="id2">
+<h2>アイテムの単一バージョンの公開制限を設定する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アイテムのバージョンに対してパブリッシングの制限を設定するには、次の手順に従います。</p>
+<ol class="arabic simple">
+<li><p>コンテンツ エディタまたはエクスペリエンス エディタで、出版制限を設定する項目またはページに移動します。アイテムの関連する言語とバージョンを選択していることを確認します。</p></li>
+<li><p>[パブリッシング設定]ダイアログボックスを開くには</p>
+<ul class="simple">
+<li><p>[コンテンツエディタ]で、[パブリッシュ]タブの[制限]グループで、[変更]をクリックします。</p></li>
+</ul>
+</li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a1ea60a1.png"><img alt="アイテムの公開制限を設定する" class="align-center" src="_images/15ed64a1ea60a1.png" style="width: 400px;" /></a>
+<ul class="simple">
+<li><p>エクスペリエンス エディタの［ホーム］タブの［パブリッシュ］グループで［設定］をクリックします。</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/15ed64a1eaa15c.png"><img alt="アイテムの公開制限を設定する" class="align-center" src="_images/15ed64a1eaa15c.png" style="width: 400px;" /></a>
+<p>[パブリッシング設定] ダイアログ ボックスの [バージョン] タブには、現在の言語でのアイテムのバージョンが一覧表示されます。デフォルトでは、各バージョンは公開可能です。アイテムが公開できない場合は、ウェブサイト全体を公開しても、そのアイテムは公開されません。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1eaf527.png"><img alt="アイテムの公開制限を設定する" class="align-center" src="_images/15ed64a1eaf527.png" style="width: 400px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>ワークフロー内にアイテムがある場合、「出版設定」ダイアログボックスで「出版可能」チェックボックスを選択していても、ワークフローの最終状態になるまでは、アイテムは出版できません。</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>特定のアイテムのバージョンを公開可能にするには、[公開可能] チェックボックスをオンにします。アイテムのバージョンをパブリッシュできないようにするには、[パブリッシュ可能]チェックボックスをオフにします。</p></li>
+<li><p>アイテムのバージョンがパブリッシュ可能な期間を指定するには、[パブリッシュ可能]チェックボックスを選択し、[パブリッシュ元]フィールドと[パブリッシュ先]フィールドに日付と時間を入力します。
+開始日と終了日のみを指定するか、すべてのフィールドを空白のままにしておくこともできます。</p></li>
+<li><p>公開制限の設定が完了したら、[OK] をクリックします。コンテンツ エディタでは、アイテムのコンテンツ領域に警告が表示され、このアイテムに制限が設定されていることを、自分または他のコンテンツ エディタに通知します。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a1eb331f.png"><img alt="アイテムの公開制限を設定する" class="align-center" src="_images/15ed64a1eb331f.png" style="width: 400px;" /></a>
+<p>アイテムの公開制限を設定したら、ウェブサイトをプレビューして、すべてが正しく設定されていることを確認してください。ウェブサイトをプレビューすると、すべてのウェブページが今後の日付や異なる言語でどのように見えるかを確認することができます。</p>
+</div>
+<div class="section" id="id3">
+<h2>アイテムのすべてのバージョンの公開制限を設定する<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アイテムのすべてのバージョンとすべての言語に対してパブリッシング制限を設定するには</p>
+<ol class="arabic simple">
+<li><p>[コンテンツ エディタ] または [エクスペリエンス エディタ] で、出版制限を設定する項目またはページに移動します。</p></li>
+<li><p>パブリッシング設定］ダイアログボックスを開くには</p></li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p>コンテンツ エディタ]で、[パブリッシュ]タブの[制限]グループで、[変更]をクリックします。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1ea60a1.png"><img alt="アイテムの公開制限を設定する" class="align-center" src="_images/15ed64a1ea60a1.png" style="width: 400px;" /></a>
+</li>
+<li><p>エクスペリエンス エディタの［ホーム］タブの［パブリッシュ］グループで［設定］をクリックします。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1eb74a8.png"><img alt="アイテムの公開制限を設定する" class="align-center" src="_images/15ed64a1eb74a8.png" style="width: 400px;" /></a>
+</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>パブリッシング設定ダイアログボックスで、項目タブをクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a1ebbe91.png"><img alt="アイテムの公開制限を設定する" class="align-center" src="_images/15ed64a1ebbe91.png" style="width: 400px;" /></a>
+<ul class="simple">
+<li><p>すべてのアイテムのバージョンをパブリッシュ可能に指定するには、パブリッシュ可能チェックボックスをオンにします。</p></li>
+<li><p>すべてのアイテムのバージョンをパブリッシュできないように指定するには、[パブリッシュ可能] チェックボックスをオフにします。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>[パブリッシュ可能] チェックボックスをオフにすると、[バージョン] タブに表示されているすべてのアイテムのバージョンに影響します。つまり、アイテムをパブリッシュできないように指定した場合、そのアイテムのバージョンをパブリッシュ可能にすることはできません。公開すると、そのアイテムとそのすべてのバージョンがターゲット データベースから削除されます。</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>すべてのアイテムのバージョンが公開可能な期間を指定するには、[公開元] フィールドと [公開先] フィールドに日付と時刻を入力します。
+開始日、終了日のみを指定するか、すべてのフィールドを空白のままにしておくこともできます。</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>アイテムやアイテムのバージョンが公開可能な日付範囲を指定した場合、開始日にアイテムが公開され、終了日に再び削除されるという意味ではありません。代わりに、そのアイテムまたはウェブサイト全体を公開するときに、そのアイテムが公開可能であり、含まれていることを意味します。開始日にアイテムをウェブサイトに表示し、終了日に再び削除するには、両方の日にアイテムの公開ウィザードを実行する必要があります。</p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>アイテムのすべてのバージョンを特定のパブリッシュ ターゲットにのみ公開するように制限するには、[ターゲット] タブで、関連するパブリッシュ ターゲットを選択します。これは、すべての言語のアイテムのすべてのバージョンに適用されます。
+アイテムのパブリッシング ターゲットを 1 つ以上選択すると、パブリッシュ時に、選択していないパブリッシング ターゲットからアイテムが削除されます。
+アイテムのパブリッシング ターゲットを指定しない場合、アイテムは、パブリッシュウィザードで選択した任意のパブリッシング ターゲットにパブリッシュできます。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a1ec010f.png"><img alt="アイテムの公開制限を設定する" class="align-center" src="_images/15ed64a1ec010f.png" style="width: 400px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>出版ターゲットのリストには、通常の出版ターゲットとプレビュー出版ターゲットの両方が含まれています。</p>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>公開制限の設定が完了したら、[OK] をクリックします。</p></li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p>コンテンツ エディタで、アイテムのコンテンツ タブに警告が表示され、このアイテムに制限が設定されていることを通知します。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1eb331f.png"><img alt="アイテムの公開制限を設定する" class="align-center" src="_images/15ed64a1eb331f.png" style="width: 400px;" /></a>
+</li>
+<li><p>エクスペリエンス エディタでは、エクスペリエンス タブの日付グループで指定した日付に、より新しい公開可能なバージョンがある場合に通知が表示されます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1ec46bb.png"><img alt="アイテムの公開制限を設定する" class="align-center" src="_images/15ed64a1ec46bb.png" style="width: 400px;" /></a>
+</li>
+</ul>
+</div></blockquote>
+<p>アイテムの公開制限を設定したら、ウェブサイトをプレビューして、すべてが正しく設定されていることを確認してください。ウェブサイトをプレビューすると、各ウェブページが特定の日付や異なる言語でどのように表示されるかを確認することができます。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/set-up-publishing-restrictions-for-an-item.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/set-up-publishing-restrictions-for-an-item.html</a></p>
+</div>
 </div>
 </div>
 

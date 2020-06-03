@@ -102,7 +102,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="explore-mode.html">エクスプローラ モード</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">エクスプローラーモード - 訪問サンプル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create-an-explore-mode-preset.html">エクスプローラーモードのプリセットを作成する</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the-explore-mode-settings.html">エクスペリエンスモードの設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="the-explore-mode-settings.html">エクスプローラー モードの設定</a></li>
 <li class="toctree-l3"><a class="reference internal" href="the-explore-mode-viewer-panel.html">エクスプローラモードのビューアパネル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resolve-google-maps-error-in-experience-explorer.html">エクスペリエンス エクスプローラで Google マップのエラーを解決する</a></li>
 </ul>
@@ -183,13 +183,122 @@
             
   <div class="section" id="id1">
 <h1>エクスプローラーモード - 訪問サンプル<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>エクスプローラー モードを使用して、実際の訪問者の視点からウェブサイトを訪問したときの体験をシミュレートします。プリセットを選択すると、対応するプリセットで指定された重要なビジネスターゲットグループの1つに合わせて、訪問中にウェブサイトのルック＆フィールが調整されます。訪問をシミュレートするには、2つの方法があります。</p>
+<ul class="simple">
+<li><p>固定訪問では、訪問者がウェブサイトをナビゲートすると、すべてのプロファイル値が自動的に選択されたプリセットで指定された値にリセットされます。固定訪問では、ウェブサイトの各ページは、訪問者が最初のページとしてそのページに直接アクセスしたか、プロフィールを固定したままにしているかのように表示されます。
+つまり、訪問中にトリガーされた目標、キャンペーン、またはプロフィールの値は自動的にリセットされ、訪問中の値として蓄積されないということです。</p></li>
+<li><p>ジャーニー訪問では、訪問者がウェブサイトをナビゲートすると、すべての値が蓄積され、これらの値が訪問者に追従するため、訪問が実際の旅をシミュレートします。
+つまり、訪問中にトリガーされた目標、キャンペーン、またはプロファイルの値は、訪問者に自動的に関連付けられ、訪問中に蓄積されます。</p></li>
+</ul>
+<div class="section" id="id2">
+<h2>プリセット<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>プリセットとは、目標、キャンペーン、プロフィールの値、または条件付きレンダリングなどの値が関連付けられたペルソナのことです。SBOSチームは、あなたのウェブサイトで使用するための適切なプリセットを開発するお手伝いをします。</p>
+<p>この例では、プリセットを使用しています。</p>
+<ul class="simple">
+<li><p>セシール - ファーストクラスを利用し、高水準のビジネス宿泊施設を期待する会社のCEO。</p></li>
+</ul>
+<p>このシナリオでは、セシルがジェットストリームのウェブサイトの様々なページを訪れたときの体験をシミュレートしています。彼女がウェブサイトをナビゲートしながら、目標を達成したり、行動を変えたり、サイトの異なるページを訪れたりすることで、ウェブサイトが彼女の動きに合わせて変化していく様子を見ることができます。</p>
+<p>このシナリオでは、固定訪問とジャーニー訪問の違いについても説明しています。</p>
+<div class="section" id="id3">
+<h3>プリセットの選択<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ウェブサイトへの訪問をシミュレートする前に、適切なプリセットを選択する必要があります。</p>
+<p>エクスプローラーモードのプリセットを選択するには、以下の手順に従います。</p>
+<ol class="arabic simple">
+<li><p>エクスペリエンスエディタで、モードグループのExploreをクリックします。</p></li>
+<li><p>[設定]パネルで[エクスペリエンス]セクションを展開し、関連するプリセット（例：Cecile）を選択します。</p></li>
+<li><p>パネルの上部で、該当する探索モード（固定またはジャーニー）を選択します。</p></li>
+<li><p>適用をクリックします。</p></li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h3>ホームページ<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ジェットストリームのウェブサイトでは、デフォルトのホームページにヴェネツィアの情報が表示されています。</p>
+<a class="reference internal image-reference" href="_images/15eafd358578e5.png"><img alt="ホームページ" class="align-center" src="_images/15eafd358578e5.png" style="width: 400px;" /></a>
+<p>ビューア パネルの [ページ構成] セクションで、ヒーロー カルーセル スポットでは、パーソナライズ ルールが発動されていないことがわかります。</p>
+<img alt="ホームページ" class="align-center" src="_images/15eafd3585eed8.png" />
+<p>セシールがウェブサイトを訪問した場合、ホームページにはパリの情報が表示されますが、これは主にセシールのパーソナライゼーションルールで指定されているためです。</p>
+<a class="reference internal image-reference" href="_images/15eafd3586530d.png"><img alt="ホームページ" class="align-center" src="_images/15eafd3586530d.png" style="width: 400px;" /></a>
+<p>ビューアパネルのページ設定セクションで、固定とジャーニーの両方の訪問の場合、ヒーローカルーセルスポットでは、「Mostly Cecile」パーソナライゼーションルールが適用され、太字で緑色のアイコンが表示されていることがわかります。これは、セシールのプリセット値がこのパーソナライゼーションルール（Mostly Cecile）に指定された値と密接に一致しているためです。</p>
+<img alt="ホームページ" class="align-center" src="_images/15eafd3586c2ec.png" />
+</div>
+<div class="section" id="id5">
+<h3>目的地ページ<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>セシルは可能性のある目的地に興味を持ち、目的地のページに移動します。</p>
+<a class="reference internal image-reference" href="_images/15eafd35872730.png"><img alt="目的地ページ" class="align-center" src="_images/15eafd35872730.png" style="width: 400px;" /></a>
+<p>彼女はカリブ海の目的地をクリックします。</p>
+<p>カリブ海は家族連れに人気のある休暇先であるため、イアンのプリセットのより家族向けのプロフィールにマッチしています。イアンは、オールインクルーシブで、家族で楽しめるアクティビティが充実していて、信頼できる託児施設がある休暇先を探している家族派の男性です。</p>
+<a class="reference internal image-reference" href="_images/15eafd35879996.png"><img alt="目的地ページ" class="align-center" src="_images/15eafd35879996.png" style="width: 400px;" /></a>
+<p>固定訪問では、セシルがカリブのページを訪問すると、セシルのイアンペルソナのプロフィールキーに20ポイントが加算されます。これは、イアンのペルソナが最も支配的になっているためです。</p>
+<img alt="目的地ページ" class="align-center" src="_images/15eafd3588029a.png" />
+<p>この値は、彼女がこのページを閲覧したときにのみ表示されます - 彼女がページを離れると、セシルのプリセットの値は0にリセットされます。</p>
+<p>ジャーニー訪問では、セシルがカリブ海のページを訪問すると、イアンのペルソナプロフィールキーに合わせてパーソナライズされ、値のポイントが保持されます。</p>
+</div>
+<div class="section" id="id6">
+<h3>ホームページに戻る<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>セシールはホームページに戻ります。</p>
+<p>固定訪問では、すべての値が自動的にリセットされ、要求された各ページで選択されたプリセットと一致するため、固定訪問では、彼女はまだパリについてのフロントページを見ています。イアンのプロフィールに追加された20ポイントのプロフィール値はゼロにリセットされ、代わりにセシールのプリセットで指定されたプロフィール値が追加されます。</p>
+<a class="reference internal image-reference" href="_images/15eafd35886ae8.png"><img alt="ホームページに戻る" class="align-center" src="_images/15eafd35886ae8.png" style="width: 400px;" /></a>
+<img alt="ホームページに戻る" class="align-center" src="_images/15eafd3588d33e.png" />
+<a class="reference internal image-reference" href="_images/15eafd35894180.png"><img alt="ホームページに戻る" class="align-center" src="_images/15eafd35894180.png" style="width: 400px;" /></a>
+<p>ジャーニーの訪問では、セシルが家族旅行先を選択したため、ホームページがイアンのプロフィール用にパーソナライズされるようになりました。</p>
+<p>セシールのプロフィールが10ポイントしかないのに対し、イアンのプロフィールは20ポイントを獲得しており、今回の訪問ではイアンのプロフィールが最も優位に立っています。このため、ホームページには、一般的な出張先ではなく、家族旅行の目的地に関する情報が表示されます。</p>
+<a class="reference internal image-reference" href="_images/15eafd3589a630.png"><img alt="ホームページに戻る" class="align-center" src="_images/15eafd3589a630.png" style="width: 400px;" /></a>
+<img alt="ホームページに戻る" class="align-center" src="_images/15eafd358a1672.png" />
+<img alt="ホームページに戻る" class="align-center" src="_images/15eafd358a7b58.png" />
+<p>ヒーローカルーセルでは、適用されるパーソナライゼーションルールとしてMostly IanがMostly Cecileに置き換わっています。</p>
+<div class="section" id="id7">
+<h4>プロファイルの変更<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>値やプロファイル特性を変更したい場合は、[設定] パネルで直接変更を行うことができます。適用] をクリックすると、現在の訪問の値が更新されます。</p>
+<p>たとえば、イアンプロファイルキーの値をゼロまたは50に変更することができます。また、目標やイベントを選択して、目標やイベントがトリガーされた後のサイトの挙動を確認することもできます。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>[適用] をクリックしても、実際にはプリセットに定義された値に変更は保存されません。恒久的な変更は、コンテンツ エディタでのみ可能です。
+設定パネルで［リセット］をクリックすると、Exploreモードで使用されるプロファイル値やその他のxMarketingの値をプリセットの初期設定に戻すことができます。</p>
 </div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>ニュースレターのサインアップページ<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>セシルはジェットストリームのニュースレターに登録することにしました。彼女がフォームを送信すると、ジェットストリームニュースレターのサインアップフォームのゴールがトリガーされ、彼女の訪問に5つのエンゲージメントバリューポイントが追加されます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1de7f58.png"><img alt="ニュースレターのサインアップページ" class="align-center" src="_images/15ed64a1de7f58.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/15ed64a1dec595.png"><img alt="ニュースレターのサインアップページ" class="align-center" src="_images/15ed64a1dec595.png" style="width: 400px;" /></a>
+<p>固定訪問では、送信フォームボタンに適用されるゴールはトリガーされません。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1df0731.png"><img alt="ニュースレターのサインアップページ" class="align-center" src="_images/15ed64a1df0731.png" style="width: 400px;" /></a>
+<p>ジャーニー訪問では、オンサイト行動のセクションで、目標が登録され、セシルが5つのエンゲージメントバリューポイントを獲得していることがわかります。セシールのプリセットには、彼女がすでに達成しているいくつかの目標が設定されており、さらに70のエンゲージメント価値ポイントが付与されています。彼女がメルマガに登録した後は、合計75のエンゲージメントバリューポイントを獲得しています。</p>
+<img alt="ニュースレターのサインアップページ" class="align-center" src="_images/15ed64a1e009d1.png" />
+</div>
+<div class="section" id="id9">
+<h2>検索<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>セシールは、コペンハーゲンからカリブ海のプンタカナへのフライトを検索することにしました。</p>
+<p>固定訪問では、セシールが検索結果ページにいるとき、他のトリガーされたゴールは表示されません。セシールの検索では結果は出ませんが、彼女の検索ではフライト検索のゴールがトリガーされます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1e04d00.png"><img alt="検索" class="align-center" src="_images/15ed64a1e04d00.png" style="width: 400px;" /></a>
+<img alt="検索" class="align-center" src="_images/15ed64a1e093ef.png" />
+<p>ジャーニーの訪問では、フライトサーチのゴールは、彼女のプロフィールにさらに10のエンゲージメントバリューポイントを追加します。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1e0df8d.png"><img alt="検索" class="align-center" src="_images/15ed64a1e0df8d.png" style="width: 400px;" /></a>
+<img alt="検索" class="align-center" src="_images/15ed64a1e1276a.png" />
+<p>結果は見つかりませんでしたので、セシルは別のフライトを探すことにしました。この検索を行うと、さらに10のエンゲージメントポイントが加算されます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1e16fac.png"><img alt="検索" class="align-center" src="_images/15ed64a1e16fac.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id10">
+<h2>航空券の選択ページ<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>今回、彼女の検索では、いくつかのフライトが出てきます。彼女は適切なフライトを選択して予約します。このページでは、彼女は再びフライト検索のゴールを起動しました。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1e1b9b8.png"><img alt="航空券の選択ページ" class="align-center" src="_images/15ed64a1e1b9b8.png" style="width: 400px;" /></a>
+<p>固定訪問では、他のトリガーとなるゴールは表示されません。</p>
+<p>ジャーニー訪問では、フライトを予約することで70点のエンゲージメントバリューポイントが追加され、セシルのプロフィールは合計165点となります。</p>
+</div>
+<div class="section" id="id11">
+<h2>サンキューページ<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<a class="reference internal image-reference" href="_images/15ed64a1e1fdcb.png"><img alt="サンキューページ" class="align-center" src="_images/15ed64a1e1fdcb.png" style="width: 400px;" /></a>
+<p>サンキューページでは、セシールは予約ゴールをトリガーにしました。</p>
+<p>固定訪問では、現在のページでトリガーされたゴールのみが表示されるため、予約ゴールが表示され、フライト検索ゴールは表示されなくなります。</p>
+<img alt="サンキューページ" class="align-center" src="_images/15ed64a1e23ffd.png" />
+<p>しかし、旅の訪問では、彼女の旅のビューアパネルには、この訪問中にセシルも3つの追加目標を達成していることが表示されています。</p>
+<img alt="サンキューページ" class="align-center" src="_images/15ed64a1e28372.png" />
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/explore-mode---a-sample-visit.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/explore-mode---a-sample-visit.html</a></p>
+</div>
 </div>
 </div>
 

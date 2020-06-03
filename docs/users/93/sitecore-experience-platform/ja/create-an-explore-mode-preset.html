@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
-    <link rel="next" title="エクスペリエンスモードの設定" href="the-explore-mode-settings.html" />
+    <link rel="next" title="エクスプローラー モードの設定" href="the-explore-mode-settings.html" />
     <link rel="prev" title="エクスプローラーモード - 訪問サンプル" href="explore-mode---a-sample-visit.html" />
  
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -102,7 +102,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="explore-mode.html">エクスプローラ モード</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="explore-mode---a-sample-visit.html">エクスプローラーモード - 訪問サンプル</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">エクスプローラーモードのプリセットを作成する</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the-explore-mode-settings.html">エクスペリエンスモードの設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="the-explore-mode-settings.html">エクスプローラー モードの設定</a></li>
 <li class="toctree-l3"><a class="reference internal" href="the-explore-mode-viewer-panel.html">エクスプローラモードのビューアパネル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="resolve-google-maps-error-in-experience-explorer.html">エクスペリエンス エクスプローラで Google マップのエラーを解決する</a></li>
 </ul>
@@ -183,13 +183,91 @@
             
   <div class="section" id="id1">
 <h1>エクスプローラーモードのプリセットを作成する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Exploreモードで最初にウェブサイトを開いたときには、Anonymousという名前のプリセットが1つあります。プリセットを作成することは、通常、エクスペリエンスマーケティングの全体的なプロファイリング戦略の一環として行われます。Exploreモードでウェブサイトの分析を始める前に、独自のプリセットセットを作成する必要があります。</p>
+<div class="section" id="id2">
+<h2>プリセットの作成<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>独自のプリセットセットを作成するには</p>
+<ol class="arabic simple">
+<li><p>コンテンツエディタのコンテンツツリーで、/sitecore/system/Marketing Control Panel/Experience Explorer/Presetsノードに移動します。
+デフォルトのプリセットは、Anonymous（匿名）という名前のものが1つだけ表示されます。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a1e2ca1c.png"><img alt="プリセットの作成" class="align-center" src="_images/15ed64a1e2ca1c.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>リボンの[ホーム]タブで[テンプレートから挿入]をクリックし、/sitecore/templates/System/Experience Explorer/Preset Personaに移動し、プリセットの名前を「Cecile」とします。</p></li>
+</ol>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>2種類のアイテムを作成することができます。プリセット - ペルソナ」と「プリセット」です。プリセット - ペルソナの項目には、プリセットの項目よりも、プリセットを説明するために使用できるフィールドが多く含まれています。</p>
 </div>
+<a class="reference internal image-reference" href="_images/15ed64a1e312e0.png"><img alt="プリセットの作成" class="align-center" src="_images/15ed64a1e312e0.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>名前とその他の関連する詳細を入力します。
+プリセットの正確な描写を作成するために十分な情報を入力する必要があります。含めるべき最も重要なフィールドは以下の通りです。</p></li>
+</ol>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>フィールド名</p></td>
+<td><p>概要</p></td>
+</tr>
+<tr class="row-even"><td><p>名前</p></td>
+<td><p>プリセットの名前。例えば、セシル。</p></td>
+</tr>
+<tr class="row-odd"><td><p>詳細</p></td>
+<td><p>ビジネス訪問者のタイプ。例えば、エグゼクティブ。</p></td>
+</tr>
+<tr class="row-even"><td><p>画像</p></td>
+<td><p>プリセットを表現するのに適した画像を添付してください。</p></td>
+</tr>
+<tr class="row-odd"><td><p>概要</p></td>
+<td><p>このプリセットが表すビジネス訪問者のタイプを詳細に説明してください。
+例えば、セシールはファーストクラスの旅行と高水準のビジネス宿泊施設を探している会社のCEOです。</p></td>
+</tr>
+</tbody>
+</table>
+<p>他のフィールドは今のところ空欄で構いません。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1e35ad2.png"><img alt="プリセットの作成" class="align-center" src="_images/15ed64a1e35ad2.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>プロファイリング戦略の一環として用意した他のプリセットを作成します。</p></li>
+<li><p>変更内容を保存します。</p></li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>プリセットの設定<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>プリセットを作成した後、それを特定のエクスペリエンスマーケティング機能に関連付けることができます。</p>
+<p>プリセットを設定するには</p>
+<ol class="arabic simple">
+<li><p>コンテンツエディタで、/sitecore/system/Marketing Control Panel/Experience Explorer/Presets ノードに移動し、設定したいプリセットを選択します。</p></li>
+<li><p>詳細グループでは、このプリセットに関連付けられたプロファイル、目標、キャンペーンを見ることができます。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a1e39bd3.png"><img alt="プリセットの設定" class="align-center" src="_images/15ed64a1e39bd3.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>プロファイル、ゴール、または属性をクリックして、これらの値を編集します。
+例えば、[プロフィール]をクリックしてから[編集]をクリックすると、セシルのプリセットに割り当てられたプロフィールカードの値を表示または編集することができます。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a1e3df4b.png"><img alt="プリセットの設定" class="align-center" src="_images/15ed64a1e3df4b.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>[カスタマイズ] をクリックして、これらの値を変更します。</p></li>
+<li><p>[OK] をクリックして変更を保存します。</p></li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2>エクスプローラー モードでプリセットを表示<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>エクスプローラー モードでサイトにプリセットを適用すると、プリセットのプロファイルと一致するプロファイルを持つ訪問者に自分のウェブサイトがどのように見えるかを確認することができます。</p>
+<ol class="arabic simple">
+<li><p>エクスプローラモードでウェブサイトを開くには、エクスペリエンス エディタのリボンで、エクスプローラをクリックします。</p></li>
+<li><p>[設定] パネルで [エクスペリエンス] セクションをクリックします。
+利用可能なプリセットがプリセットカルーセルに表示されます。</p></li>
+<li><p>プリセットを選択し、[適用] をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a1e420df.png"><img alt="プリセットの設定" class="align-center" src="_images/15ed64a1e420df.png" style="width: 400px;" /></a>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/create-an-explore-mode-preset.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/create-an-explore-mode-preset.html</a></p>
+</div>
 </div>
 </div>
 
@@ -201,7 +279,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="the-explore-mode-settings.html" class="btn btn-neutral float-right" title="エクスペリエンスモードの設定" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="the-explore-mode-settings.html" class="btn btn-neutral float-right" title="エクスプローラー モードの設定" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="explore-mode---a-sample-visit.html" class="btn btn-neutral float-left" title="エクスプローラーモード - 訪問サンプル" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
