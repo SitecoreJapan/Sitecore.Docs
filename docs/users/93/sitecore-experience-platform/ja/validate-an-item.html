@@ -184,13 +184,58 @@
             
   <div class="section" id="id1">
 <h1>アイテムを検証する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>アイテムを発行する前に、アイテムのチェックをいくつか実行して、発行できるようにしておきましょう。</p>
+<div class="section" id="id2">
+<h2>ウェブページのマークアップをチェック<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>すべての HTML フィールドを W3C HTML Validator に送ることで、ウェブページのマークアップをチェックすることができます。</p>
+<p>すべての HTML フィールドを W3C HTML Validator に送信するには、以下の手順に従います。</p>
+<ol class="arabic simple">
+<li><p>コンテンツエディタまたはエクスペリエンスエディタで、該当する項目またはページに移動します。</p></li>
+<li><p>ウェブページのマークアップをチェックするには。</p>
+<ul class="simple">
+<li><p>コンテンツ エディタの [レビュー] タブの [プルーフィング] グループで [マークアップ] をクリックします。</p></li>
+<li><p>エクスペリエンス エディタの [ホーム] タブの [検証] グループで [マークアップ] をクリックします。</p></li>
+</ul>
+</li>
+</ol>
+<p>チェックの結果がウェブページ上に表示され、詳細な注意事項や潜在的な問題が表示されます。</p>
 </div>
+<div class="section" id="id3">
+<h2>アイテムを検証する<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Sitecoreのフィールドバリデータは、アイテム、特定のフィールドタイプ、またはアイテムの特定のフィールドに適用することができるユーザー入力バリデータのセットです。</p>
+<p>コンテンツエディタは、フィールドを自動的にバリデーションします。検証エラーや警告が含まれるフィールドがある場合、該当するフィールドの左側に赤いバーが表示され、バリデータバーのアイコンはエラーの種類に応じて赤または黄色に変わります。エラーの詳細を見るには、バリデータバーの個々のアイコンの上にマウスを移動してください。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1e515ac.png"><img alt="アイテムを検証する" class="align-center" src="_images/15ed64a1e515ac.png" style="width: 400px;" /></a>
+<p>Experience Editorでは、Saveをクリックするたびにページのバリデーションチェックを実行するようにSitecoreを設定することができます。</p>
+<ul class="simple">
+<li><p>エクスペリエンス エディタ リボンの [表示] タブの [有効化] グループで [フィールドの検証] をクリックします。</p></li>
+</ul>
+<p>このようにして、ページに変更を加えて保存をクリックすると、ページ上のすべてのフィールドに対してバリデーションチェックが実行されます。検証の警告やエラーを含むフィールドがある場合は、警告やエラーの種類に応じて色分けされた点線でフィールドが強調表示され、詳細を示す通知が表示されます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1e558f1.png"><img alt="アイテムを検証する" class="align-center" src="_images/15ed64a1e558f1.png" style="width: 400px;" /></a>
+<p>コンテンツ エディタとエクスペリエンス エディタでは、検証テストを手動で実行し、検証結果ダイアログ ボックスに検証テストの詳細を表示できます。</p>
+<p>アイテムで検証テストを手動で実行するには</p>
+<ol class="arabic simple">
+<li><p>コンテンツ エディタまたはエクスペリエンス エディタで、該当する項目またはページに移動します。</p></li>
+<li><p>アイテムまたはページで検証テストを実行するには</p>
+<ul class="simple">
+<li><p>[コンテンツ エディタ] の [レビュー] タブの [検証] グループで、[検証] をクリックします。</p></li>
+<li><p>エクスペリエンス エディタの [ホーム] タブの [検証] グループで [検証] をクリックします。</p></li>
+</ul>
+</li>
+</ol>
+<p>[検証結果] ダイアログ ボックスには、検証結果の概要と変更の提案が表示されます。可能な値は次のとおりです。</p>
+<ul class="simple">
+<li><p>有効 (緑) - アクションは必要ありません。</p></li>
+<li><p>提案 (黄色) - 問題を調べて、アクションが必要かどうかを判断します。</p></li>
+<li><p>警告(オレンジ) - 問題に対処します。</p></li>
+<li><p>エラー (赤) - これはエラーです。</p></li>
+<li><p>クリティカルエラー (赤) - 変更を保存する前に警告が表示されます。</p></li>
+<li><p>致命的なエラー (赤) - エラーが修正される前にアイテムを保存することはできません。</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/15ed64a1e5aa39.png"><img alt="アイテムを検証する" class="align-center" src="_images/15ed64a1e5aa39.png" style="width: 400px;" /></a>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/preview-a-webpage.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/preview-a-webpage.html</a></p>
+</div>
 </div>
 </div>
 
