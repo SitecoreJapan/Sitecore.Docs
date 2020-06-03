@@ -181,13 +181,117 @@
             
   <div class="section" id="id1">
 <h1>検索クエリを構築する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Sitecoreのウェブサイトには何千ものアイテムが含まれている可能性があるため、正確な検索を行い、検索結果を最も関連性の高いアイテムに限定する方法を知っておくことが重要です。</p>
+<p>Sitecoreでは、シンプルな検索を実行することも、複雑な検索クエリを作成することもできます。1つの検索クエリを使って検索することも、複数のクエリを組み合わせて検索結果を限定することもできます。検索フィルタやキーワードは、必要なだけ入力することができます。</p>
+<p>このトピックでは、その方法の概要を説明します。</p>
+<div class="section" id="or">
+<h2>デフォルトの 'or' ロジックで検索<a class="headerlink" href="#or" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>複数の検索フィルタまたはキーワードを入力した場合、検索はデフォルトで「または」ロジックを使用します。つまり、他のフィルタやキーワードのうち、1つ以上のフィルタやキーワードに基づいた項目を検索結果として返すということです。</p>
+<p>例えば、検索クエリでバージョン2のフィルタと日本語のフィルタを適用した場合、検索結果はバージョン2のアイテムか日本語のアイテム（またはその両方）を返します。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1f27b22.png"><img alt="検索クエリを構築する" class="align-center" src="_images/15ed64a1f27b22.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id2">
+<h2>定義済みの検索オプションで検索<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Sitecoreでの日々の作業を楽にするために、検索機能では、最近の検索アクティビティや、最近作成または修正したアイテムの情報を収集します。これらの事前定義された検索オプションを使用すれば、コンテンツツリーでどの項目が選択されているかに関わらず、コンテンツエディタで定期的に作業している項目に素早くたどり着くことができます。</p>
+<p>定義済みの検索オプションには、次のようなものがあります。</p>
+<ul class="simple">
+<li><p>最近の検索</p></li>
+<li><p>最近変更された項目</p></li>
+<li><p>最近作成したもの</p></li>
+<li><p>最近開いたタブ</p></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>Sitecore管理者は、ドロップダウンメニューで利用可能なデフォルトのオプションをカスタマイズすることができます。</p>
 </div>
+<p>定義済みの検索オプションから項目を開くには</p>
+<ol class="arabic">
+<li><p>検索フィールドの左側にあるドロップダウン矢印をクリックします。</p></li>
+<li><p>検索オプションの1つを展開すると、その特定の検索オプションにリストされている項目の詳細なリストが表示されます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a1f2b96c.png"><img alt="検索クエリを構築する" class="align-center" src="_images/15ed64a1f2b96c.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>項目へのリンクをクリックすると、編集ペインで新しいタブで開きます。</p>
+<p>「最近の検索」で検索クエリをクリックすると、検索フィールドにクエリが挿入され、検索アイコンをクリックして検索を実行することができます。My Recent Searchesからは、複数の検索クエリを入力することができます。</p>
+</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>事前に定義された検索フィルタで検索<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>検索結果を制限するには、検索フィールドに 1 つ以上の定義済みの検索フィルタを挿入することができます。</p>
+<p>検索フィルタを使用するには</p>
+<ol class="arabic">
+<li><p>検索フィールドの左側にあるドロップダウン矢印をクリックします。</p></li>
+<li><p>[検索フィルタ] オプションを展開し、必要なフィルタを選択します。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a1f2fe97.png"><img alt="事前に定義された検索フィルタで検索" class="align-center" src="_images/15ed64a1f2fe97.png" style="width: 400px;" /></a>
+</div></blockquote>
+<p>フィルタは検索フィールドにコロンの後に挿入されます。</p>
+</li>
+<li><p>コロンの後に、フィルタの検索キーワードを入力します。Sitecoreは、テキストを自動で提案するか、日付を入力するように促します。Sitecoreが提案を行う前に、1～3文字を入力する必要があります。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a1f33f9a.png"><img alt="事前に定義された検索フィルタで検索" class="align-center" src="_images/15ed64a1f33f9a.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>ENTERを押すか、Searchをクリックします。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>さまざまな検索の構文に慣れてきたら、検索フィールドに検索フィルタを直接入力することができます。Sitecoreは、テキストを自動提案したり、日付の入力を促したりします。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>ワイルドカードと置換で検索<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Sitecoreでの検索を支援するために、ワイルドカードと置換を使用することができます。Sitecoreは以下の記号をサポートしており、必要に応じて基本的な検索や事前に定義された検索フィルタ内で使用することができます。</p>
+<ul>
+<li><p>引用符、例えば &quot;text&quot; - 正確な単語やフレーズを検索します。</p></li>
+<li><p>*記号 - 単語のすべての形を検索します。記号は、単語の中、単語の先頭または末尾、またはこれらの組み合わせで使用できます。例えば、以下のようになります。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>econom*を検索すると、&quot;economics&quot;、&quot;economics&quot;、&quot;economic &quot;などが検索されます。</p></li>
+<li><p>graph*を検索すると、&quot;paragraph&quot;、&quot;paragraphing&quot;、&quot;graphic &quot;などが出てきます。</p></li>
+<li><p>単独で*を使用すると、選択した項目内のすべての項目が表示されます。</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>?記号 - 単語の中、または単語の最初や最後にある1文字を置き換えます。例えば、以下のようになります。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>t?re」と検索すると、「tire」「tare」「tore」などが出てきます。</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>範囲内での検索<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>範囲内で検索する必要がある場合、Sitecoreは数値範囲検索とテキスト範囲検索の両方をサポートしています。</p>
+<p>例えば、以下のようになります。</p>
+<ul class="simple">
+<li><p>price：[400 TO 500]</p></li>
+<li><p>title：[algeria TO bahrain]</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>開発者は、あらかじめ定義された範囲でスライドコントロールを追加することができるので、受け入れられた範囲内で見やすく、検索しやすくなります。</p>
+</div>
+</div>
+<div class="section" id="and-not">
+<h2>検索クエリで 'and' と 'not' を組み合わせる<a class="headerlink" href="#and-not" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>特定の単語を含む必要がある、または除外する必要があるなど、複雑な検索を実行するには、クエリ内の検索フィルタを組み合わせるために、「and」、「or」、および「not」を使用する必要があります。</p>
+<p>検索フィールドにフィルタを入力すると、検索フィルタのアイコンをクリックして、「 <img alt="icon1" src="_images/15ed64a1f3c6c5.png" /> を含まなければならない」と「 <img alt="icon2" src="_images/15ed64a1f40266.png" /> を含まい」を切り替えることができます。</p>
+<ul class="simple">
+<li><p><img alt="icon1" src="_images/15ed64a1f3c6c5.png" /> を選択した場合は、検索結果に検索フィルタの値が含まれている必要があります。</p></li>
+<li><p><img alt="icon2" src="_images/15ed64a1f40266.png" /> を選択した場合、検索結果にフィルタの値が含まれていない項目が返されます。</p></li>
+<li><p>クエリに、<img alt="icon1" src="_images/15ed64a1f3c6c5.png" /> または <img alt="icon2" src="_images/15ed64a1f40266.png" /> のいずれかでマークされた検索フィルタと、マークされていない検索フィルタの両方が含まれている場合は、マークされていない検索フィルタの方が、検索結果の先頭に表示されるアイテムを決定します。</p></li>
+</ul>
+<p>例えば、以下のスクリーンショットでは、検索結果の内容に「new」というテキストが含まれていなければならず、検索結果は英語で表示できず、sitecore\adminユーザーが書いた項目が検索結果の一番上に表示されます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1f50cbc.png"><img alt="組み合わせる" class="align-center" src="_images/15ed64a1f50cbc.png" style="width: 400px;" /></a>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/build-a-search-query.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/build-a-search-query.html</a></p>
+</div>
 </div>
 </div>
 

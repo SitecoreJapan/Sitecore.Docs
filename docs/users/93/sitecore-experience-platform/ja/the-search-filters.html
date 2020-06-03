@@ -188,10 +188,65 @@
             
   <div class="section" id="id1">
 <h1>検索フィルター<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳中</p>
-</div>
+<p>Sitecoreで検索クエリを構築すると、Searchフィールドのドロップダウンメニューから以下の検索フィルタを選択することができます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1f5ea60.png"><img alt="検索フィルター" class="align-center" src="_images/15ed64a1f5ea60.png" style="width: 400px;" /></a>
+<p>フィルタを選択すると、そのフィルタが検索フィールドに挿入され、検索結果はそれに応じてフィルタリングされます。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 91%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>検索フィルタ</p></td>
+<td><p>概要</p></td>
+</tr>
+<tr class="row-even"><td><p>編集者で検索</p></td>
+<td><p>特定の作者が作成したアイテムを検索します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>ログ検索 (1 is on)</p></td>
+<td><p>単一の検索クエリのロギングをオンにします（1がオン、0がオフ）。</p></td>
+</tr>
+<tr class="row-even"><td><p>拡張子でフィルタリング</p></td>
+<td><p>特定の拡張子を持つアイテムを検索します。これは、メディアライブラリ内のファイルを検索する際に便利です。</p></td>
+</tr>
+<tr class="row-odd"><td><p>言語で検索</p></td>
+<td><p>特定の言語での選択</p></td>
+</tr>
+<tr class="row-even"><td><p>サイトで検索</p></td>
+<td><p>特定のサイトのアイテムを検索します。これは、同じSitecoreインストール上に複数のサイトがある場合に便利です。</p></td>
+</tr>
+<tr class="row-odd"><td><p>作成日で検索</p></td>
+<td><p>特定の日付以降に作成されたアイテムを検索します。</p></td>
+</tr>
+<tr class="row-even"><td><p>テンプレートで検索</p></td>
+<td><p>特定のテンプレートに基づいて項目を検索します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>バージョンで探す</p></td>
+<td><p>特定のバージョン番号のアイテムを検索します。</p></td>
+</tr>
+<tr class="row-even"><td><p>フィールドの値で検索</p></td>
+<td><p>特定のフィールドで特定の値を持つアイテムを検索します。例えば、「タイトル」フィールドに「デザイン」という単語を持つすべてのアイテムを検索するには、「custom:title|design」と入力します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>最新の結果を表示する</p></td>
+<td><p>特定の日付またはそれ以前に作成されたアイテムを検索します。</p></td>
+</tr>
+<tr class="row-even"><td><p>IDで検索 (最大1件)</p></td>
+<td><p>特定のアイテムIDでアイテムを検索します。ID全体を入力する必要があります。</p></td>
+</tr>
+<tr class="row-odd"><td><p>検索開始点(ID)の設定</p></td>
+<td><p>特定の場所からアイテムを検索します。検索を開始する場所に特定のコンテンツアイテムIDを入力します。</p></td>
+</tr>
+<tr class="row-even"><td><p>フィールド別に並べ替え</p></td>
+<td><p>コロンの後に指定されたフィールドのテキストに基づいて項目を並べ替えます。選択されたフィールドは、トークン化されていない (アナライザを持たない) か、または KeywordTokenizer のような単一のタームのみを生成するアナライザを使用している必要があります。</p></td>
+</tr>
+<tr class="row-odd"><td><p>タグで検索</p></td>
+<td><p>特定のタグが付いている項目を検索します。</p></td>
+</tr>
+<tr class="row-even"><td><p>テキストで検索</p></td>
+<td><p>特定のがを含む単語を探します。</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-search-filters.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-search-filters.html</a></p>
