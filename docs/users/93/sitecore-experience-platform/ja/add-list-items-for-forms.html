@@ -109,7 +109,7 @@
 <li class="toctree-l4"><a class="reference internal" href="working-with-submit-actions.html">サブミットアクションでの作業</a></li>
 <li class="toctree-l4"><a class="reference internal" href="use-prefilled-form-fields.html">プレフィルドフォームフィールドを使用する</a></li>
 <li class="toctree-l4"><a class="reference internal" href="delete-form-entries.html">フォームエントリの削除</a></li>
-<li class="toctree-l4"><a class="reference internal" href="publish-a-form.html">フォームを発行する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="publish-a-form.html">フォームをパブリッシュする</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="the-form-elements.html">フォーム要素</a></li>
@@ -197,13 +197,75 @@
             
   <div class="section" id="id1">
 <h1>フォーム用のリストアイテムを追加<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>フォームでは、リストフィールドに表示するオプションを指定できます。リストフィールドでは、ユーザーは事前に定義された値のグループから 1 つ以上のオプションを選択することができます。リスト フィールドは、値とテキストの両方を持つことができます。値はデータベースに保存され、統計に使用されます。</p>
+<p>フォーム アプリケーションには、ドロップダウン リスト、リスト ボックス、チェック ボックス、およびラジオ ボタン リストのデフォルトのリスト要素が含まれています。この機能を使用することで、プロファイルを作成することができます。</p>
+<div class="section" id="id2">
+<h2>リスト項目を手動で追加する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>すべてのリスト要素について、リストに表示する値を手動で入力することができます。</p>
+<p>リスト要素を手動で追加するには</p>
+<ol class="arabic">
+<li><p>フォーム要素ペインで、追加したいリスト要素をクリックして、フォームキャンバスにドラッグします。</p></li>
+<li><p>要素の適切な場所が見つかり、緑色の線が表示されたら、要素をドロップします。</p></li>
+<li><p>[フォーム要素] ウィンドウの [リスト アイテム] セクションで、[静的] が選択されていることを確認します (これがデフォルトです)。</p></li>
+<li><p>ラジオ ボタン 1 ラベル フィールドに、最初のリスト項目の値を入力します。</p></li>
+<li><p>次のリスト項目を追加するには、新規追加 をクリックします。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a206f5fc.png"><img alt="リスト項目を手動で追加する" class="align-center" src="_images/15ed64a206f5fc.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>値リストで、データベースに保存されるリスト項目の値を指定します。オプションは次のとおりです。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ラベルと同じ - 値はラベルを反映します。これがデフォルトです。</p></li>
+<li><p>カスタマイズ - カスタム値を入力します。例えば、フォームの異なる言語バージョンを使用していて、元の言語の値をデータベースに保存したい場合などに、カスタム値を入力すると便利です。</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/15ed64a2073bc5.png"><img alt="リスト項目を手動で追加する" class="align-center" src="_images/15ed64a2073bc5.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>バリデーションセクションで、フィールドの重要度の項目で、連絡先が関連フィールドに記入する必要があるかどうかを指定します。オプションは次のとおりです。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>必須 - フィールドは必須です。</p></li>
+<li><p>オプション - 連絡先は、フィールドに記入するかどうかを決めることができます。</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
 </div>
+<div class="section" id="id3">
+<h2>リスト項目にコンテンツを割り当てる<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>リスト項目は手動で入力することもできますが、データソースにバインドすることもできます。Sitecore Formsモジュールを使用すると、フォーム内でSitecoreのコンテンツを操作することができます。データソースが変更されるとリスト項目が自動的に変更されるので、リスト項目が定期的に変更されることが予想される場合に便利です。例えば、製品の問い合わせフォームやリクエストデモフォームで利用可能な製品をリストアップするアイテムなどです。</p>
+<p>リスト項目にコンテンツを割り当てると、顧客満足度を示すラジオ ボタン リストのような定期的なリストにも便利です。</p>
+<p>リスト項目にコンテンツを割り当てるには</p>
+<ol class="arabic">
+<li><p>フォーム要素ペインで、追加したいリスト要素をクリックして、フォームキャンバスにドラッグします。</p></li>
+<li><p>要素の適切な場所が見つかり、緑色の線が表示されたら、要素をドロップします。</p></li>
+<li><p>[フォーム要素] ペインの [リスト アイテム] セクションで、[動的] を選択してデータ ソースを選択します。</p></li>
+<li><p>コントロールのデータソースの選択 ダイアログボックスで、表示したいフィールド値に対応するサブアイテムを含むウェブサイト上のアイテムに移動します。関連する項目を選択し、選択をクリックします。
+例えば、顧客満足度に関する質問を追加するには、顧客満足度を選択します。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a2078703.png"><img alt="リスト項目にコンテンツを割り当てる" class="align-center" src="_images/15ed64a2078703.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>値フィールドフィールドで、表示する値フィールドを選択します。</p></li>
+<li><p>選択されたラジオボタンのドロップダウンリストで、デフォルトで事前に選択されているリスト項目を選択します。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a207cd07.png"><img alt="リスト項目にコンテンツを割り当てる" class="align-center" src="_images/15ed64a207cd07.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>バリデーションセクションで、フィールドの重要度の項目で、連絡先が関連フィールドに記入する必要があるかどうかを指定します。オプションは次のとおりです。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>必須 - フィールドは必須です。</p></li>
+<li><p>オプション - 連絡先は、フィールドに記入するかどうかを決めることができます。</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p><a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/add-list-items-for-forms.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/add-list-items-for-forms.html</a></p>
+</div>
 </div>
 </div>
 

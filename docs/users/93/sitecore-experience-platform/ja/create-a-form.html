@@ -109,7 +109,7 @@
 <li class="toctree-l4"><a class="reference internal" href="working-with-submit-actions.html">サブミットアクションでの作業</a></li>
 <li class="toctree-l4"><a class="reference internal" href="use-prefilled-form-fields.html">プレフィルドフォームフィールドを使用する</a></li>
 <li class="toctree-l4"><a class="reference internal" href="delete-form-entries.html">フォームエントリの削除</a></li>
-<li class="toctree-l4"><a class="reference internal" href="publish-a-form.html">フォームを発行する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="publish-a-form.html">フォームをパブリッシュする</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="the-form-elements.html">フォーム要素</a></li>
@@ -197,9 +197,71 @@
             
   <div class="section" id="id1">
 <h1>フォームの作成<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Sitecore Formsアプリケーションでは、標準要素を使って素早くフォームを作成することができます。フォームの作成を始める前に、連絡先に何を質問したいかを決定し、含めるフォームフィールドを決定する必要があります。</p>
+<div class="section" id="id2">
+<h2>フォームの作成<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>テンプレートを使ってフォームを作成することもできますし、空白のフォームから始めることもできます。</p>
+<p>フォームを作成するには</p>
+<ol class="arabic simple">
+<li><p>フォーム ダッシュボードで、[作成] をクリックします。</p></li>
+<li><p>新しいフォームをゼロから作成するには、「空白のフォーム」をクリックするか、フォームのベースとなるテンプレートを選択します。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a2028840.png"><img alt="フォームの作成" class="align-center" src="_images/15ed64a2028840.png" style="width: 400px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>ダッシュボードにフォームが表示されない場合は、インスタンスのインストール時にインストール後の手順が完了していることを確認してください。Sitecore Formsを正常に動作させるためには、インストール後に検索インデックスを再構築する必要があります。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>フォームフィールドの追加<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>新しいフォームにフィールドを追加するには、フォーム要素ペインからフォーム要素をフォームキャンバスにドラッグします。フォーム上にフォームフィールドとして要素を配置した場合、フォーム要素ペインの全般タブでその設定を変更することができます。</p>
+<p>フォームフィールドを追加するには</p>
+<ol class="arabic simple">
+<li><p>フォーム要素ペインで、追加したい要素をクリックして、フォームキャンバスにドラッグします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a202e5f6.png"><img alt="フォームの作成" class="align-center" src="_images/15ed64a202e5f6.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>要素の適切な場所を見つけ、緑の線が表示されたら、要素をドロップします。</p></li>
+<li><p>新しいフィールドの設定を変更するには、キャンバス上でフィールドをクリックし、フォーム要素ペインで変更を適用します。例えば、フィールドに CSS クラスを追加してスタイルを変更します。</p></li>
+<li><p>設定の変更が終わったら、適用 をクリックして、フォーム上の変更を確認します。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Web サイトに公開する前に、フォームをプレビューすることをお勧めします。フォーム アプリケーションでのフォームの表示方法は、Web ページ上のフォームの実際のスタイリングを反映していない場合があります。</p>
+</div>
+<ol class="arabic" start="5">
+<li><p>フォームにリストを追加するには、フォーム要素ペインのリストセクションでドロップダウンリストをフォームにドラッグします。</p>
+<p>必ず意味のあるフィールド名を追加してください。フィールド名は、フォームフィールドのSitecore定義項目の実際の項目名です。フォーム要素に意味のある名前をつけることで、例えばフォームフィールドのパフォーマンストラッキングのように、フォーム要素を区別しやすくなります。</p>
+</li>
+</ol>
+<img alt="フォームの作成" class="align-center" src="_images/15ed64a2033f84.png" />
+<ol class="arabic simple" start="6">
+<li><p>フォームにSubmitボタンを追加するには、フォーム要素ペインの構造セクションでSubmitボタン要素をフォームにドラッグします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a2038170.png"><img alt="フォームの作成" class="align-center" src="_images/15ed64a2038170.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="7">
+<li><p>[詳細]セクションで、ボタンの名前を入力し、[ナビゲーションステップ]フィールドで、[送信]を選択します。</p></li>
+<li><p>[適用] をクリックして、フォーム上の変更内容を確認します。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>時折、フォームからフィールドを削除したい場合があります。フォームフィールドを削除するには、削除するフィールドをクリックして、[ <img alt="icon1" src="_images/15ed64a204052c.png" /> 削除]をクリックします。</p>
+</div>
+<ol class="arabic" start="9">
+<li><p>フォームを保存するには</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>保存 <img alt="icon2" src="_images/15ed64a203c46d.png" /> をクリックして、新しいフォームを保存し、名前を付けます。</p></li>
+<li><p>選択したフォームを保存する <img alt="icon3" src="_images/15ed64a2045510.png" /> をクリックして、フォームのコピーを保存し、名前を付けます。</p></li>
+<li><p>Save the form as a form template <img alt="icon4" src="_images/15ed64a2049b16.png" /> をクリックして、フォームをテンプレートとして保存します。</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p><a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/create-a-form.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/create-a-form.html</a></p>
+</div>
 </div>
 </div>
 

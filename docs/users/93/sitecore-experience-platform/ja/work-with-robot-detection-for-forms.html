@@ -190,13 +190,40 @@
             
   <div class="section" id="id1">
 <h1>フォームのロボット検出との連携<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Sitecore Formsは、あなたの連絡先リストを健全に保ち、あなたのサイトのための不要なトラフィックを排除するために、スパムボットからフォームを保護するのに役立ちます。ロボット検出はデフォルトで有効になっています。</p>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>フォームにロボット検出を使用するには、xDBをインストールして有効にする必要があります。</p>
+</div>
+<div class="section" id="id2">
+<h2>ロボット検出の有効化・無効化<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Sitecore Forms のロボット検出は、デフォルトで有効になっています。</p>
+<p>各フォームフィールドのロボット検出を設定するには、以下の手順に従います。</p>
+<ul class="simple">
+<li><p>フォームエディタの [フォーム要素] ペインで、[ロボット検出を有効にする] チェックボックスを選択するか、またはクリアします。</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/15ed64a20bb996.png"><img alt="ロボット検出の有効化・無効化" class="align-center" src="_images/15ed64a20bb996.png" style="width: 400px;" /></a>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>もしロボットの検出に問題があるのであれば、レイアウトに VisitorIdentification タグが含まれていることを確認してください。&#64;Html.Sitecore().VisitorIdentification()</p>
 </div>
+<p>例えば、自動化されたパフォーマンステストを実行しているため、Sitecoreのロボット検出を無効にするには、次のようにします。</p>
+<ul class="simple">
+<li><p>以下にアクセスしてください。App_ConfigSitecore.Analytics.Tracking.Tracking.configに移動し、次の設定をFalseに変更します。&lt;setting name=&quot;Analytics.AutoDetectBots&quot; value=&quot;false&quot;/&gt;</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>送信アクションのロボット送信を有効にする<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Sitecore Forms では、送信ボタンは複数の送信アクションを持つことができます。データの保存を伴うデフォルトの送信アクションでは、ロボットによる送信は無効になります。ページへのリダイレクトやURLへのリダイレクトなど、データの保存を伴わない送信アクションでは、ロボット送信はブロックされません。</p>
+<p>送信アクションのロボット送信を有効または無効にするには、以下の手順に従います。</p>
+<ul class="simple">
+<li><p>コンテンツエディタで、設定/フォーム/送信アクションに移動し、送信アクションをクリックします。</p></li>
+<li><p>設定セクションで、ロボット送信を有効にするチェックボックスを選択またはクリアします。</p></li>
+</ul>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p><a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/work-with-robot-detection-for-forms.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/work-with-robot-detection-for-forms.html</a></p>
+</div>
 </div>
 </div>
 
