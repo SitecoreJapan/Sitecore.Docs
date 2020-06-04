@@ -192,13 +192,147 @@
             
   <div class="section" id="id1">
 <h1>セキュリティ要素<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>Sitecore Forms アプリケーションは、Forms 要素ペインのセキュリティセクションで、パスワードとパスワード確認フォームの要素をグループ化します。</p>
+<div class="section" id="id2">
+<h2>パスワード<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Password要素を使用して、連絡先がパスワードを入力できるフィールドをフォームに追加します。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 12%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Section</p></td>
+<td><p>Item</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td rowspan="6"><p>Details</p></td>
+<td><p>Label</p></td>
+<td><p>Caption that tells your contacts what information a particular form field is asking for.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Field name</p></td>
+<td><p>Name of the element. Always use meaningful names for the Field name. The Field name is the actual Item name for the Sitecore definition item for the form field.</p></td>
+</tr>
+<tr class="row-even"><td><p>Default value</p></td>
+<td><p>Sets the initial value of the input control.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Placeholder text</p></td>
+<td><p>Text in a form field that functions as a hint to describe the expected value. The placeholder text disappears when the contact clicks the field. For example, Enter your password here.</p></td>
+</tr>
+<tr class="row-even"><td><p>Minimum text length</p></td>
+<td><p>Determines the minimum text length.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Maximum text length</p></td>
+<td><p>Determines the maximum text length.</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>Validation</p></td>
+<td><p>Field validation</p></td>
+<td><p>Determines whether field validation is applied.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Field importance</p></td>
+<td><p>Indicates whether the contact must fill in the field. The options are Optional or Mandatory.</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>Styling</p></td>
+<td><p>CSS class</p></td>
+<td><p>Defines the CSS class of the field.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CSS class for label</p></td>
+<td><p>Defines the CSS class of the label.</p></td>
+</tr>
+<tr class="row-even"><td><p>Conditions</p></td>
+<td><p>Edit conditions</p></td>
+<td><p>Apply conditional actions to fields in web forms. Click Edit conditions to add a condition.</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><p>Advanced settings</p></td>
+<td><p>Allow save</p></td>
+<td><p>Enables or disables saving the filled-in field data upon form submission.</p></td>
+</tr>
+<tr class="row-even"><td><p>Performance tracking</p></td>
+<td><p>Select to record data about how the field performs. For tracking to work, on the Settings tab, the Performance tracking checkbox for the form must also be selected.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Value provider</p></td>
+<td><p>Select the source that you want to link the field to. The prefill value of the form will be fetched from this source.</p></td>
+</tr>
+<tr class="row-even"><td><p>Value provider parameters</p></td>
+<td><p>Enter the key to match the field.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+<div class="section" id="id3">
+<h2>パスワードの確認<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>パスワード確認要素を使用して、誤ったパスワードでユーザーが登録しないようにします。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 15%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Section</p></td>
+<td><p>Item</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td rowspan="7"><p>Details</p></td>
+<td><p>Label</p></td>
+<td><p>Caption that tells your contacts what information a particular form field is asking for.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Confirm password label</p></td>
+<td><p>Caption that goes with the confirm password field.</p></td>
+</tr>
+<tr class="row-even"><td><p>Field name</p></td>
+<td><p>Name of the element.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Password placeholder text</p></td>
+<td><p>Text in a form field that functions as a hint to describe the expected value. The placeholder text disappears when the contact clicks the field. For example, Enter your password here.</p></td>
+</tr>
+<tr class="row-even"><td><p>Confirm password placeholder text</p></td>
+<td><p>Text in a form field that functions as a hint to describe the expected value. The placeholder text disappears when the contact clicks the field. For example, Confirm your password here.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Minimum text length</p></td>
+<td><p>Determines the minimum text length. Contacts see a validation error message if their input is lower than the value specified in this field.</p></td>
+</tr>
+<tr class="row-even"><td><p>Maximum text length value</p></td>
+<td><p>Determines the maximum text length. Contacts see a validation error message if their input is higher than the value specified in this field.</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>Validation</p></td>
+<td><p>Field validation</p></td>
+<td><p>Determines whether field validation is applied.</p></td>
+</tr>
+<tr class="row-even"><td><p>Field importance</p></td>
+<td><p>Indicates whether the visitor must fill in the field. The options are Optional or Mandatory.</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>Styling</p></td>
+<td><p>CSS class</p></td>
+<td><p>Defines the CSS class of the field.</p></td>
+</tr>
+<tr class="row-even"><td><p>CSS class for label</p></td>
+<td><p>Defines the CSS class of the label.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Conditions</p></td>
+<td><p>Edit conditions</p></td>
+<td><p>Apply conditional actions to fields in web forms. Click Edit conditions to add a condition.</p></td>
+</tr>
+<tr class="row-even"><td rowspan="4"><p>Advanced settings</p></td>
+<td><p>Allow save</p></td>
+<td><p>Enables or disables saving the filled-in field data upon form submission.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Performance tracking</p></td>
+<td><p>Select to record data about how the field performs. For tracking to work, on the Settings tab, the Performance tracking checkbox for the form must also be selected.</p></td>
+</tr>
+<tr class="row-even"><td><p>Value provider</p></td>
+<td><p>Select the source that you want to link the field to. The prefill value of the form will be fetched from this source.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Value provider parameters</p></td>
+<td><p>Enter the key to match the field.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p><a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-security-elements.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-security-elements.html</a></p>
+</div>
 </div>
 </div>
 

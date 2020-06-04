@@ -109,7 +109,7 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">サブミットアクションでの作業</a></li>
 <li class="toctree-l4"><a class="reference internal" href="use-prefilled-form-fields.html">プレフィルドフォームフィールドを使用する</a></li>
 <li class="toctree-l4"><a class="reference internal" href="delete-form-entries.html">フォームエントリの削除</a></li>
-<li class="toctree-l4"><a class="reference internal" href="publish-a-form.html">フォームを発行する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="publish-a-form.html">フォームをパブリッシュする</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="the-form-elements.html">フォーム要素</a></li>
@@ -197,10 +197,59 @@
             
   <div class="section" id="id1">
 <h1>サブミットアクションでの作業<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳中</p>
-</div>
+<p>送信ボタンはナビゲーション (前と次のボタン)、フォームの送信、および/または送信アクションのトリガーに使用します。送信ボタンは、フォーム要素ペインの構造セクションにあります。投稿要素をキャンバスにドラッグすると、名前を付けたり、スタイルを設定したり、投稿ボタンをクリックした後に何が起こるかを決定したりすることができます。オプションは、送信、前へ、または次へです。次に、1 つまたは複数の送信アクションを割り当てることができます。</p>
+<p>デフォルトの送信アクションをすべての送信ボタンに割り当てることができます。 また、カスタム送信アクションを作成することもできます。</p>
+<p>複数の送信アクションを追加する場合、順番が重要です。送信アクションは送信ボタンに追加された順番で実行されます。ページへのリダイレクトとURLへのリダイレクトは、それ以降のステップの実行を中止します。例えば、リダイレクトアクションを保存アクションの前に配置した場合、フォームデータは保存されないかもしれません。</p>
+<p>デフォルトでは、送信ボタンに以下のアクションを追加することができます。</p>
+<ul>
+<li><p><strong>トリガーゴール</strong> - プリセットのゴールを選択します。新しいゴールを作成することもできます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a208115f.png"><img alt="トリガーゴール" class="align-center" src="_images/15ed64a208115f.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p><strong>リダイレクトURL</strong> - 訪問者を外部URLにリダイレクトします。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a2086bc3.png"><img alt="リダイレクトURL" class="align-center" src="_images/15ed64a2086bc3.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 95%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>フィールド</p></td>
+<td><p>説明</p></td>
+</tr>
+<tr class="row-even"><td><p>Url</p></td>
+<td><p>プロトコルの先頭にURLを入力してください。 (<a class="reference external" href="http://">http://</a> or <a class="reference external" href="https://">https://</a>).</p></td>
+</tr>
+<tr class="row-odd"><td><p>URL プレビュー</p></td>
+<td><p>URL のプレビューを表示します。</p></td>
+</tr>
+<tr class="row-even"><td><p>URL パラメーター</p></td>
+<td><p>URLにフォームデータをパラメータとして渡すことができます。例えば、サンキューページにリダイレクトして、訪問者の連絡先をまとめたい場合。または、例えば、外部のウェブサイトに移動する商品検索フォームを持っていて、フォームからの検索テキストをURLに渡したい場合などです。</p>
+<p>パラメータの追加] をクリックして、URL パラメータを追加します。パラメータ］フィールドに、URL パラメータのキーを入力します。フォームフィールドで、フィールドを選択します。URL送信アクションは、フィールドの値を取得し、最終的なURLを生成します。生成されたURLは、URLプレビュー入力ボックスからプレビューすることができます。x をクリックしてパラメータを削除します。</p>
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>トリガーキャンペーンアクティビティ</strong> - プリセットのキャンペーンアクティビティを選択します。ボタンがクリックされたときにトリガーされるべきキャンペーンアクティビティを選択します。</p></li>
+<li><p><strong>トリガー結果</strong> - 結果タイプを選択します。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a208c393.png"><img alt="トリガー結果" class="align-center" src="_images/15ed64a208c393.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p><strong>メールキャンペーンメッセージを送信</strong> - ボタンがクリックされたときに送信されるメールキャンペーンメッセージを選択します。</p></li>
+<li><p><strong>ページへのリダイレクト</strong> - 訪問者をウェブページにリダイレクトします。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a2090546.png"><img alt="リダイレクト" class="align-center" src="_images/15ed64a2090546.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p><strong>データの保存</strong> - フォームデータをデータベースに保存します。</p></li>
+</ul>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p><a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/working-with-submit-actions.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/working-with-submit-actions.html</a></p>
