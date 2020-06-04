@@ -190,13 +190,224 @@
             
   <div class="section" id="id1">
 <h1>マーケティングオートメーションキャンペーンの要素<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>マーケティングオートメーションでは、一連の要素から自動化キャンペーンを構築します。開始要素と終了要素は、デフォルトでは新しい自動化キャンペーンに表示され、追加要素はツールボックスペインで利用できます。</p>
+<p>マーケティングオートメーションキャンペーンの要素の簡単な概要については、以下のビデオをご覧ください。</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w_VYqTXVej0" frameborder="0" allowfullscreen></iframe><p>オートメーションキャンペーンでは、以下のタイプの要素を使用することができます。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#id7">デフォルト要素</a> - コンタクトがオートメーションキャンペーンに登録されている場所とキャンペーンが終了する場所を示す開始と終了の要素。</p></li>
+<li><p><a class="reference external" href="#id8">マーケティングアクション</a> - コンタクトのエンゲージメント値からポイントを追加または減算するなど、システム内のコンタクトに変更を加えるために使用できる要素。</p></li>
+<li><p><a class="reference external" href="#id18">リスナー</a> - 特定の期間にコンタクトによって行われた特定のアクションをリッスンするために使用できる要素で、自動化キャンペーンを通じてコンタクトがどのように進むべきかを特定する。</p></li>
+<li><p><a class="reference external" href="#id24">デシジョンポイント</a> - オートメーションキャンペーンでコンタクトがどのように進むべきかを特定するためのルールを指定できる要素。これらの要素を使用すると、指定したルールに対してすぐに評価されるため、連絡先を遅滞なくフィルタリングすることができます。</p></li>
+<li><p><a class="reference external" href="#id26">その他の要素</a> - キャンペーンでのコンタクトの移動を遅らせたり、キャンペーンの最初にコンタクトを移動させたり、別のキャンペーンにコンタクトを移動させたりするために使用できる要素。</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/15ed64a1f69d11.png"><img alt="マーケティングオートメーションキャンペーン" class="align-center" src="_images/15ed64a1f69d11.png" style="width: 400px;" /></a>
+<div class="section" id="id7">
+<h2>デフォルトの要素<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Start 要素の詳細では、コンタクトがオートメーションキャンペーンに登録されたときの条件を指定します。End要素は、オートメーションキャンペーンの終了を示します。</p>
+<div class="section" id="start">
+<h3>Start<a class="headerlink" href="#start" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>スタート要素を使用して、マーケティングオートメーションキャンペーンに登録したいコンタクトを定義し、いつ登録するかを定義します。例えば、連絡先がウェブサイトの特定のページを訪問したときに自動化キャンペーンに登録し、育成プログラムの一部として定期的なメールキャンペーンを受信するようにスケジュールを組むことができます。</p>
+<p>開始要素の詳細ペインでは、以下に基づいてキャンペーンにコンタクトを登録するかどうかを選択できます。</p>
+<ul class="simple">
+<li><p>特定の目標、イベント、または成果の達成。すべて」と「すべて」を切り替えて、コンタクトが指定された目標、イベント、または成果のうち1つ以上を満たす必要があるかどうかを指定できます。</p></li>
+<li><p>スケジュールされた登録。これは、日、週、または月単位で設定することもできますし、3つすべてを組み合わせて使用したい場合は、プログラムで定義することもできます。週単位または月単位を使用する場合は、最大5日までしか選択できません。</p></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>スケジュール登録オプションは、セグメント化されたリストのみをサポートしています。</p>
 </div>
+<ul class="simple">
+<li><p>ルール セット エディタで作成したルール。</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/15ed64a1f745d5.png"><img alt="マーケティングオートメーションキャンペーン" class="align-center" src="_images/15ed64a1f745d5.png" style="width: 400px;" /></a>
+<p>スケジュール登録オプションを使用している場合。</p>
+<ul class="simple">
+<li><p>最大登録数を1に設定し、例えば毎日実行されるマーケティングオートメーションプランにコンタクトが登録されている場合、一度登録を完了すると、そのコンタクトはプランから削除されます。</p></li>
+<li><p>予定された登録開始日よりも前にセグメント化されたリストに新しいコンタクトを追加した場合、プランの開始時に新しいコンタクトがマーケティングオートメーションプランに追加されます。</p></li>
+<li><p>スケジュールされたプランが開始され、登録が完了した後にコンタクトがセグメント化されたリストから削除された場合、そのコンタクトはマーケティングオートメーションプランから削除されません。</p></li>
+<li><p>スケジュールされた登録がプログラムで実装されている場合、マーケティングオートメーションのインターフェースを介してキャンペーンを編集することはできません。</p></li>
+</ul>
+</div>
+<div class="section" id="end">
+<h3>End<a class="headerlink" href="#end" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>End要素は、オートメーションキャンペーンの終了を示します。オートメーションキャンペーンの構築方法によっては、すべてのコンタクトがこの要素に到達するわけではありません。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>マーケティングアクション<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>マーケティング アクション要素を使用して、エクスペリエンス データベース (xDB) に保存されている連絡先についての情報を変更することができます。</p>
+<div class="section" id="id9">
+<h3>行動プロファイルの値を変更する<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>自動化キャンペーンでこの要素に到達したコンタクトの行動プロファイル値を変更するには、行動プロファイル値の変更アクションを使用します。</p>
+<p>このアクションの詳細では、まず、コンタクトに対して変更するプロファイルキーを選択し、各プロファイルキーの新しい値を指定します。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1f7a26b.png"><img alt="行動プロファイルの値を変更する" class="align-center" src="_images/15ed64a1f7a26b.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id10">
+<h3>エンゲージメントバリューの追加<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>自動化キャンペーンのこの要素に到達したコンタクトのエンゲージメント値を増加させるために、エンゲージメント値を増加させるアクションを使用します。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1f7e015.png"><img alt="エンゲージメントの価値を高める" class="align-center" src="_images/15ed64a1f7e015.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id11">
+<h3>放置されたカートのイベントを上げる<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Raise abandoned cart event アクションを使用して、顧客が購入をせずにショッピングカートを放棄した場合に、放棄されたカートイベントをトリガーします。</p>
+<p>このアクションに必要な設定はありません。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1f82007.png"><img alt="放置されたカートのイベントを上げる" class="align-center" src="_images/15ed64a1f82007.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id12">
+<h3>コマースのメールを送る<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>コマースメールを送信するマーケティングアクションは、標準的なメール送信アクションとは異なり、顧客のカートからのコンテンツでメールメッセージをパーソナライズするために必要なショッピングカート情報が含まれています。ショッピング カート情報は、顧客がキャンペーンに登録されたときに、マーケティング オートメーション キャンペーンのカスタム値として含まれます。</p>
+<p>使用されるカスタム値は以下の通りです。</p>
+<ul class="simple">
+<li><p>ショップ名とカートIDは、放置カートのマーケティングオートメーションキャンペーンで使用されます。</p></li>
+<li><p>ショップ名と注文 ID は、新規注文手配キャンペーンで使用されます。</p></li>
+</ul>
+<p>送信コマースメールアクションは、マーケティングオートメーションキャンペーンからすべてのカスタム値をコピーし、メールエクスペリエンスマネージャのクエリパラメータとして使用します。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>商用電子メールの送信アクションの代わりに電子メールの送信アクションを使用しないでください。</p>
+</div>
+<p>このアクションの詳細では、[メールキャンペーンの選択]ドロップダウンメニューで、関連するメールキャンペーンをクリックし、[適用]をクリックします。自動化されたメールキャンペーンのみを選択することができます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1f86100.png"><img alt="コマースのメールを送る" class="align-center" src="_images/15ed64a1f86100.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id13">
+<h3>メールを送る<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>オートメーションキャンペーンのこの要素に到達した連絡先に選択した電子メールメッセージを送信するには、電子メール送信アクションを使用します。</p>
+<p>このアクションの詳細では、［電子メールキャンペーンの選択］ドロップダウンメニューで、関連する電子メールキャンペーンをクリックしてから、［適用］をクリックします。自動化された電子メールキャンペーンの間でのみ選択することができます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1f8a521.png"><img alt="メールを送る" class="align-center" src="_images/15ed64a1f8a521.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id14">
+<h3>連絡先をリストに追加する<a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>オートメーションキャンペーンでこの要素に到達した連絡先を1つまたは複数の連絡先リストに追加するには、リストへの連絡先の追加アクションを使用します。</p>
+<p>このアクションの詳細では、リストの選択ドロップダウンメニューで、関連する連絡先リストをクリックします。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1f8ea4a.png"><img alt="連絡先をリストに追加する" class="align-center" src="_images/15ed64a1f8ea4a.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id15">
+<h3>リストからの退会<a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>オートメーションキャンペーンでこの要素に到達した連絡先を1つまたは複数の連絡先リストから削除するには、リストへの退会を解除するアクションを使用します。</p>
+<p>このアクションの詳細では、リストの選択ドロップダウンメニューで、関連する連絡先リストをクリックします。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1f930f4.png"><img alt="リストからの退会" class="align-center" src="_images/15ed64a1f930f4.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id16">
+<h3>同意の設定を更新する<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>オートメーションキャンペーンのこの要素に到達するコンタクトの同意設定を変更するには、同意設定の更新アクションを使用します。選択することができます。</p>
+<ul class="simple">
+<li><p>マーケティングしない - コンタクトをすべてのリストから削除し、コンタクトが二度とマーケティングメッセージを受信しないようにします。</p></li>
+<li><p>同意を取り消す - 連絡先がお客様からのメッセージを二度と受信しないようにします。</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/15ed64a1f9761a.png"><img alt="同意の設定を更新する" class="align-center" src="_images/15ed64a1f9761a.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id17">
+<h3>メールアドレスの検証<a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>自動化キャンペーンでこの要素に到達したコンタクトのメールアドレスを有効としてマークするには、メールアドレスの有効化アクションを使用します。メールアドレスは、例えば、コンタクトがこのメールアドレスに送信された電子メールメッセージのリンクに反応したり、クリックしたりした場合に有効です。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1f9bd61.png"><img alt="メールアドレスの検証" class="align-center" src="_images/15ed64a1f9bd61.png" style="width: 400px;" /></a>
+</div>
+</div>
+<div class="section" id="id18">
+<h2>リスナー<a class="headerlink" href="#id18" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>リスナー要素を使用すると、コンタクトがオートメーションキャンペーンでどのように進むべきかを識別するためのルールを指定できます。リスナーから、コンタクトは、指定された期間内にコンタクトがルールで指定された条件をどのように満たすかに応じて、キャンペーンで Yes パスまたは No パスに沿って進むことができます。</p>
+<p>リスナーは、コンタクトがオートメーションキャンペーンをさらに進めないようにします。</p>
+<div class="section" id="id19">
+<h3>キャンペーンアクティビティトリガー<a class="headerlink" href="#id19" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>自動化キャンペーンのこの要素に到達したコンタクトが 1 つ以上のキャンペーンをトリガーしたかどうかを評価するために、キャンペーン アクティビティをトリガーしたリスナーを使用します。選択したキャンペーンをいつでもトリガーしたコンタクトは、Yes パスに沿って移動します。</p>
+<p>リスナーの詳細では、リスナーの名前を入力し、関連するキャンペーンを選択してから、リスナーがこの要素に到達した連絡先を評価する時間を指定します。リスナーが特定の期間、または特定の日時まで連絡先を評価するかどうかを指定できます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1fa00ad.png"><img alt="キャンペーンアクティビティトリガー" class="align-center" src="_images/15ed64a1fa00ad.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id20">
+<h3>カスタムリスナー<a class="headerlink" href="#id20" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>カスタムリスナーリスナーを使用して、オートメーションキャンペーンでこの要素に到達したコンタクトが、指定された期間内に指定されたルールの条件を満たしているかどうかを評価し、それに応じてYesパスまたはNoパスに沿って送信します。カスタムリスナーは、ルールセットエディタでカスタムルールで指定したものをリスナーとして設定することができます。</p>
+<p>リスナーの詳細で、ルール セット エディタの [編集] をクリックしてルールを作成し、リスナーがこの要素に到達した連絡先を評価する期間を指定します。リスナーが特定の期間、または特定の日時まで連絡先を評価するかどうかを指定できます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1fa4a01.png"><img alt="カスタムリスナー" class="align-center" src="_images/15ed64a1fa4a01.png" style="width: 400px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>コマースのマーケティングオートメーションキャンペーンには、以下のカスタムリスナーが含まれています。カートのアクティビティをチェックし、コンタクトのカートが操作された条件付きのルールが含まれています。</p>
+</div>
+</div>
+<div class="section" id="id21">
+<h3>ゴールトリガー<a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ゴールトリガーリスナーを使用して、オートメーションキャンペーンのこの要素に到達したコンタクトが 1 つ以上のゴールをトリガーしたかどうかを評価します。選択したゴールをトリガーしたコンタクトは、Yes パスに沿って移動します。</p>
+<p>リスナーの詳細では、リスナーの名前を入力し、関連するゴールを選択し、コンタクトが選択したすべてのゴールをトリガーしたか、1つのゴールだけをトリガーしたかを指定します。次に、リスナーがこの要素に到達した連絡先を評価する時間を指定します。リスナーが特定の期間、または特定の日時まで連絡先を評価するかどうかを指定できます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1fa8e69.png"><img alt="ゴールトリガー" class="align-center" src="_images/15ed64a1fa8e69.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id22">
+<h3>登録されている成果<a class="headerlink" href="#id22" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>アウトカム登録リスナーを使用して、自動化キャンペーンのこの要素に到達したコンタクトが 1 つ以上のアウトカムを登録しているかどうかを評価します。選択した成果物を登録した連絡先は、Yes パスに沿って移動します。</p>
+<p>リスナーの詳細では、リスナーの名前を入力し、関連する成果物を選択し、接触者が選択したすべての目標をトリガーするか、またはそのうちの1つだけをトリガーするかを指定します。次に、リスナーがこの要素に到達した連絡先を評価する時間を指定します。リスナーが特定の期間、または特定の日時まで連絡先を評価するかどうかを指定できます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1fad537.png"><img alt="登録されている成果" class="align-center" src="_images/15ed64a1fad537.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id23">
+<h3>リスナーを訪問<a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>訪問リスナーを使用して、自動化キャンペーンのこの要素に到達したコンタクトがウェブサイトを訪問したかどうかを評価します。ウェブサイトを訪問した連絡先は、Yes パスに沿って移動します。</p>
+<p>リスナーの詳細では、リスナーの名前を入力し、リスナーがこの要素に到達した連絡先を評価する期間を指定します。リスナーが特定の期間、または特定の日時まで連絡先を評価するかどうかを指定できます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1fb1a41.png"><img alt="リスナーを訪問" class="align-center" src="_images/15ed64a1fb1a41.png" style="width: 400px;" /></a>
+</div>
+</div>
+<div class="section" id="id24">
+<h2>デシジョンポイント<a class="headerlink" href="#id24" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>デシジョンポイント要素は、コンタクトが継続するべき自動化キャンペーンのパスを決定するためのルールを評価します。</p>
+<p>デシジョンポイント要素を使用して、キャンペーンの複数のパスにコンタクトをフィルタリングすることができます。たとえば、ゴールをトリガーするコンタクトをさらにフィルタリングするには、キャンペーンにゴールトリガーリスナーを追加し、その後、場所、年齢、好みなどに基づいてコンタクトをフィルタリングする多数の決定ポイントを追加します。</p>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>キャンペーンでリスナーの後に決定点を配置した場合、そのリスナーを削除したい場合、決定点が表示されているリスナーの後のパスもすべて削除されます。</p>
+</div>
+<div class="section" id="id25">
+<h3>デシジョンポイント<a class="headerlink" href="#id25" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>自動化キャンペーンでこの要素に到達したコンタクトを特定のパスに沿って誘導するには、決定ポイント要素を使用します。コンタクトを評価するルールを作成し、コンタクトがルールの条件を満たしている場合、コンタクトは「はい」パスに沿って継続します。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1fb59b6.png"><img alt="デシジョンポイント" class="align-center" src="_images/15ed64a1fb59b6.png" style="width: 400px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>コマースマーケティングオートメーションキャンペーンには、コンタクトのカートが空であるという条件付きのルールを含む、カートが空であるかどうかの決定ポイントが含まれています。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id26">
+<h2>その他の要素<a class="headerlink" href="#id26" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>これらの要素を使用して、キャンペーン中のコンタクトの移動を一時停止したり、コンタクトをキャンペーンの開始または別のキャンペーンに移動したりすることができます。</p>
+<div class="section" id="id27">
+<h3>遅延<a class="headerlink" href="#id27" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>遅延要素を使用して、自動化キャンペーンを通じてコンタクトのさらなる動きを遅らせることができます。例えば、遅延を使用して、コンタクトにコンテンツの特定のパーソナライゼーションを限定された期間だけ受けることができます。</p>
+<p>要素の詳細では、コンタクトを特定の期間、または特定の日時まで遅延させる必要があるかどうかを指定することができます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a1fba2f6.png"><img alt="遅延" class="align-center" src="_images/15ed64a1fba2f6.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id28">
+<h3>別のキャンペーンに移動する<a class="headerlink" href="#id28" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>この要素は、複数の自動化キャンペーンの間でコンタクトをループさせる可能性があるため、注意して使用してください。連絡先を登録する自動化キャンペーンを選択する場合、選択した自動化キャンペーンがさらに多くのキャンペーンに連絡先を登録するかどうかを確認する必要があります。</p>
+</div>
+<p>オートメーションキャンペーンのこの要素に到達した連絡先を別のオートメーションキャンペーンに登録するには、別のキャンペーンに移動するアクションを使用します。</p>
+<p>このアクションの詳細では、Select an automation campaignドロップダウンメニューで、連絡先を登録するオートメーションキャンペーンをクリックします。連絡先を他の1つのオートメーションキャンペーンに移動することだけを選択することができます。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>キャンペーンでこのアクションを使用すると、この要素の後のパスに表示されるキャンペーンの要素が削除されます。</p>
+</div>
+<a class="reference internal image-reference" href="_images/15ed64a1fbe860.png"><img alt="別のキャンペーンに移動する" class="align-center" src="_images/15ed64a1fbe860.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id29">
+<h3>キャンペーンからの削除<a class="headerlink" href="#id29" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>オートメーションキャンペーンからこの要素に到達した連絡先を削除するには、キャンペーンから削除アクションを使用します。この要素は、オートメーションキャンペーン内の任意の場所から連絡先を削除する柔軟性を提供します。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>キャンペーンでこのアクションを使用すると、この要素の後のパスに表示されるキャンペーンの要素が削除されます。</p>
+</div>
+<a class="reference internal image-reference" href="_images/15ed64a1fc36be.png"><img alt="別のキャンペーンに移動する" class="align-center" src="_images/15ed64a1fc36be.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id30">
+<h3>スタートに戻る<a class="headerlink" href="#id30" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>この要素を使用すると、キャンペーン内でコンタクトをループさせ、そのコンタクトに対する繰り返しのマーケティングアクションの実行を引き起こす可能性があるため、注意が必要です。</p>
+</div>
+<p>オートメーションキャンペーンでこの要素に到達したコンタクトをキャンペーンの最初に移動させて、再度この要素を通過できるようにするには、開始アクションに戻るを使用します。コンタクトはStart要素の後の要素に移動され、Start要素によって再び評価されることはありません。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>キャンペーンでこのアクションを使用すると、この要素の後にパス上にあるキャンペーンの要素が削除されます。</p>
+</div>
+<a class="reference internal image-reference" href="_images/15ed64a1fc7343.png"><img alt="スタートに戻る" class="align-center" src="_images/15ed64a1fc7343.png" style="width: 400px;" /></a>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p><a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-elements-in-a-marketing-automation-campaign.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-elements-in-a-marketing-automation-campaign.html</a></p>
+</div>
+</div>
 </div>
 </div>
 

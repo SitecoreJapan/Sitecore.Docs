@@ -192,13 +192,681 @@
             
   <div class="section" id="id1">
 <h1>基本的な要素<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>テキスト、電子メール、電話などのフォームでよく使われる要素は、フォーム要素ペインの基本セクションにグループ化されています。これらの要素は、[フォーム要素] ペインの [全般] タブからフォーム キャンバスにドラッグ アンド ドロップすると、フォーム フィールドになり、編集することができます。</p>
+<p>このトピックでは、基本的なフォーム要素とその設定について説明します。</p>
+<div class="section" id="id2">
+<h2>テキスト<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>フォームにテキストフィールドを追加するにはText要素を使用します。この要素をフォームのタイトルに使用して、フォームの目的を説明することができます。例えば、「採用情報お問い合わせフォーム」や「お問い合わせ」などです。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 13%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>セクション</p></td>
+<td><p>アイテム</p></td>
+<td><p>説明</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><p>詳細</p></td>
+<td><p>Text</p></td>
+<td><p>テキスト要素を追加したときにフォームのタイトルなどに表示されるテキスト。</p></td>
+</tr>
+<tr class="row-odd"><td><p>フィールド名</p></td>
+<td><p>エレメントの名前。</p></td>
+</tr>
+<tr class="row-even"><td><p>Html tag</p></td>
+<td><p>テキストのHTMLタグを選択します。タグを追加するには、sitecore/System/Settings/Forms/Meta Data/Text Tagsに移動します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>スタイル</p></td>
+<td><p>CSS class</p></td>
+<td><p>フィールドのCSSクラスを定義します。</p></td>
+</tr>
+<tr class="row-even"><td><p>条件</p></td>
+<td><p>編集条件</p></td>
+<td><p>Web フォームのフィールドに条件付きアクションを適用します。条件を追加するには、[条件の編集] をクリックします。</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><p>拡張設定</p></td>
+<td><p>保存を許可する</p></td>
+<td><p>フォーム送信時に入力されたフィールドデータを保存することを有効または無効にします。</p></td>
+</tr>
+<tr class="row-even"><td><p>パフォーマンスのトラッキング</p></td>
+<td><p>フィールドのパフォーマンスに関するデータを記録する場合に選択します。トラッキングを機能させるためには、設定タブで、フォームのパフォーマンストラッキングチェックボックスも選択する必要があります。</p></td>
+</tr>
+<tr class="row-odd"><td><p>バリュープロバイダー</p></td>
+<td><p>フィールドをリンクするソースを選択します。フォームのプリフィル値はこのソースから取得されます。</p></td>
+</tr>
+<tr class="row-even"><td><p>値プロバイダパラメータ</p></td>
+<td><p>フィールドに一致するキーを入力します。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h2>ファイルアップロード<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ファイルアップロード要素を使用して、Webフォームにファイルアップロードの可能性を追加します。訪問者が 1 つのファイルまたは複数のファイルを Web フォームに添付できるようにすることができます。例えば、履歴書、アバター、プロフィール写真などです。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>ファイルのアップロードは、<a class="reference internal" href="export-form-results.html"><span class="doc">エクスポート フォームの CSV ファイル</span></a> に表示されます。</p>
+</div>
+<p>フォームエディタでは、これらのファイルのサイズと形式を含めて、訪問者がアップロードできるファイルの数を決定することができます。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 11%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>セクション</p></td>
+<td><p>アイテム</p></td>
+<td><p>説明</p></td>
+</tr>
+<tr class="row-even"><td rowspan="5"><p>詳細</p></td>
+<td><p>ラベル</p></td>
+<td><p>特定のフォームフィールドがどのような情報を求めているかを連絡先に伝えるキャプション。</p></td>
+</tr>
+<tr class="row-odd"><td><p>ファイル名</p></td>
+<td><p>エレメントの名前。</p></td>
+</tr>
+<tr class="row-even"><td><p>ファイルサイズの制限</p></td>
+<td><p>訪問者がアップロードできるファイルの最大ファイルサイズを決定します。デフォルトでは、訪問者は最大2GBを超えないファイルをアップロードできます。ファイルサイズバリデータチェックボックスが選択されている場合のみ適用されます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>ファイル数の制限</p></td>
+<td><p>訪問者がアップロードできるファイル数を決定します。このフィールドは必須です。File count validator チェックボックスが選択されている場合にのみ適用されます。</p></td>
+</tr>
+<tr class="row-even"><td><p>ファイルの種類を制限する</p></td>
+<td><p>許可されているファイル拡張子または MIME タイプを、カンマで区切って指定します。例えば、application/PDF , .pdf , pdf</p>
+<p>このフィールドが空の場合、訪問者は任意の形式でファイルをアップロードすることができます。</p>
+<p>ファイルタイプバリデータチェックボックスが選択されている場合のみ適用されます。</p>
+</td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><p>バリデーション</p></td>
+<td><p>ファイルサイズバリデータ</p></td>
+<td><p>[Limit file size]フィールドで設定した値に従ってファイルサイズを検証する場合に選択します。</p></td>
+</tr>
+<tr class="row-even"><td><p>ファイルカウントバリデータ</p></td>
+<td><p>Limit number of files フィールドで設定した値に応じてファイル数を検証する場合に選択します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>ファイル型バリデータ</p></td>
+<td><p>制限されたファイルタイプフィールドで設定した値に従ってファイルタイプを検証する場合に選択します。</p></td>
+</tr>
+<tr class="row-even"><td><p>フィールドの重要性</p></td>
+<td><p>連絡先がフィールドに記入する必要があるかどうかを示します。オプションはオプションまたは必須です。</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>スタイル</p></td>
+<td><p>CSSクラス</p></td>
+<td><p>フィールドのCSSクラスを定義します。</p></td>
+</tr>
+<tr class="row-even"><td><p>ラベル用CSSクラス</p></td>
+<td><p>ラベルのCSSクラスを定義します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>編集条件</p></td>
+<td><p>Web フォームのフィールドに条件付きアクションを適用します。条件を追加するには、[条件の編集] をクリックします。</p></td>
+</tr>
+<tr class="row-even"><td rowspan="4"><p>詳細設定</p></td>
+<td><p>保存を許可する</p></td>
+<td><p>フォーム送信時に入力されたフィールドデータを保存することを有効または無効にします。</p></td>
+</tr>
+<tr class="row-odd"><td><p>パフォーマンスのトラッキング</p></td>
+<td><p>フィールドのパフォーマンスに関するデータを記録する場合に選択します。トラッキングを機能させるためには、設定タブで、フォームのパフォーマンストラッキングチェックボックスも選択する必要があります。</p></td>
+</tr>
+<tr class="row-even"><td><p>バリュープロバイダー</p></td>
+<td><p>フィールドをリンクするソースを選択します。フォームのプリフィル値はこのソースから取得されます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>値プロバイダパラメータ</p></td>
+<td><p>フィールドに一致するキーを入力します。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>あなたの訪問者が大きなファイルをアップロードできるようにしたい場合は、あなたのウェブサーバーが大きなファイルサイズを許可するように設定されていることを確認してください。そうしないと、訪問者がエラーメッセージを受け取る可能性があります。HTTP Error 413 Request Entity Too Large. ASP.NETのファイルアップロード設定は、Web.configファイルで調整することができます。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;httpRuntime maxRequestLength=&quot;your-desired-request-length&quot; /&gt;。
+&lt;requestLimits maxAllowedContentLength=&quot;your-max-allowed-content-length&quot; /&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>数<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Number要素を使用して、数値を入力するフィールドを追加します。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 12%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>セクション</p></td>
+<td><p>アイテム</p></td>
+<td><p>説明</p></td>
+</tr>
+<tr class="row-even"><td rowspan="7"><p>詳細</p></td>
+<td><p>ラベル</p></td>
+<td><p>特定のフォームフィールドがどのような情報を求めているかを連絡先に伝えるキャプション。</p></td>
+</tr>
+<tr class="row-odd"><td><p>フィールド名</p></td>
+<td><p>要素の名前。Field nameには必ず意味のある名前を使用してください。Field nameは、フォームフィールドのSitecore定義項目の実際のItem名です。</p></td>
+</tr>
+<tr class="row-even"><td><p>標準値</p></td>
+<td><p>初期値</p></td>
+</tr>
+<tr class="row-odd"><td><p>プレースホルダテキスト</p></td>
+<td><p>期待される値を説明するためのヒントとして機能するフォームフィールド内のテキスト。プレースホルダテキストは、連絡先がフィールドをクリックすると消えます。例えば、ここにあなたの名前を入力してください。</p></td>
+</tr>
+<tr class="row-even"><td><p>最小値</p></td>
+<td><p>最小値を決定します。連絡先は、入力がこのフィールドで指定された値よりも低い場合、検証エラーメッセージを表示します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>最大値</p></td>
+<td><p>最大値を決定します。連絡先には、入力がこのフィールドで指定された値よりも高い場合、検証エラーメッセージが表示されます。</p></td>
+</tr>
+<tr class="row-even"><td><p>ステップ</p></td>
+<td><p>連絡先に偶数のみを記入させる場合など、数字の間隔を指定します。既定値は 1 です。</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>バリデーション</p></td>
+<td><p>フィールドの検証</p></td>
+<td><p>フィールドバリデーションを適用するかどうかを決定します。</p></td>
+</tr>
+<tr class="row-even"><td><p>フィールドの重要性</p></td>
+<td><p>訪問者がフィールドに記入する必要があるかどうかを示します。オプションはオプションまたは必須です。</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>スタイル</p></td>
+<td><p>CSSクラス</p></td>
+<td><p>フィールドのCSSクラスを定義します。</p></td>
+</tr>
+<tr class="row-even"><td><p>ラベル用CSSクラス</p></td>
+<td><p>ラベルのCSSクラスを定義します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>編集条件</p></td>
+<td><p>Web フォームのフィールドに条件付きアクションを適用します。条件を追加するには、[条件の編集] をクリックします。</p></td>
+</tr>
+<tr class="row-even"><td rowspan="4"><p>詳細設定</p></td>
+<td><p>保存を許可する</p></td>
+<td><p>フォーム送信時に入力されたフィールドデータを保存することを有効または無効にします。</p></td>
+</tr>
+<tr class="row-odd"><td><p>パフォーマンスのトラッキング</p></td>
+<td><p>フィールドのパフォーマンスに関するデータを記録する場合に選択します。トラッキングを機能させるためには、設定タブで、フォームのパフォーマンストラッキングチェックボックスも選択する必要があります。</p></td>
+</tr>
+<tr class="row-even"><td><p>バリュープロバイダー</p></td>
+<td><p>フィールドをリンクするソースを選択します。フォームのプリフィル値はこのソースから取得されます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>値プロバイダパラメータ</p></td>
+<td><p>フィールドに一致するキーを入力します。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h2>シングルライン テキスト<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>1行のテキストを入力するフィールドを追加するには、1行テキスト要素を使用します。例えば、名前を入力するフィールドの場合。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 12%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>セクション</p></td>
+<td><p>アイテム</p></td>
+<td><p>説明</p></td>
+</tr>
+<tr class="row-even"><td rowspan="6"><p>詳細</p></td>
+<td><p>ラベル</p></td>
+<td><p>特定のフォームフィールドがどのような情報を求めているかを連絡先に伝えるキャプション。</p></td>
+</tr>
+<tr class="row-odd"><td><p>フィールド名</p></td>
+<td><p>要素の名前。</p></td>
+</tr>
+<tr class="row-even"><td><p>デフォルト値</p></td>
+<td><p>初期値。</p></td>
+</tr>
+<tr class="row-odd"><td><p>プレースホルダテキスト</p></td>
+<td><p>期待される値を説明するためのヒントとして機能するフォームフィールド内のテキスト。プレースホルダテキストは、連絡先がフィールドをクリックすると消えます。例えば、ここにあなたの名前を入力してください。</p></td>
+</tr>
+<tr class="row-even"><td><p>最小テキスト長</p></td>
+<td><p>1行テキスト要素の入力フィールドの最小テキスト長を決定します。連絡先の入力がこのフィールドで指定された文字数よりも短い場合、検証エラーメッセージが表示されます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>最大テキスト長</p></td>
+<td><p>1行テキスト要素の入力フィールドの最大テキスト長を決定します。連絡先の入力がこのフィールドで指定された文字数よりも長い場合、検証エラーメッセージが表示されます。</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>バリデーション</p></td>
+<td><p>フィールドの検証</p></td>
+<td><p>フィールドバリデーションを適用するかどうかを決定します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>フィールドの重要性</p></td>
+<td><p>連絡先がフィールドに記入する必要があるかどうかを示します。オプションはオプションまたは必須です。</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>スタイリング</p></td>
+<td><p>CSSクラス</p></td>
+<td><p>フィールドのCSSクラスを定義します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>ラベル用CSSクラス</p></td>
+<td><p>ラベルのCSSクラスを定義します。</p></td>
+</tr>
+<tr class="row-even"><td><p>条件</p></td>
+<td><p>編集条件</p></td>
+<td><p>Web フォームのフィールドに条件付きアクションを適用します。条件を追加するには、[条件の編集] をクリックします。</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><p>詳細設定</p></td>
+<td><p>保存を許可する</p></td>
+<td><p>フォーム送信時に入力されたフィールドデータを保存することを有効または無効にします。</p></td>
+</tr>
+<tr class="row-even"><td><p>パフォーマンスのトラッキング</p></td>
+<td><p>フィールドのパフォーマンスに関するデータを記録する場合に選択します。トラッキングを機能させるためには、設定タブで、フォームのパフォーマンストラッキングチェックボックスも選択する必要があります。</p></td>
+</tr>
+<tr class="row-odd"><td><p>バリュープロバイダー</p></td>
+<td><p>フィールドをリンクするソースを選択します。フォームのプリフィル値はこのソースから取得されます。</p></td>
+</tr>
+<tr class="row-even"><td><p>値プロバイダパラメータ</p></td>
+<td><p>フィールドに一致するキーを入力します。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id6">
+<h2>複数行テキスト<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>複数行テキスト要素を使用して、複数行のテキストを入力するフィールドを追加します。この要素は、住所やコメントや説明などの長い回答に使用することができます。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 12%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>セクション</p></td>
+<td><p>アイテム</p></td>
+<td><p>説明</p></td>
+</tr>
+<tr class="row-even"><td rowspan="7"><p>詳細</p></td>
+<td><p>ラベル</p></td>
+<td><p>特定のフォームフィールドがどのような情報を求めているかを連絡先に伝えるキャプション。</p></td>
+</tr>
+<tr class="row-odd"><td><p>フィールド名</p></td>
+<td><p>要素の名前。</p></td>
+</tr>
+<tr class="row-even"><td><p>デフォルト値</p></td>
+<td><p>初期値。</p></td>
+</tr>
+<tr class="row-odd"><td><p>プレースホルダテキスト</p></td>
+<td><p>期待される値を説明するためのヒントとして機能するフォームフィールド内のテキスト。プレースホルダテキストは、連絡先がフィールドをクリックすると消えます。例えば、ここにあなたの名前を入力してください。</p></td>
+</tr>
+<tr class="row-even"><td><p>行数</p></td>
+<td><p>利用可能な行数を決定します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>最小テキスト長</p></td>
+<td><p>複数行テキスト要素の入力フィールドの最小テキスト長を決定します。連絡先の入力がこのフィールドで指定された文字数よりも短い場合、検証エラーメッセージが表示されます。</p></td>
+</tr>
+<tr class="row-even"><td><p>最大テキスト長</p></td>
+<td><p>複数行テキスト要素の入力フィールドの最大テキスト長を決定します。連絡先には、入力がこのフィールドで指定された文字数よりも長い場合、検証エラーメッセージが表示されます。</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>バリデーション</p></td>
+<td><p>フィールドの検証</p></td>
+<td><p>フィールドバリデーションを適用するかどうかを決定します。</p></td>
+</tr>
+<tr class="row-even"><td><p>フィールドの重要性</p></td>
+<td><p>連絡先がフィールドに記入する必要があるかどうかを示します。オプションはオプションまたは必須です。</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>スタイリング</p></td>
+<td><p>CSS クラス</p></td>
+<td><p>フィールドのCSSクラスを定義します。</p></td>
+</tr>
+<tr class="row-even"><td><p>ラベル用CSSクラス</p></td>
+<td><p>ラベルのCSSクラスを定義します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>編集条件</p></td>
+<td><p>Web フォームのフィールドに条件付きアクションを適用します。条件を追加するには、[条件の編集] をクリックします。</p></td>
+</tr>
+<tr class="row-even"><td rowspan="4"><p>詳細設定</p></td>
+<td><p>保存を許可する</p></td>
+<td><p>フォーム送信時に入力されたフィールドデータを保存することを有効または無効にします。</p></td>
+</tr>
+<tr class="row-odd"><td><p>パフォーマンスのトラッキング</p></td>
+<td><p>フィールドのパフォーマンスに関するデータを記録する場合に選択します。トラッキングを機能させるためには、設定タブで、フォームのパフォーマンストラッキングチェックボックスも選択する必要があります。</p></td>
+</tr>
+<tr class="row-even"><td><p>バリュープロバイダー</p></td>
+<td><p>フィールドをリンクするソースを選択します。フォームのプリフィル値はこのソースから取得されます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>値プロバイダパラメータ</p></td>
+<td><p>フィールドに一致するキーを入力します。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id7">
+<h2>電子メール<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>メールアドレスを入力するフィールドを追加するには、Email要素を使用します。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 12%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>セクション</p></td>
+<td><p>アイテム</p></td>
+<td><p>説明</p></td>
+</tr>
+<tr class="row-even"><td rowspan="6"><p>詳細</p></td>
+<td><p>ラベル</p></td>
+<td><p>特定のフォームフィールドがどのような情報を求めているかを連絡先に伝えるキャプション。</p></td>
+</tr>
+<tr class="row-odd"><td><p>フィールド名</p></td>
+<td><p>要素の名前。</p></td>
+</tr>
+<tr class="row-even"><td><p>デフォルト値</p></td>
+<td><p>初期値。</p></td>
+</tr>
+<tr class="row-odd"><td><p>プレースホルダテキスト</p></td>
+<td><p>期待される値を説明するためのヒントとして機能するフォームフィールド内のテキスト。プレースホルダテキストは、連絡先がフィールドをクリックすると消えます。例えば、ここにあなたの名前を入力してください。</p></td>
+</tr>
+<tr class="row-even"><td><p>最小テキスト長</p></td>
+<td><p>Email要素の入力フィールドの最小テキスト長を決定します。連絡先は、入力がこのフィールドで指定された文字数よりも短い場合、検証エラーメッセージを表示します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>最大テキスト長</p></td>
+<td><p>Email要素の入力フィールドの最大テキスト長を決定します。連絡先は、入力がこのフィールドで指定された文字数よりも長い場合、検証エラーメッセージを表示します。</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>バリデーション</p></td>
+<td><p>フィールドの検証</p></td>
+<td><p>フィールドバリデーションを適用するかどうかを決定します。オプションは Email Validator または String Length Validator です。</p></td>
+</tr>
+<tr class="row-odd"><td><p>フィールドの重要性</p></td>
+<td><p>連絡先がフィールドに記入する必要があるかどうかを示します。オプションはオプションまたは必須です。</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>スタイリング</p></td>
+<td><p>CSSクラス</p></td>
+<td><p>フィールドのCSSクラスを定義します。</p></td>
+</tr>
+<tr class="row-odd"><td><p>ラベル用CSSクラス</p></td>
+<td><p>ラベルのCSSクラスを定義します。</p></td>
+</tr>
+<tr class="row-even"><td><p>条件</p></td>
+<td><p>編集条件</p></td>
+<td><p>Web フォームのフィールドに条件付きアクションを適用します。条件を追加するには、[条件の編集] をクリックします。</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><p>詳細設定</p></td>
+<td><p>保存を許可する</p></td>
+<td><p>フォーム送信時に入力されたフィールドデータを保存することを有効または無効にします。</p></td>
+</tr>
+<tr class="row-even"><td><p>パフォーマンスのトラッキング</p></td>
+<td><p>フィールドのパフォーマンスに関するデータを記録する場合に選択します。トラッキングを機能させるためには、設定タブで、フォームのパフォーマンストラッキングチェックボックスも選択する必要があります。</p></td>
+</tr>
+<tr class="row-odd"><td><p>バリュープロバイダー</p></td>
+<td><p>フィールドをリンクするソースを選択します。フォームのプリフィル値はこのソースから取得されます。</p></td>
+</tr>
+<tr class="row-even"><td><p>値プロバイダパラメータ</p></td>
+<td><p>フィールドに一致するキーを入力します。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id8">
+<h2>メールでの確認<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>メールアドレスの誤送信を防ぐために、メールの確認欄の利用を検討してみてはいかがでしょうか。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 13%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Section</p></td>
+<td><p>Item</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td rowspan="8"><p>Details</p></td>
+<td><p>Email label</p></td>
+<td><p>Caption that tells your contacts what information a particular form field is asking for.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Confirm email label</p></td>
+<td><p>Caption that tells your contacts what information a particular form field is asking for.</p></td>
+</tr>
+<tr class="row-even"><td><p>Field name</p></td>
+<td><p>Name of the element.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Default value</p></td>
+<td><p>Initial value.</p></td>
+</tr>
+<tr class="row-even"><td><p>Email placeholder text</p></td>
+<td><p>Text in a form field that functions as a hint to describe the expected value. The placeholder text disappears when the contact clicks the field. For example, Enter your email address here.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Confirm email placeholder text</p></td>
+<td><p>Text in a form field that functions as a hint to describe the expected value. The placeholder text disappears when the contact clicks the field. For example, Re-type your email address here.
+For this setting to apply, you must select the String Length Validator check box in the Field validation field.</p></td>
+</tr>
+<tr class="row-even"><td><p>Minimum text length</p></td>
+<td><p>Determines the minimum text length for the input field of the Email element. Contacts see a validation error message if their input is shorter than the number of characters specified in this field.
+For this setting to apply, you must select the String Length Validator check box in the Field validation field.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Maximum text length</p></td>
+<td><p>Determines the maximum text length for the input field of the Email element. Contacts see a validation error message if their input is longer than the number of characters specified in this field.</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>Validation</p></td>
+<td><p>Field validation</p></td>
+<td><p>Determines whether field validation is applied. The options are Email Validator or String Length Validator.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Field importance</p></td>
+<td><p>Indicates whether the contact must fill in the field. The options are Optional or Mandatory.</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>Styling</p></td>
+<td><p>CSS class</p></td>
+<td><p>Defines the CSS class of the field.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CSS class for label</p></td>
+<td><p>Defines the CSS class of the label.</p></td>
+</tr>
+<tr class="row-even"><td><p>Conditions</p></td>
+<td><p>Edit conditions</p></td>
+<td><p>Apply conditional actions to fields in web forms. Click Edit conditions to add a condition.</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><p>Advanced settings</p></td>
+<td><p>Allow save</p></td>
+<td><p>Enables or disables saving the filled-in field data upon form submission.</p></td>
+</tr>
+<tr class="row-even"><td><p>Performance tracking</p></td>
+<td><p>Select to record data about how the field performs. For tracking to work, on the Settings tab, the Performance tracking checkbox for the form must also be selected.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Value provider</p></td>
+<td><p>Select the source that you want to link the field to. The prefill value of the form will be fetched from this source.</p></td>
+</tr>
+<tr class="row-even"><td><p>Value provider parameters</p></td>
+<td><p>Enter the key to match the field.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id9">
+<h2>電話番号<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>電話番号を入力するフィールドを追加するには、Telephone要素を使用します。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 12%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Section</p></td>
+<td><p>Item</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td rowspan="6"><p>Details</p></td>
+<td><p>Label</p></td>
+<td><p>Caption that tells your contacts what information a particular form field is asking for.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Field name</p></td>
+<td><p>Name of the element.</p></td>
+</tr>
+<tr class="row-even"><td><p>Default value</p></td>
+<td><p>Initial value.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Placeholder text</p></td>
+<td><p>Text in a form field that functions as a hint to describe the expected value. The placeholder text disappears when the contact clicks the field. For example, Enter your first name here,</p></td>
+</tr>
+<tr class="row-even"><td><p>Minimum text length</p></td>
+<td><p>Determines the minimum text length. Contacts see a validation error message if their input is shorter than the number of characters specified in this field.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Maximum text length</p></td>
+<td><p>Determines the maximum text length. Contacts see a validation error message if their input is longer than the number of characters specified in this field.</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>Validation</p></td>
+<td><p>Field validation</p></td>
+<td><p>Determines whether field validation is applied. The options are Phone Number Validator or String Length Validator.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Field importance</p></td>
+<td><p>Indicates whether the contact must fill in the field. The options are Optional or Mandatory.</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>Styling</p></td>
+<td><p>CSS class</p></td>
+<td><p>Defines the CSS class of the field.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CSS class for label</p></td>
+<td><p>Defines the CSS class of the label.</p></td>
+</tr>
+<tr class="row-even"><td><p>Conditions</p></td>
+<td><p>Edit conditions</p></td>
+<td><p>Apply conditional actions to fields in web forms. Click Edit conditions to add a condition.</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><p>Advanced settings</p></td>
+<td><p>Allow save</p></td>
+<td><p>Enables or disables saving the filled-in field data upon form submission.</p></td>
+</tr>
+<tr class="row-even"><td><p>Performance tracking</p></td>
+<td><p>Select to record data about how the field performs. For tracking to work, on the Settings tab, the Performance tracking checkbox for the form must also be selected.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Value provider</p></td>
+<td><p>Select the source that you want to link the field to. The prefill value of the form will be fetched from this source.</p></td>
+</tr>
+<tr class="row-even"><td><p>Value provider parameters</p></td>
+<td><p>Enter the key to match the field.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id10">
+<h2>チェックボックス<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Checkbox要素を使用して、ユーザーがトグルしてオプションを選択できるようにするチェックボックスを表示します。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 13%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Section</p></td>
+<td><p>Item</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><p>Details</p></td>
+<td><p>Label</p></td>
+<td><p>Caption that tells your contacts what information a particular form field is asking for.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Field name</p></td>
+<td><p>Name of the element.</p></td>
+</tr>
+<tr class="row-even"><td><p>Checked</p></td>
+<td><p>Determines the check box value that is preselected by default.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Validation</p></td>
+<td><p>Field importance</p></td>
+<td><p>Indicates whether the contact must fill in the field. The options are Optional or Mandatory.</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>Styling</p></td>
+<td><p>CSS class</p></td>
+<td><p>Defines the CSS class of the field.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CSS class for label</p></td>
+<td><p>Defines the CSS class of the label.</p></td>
+</tr>
+<tr class="row-even"><td><p>Conditions</p></td>
+<td><p>Edit conditions</p></td>
+<td><p>Apply conditional actions to fields in web forms. Click Edit conditions to add a condition.</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><p>Advanced settings</p></td>
+<td><p>Allow save</p></td>
+<td><p>Enables or disables saving the filled-in field data upon form submission.</p></td>
+</tr>
+<tr class="row-even"><td><p>Performance tracking</p></td>
+<td><p>Select to record data about how the field performs. For tracking to work, on the Settings tab, the Performance tracking checkbox for the form must also be selected.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Value provider</p></td>
+<td><p>Select the source that you want to link the field to. The prefill value of the form will be fetched from this source.</p></td>
+</tr>
+<tr class="row-even"><td><p>Value provider parameters</p></td>
+<td><p>Enter the key to match the field.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id11">
+<h2>日付<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Date要素を使用して、日付を入力するフィールドを追加します。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 13%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Section</p></td>
+<td><p>Item</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td rowspan="5"><p>Details</p></td>
+<td><p>Label</p></td>
+<td><p>Caption that tells your contacts what information a particular form field is asking for.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Field name</p></td>
+<td><p>Name of the element.</p></td>
+</tr>
+<tr class="row-even"><td><p>Selected date</p></td>
+<td><p>Specifies the date selected by default.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Start date</p></td>
+<td><p>Specifies the date range start date.</p></td>
+</tr>
+<tr class="row-even"><td><p>End date</p></td>
+<td><p>Specifies the date range end date.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Validation</p></td>
+<td><p>Field importance</p></td>
+<td><p>Indicates whether the contact must fill in the field. The options are Optional or Mandatory.</p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p>Styling</p></td>
+<td><p>CSS class</p></td>
+<td><p>Defines the CSS class of the field.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CSS class for label</p></td>
+<td><p>Defines the CSS class of the label.</p></td>
+</tr>
+<tr class="row-even"><td><p>Conditions</p></td>
+<td><p>Edit conditions</p></td>
+<td><p>Apply conditional actions to fields in web forms. Click Edit conditions to add a condition.</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><p>Advanced settings</p></td>
+<td><p>Allow save</p></td>
+<td><p>Enables or disables saving the filled-in field data upon form submission.</p></td>
+</tr>
+<tr class="row-even"><td><p>Performance tracking</p></td>
+<td><p>Select to record data about how the field performs. For tracking to work, on the Settings tab, the Performance tracking checkbox for the form must also be selected.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Value provider</p></td>
+<td><p>Select the source that you want to link the field to. The prefill value of the form will be fetched from this source.</p></td>
+</tr>
+<tr class="row-even"><td><p>Value provider parameters</p></td>
+<td><p>Enter the key to match the</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Sitecore Formsは、&lt;input type=date&gt; HTML5要素を使用して日付フィールドをレンダリングします。この要素はIE11とMac OS Safariブラウザではサポートされていません。これらのブラウザでdatetime picker要素を使用して日付フィールドを取得するには、カスタム要素の実装を検討してください。</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p><a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-basic-elements.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-basic-elements.html</a></p>
+</div>
 </div>
 </div>
 
