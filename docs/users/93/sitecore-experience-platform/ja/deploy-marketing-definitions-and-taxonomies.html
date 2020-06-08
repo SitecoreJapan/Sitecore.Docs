@@ -184,13 +184,47 @@
             
   <div class="section" id="id1">
 <h1>マーケティングの定義とタクソノミを展開<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>マーケティング定義とは、キャンペーン、ファネル、ゴール、マーケティングアセット、アウトカム、マーケティングタクソノミを作成し、定義することができるSitecoreのアイテムです。スケーリングされたセットアップで集計とレポートを正しく機能させるためには、マーケティング定義のアイテムを導入する必要があります。Experience Analyticsのレポートは、レポーティング データベースからのデータに基づいて構築されるため、データを正確に表示するためには、タクソノミと定義がレポーティング データベースに存在する必要があります。配置とは、マスターデータベースで定義されたマーケティング定義またはタクソノミに対して、対応するレコードがレポーティングデータベースに作成されることを意味します。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>カスタムマーケティング定義やタクソノミをレポートに含めるには、1つまたは複数のカスタムレポートを作成する必要があります。</p>
+</div>
+<div class="section" id="id2">
+<h2>すべてのマーケティング定義とタクソノミを展開する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>あなたがするときには、すべてのマーケティング定義項目を展開する必要があります。</p>
+<ul>
+<li><p>スタンドアロン環境のインストール</p></li>
+<li><p>スケーラブルな環境を構成する</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>スケーリングされた環境では、[マーケティング定義の展開]ダイアログボックスは、コンテンツ管理ロールでのみ利用可能です。</p>
+</div>
+</li>
+<li><p>メールエクスペリエンスマネージャなどのモジュールを追加する</p></li>
+<li><p>コマースサーバーをSitecoreでインストールする</p></li>
+<li><p>Sitecoreインスタンスを新しいバージョンにアップグレードする</p></li>
+</ul>
+<p>Sitecoreモジュールをインストールした場合は、Deploy marketing definitionsダイアログを使用して、モジュールの一部として追加されたマーケティング定義でレポーティングデータベースを更新します。</p>
+<p>すべてのマーケティング定義とタクソノミをデプロイするには、以下の手順に従います。</p>
+<ol class="arabic">
+<li><p>Sitecore Experience Platformデスクトップにログインします。</p></li>
+<li><p>コントロールパネルをクリックして、ANALYTICSセクションに移動します。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a20dd6cf.png"><img alt="すべてのマーケティング定義とタクソノミを展開する" class="align-center" src="_images/15ed64a20dd6cf.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>マーケティング定義の展開をクリックします。</p></li>
+<li><p>[マーケティング定義の配置] ダイアログ ボックスで、すべてのチェックボックスを選択し、[配置] をクリックします。</p></li>
+</ol>
+<p>Deployをクリックすると、Analyticsワークフローの最終状態にあるすべてのマーケティング定義と、すべてのタクソノミー項目がレポーティングデータベースにデプロイされます。これは完了するまでに時間がかかることがあります。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>マーケティング定義を正しく展開できなかった場合、集計中にエラーが発生し、一部のxAnalyticsレポートが正しく表示されないことがあります。エラーはログファイルに保存されますが、xAnalytics UIには表示されません。また、レポートデータベースを使用している他の Sitecore アプリケーションも影響を受ける可能性があります。</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p><a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/deploy-marketing-definitions-and-taxonomies.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/deploy-marketing-definitions-and-taxonomies.html</a></p>
+</div>
 </div>
 </div>
 
