@@ -191,13 +191,62 @@
             
   <div class="section" id="id1">
 <h1>コンテンツテスト戦略<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>コンテンツテスト戦略は、コンテンツテスト中にウェブサイトのトラフィックがテストバリアント間でどのように分配されるかを決定します。Sitecoreのデフォルトのテストストラテジーは、サブグループラウンドロビンスティッキーテストストラテジーです。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>このストラテジーが最も効果的なストラテジーなので、すべての状況でこのストラテジーを使用することをお勧めします。しかし、必要であれば、1つのテストに対してテストストラテジーを変更することもできますし、管理者がデフォルトのテストストラテジーを変更することもできます。</p>
 </div>
+<div class="section" id="id2">
+<h2>ランダムテストの攻略法<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ランダムテスト戦略を適用すると、Sitecoreは訪問するたびにランダムに選択されたエクスペリエンスを提示します。つまり、サイトを何度も訪問した場合、訪問者は異なる体験を受けることになるかもしれません。</p>
+</div>
+<div class="section" id="id3">
+<h2>スティッキーテスト戦略<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>スティッキーテスト戦略を適用すると、Sitecoreは、訪問者が最初に訪問したときにはランダムに選択された体験を提示しますが、その後の訪問でも同じ体験を提供します。</p>
+</div>
+<div class="section" id="id4">
+<h2>ラウンドロビンのスティッキーテストの攻略法<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Round Robin Stickyテスト戦略を適用すると、Sitecoreは、同数の訪問者がそれぞれのバリエーションを見ることができるように、体験を交互に表示します。例えば、次の表は、Sitecoreが3つの異なる体験を一連の訪問者にどのように提示しているかを示しています。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 56%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Visitor 1</p></td>
+<td><p>Experience A</p></td>
+</tr>
+<tr class="row-even"><td><p>Visitor 2</p></td>
+<td><p>Experience B</p></td>
+</tr>
+<tr class="row-odd"><td><p>Visitor 3</p></td>
+<td><p>Experience C</p></td>
+</tr>
+<tr class="row-even"><td><p>Visitor 4</p></td>
+<td><p>Experience A</p></td>
+</tr>
+<tr class="row-odd"><td><p>Visitor 5</p></td>
+<td><p>Experience B</p></td>
+</tr>
+<tr class="row-even"><td><p>Visitor 6</p></td>
+<td><p>Experience C</p></td>
+</tr>
+<tr class="row-odd"><td><p>Visitor 7</p></td>
+<td><p>Experience A</p></td>
+</tr>
+</tbody>
+</table>
+<p>訪問者がサイトに戻ってきた場合、毎回同じ体験をしてもらうことになります。</p>
+<p>この戦略では、パーソナライゼーションのルールは考慮されていません。このため、サブグループ・ラウンドロビン・スティッキー・テスト戦略が好ましいです。</p>
+</div>
+<div class="section" id="id5">
+<h2>標準のテストストラテジー - サブグループラウンドロビンスティッキー<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>サブグループのラウンドロビンスティッキーテスト戦略は、ラウンドロビンスティッキー戦略に似ています。Sitecoreは、同数の訪問者がそれぞれのバリエーションを見ることができるように、体験を交互に表示します。しかし、この戦略では、Sitecoreがサブグループ内でエクスペリエンスを均等に分散するため、パーソナライゼーションルールを効果的にテストすることができます。</p>
+<p><a class="reference internal" href="personalization-tests.html"><span class="doc">Personalization tests</span></a> のトピックでは、デフォルトのテストストラテジーを使ったテストがどのように機能するかを詳しく説明しています。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-content-test-strategy.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-content-test-strategy.html</a></p>
+</div>
 </div>
 </div>
 

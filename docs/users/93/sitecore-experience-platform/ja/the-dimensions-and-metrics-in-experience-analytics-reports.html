@@ -184,13 +184,229 @@
             
   <div class="section" id="experience-analytics">
 <h1>Experience Analyticsレポートのディメンションとメトリクス<a class="headerlink" href="#experience-analytics" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>Sitecoreの開発者と管理者は、Experience Analyticsのレポートを作成する際に、ディメンションとメトリクスを使用します。</p>
+<p>各レポートには、1つのディメンションのデータが表示されます。ディメンジョンは、訪問者の地理的IPロケーションやトリガーされたキャンペーンなど、レポート内でデータをどのようにグループ化するかを決定します。レポートの名前は、「ロケーション」、「キャンペーン」、「アセット」、「ゴール」などのように、ディメンションを反映しています。</p>
+<p>メトリクスによって、レポートに表示される値や測定の種類が決まります。一部の概要レポートでは、複数のメトリクスのデータが表示され、各メトリクスのオン/オフを切り替えることができます。各詳細レポートでは、一連のオプションから 1 つのメトリックを選択します。この機能を使用すると、その機能を使用している間は、その機能を使用していない場合でも、その機能を使用することができます。</p>
+<p>メトリクスが測定する内容は、ディメンジョンによって異なります。たとえば、キャンペーン ディメンジョンでは、訪問メトリックは、特定のキャンペーンが登録されたインタラクションの数をカウントします。</p>
+<div class="section" id="id1">
+<h2>ディメンジョン<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Experience Analyticsレポートを作成する際には、以下のディメンションと標準的なメトリクスのセットを組み合わせて、ウェブサイト上のアクティビティを分析することができます。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 95%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Dimension</p></td>
+<td><p>Definition</p></td>
+</tr>
+<tr class="row-even"><td><p>Asset</p></td>
+<td><p>Marketing assets are the content that you use to attract contacts to your website and increase their engagement with your organization. If a marketing asset is a PDF, video, or other downloadable interactive content, you can use this dimension to track how frequently contacts download your marketing assets.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Asset group</p></td>
+<td><p>An asset group is a taxonomic grouping that enables you to group marketing assets into related categories, for example, marketing collateral. If your marketing assets are downloadable or interactive content, you can analyze the data for asset groups as well as for assets.</p></td>
+</tr>
+<tr class="row-even"><td><p>Campaign</p></td>
+<td><p>Campaigns are advertising initiatives designed to encourage people to visit a website and can appear in different media across a specific time frame. A contact can trigger several campaigns during an interaction, but the campaign dimension measures the first campaign that was triggered.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Campaign facet</p></td>
+<td><p>A campaign facet is a customizable taxonomy tag that allows you to classify your campaigns into meaningful groups, for example, by geographic region or business unit. This dimension enables you to track how contacts interact with different types of campaign activities.</p></td>
+</tr>
+<tr class="row-even"><td><p>Campaign facet group</p></td>
+<td><p>A campaign facet group organizes related campaign facets. You can use this dimension to track how contacts interact with campaign activities that have been tagged as belonging to this campaign facet group. From this group, you can drill down to campaign facets and their subgroups.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Campaign group</p></td>
+<td><p>A campaign group is a way of classifying individual campaigns under a higher-level campaign group that contains multiple campaigns across different channels. The Campaign group dimension functions as a tag to identify the campaigns that belong to a particular campaign group. Interactions from every campaign are summarized at the campaign-group level. You can drill down from a campaign group to individual campaigns.</p></td>
+</tr>
+<tr class="row-even"><td><p>Channel</p></td>
+<td><p>Channels are the marketing channels or traffic sources where the interactions on your website occur.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Channel group</p></td>
+<td><p>Interactions from every channel in a channel group are categorized at the group level. You can drill down from channel groups to channels.</p></td>
+</tr>
+<tr class="row-even"><td><p>Channel type</p></td>
+<td><p>By default, you can use two basic types of channels to interact with your contacts: online or offline. Interactions from every channel are summarized at the channel type level. You can drill down from channel type to channel group or channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>City</p></td>
+<td><p>Use the City dimension to analyze the interactions coming from different cities using Geo IP data.</p></td>
+</tr>
+<tr class="row-even"><td><p>Country</p></td>
+<td><p>Use the Country dimension to analyze and compare the interactions of contacts coming from different countries using Geo IP data. You can drill down from country to region to city.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Device model</p></td>
+<td><p>The Device model dimension enables you to you track how contacts interact with content from specific device models, for example, Samsung Galaxy Note10+ or iPad Pro.</p></td>
+</tr>
+<tr class="row-even"><td><p>Device type</p></td>
+<td><p>The device type dimension measures how contacts interact with content from various devices, such as PCs, mobile phones and tablets. From here, you can drill down to device model.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Download</p></td>
+<td><p>Use the downloads dimension to analyze the interactions where a file download occurred.</p></td>
+</tr>
+<tr class="row-even"><td><p>Entry page by item</p></td>
+<td><p>An entry page by item is the first page a contact opens when visiting a website. Use the Entry pages dimension to analyze the activity of contacts that enter your website on specific entry pages.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Entry page by URL</p></td>
+<td><p>An entry page URL is the URL of the first page of an interaction. Use the Entry page by URL dimension to analyze the activity of contacts that enter your website on a specific entry page URL.</p></td>
+</tr>
+<tr class="row-even"><td><p>Exit page by item</p></td>
+<td><p>An exit page is the last page accessed when a contact leaves a website, signifying the end of an interaction/session. Use the Exit pages dimension to analyze the activity of contacts or visitors that leave your Sitecore website on specific pages.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Exit page by URL</p></td>
+<td><p>An exit page URL is the last URL accessed when a contact leaves a website, signifying the end of an interaction/session. Use the Exit page by URL dimension to analyze the activity of contacts that leave your Sitecore website on a specific URL.</p></td>
+</tr>
+<tr class="row-even"><td><p>Goal</p></td>
+<td><p>A goal is a specific activity (page event) on a website that indicates success to the site owner. For example, filling in and submitting a form could be a goal. Use the Goal dimension to analyze the goals achieved during interactions.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Goal facet</p></td>
+<td><p>A goal facet describes different aspects of a goal that you want to track, for example, a category or description of related goals. This dimension allows you to track how often contacts convert on goals that have been tagged with a specific goal facet.</p></td>
+</tr>
+<tr class="row-even"><td><p>Internal search keyword</p></td>
+<td><p>Internal search keywords are the words or phrases that a contact enters into the Search field on your website. This dimension is not case sensitive, so the interactions searching for &quot;sitecore&quot; and &quot;Sitecore&quot; appear in reports as &quot;sitecore&quot;. The internal search keyword is triggered by the Search page event. Use the Internal search keyword dimension to analyze the actions and behavior of contacts that use different search keywords on your website.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Language</p></td>
+<td><p>The Language dimension refers to the language that a contact chooses to view the pages on a website in.
+The Language dimension tracks the language of the initial interaction, not the language of the individual web pages. For example, you can see how much value is generated by English content versus Danish content.</p></td>
+</tr>
+<tr class="row-even"><td><p>Outcome</p></td>
+<td><p>Outcomes occur when a contact triggers a page event that is classified as an outcome. For example, placing an order is an outcome by default.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Page</p></td>
+<td><p>The page dimension lets you analyze interactions according to which pages were viewed. For example, you can see which pages were often viewed during interactions with a high value per visit. Use the Page reports to analyze and assess the performance of your website pages.</p></td>
+</tr>
+<tr class="row-even"><td><p>Page by item</p></td>
+<td><p>Page by item reports give you information about pages on your Sitecore website based on the underlying item.  <a class="footnote-reference brackets" href="#id3" id="id2">1</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Page by URL</p></td>
+<td><p>Page by URL reports let you analyze how content is used based on its URL. This dimension provides a breakdown of the raw URLs requested by contacts (path and query). The dimension is not case sensitive, which means that, for example, /Products and /products are displayed in your reports as one URL: /products.</p></td>
+</tr>
+<tr class="row-even"><td><p>Pattern</p></td>
+<td><p>A pattern is a way to categorize an interaction using predictive personalization. Use the Pattern dimension to analyze the behavior of interactions matched to patterns across all profiles. This dimension enables you to see which patterns have the most matches, which patterns do not have matches, or which have conversions.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Referring site</p></td>
+<td><p>Use the Referring sites dimension to analyze the behavior of contacts coming to your website from an external website that contains a link to your website.</p></td>
+</tr>
+<tr class="row-even"><td><p>Region</p></td>
+<td><p>Use the Region dimension to analyze the interactions coming from different regions using Geo IP data. For example, you can compare the behavior of contacts in interactions from different regions. You can drill down from region to city.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Sitecoreのアイテムは、サイト内の複数の場所で使用されている場合、複数のURLを持つことができます。</p>
+</dd>
+</dl>
 </div>
+<div class="section" id="id4">
+<h2>メトリクス<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>各レポートでは、オプションのセットから1つのメトリックを選択できます。選択したメトリックは、レポートのグラフィック部分に表示されます。この図では、「Element Import Import」という名前で、「Element Import」という名前が付けられています。</p>
+<p>利用可能なメトリクスのセットは、レポートごとに異なりますが、常に以下のサブセットになっています。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 92%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Metric</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>Visits</p></td>
+<td><p>The total number of interactions, including website visits as well as interactions through other channels, such as EXM. One website visit comprises all the actions that a visitor takes from the moment they enter a website until the moment they leave.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Average duration</p></td>
+<td><p>The average duration of interactions.</p></td>
+</tr>
+<tr class="row-even"><td><p>Value</p></td>
+<td><p>The engagement value generated.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Value per visit</p></td>
+<td><p>The average engagement value per visit.</p></td>
+</tr>
+<tr class="row-even"><td><p>Conversions</p></td>
+<td><p>The number of times contacts have completed a goal that represents a measurable commitment.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Conversion rate</p></td>
+<td><p>The proportion of interactions that result in a conversion. This is calculated as the number of interactions in which one or more goals is triggered divided by the total number of interactions.</p></td>
+</tr>
+<tr class="row-even"><td><p>Time on site</p></td>
+<td><p>The total duration of interactions.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Page views</p></td>
+<td><p>The number of pages viewed.</p></td>
+</tr>
+<tr class="row-even"><td><p>Page views per visit</p></td>
+<td><p>The number of page views per visit.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bounces</p></td>
+<td><p>The number of interactions where only one page was viewed.</p></td>
+</tr>
+<tr class="row-even"><td><p>Bounce rate</p></td>
+<td><p>The percentage of interactions where only one page was viewed. This is calculated as the number of interactions in which only a single page is viewed, divided by the total number of unique visitors, multiplied by 100.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Outcome occurrence</p></td>
+<td><p>The number of outcomes.</p></td>
+</tr>
+<tr class="row-even"><td><p>Count per visit</p></td>
+<td><p>The number of downloads, goal conversions or outcomes per interaction.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Value per count</p></td>
+<td><p>The sum of the engagement values achieved by all interactions divided by the total number of downloads, goal conversions or outcomes.</p></td>
+</tr>
+</tbody>
+</table>
+<p>例 - チャンネル
+===================-</p>
+<p>以下に、チャネル・ディメンジョンを使用するレポートでのメトリクスの適用方法の例を示します。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 93%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Metric</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>Visits</p></td>
+<td><p>The number of interactions from a given channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Average duration</p></td>
+<td><p>The average duration of interactions from a given channel.</p></td>
+</tr>
+<tr class="row-even"><td><p>Value</p></td>
+<td><p>The engagement value generated by interactions from a given channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Value per visit</p></td>
+<td><p>The engagement value generated by interactions from a given channel divided by the number of interactions from the channel.</p></td>
+</tr>
+<tr class="row-even"><td><p>Conversions</p></td>
+<td><p>The number of conversions from a given channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Conversion rate</p></td>
+<td><p>The proportion of interactions from a given channel that result in a conversion. This is calculated as the number of interactions in which one or more goals is triggered divided by the total number of interactions.</p></td>
+</tr>
+<tr class="row-even"><td><p>Time on site</p></td>
+<td><p>The total duration of interactions from a given channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Page views</p></td>
+<td><p>The number of pages viewed in interactions from a given channel.</p></td>
+</tr>
+<tr class="row-even"><td><p>Page views per visit</p></td>
+<td><p>The number of page views per visit from a given channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bounces</p></td>
+<td><p>The number of interactions from a given channel where only one page was viewed.</p></td>
+</tr>
+<tr class="row-even"><td><p>Bounce rate</p></td>
+<td><p>The percentage of interactions from a given channel where only one page was viewed. This is calculated as the number of interactions that originate from a specific channel and in which only a single page is viewed, divided by the total number of unique visitors from the channel, multiplied by 100.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Outcome occurrence</p></td>
+<td><p>The number of outcomes in interactions from a given channel.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-dimensions-and-metrics-in-experience-analytics-reports.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-dimensions-and-metrics-in-experience-analytics-reports.html</a></p>
+</div>
 </div>
 </div>
 
