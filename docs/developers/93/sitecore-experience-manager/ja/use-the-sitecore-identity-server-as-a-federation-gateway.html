@@ -1,0 +1,402 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>フェデレーションゲートウェイとしてSitecore Identityサーバーを使用する &mdash; Sitecore Experience Manager  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="UI のローカライズ" href="localize-the-ui.html" />
+    <link rel="prev" title="クライアントアプリケーションで bearer トークンを使用する" href="use-bearer-tokens-in-client-applications.html" />
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153234118-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-153234118-2');
+</script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Sitecore Experience Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="sitecore-identity.html">Sitecore Identity</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sitecore-identity-structure.html">Sitecore Identity の構造</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sitecore-identity-server-authentication.html">Sitecore Identityサーバー認証</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configure-a-sitecore-instance-and-sitecore-identity-server.html">SitecoreインスタンスとSitecore Identityサーバーを設定する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="understanding-sitecore-authentication-behavior-changes.html">Sitecoreの認証動作の変化を理解する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="single-sign-out.html">シングルサインアウト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="use-bearer-tokens-in-client-applications.html">クライアントアプリケーションで bearer トークンを使用する</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">フェデレーションゲートウェイとしてSitecore Identityサーバーを使用する</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Sitecore Identityサーバーでサブプロバイダーを設定する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sitecore">Sitecoreインスタンスにサブプロバイダを登録する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">クレームの変換を設定する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#azuread">AzureのADを設定する</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="localize-the-ui.html">UI のローカライズ</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sitecore Experience Manager</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sitecore-identity.html">Sitecore Identity</a> &raquo;</li>
+        
+      <li>フェデレーションゲートウェイとしてSitecore Identityサーバーを使用する</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/use-the-sitecore-identity-server-as-a-federation-gateway.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sitecore-identity">
+<h1>フェデレーションゲートウェイとしてSitecore Identityサーバーを使用する<a class="headerlink" href="#sitecore-identity" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><a class="reference external" href="https://identityserver4.readthedocs.io/en/release/">IdentityServer4</a> をベースにしているため、Sitecore Identity (SI) サーバーを、1 つ以上の外部 ID プロバイダ (またはサブプロバイダ、インナープロバイダと呼ばれることもあります) へのゲートウェイとして使用することができます。 <a class="reference external" href="http://docs.identityserver.io/en/latest/topics/federation_gateway.html">IdentityServer4 フェデレーションゲートウェイ</a> に、この概念の詳細が記載されています。</p>
+<p>サブプロバイダーを構成すると、SI サーバーのログイン画面にこのプロバイダーのログインボタンが表示されます。</p>
+<p>SI サーバーに付属している Azure AD ID プロバイダーを有効にする必要があります。この方法については、「{SI_server_root_folder}sSitecore.Plugin.IdentityProvider.AzureAdConfigreadme.txt」を参照してください。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p><a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory/azuread-dev/v1-protocols-openid-connect-code">OpenID ConnectとAzure Active Directoryを使用してWebアプリケーションへのアクセスを許可</a> することで、SIサーバーと連携するようにAzure ADを構成することができます。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>このエラーが表示された場合 &quot;リクエストで指定された返信URLは、アプリケーションに設定された返信URLと一致しません: &quot;が表示された場合は、アプリケーションマニフェストのreplyUrlsセクションで <a class="reference external" href="https://[SI">https://[SI</a> Server host name]/signin-oidc URLを使用してください。</p>
+</div>
+<div class="section" id="id2">
+<h2>Sitecore Identityサーバーでサブプロバイダーを設定する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>SIサーバにサブプロバイダを追加するには</p>
+<ol class="arabic">
+<li><p>Visual Studio で新しいプラグインを作成します。</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>クラス・ライブラリ（.NET Standard）C#プロジェクトを作成します。</p></li>
+<li><p>リポジトリのルートにglobal.jsonファイルを作成します。</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+    &quot;msbuild-sdks&quot;. {
+        &quot;Sitecore.Framework.Runtime.Build&quot;. “1.1.0”
+    }
+}
+</pre></div>
+</div>
+<p>特定のバージョンを指定します。</p>
+<ol class="loweralpha simple" start="3">
+<li><p>csprojファイルを編集します: Projectノードの後に&lt;Sdk Name=&quot;Sitecore.Framework.Runtime.Build&quot; /&gt;を追加します。</p></li>
+<li><p>必要な他の参照を追加します。コマンドを有効にするためのSitecore.Framework.Runtime.Commands、ランタイム抽象化の使用を有効にするためのSitecore.Framework.Runtime.Abstractions、プラグインにすでにある機能の上にビルドする場合は他のプラグインへの参照を追加します。</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>このプロバイダの指示に従って優先サブプロバイダのサービスを設定し、SignInScheme 設定を idsrv.external として指定します。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>AddOpenIdConnect などの認証ミドルウェアを使用するには、Microsoft.AspNetCore.Authentication.AuthenticationBuilder 型のオブジェクトが必要です。プラグインでは、services.AddAuthentication() の代わりに新しい Microsoft.AspNetCore.Authentication.AuthenticationBuilder(services) を使用します。</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>構成にサブプロバイダを登録します。SI_server_root_folder}SsitecoreSitecore.Plugin.IdentityProvider.AzureAdConfigSitecore.Plugin.IdentityProvider.AzureAd.xmlファイルに例があります。</p></li>
+<li><p>オプションで、Sitecore インスタンスにサブプロバイダを登録します。</p></li>
+</ol>
+</div>
+<div class="section" id="sitecore">
+<h2>Sitecoreインスタンスにサブプロバイダを登録する<a class="headerlink" href="#sitecore" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>デフォルトでは、Sitecore インスタンスは、SI サーバー (Sitecore.Owin.Authentication.IdentityServer.config 構成ファイルの SitecoreIdentityServer 名) の 1 つの外部 ID プロバイダのみを知っており、明示的に指定しない限り、サブプロバイダについては知りません。</p>
+<p>サブプロバイダは、次のような状況で指定します。</p>
+<ul class="simple">
+<li><p>SitecoreIdentityServer 自体ではなく、他のサイトにサブプロバイダをマッピングしたい場合。たとえば、SI サーバーはシェルサイトと管理者サイトにマップされていますが、SI サーバーで構成されている Azure AD プロバイダを Web サイトにマップしたいとします。</p></li>
+<li><p>GetSignInUrlInfoPipelineパイプラインを使用して、特定のサブプロバイダのサインインURLを取得して、ユーザーをサブプロバイダのログインページに直接リダイレクトしたい（SIログインページをスキップして）とします。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>新しいログインエンドポイントをサブプロバイダーで利用するためには、Sitecoreにサブプロバイダーを登録する必要がありますが、これはオプションです。SIサーバーに組み込まれたAzure ADのサブプロバイダーを有効にし、シェルサイトのloginPage属性にこのURL $(loginPath)shell/SitecoreIdentityServer/IdS4-AzureAdを指定すると、シェルユーザーはAzure ADを使用して認証し、SIサーバーのログインページをスキップすることができます。</p>
+<p>SIサーバーにAzure ADを登録するには、AuthenticationSchemeの設定値をIdS4-AzureAdに指定します。</p>
+</div>
+<p>Sitecoreにサブプロバイダーを登録するには</p>
+<ul>
+<li><p>sitecore/federatedAuthentication/identityProvidersノードにidentityProviderノードを追加します。この構成ノードは、name パラメータの命名規則に従う必要があります。名前パラメータは以下の形式にする必要があります。gateway_identity_provider]/[AuthenticationScheme]は、sitecoreが直接通信するIDプロバイダであり、AuthenticationSchemeは、gateway_identity_providerで構成したサブIDプロバイダ（例えば、IdS4-AzureAd）の認証スキームです。</p>
+<p>考慮しなければならない制限がいくつかあります。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>TriggerExternalSignOut プロパティと Transformations プロパティは gateway_identity_provider ノードから継承され、それらをオーバーライドすることはできません。</p></li>
+<li><p>このサブプロバイダを有効にするには、gateway_identity_provider プロバイダの Enabled プロパティを Enabled に設定する必要があります。</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>App_ConfigSitecore.Owin.Authentication.IdentityServer.config構成ファイルには、Azure ADサブプロバイダを登録する例があります。</p>
+</div>
+<div class="section" id="id3">
+<h2>クレームの変換を設定する<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>外部IDプロバイダごとにクレーム変換を設定することができます。それらはSitecoreが既に持っているものと似ていますが、以下の理由からSIサーバー側でクレーム変換を行う必要があります。</p>
+<ul class="simple">
+<li><p>SIサーバーと他のSIクライアント（Sitecore自体ではないもの）との間の通信にSitecoreインスタンスが存在しない。例えば、Sitecore以外のアプリケーションが外部プロバイダとしてSIサーバーを利用している場合、そのアプリケーションは、SIサーバーで正規化されていない限り、正規化されたクレームを受け取ることができません。</p></li>
+<li><p>SIサーバは、SIクライアントがスコープを使用して実際に要求したクレームのみを返します。そのため、SIクライアントは、未知のクレームを受け取ることはありません。</p></li>
+</ul>
+<p>デフォルトでは、Sitecore Identityは以下のカスタムスコープで動作します。IDリソースとしてsitecore.profile、APIリソースとしてsitecore.profile.apiです。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>sitecore/pipelines/owin.identityProviders/processor[id=SitecoreIdentityServer]/scopes)で、Sitecore に要求されたスコープを変更することができます。</p>
+<p>Sitecore.Plugin.Authentication.OpenIdConnectパッケージを使用するアプリケーションの場合は、{application_root_folder}sitecoreSitecore.Plugin.Authentication.OpenIdConnectConfigopenIdConnect.xmlファイルを確認してください。設定パスは、Sitecore:Authentication:OpenIdConnectOptions:Scope:...です。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>デフォルトのスコープ定義は、{SI_server_root_folder}sitecitecore.Plugin.IdentityServerConfig\Sitecore.IdentityServer.xmlファイルに記載されています。</p>
+</div>
+<p>sitecore.profileとsitecore.profile.apiスコープの両方には、以下のようなクレームが含まれています。</p>
+<ul class="simple">
+<li><p>名前</p></li>
+<li><p>電子メール</p></li>
+<li><p>ロール</p></li>
+<li><p><a class="reference external" href="http://www.sitecore.net/identity/claims/isAdmin">http://www.sitecore.net/identity/claims/isAdmin</a></p></li>
+<li><p><a class="reference external" href="http://www.sitecore.net/identity/claims/originalIssuer">http://www.sitecore.net/identity/claims/originalIssuer</a></p></li>
+</ul>
+<p>ユーザーにロールを与えるために</p>
+<ul class="simple">
+<li><p>特定の着信クレームを適切なロール・クレームにマッピングします。たとえば、90e5a2e5-4e3f-4f25-8beb-1238052fda8e Azure ADグループをsitecoreに変換するには、SitecoreのAuthorロールを使用します。</p></li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;AzureGroupTransformation</span> <span class="na">type=</span><span class="s">&quot;Sitecore.Plugin.IdentityProviders.DefaultClaimsTransformation, Sitecore.Plugin.IdentityProviders&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;SourceClaims&gt;</span>
+                                <span class="nt">&lt;Claim1</span> <span class="na">type=</span><span class="s">&quot;groups&quot;</span> <span class="na">value=</span><span class="s">&quot;90e5a2e5-4e3f-4f25-8beb-1238052fda8e&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/SourceClaims&gt;</span>
+                <span class="nt">&lt;NewClaims&gt;</span>
+                                <span class="nt">&lt;Claim1</span> <span class="na">type=</span><span class="s">&quot;role&quot;</span> <span class="na">value=</span><span class="s">&quot;sitecore\Author&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/NewClaims&gt;</span>
+<span class="nt">&lt;/AzureGroupTransformation&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>同じ名前で複数のノードを追加しないでください。複数のノードが必要な場合は、AzureGroupTransformation1、AzureGroupTransformation2などのノードに名前を付けます。</p>
+</div>
+<p>ユーザーを管理者にするには</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.sitecore.net/identity/claims/isAdmin">http://www.sitecore.net/identity/claims/isAdmin</a> を追加し、値を true に設定します（Sitecore で管理者ユーザーであることは、特定のロールを持つことではありません）。例えば、a9bb60b6-40d2-4e2a-88b8-0e47ee2d078e Azure AD グループのすべてのユーザーを Sitecore 管理者ユーザーにするには、以下のようにします。</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">AzureADUserToAdminUser</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Sitecore.Plugin.IdentityProviders.DefaultClaimsTransformation, Sitecore.Plugin.IdentityProviders&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">SourceClaims</span><span class="o">&gt;</span>
+                                <span class="o">&lt;</span><span class="n">Claim1</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;groups&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;a9bb60b6-40d2-4e2a-88b8-0e47ee2d078e&quot;</span> <span class="o">/&gt;</span>
+                <span class="o">&lt;/</span><span class="n">SourceClaims</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">NewClaims</span><span class="o">&gt;</span>
+                                <span class="o">&lt;</span><span class="n">Claim1</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;http://www.sitecore.net/identity/claims/isAdmin&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="o">/&gt;</span>
+                <span class="o">&lt;/</span><span class="n">NewClaims</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">AzureADUserToAdminUser</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>次に、Configuration:sitecore:federatedAuthentication:propertyInitializer:maps node に、Sitecore 内のクレームをマッピングする。 application_root_folder}App_ConfigSitecore.Owin.Authentication.IdentityServer.configファイルには、この例があります。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">propertyInitializer</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">maps</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nb">map</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;set IsAdministrator&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Sitecore.Owin.Authentication.Services.DefaultClaimToPropertyMapper, Sitecore.Owin.Authentication&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">data</span> <span class="n">hint</span><span class="o">=</span><span class="s2">&quot;raw:AddData&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">source</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;http://www.sitecore.net/identity/claims/isAdmin&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;true&quot;</span> <span class="o">/&gt;</span>
+                <span class="o">&lt;</span><span class="n">target</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;IsAdministrator&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;true&quot;</span> <span class="o">/&gt;</span>
+            <span class="o">&lt;/</span><span class="n">data</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="nb">map</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">maps</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">propertyInitializer</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>変換された名前と電子メールのクレームについても同様の手順を使用して、Sitecore の User プロパティにマッピングします。</p>
+<p>次の例は、必須のクレーム変換が必要であることを示しています。</p>
+<p>サブプロバイダが <a class="reference external" href="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress">http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</a> クレームでアイデンティティを返してきた場合、どのSIクライアントでもそれを取得することはできません。この場合、2つのオプションがあります。</p>
+<ul class="simple">
+<li><p>SI サーバでは、クレーム変換を追加して <a class="reference external" href="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress">http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</a> を電子メール・クレームにマッピングすることができます。SI サーバでは、クレーム変換を追加して、 を電子メール・クレームにマッピングできます。</p></li>
+<li><p>SIサーバに必要なクレームをつけて新しいスコープを登録し、クライアントにこのスコープのリクエストを許可し、クライアントがこのスコープをリクエストする。</p></li>
+</ul>
+<p>Sitecoreが外部ユーザーを表すために永続的なユーザーを作成する場合、いくつかの制限があります。Sitecoreは、そのようなユーザーに対して以下の機能をサポートしていません。</p>
+<ol class="arabic simple">
+<li><p>外部ユーザーのロールはSitecoreに保存されていないため、User Managerで外部ユーザーのロールを読み取ったり削除したりすることはできません。</p></li>
+<li><p>このため、アクセスビューアを使用する。</p></li>
+<li><p>ユーザーのパスワードを変更する。対応するIDプロバイダでパスワードを変更する必要があります。</p></li>
+</ol>
+</div>
+<div class="section" id="azuread">
+<h2>AzureのADを設定する<a class="headerlink" href="#azuread" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Azure AD を Sitecore Identity サーバーで設定して使用する場合は、覚えておく必要があります。</p>
+<ul class="simple">
+<li><p>アプリケーション登録の[Web] - [認証]タブの[詳細設定]でIDトークンのチェックボックスをオンにします。</p></li>
+<li><p>アプリケーションマニフェストのgroupMembershipClaims設定の値をSecurityGroupに設定します。</p></li>
+<li><p>アプリケーション登録のレガシーバージョンでのみ、replyUrls を構成できます。代わりに replyUrlsWithType を使用してください。</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p>英語版 <a class="reference external" href="https://doc.sitecore.com/developers/93/sitecore-experience-manager/en/use-the-sitecore-identity-server-as-a-federation-gateway.html">https://doc.sitecore.com/developers/93/sitecore-experience-manager/en/use-the-sitecore-identity-server-as-a-federation-gateway.html</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="localize-the-ui.html" class="btn btn-neutral float-right" title="UI のローカライズ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="use-bearer-tokens-in-client-applications.html" class="btn btn-neutral float-left" title="クライアントアプリケーションで bearer トークンを使用する" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sitecore Japan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

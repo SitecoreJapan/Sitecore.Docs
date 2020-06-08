@@ -1,0 +1,607 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>クライアントアプリケーションで bearer トークンを使用する &mdash; Sitecore Experience Manager  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="フェデレーションゲートウェイとしてSitecore Identityサーバーを使用する" href="use-the-sitecore-identity-server-as-a-federation-gateway.html" />
+    <link rel="prev" title="シングルサインアウト" href="single-sign-out.html" />
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153234118-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-153234118-2');
+</script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Sitecore Experience Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="sitecore-identity.html">Sitecore Identity</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sitecore-identity-structure.html">Sitecore Identity の構造</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sitecore-identity-server-authentication.html">Sitecore Identityサーバー認証</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configure-a-sitecore-instance-and-sitecore-identity-server.html">SitecoreインスタンスとSitecore Identityサーバーを設定する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="understanding-sitecore-authentication-behavior-changes.html">Sitecoreの認証動作の変化を理解する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="single-sign-out.html">シングルサインアウト</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">クライアントアプリケーションで bearer トークンを使用する</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#api">APIを保護する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mvc">MVCクライアントの設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">リフレッシュトークンとアクセストークンの交換</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="use-the-sitecore-identity-server-as-a-federation-gateway.html">フェデレーションゲートウェイとしてSitecore Identityサーバーを使用する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="localize-the-ui.html">UI のローカライズ</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sitecore Experience Manager</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sitecore-identity.html">Sitecore Identity</a> &raquo;</li>
+        
+      <li>クライアントアプリケーションで bearer トークンを使用する</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/use-bearer-tokens-in-client-applications.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bearer">
+<h1>クライアントアプリケーションで bearer トークンを使用する<a class="headerlink" href="#bearer" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このトピックでは、ベアラートークン認証と Sitecore Identity サーバーを使用して、MVC クライアントから API に安全にアクセスする方法について説明します。</p>
+<p>ベアラートークン認証には、以下の 3 つの要素が含まれます。</p>
+<ul class="simple">
+<li><p>Sitecore Identity (SI) サーバー。SIサーバーは、デフォルトでJWT（JSON Web Token）形式のアクセストークンを発行します。現在、関連するすべてのプラットフォームは、JWTトークンの検証をサポートしています。アクセストークンとベアラートークンは同じものと考えることができます。</p></li>
+<li><p>API アプリケーション。</p></li>
+<li><p>MVCクライアントアプリケーション。アプリケーションは SI サーバにアクセストークンを要求し、それを使用して API にアクセスします。</p></li>
+</ul>
+<p>このトピックで説明する手順では、これらの前提に基づいた例を使用します。</p>
+<ul class="simple">
+<li><p>SI サーバは <a class="reference external" href="https://localhost:44356/">https://localhost:44356/</a> で動作しています。例を使用する場合は、これを実際の URL に変更してください。</p></li>
+<li><p>MVC クライアントは id として MvcClient を持ち、SI サーバ上で次のように設定されています。</p></li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;Settings&gt;</span>
+<span class="nt">&lt;Sitecore&gt;</span>
+    <span class="nt">&lt;IdentityServer&gt;</span>
+    <span class="nt">&lt;Clients&gt;</span>
+        <span class="nt">&lt;SampleMvcClient&gt;</span>
+        <span class="nt">&lt;ClientId&gt;</span>MvcClient<span class="nt">&lt;/ClientId&gt;</span>
+        <span class="nt">&lt;ClientName&gt;</span>Sample MVC client<span class="nt">&lt;/ClientName&gt;</span>
+        <span class="nt">&lt;AccessTokenType&gt;</span>0<span class="nt">&lt;/AccessTokenType&gt;</span>
+        <span class="nt">&lt;AllowOfflineAccess&gt;</span>true<span class="nt">&lt;/AllowOfflineAccess&gt;</span>
+        <span class="nt">&lt;AlwaysIncludeUserClaimsInIdToken&gt;</span>true<span class="nt">&lt;/AlwaysIncludeUserClaimsInIdToken&gt;</span>
+        <span class="nt">&lt;AccessTokenLifetimeInSeconds&gt;</span>120<span class="nt">&lt;/AccessTokenLifetimeInSeconds&gt;</span>
+        <span class="nt">&lt;IdentityTokenLifetimeInSeconds&gt;</span>120<span class="nt">&lt;/IdentityTokenLifetimeInSeconds&gt;</span>
+        <span class="nt">&lt;AllowAccessTokensViaBrowser&gt;</span>true<span class="nt">&lt;/AllowAccessTokensViaBrowser&gt;</span>
+        <span class="nt">&lt;RequireConsent&gt;</span>false<span class="nt">&lt;/RequireConsent&gt;</span>
+        <span class="nt">&lt;RequireClientSecret&gt;</span>false<span class="nt">&lt;/RequireClientSecret&gt;</span>
+        <span class="nt">&lt;AllowedGrantTypes&gt;</span>
+            <span class="nt">&lt;AllowedGrantType1&gt;</span>client_credentials<span class="nt">&lt;/AllowedGrantType1&gt;</span>
+            <span class="nt">&lt;AllowedGrantType2&gt;</span>hybrid<span class="nt">&lt;/AllowedGrantType2&gt;</span>
+        <span class="nt">&lt;/AllowedGrantTypes&gt;</span>
+        <span class="nt">&lt;RedirectUris&gt;</span>
+            <span class="nt">&lt;RedirectUri1&gt;</span>{AllowedCorsOrigin}/signin-oidc<span class="nt">&lt;/RedirectUri1&gt;</span>
+        <span class="nt">&lt;/RedirectUris&gt;</span>
+        <span class="nt">&lt;PostLogoutRedirectUris&gt;</span>
+            <span class="nt">&lt;PostLogoutRedirectUri1&gt;</span>{AllowedCorsOrigin}/signout-callback-oidc<span class="nt">&lt;/PostLogoutRedirectUri1&gt;</span>
+        <span class="nt">&lt;/PostLogoutRedirectUris&gt;</span>
+        <span class="nt">&lt;AllowedCorsOrigins&gt;</span>
+            <span class="nt">&lt;AllowedCorsOriginsGroup1&gt;</span>http://localhost:54567<span class="nt">&lt;/AllowedCorsOriginsGroup1&gt;</span>
+        <span class="nt">&lt;/AllowedCorsOrigins&gt;</span>
+        <span class="nt">&lt;AllowedScopes&gt;</span>
+            <span class="nt">&lt;AllowedScope1&gt;</span>openid<span class="nt">&lt;/AllowedScope1&gt;</span>
+            <span class="nt">&lt;AllowedScope2&gt;</span>sitecore.profile<span class="nt">&lt;/AllowedScope2&gt;</span>
+            <span class="nt">&lt;AllowedScope3&gt;</span>sitecore.profile.api<span class="nt">&lt;/AllowedScope3&gt;</span>
+        <span class="nt">&lt;/AllowedScopes&gt;</span>
+        <span class="nt">&lt;UpdateAccessTokenClaimsOnRefresh&gt;</span>true<span class="nt">&lt;/UpdateAccessTokenClaimsOnRefresh&gt;</span>
+        <span class="nt">&lt;/SampleMvcClient&gt;</span>
+    <span class="nt">&lt;/Clients&gt;</span>
+    <span class="nt">&lt;/IdentityServer&gt;</span>
+<span class="nt">&lt;/Sitecore&gt;</span>
+<span class="nt">&lt;/Settings&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="api">
+<h2>APIを保護する<a class="headerlink" href="#api" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このセクションでは、SI サーバーとベアラートークン認証を使用して API を保護する基本的なシナリオを概説する。ASP.NET Core ベースの API を保護するには、DI で JWT ベアラ認証ハンドラを設定し、認証ミドルウェアをパイプラインに追加するだけです。</p>
+<p>API を保護するには</p>
+<ol class="arabic simple">
+<li><p>ASP.NET Core Web API テンプレートを使用して Visual Studio で新規プロジェクトを作成し、起動プロファイルでアプリケーション URL を構成します。ここで使用する例では、URL として <a class="reference external" href="http://localhost:55600/">http://localhost:55600/</a> を使用して API を構成することを想定しています。この URL は、独自のソリューションで実際に使用する URL に置き換えてください。</p></li>
+<li><p>プロジェクトにパッケージ参照を追加します。</p></li>
+</ol>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Project</span> <span class="na">Sdk=</span><span class="s">&quot;Microsoft.NET.Sdk.Web&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;TargetFramework&gt;</span>netcoreapp2.1<span class="nt">&lt;/TargetFramework&gt;</span>
+<span class="nt">&lt;/PropertyGroup&gt;</span>
+<span class="nt">&lt;ItemGroup&gt;</span>
+    <span class="nt">&lt;PackageReference</span> <span class="na">Include=</span><span class="s">&quot;Microsoft.AspNetCore.App&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/ItemGroup&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>スタートアップクラスを設定します。</p></li>
+</ol>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">class</span> <span class="nc">Startup</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">services</span><span class="p">.</span><span class="n">AddMvcCore</span><span class="p">()</span>
+            <span class="p">.</span><span class="n">AddAuthorization</span><span class="p">()</span>
+            <span class="p">.</span><span class="n">AddJsonFormatters</span><span class="p">();</span>
+
+        <span class="n">services</span><span class="p">.</span><span class="n">AddAuthentication</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">AddJwtBearer</span><span class="p">(</span><span class="s">&quot;Bearer&quot;</span><span class="p">,</span> <span class="n">options</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="n">options</span><span class="p">.</span><span class="n">Authority</span> <span class="p">=</span> <span class="s">&quot;https://localhost:44356&quot;</span><span class="p">;</span>
+                <span class="n">options</span><span class="p">.</span><span class="n">RequireHttpsMetadata</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+
+                <span class="n">options</span><span class="p">.</span><span class="n">Audience</span> <span class="p">=</span> <span class="s">&quot;sitecore.profile.api&quot;</span><span class="p">;</span>
+            <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">,</span> <span class="n">IHostingEnvironment</span> <span class="n">env</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">app</span><span class="p">.</span><span class="n">UseAuthentication</span><span class="p">();</span>
+        <span class="n">app</span><span class="p">.</span><span class="n">UseMvc</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>AddAuthenticationメソッドは、認証サービスを追加し、Bearerをデフォルトのスキームとして設定します。AddJwtBearer メソッドは、SI Server アクセストークン検証ハンドラを追加し、認証サービスがそれを使用できるようにします。UseAuthentication メソッドは、認証ミドルウェアをパイプラインに追加し、ホストへの呼び出しごとに認証が自動的に実行されるようにします。</p>
+<ol class="arabic simple" start="4">
+<li><p>APIプロジェクトに新しいコントローラを追加します。</p></li>
+</ol>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="na">[Route(&quot;[controller]</span><span class="s">&quot;)]</span>
+<span class="na">[Authorize]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">IdentityController</span> <span class="p">:</span> <span class="n">ControllerBase</span>
+<span class="p">{</span>
+<span class="na">    [HttpGet]</span>
+    <span class="k">public</span> <span class="n">IActionResult</span> <span class="nf">Get</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">JsonResult</span><span class="p">(</span><span class="k">from</span> <span class="n">c</span> <span class="k">in</span> <span class="n">User</span><span class="p">.</span><span class="n">Claims</span>
+            <span class="k">select</span> <span class="k">new</span>
+            <span class="p">{</span>
+                <span class="n">c</span><span class="p">.</span><span class="n">Type</span><span class="p">,</span>
+                <span class="n">c</span><span class="p">.</span><span class="n">Value</span>
+            <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>コントローラ (<a class="reference external" href="http://localhost:55600/identity">http://localhost:55600/identity</a>) に移動すると、401 ステータスコードが返ってきます。これは、あなたの API がクレデンシャルを必要とし、SI サーバーによって保護されていることを示しています。</p>
+</div>
+<div class="section" id="mvc">
+<h2>MVCクライアントの設定<a class="headerlink" href="#mvc" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>MVC クライアントが保護された API を使用するように設定するには。</p>
+<p>次の例では、<a class="reference external" href="http://localhost:54567/">http://localhost:54567/</a> を URL として API を構成したと仮定しています。この URL を、SI サーバー クライアント構成の AllowedCorsOriginsGroup1 ノードで、独自のソリューションで実際に使用している URL に置き換えます。</p>
+<p>プロジェクトにパッケージ参照を追加します。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Project</span> <span class="na">Sdk=</span><span class="s">&quot;Microsoft.NET.Sdk.Web&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;TargetFramework&gt;</span>netcoreapp2.1<span class="nt">&lt;/TargetFramework&gt;</span>
+<span class="nt">&lt;/PropertyGroup&gt;</span>
+
+<span class="nt">&lt;ItemGroup&gt;</span>
+    <span class="nt">&lt;PackageReference</span> <span class="na">Include=</span><span class="s">&quot;Microsoft.AspNetCore.All&quot;</span> <span class="na">Version=</span><span class="s">&quot;[2.1.3]&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;PackageReference</span> <span class="na">Include=</span><span class="s">&quot;Microsoft.AspNetCore.Authentication.Abstractions&quot;</span> <span class="na">Version=</span><span class="s">&quot;[2.1.1.0]&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;PackageReference</span> <span class="na">Include=</span><span class="s">&quot;IdentityModel&quot;</span> <span class="na">Version=</span><span class="s">&quot;[3.8.0]&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/ItemGroup&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</pre></div>
+</div>
+<p>MVC アプリケーションのスタートアップクラスの ConfigureServices メソッドで、クッキーと OpenID Connect 認証のサポートを追加します。</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">class</span> <span class="nc">Startup</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">ConfigureServices</span><span class="p">(</span><span class="n">IServiceCollection</span> <span class="n">services</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">services</span><span class="p">.</span><span class="n">AddMvc</span><span class="p">();</span>
+
+        <span class="n">services</span><span class="p">.</span><span class="n">AddAuthentication</span><span class="p">(</span><span class="n">options</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="n">options</span><span class="p">.</span><span class="n">DefaultScheme</span> <span class="p">=</span> <span class="n">CookieAuthenticationDefaults</span><span class="p">.</span><span class="n">AuthenticationScheme</span><span class="p">;</span>
+                <span class="n">options</span><span class="p">.</span><span class="n">DefaultChallengeScheme</span> <span class="p">=</span> <span class="s">&quot;oidc&quot;</span><span class="p">;</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="n">AddCookie</span><span class="p">(</span><span class="n">options</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="n">options</span><span class="p">.</span><span class="n">ExpireTimeSpan</span> <span class="p">=</span> <span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromMinutes</span><span class="p">(</span><span class="m">60</span><span class="p">);</span>
+                <span class="n">options</span><span class="p">.</span><span class="n">Cookie</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">&quot;mvcimplicit&quot;</span><span class="p">;</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="n">AddOpenIdConnect</span><span class="p">(</span><span class="s">&quot;oidc&quot;</span><span class="p">,</span> <span class="n">options</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="n">options</span><span class="p">.</span><span class="n">ClientId</span> <span class="p">=</span> <span class="s">&quot;MvcClient&quot;</span><span class="p">;</span>
+                <span class="n">options</span><span class="p">.</span><span class="n">Authority</span> <span class="p">=</span> <span class="s">&quot;https://localhost:44356&quot;</span><span class="p">;</span>
+                <span class="n">options</span><span class="p">.</span><span class="n">RequireHttpsMetadata</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+                <span class="n">options</span><span class="p">.</span><span class="n">GetClaimsFromUserInfoEndpoint</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+                <span class="n">options</span><span class="p">.</span><span class="n">ResponseType</span> <span class="p">=</span> <span class="s">&quot;code token&quot;</span><span class="p">;</span>
+
+                <span class="n">options</span><span class="p">.</span><span class="n">Scope</span><span class="p">.</span><span class="n">Clear</span><span class="p">();</span>
+                <span class="n">options</span><span class="p">.</span><span class="n">Scope</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;openid&quot;</span><span class="p">);</span>
+                <span class="n">options</span><span class="p">.</span><span class="n">Scope</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;sitecore.profile&quot;</span><span class="p">);</span>
+                <span class="n">options</span><span class="p">.</span><span class="n">Scope</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;offline_access&quot;</span><span class="p">);</span>
+                <span class="n">options</span><span class="p">.</span><span class="n">Scope</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;sitecore.profile.api&quot;</span><span class="p">);</span>
+
+                <span class="n">options</span><span class="p">.</span><span class="n">SaveTokens</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+
+                <span class="n">options</span><span class="p">.</span><span class="n">TokenValidationParameters</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TokenValidationParameters</span>
+                <span class="p">{</span>
+                    <span class="n">NameClaimType</span> <span class="p">=</span> <span class="n">JwtClaimTypes</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span>
+                    <span class="n">RoleClaimType</span> <span class="p">=</span> <span class="n">JwtClaimTypes</span><span class="p">.</span><span class="n">Role</span><span class="p">,</span>
+                <span class="p">};</span>
+            <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Configure</span><span class="p">(</span><span class="n">IApplicationBuilder</span> <span class="n">app</span><span class="p">,</span> <span class="n">IHostingEnvironment</span> <span class="n">env</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">app</span><span class="p">.</span><span class="n">UseDeveloperExceptionPage</span><span class="p">();</span>
+        <span class="n">app</span><span class="p">.</span><span class="n">UseStaticFiles</span><span class="p">();</span>
+        <span class="n">app</span><span class="p">.</span><span class="n">UseAuthentication</span><span class="p">();</span>
+        <span class="n">app</span><span class="p">.</span><span class="n">UseMvcWithDefaultRoute</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>AddAuthentication メソッドは、認証サービスを追加します。DefaultScheme には Cookies が指定されているため、クッキーがユーザを認証する主な方法です。DefaultChallengeScheme は oidc として指定されているため、ユーザーがログインするときは OpenID Connect スキームを使用しなければなりません。</p>
+<p>AddCookie メソッドは、クッキーを処理できるハンドラを追加します。</p>
+<p>AddOpenIdConnectメソッドは、OpenID Connectプロトコルを実行するハンドラを構成します。Authority プロパティは、SI サーバが信頼されていることを指定します。このクライアントは、ClientId プロパティで識別できます。SignInScheme メソッドは、OpenID Connect プロトコルが完了すると、クッキーハンドラを使用してクッキーを発行します。SaveTokens メソッドは、SI サーバからのトークンをクッキーに永続化します（後で必要になります）。ResponseTypeプロパティにコードトークンを指定します（これは実質的にハイブリッドフローを使用することを意味します）。</p>
+<ol class="arabic simple" start="4">
+<li><p>ConfigureメソッドのUseAuthenticationメソッドを呼び出して、リクエストごとに認証サービスが実行されるようにします。認証ミドルウェアをMVCの前にパイプラインに追加する必要があります。</p></li>
+<li><p>認証ハンドシェイクをトリガーにするには、ホームコントローラに[Authorize]属性を追加します。</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[Authorize]
+public class Home : Controller
+{
+    private static readonly HttpClient HttpClient = new HttpClient();
+
+    public async Task&lt;IActionResult&gt; Index()
+    {
+        string accessToken = await HttpContext.GetTokenAsync(&quot;access_token&quot;);
+        string refreshToken = await HttpContext.GetTokenAsync(&quot;refresh_token&quot;);
+
+        return Content($&quot;Current user: &lt;span id=\&quot;UserIdentityName\&quot;&gt;{User.Identity.Name ?? &quot;anonymous&quot;}&lt;/span&gt;&lt;br/&gt;&quot; +
+            $&quot;&lt;div&gt;Access token: {accessToken}&lt;/div&gt;&lt;br/&gt;&quot; +
+            $&quot;&lt;div&gt;Refresh token: {refreshToken}&lt;/div&gt;&lt;br/&gt;&quot;
+            , &quot;text/html&quot;);
+    }
+}
+</pre></div>
+</div>
+<p>現在、ブラウザでこのコントローラに移動すると、SIサーバへのリダイレクトが試みられ、認証に成功すると、このページが表示されます。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Current</span> <span class="n">user</span><span class="p">:</span> <span class="n">sitecore</span>\<span class="n">Admin</span>
+<span class="n">Access</span> <span class="n">token</span><span class="p">:</span> <span class="n">eyJhbG</span><span class="o">......</span><span class="n">L8A</span>
+<span class="n">Refresh</span> <span class="n">token</span><span class="p">:</span> <span class="mi">4</span><span class="n">cdf3b4d873a65135553afdf420a47dbc898ba0c1c0ece2407bbbf2bde02a68b</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>このアクションをホームコントローラに追加して、ベアラートークンでAPIを呼び出すようにします。</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[Route(&quot;/callapi&quot;)]
+    public async Task&lt;IActionResult&gt; CallApi()
+    {
+        string accessToken = await HttpContext.GetTokenAsync(&quot;access_token&quot;);
+
+        var request = new HttpRequestMessage(HttpMethod.Get, &quot;http://localhost:55600/identity&quot;);
+        request.Headers.Authorization = new AuthenticationHeaderValue(&quot;Bearer&quot;, accessToken);
+        HttpResponseMessage response = await HttpClient.SendAsync(request);
+
+        if (response.StatusCode != HttpStatusCode.OK)
+        {
+            return Content(response.ToString());
+        }
+
+        return Content($&quot;{await response.Content.ReadAsStringAsync()}&quot;);
+    }
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>access_token 引数を渡すことで、GetTokenAsync メソッドを使用して、HttpContext からベアラ (アクセス) トークンを取得します。このようにして、アクセストークンをリクエスト・ヘッダに追加します。</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">request</span><span class="o">.</span><span class="n">Headers</span><span class="o">.</span><span class="n">Authorization</span> <span class="o">=</span> <span class="n">new</span> <span class="n">AuthenticationHeaderValue</span><span class="p">(</span><span class="s2">&quot;Bearer&quot;</span><span class="p">,</span> <span class="n">accessToken</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="http://localhost:54567/callapi">http://localhost:54567/callapi</a> urlに移動します。答えは以下のようになるはずです。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="p">{</span>
+<span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;nbf&quot;</span><span class="p">,</span>
+<span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;1543572239&quot;</span>
+<span class="p">},</span>
+<span class="p">{</span>
+<span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;exp&quot;</span><span class="p">,</span>
+<span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;1543572359&quot;</span>
+<span class="p">},</span>
+<span class="p">{</span>
+<span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;iss&quot;</span><span class="p">,</span>
+<span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;https://localhost:44356&quot;</span>
+<span class="p">},</span>
+<span class="p">{</span>
+<span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;aud&quot;</span><span class="p">,</span>
+<span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;https://localhost:44356/resources&quot;</span>
+<span class="p">},</span>
+<span class="p">{</span>
+<span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;aud&quot;</span><span class="p">,</span>
+<span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;sitecore.profile.api&quot;</span>
+<span class="p">},</span>
+<span class="p">{</span>
+<span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;client_id&quot;</span><span class="p">,</span>
+<span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;MvcClient&quot;</span>
+<span class="p">},</span>
+<span class="p">{</span>
+<span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+<span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;sitecore</span><span class="se">\\</span><span class="s2">Admin&quot;</span>
+<span class="p">},</span>
+<span class="o">........</span>
+</pre></div>
+</div>
+<p>呼び出し元の URL (<a class="reference external" href="http://localhost:55600/identity">http://localhost:55600/identity</a>) を変更して、別の API、例えば Sitecore アイテムサービスなどを呼び出すことができます。</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="nt">&quot;ItemID&quot;</span><span class="p">:</span> <span class="s2">&quot;110d559f-dea5-42ea-9c1c-8a5df7e70ef9&quot;</span><span class="p">,</span>
+<span class="nt">&quot;ItemName&quot;</span><span class="p">:</span> <span class="s2">&quot;Home&quot;</span><span class="p">,</span>
+<span class="nt">&quot;ItemPath&quot;</span><span class="p">:</span> <span class="s2">&quot;/sitecore/content/Home&quot;</span><span class="p">,</span>
+<span class="nt">&quot;ParentID&quot;</span><span class="p">:</span> <span class="s2">&quot;0de95ae4-41ab-4d01-9eb0-67441b7c2450&quot;</span><span class="p">,</span>
+<span class="nt">&quot;TemplateID&quot;</span><span class="p">:</span> <span class="s2">&quot;76036f5e-cbce-46d1-af0a-4143f9b557aa&quot;</span><span class="p">,</span>
+<span class="nt">&quot;TemplateName&quot;</span><span class="p">:</span> <span class="s2">&quot;Sample Item&quot;</span><span class="p">,</span>
+<span class="nt">&quot;CloneSource&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+<span class="nt">&quot;ItemLanguage&quot;</span><span class="p">:</span> <span class="s2">&quot;en&quot;</span><span class="p">,</span>
+<span class="nt">&quot;ItemVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="nt">&quot;DisplayName&quot;</span><span class="p">:</span> <span class="s2">&quot;Home&quot;</span><span class="p">,</span>
+<span class="nt">&quot;HasChildren&quot;</span><span class="p">:</span> <span class="s2">&quot;False&quot;</span><span class="p">,</span>
+<span class="nt">&quot;ItemIcon&quot;</span><span class="p">:</span> <span class="s2">&quot;/temp/iconcache/network/16x16/home.png&quot;</span><span class="p">,</span>
+<span class="nt">&quot;ItemMedialUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;/-/icon/Network/48x48/home.png.aspx&quot;</span><span class="p">,</span>
+<span class="nt">&quot;ItemUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;~/link.aspx?_id=110D559FDEA542EA9C1C8A5DF7E70EF9&amp;amp;amp;_z=z&quot;</span><span class="p">,</span>
+<span class="nt">&quot;Text&quot;</span><span class="p">:</span> <span class="s2">&quot;&amp;lt;p style.......e&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;\r&quot;</span><span class="p">,</span>
+<span class="nt">&quot;Title&quot;</span><span class="p">:</span> <span class="s2">&quot;Sitecore Experience Platform&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>しばらくすると（SIサーバ上のクライアント設定でAccessTokenLifetimeInSecondsパラメータとして指定されている）、以下のような結果が得られます。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>StatusCode: 401, ReasonPhrase:
+&#39;Unauthorized&#39;, Version: 1.1, Content:
+System.Net.Http.HttpConnection+HttpConnectionResponseContent, Headers:
+{
+Server:
+Kestrel
+
+WWW-Authenticate: Bearer error=&quot;invalid_token&quot;,
+error_description=&quot;The token is expired&quot;
+X-SourceFiles:
+=?UTF-8?B?Qzpcclxfd1xpc1xzYW1wbGVzXEFwaVxpZGVudGl0eQ==?=
+X-Powered-By:
+ASP.NET
+Date: Fri, 30
+Nov 2018 07:42:20 GMT
+
+Content-Length: 0
+}
+</pre></div>
+</div>
+<p>つまり、アクセストークンの有効期限が切れているので、新しいアクセストークンを取得する必要があります。次のセクションでは、その方法を説明します。</p>
+</div>
+<div class="section" id="id1">
+<h2>リフレッシュトークンとアクセストークンの交換<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>SI サーバーには、プログラムでトークンを要求するために使用するトークンエンドポイントがあります。このサーバは OpenID Connect および OAuth 2.0 トークン要求パラメータのサブセットをサポートしています。OpenID のドキュメントに完全なリストがあります。</p>
+<p>トークンを要求するには</p>
+<ol class="arabic simple">
+<li><p>ホームコントローラに次のアクションを追加します。</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[Route(&quot;/exchange&quot;)]
+public async Task&lt;IActionResult&gt; Exchange()
+{
+    var disco = await DiscoveryClient.GetAsync(&quot;https://localhost:44356&quot;);
+    if (disco.IsError) throw new Exception(disco.Error);
+
+    var tokenClient = new TokenClient(disco.TokenEndpoint, &quot;MvcClient&quot;, &quot;secret&quot;);
+    var rt = await HttpContext.GetTokenAsync(&quot;refresh_token&quot;);
+    var tokenResult = await tokenClient.RequestRefreshTokenAsync(rt);
+
+    if (!tokenResult.IsError)
+    {
+        var expiresAt = (DateTime.UtcNow + TimeSpan.FromSeconds(tokenResult.ExpiresIn)).ToString(&quot;o&quot;, CultureInfo.InvariantCulture);
+
+        var authService = HttpContext.RequestServices.GetRequiredService&lt;IAuthenticationService&gt;();
+        AuthenticateResult authenticateResult = await authService.AuthenticateAsync(HttpContext, null);
+        AuthenticationProperties properties = authenticateResult.Properties;
+
+        properties.UpdateTokenValue(OpenIdConnectParameterNames.RefreshToken, tokenResult.RefreshToken);
+        properties.UpdateTokenValue(OpenIdConnectParameterNames.AccessToken, tokenResult.AccessToken);
+        properties.UpdateTokenValue(OpenIdConnectParameterNames.ExpiresIn, expiresAt);
+
+        await authService.SignInAsync(HttpContext, null, authenticateResult.Principal, authenticateResult.Properties);
+
+        return Redirect(&quot;/&quot;);
+    }
+
+    return BadRequest();
+}
+</pre></div>
+</div>
+<p>TokenClient クラスのインスタンスを使用して、SI サーバに新しいトークンを要求します。この要求の前に有効なリフレッシュ・トークンが必要です。成功したリクエスト (RequestRefreshTokenAsync) の後、このリフレッシュ・トークンは無効になり、クッキー内のリフレッシュ・トークンとアクセス・トークンを新しいもので更新する必要があります。</p>
+<ol class="arabic simple" start="2">
+<li><p>AuthenticateAsyncメソッドを呼び出して認証プロパティを取得します。UpdateTokenValueメソッドはトークンを更新し、プロパティ内の有効期限のタイムスタンプも更新し、最後にSignInAsyncメソッドは認証クッキーを保存します。</p></li>
+</ol>
+<p>これでGetTokenAsyncメソッドは更新されたアクセスまたは更新されたトークンを返します。</p>
+<div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p>英語版 <a class="reference external" href="https://doc.sitecore.com/developers/93/sitecore-experience-manager/en/use-bearer-tokens-in-client-applications.html">https://doc.sitecore.com/developers/93/sitecore-experience-manager/en/use-bearer-tokens-in-client-applications.html</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="use-the-sitecore-identity-server-as-a-federation-gateway.html" class="btn btn-neutral float-right" title="フェデレーションゲートウェイとしてSitecore Identityサーバーを使用する" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="single-sign-out.html" class="btn btn-neutral float-left" title="シングルサインアウト" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sitecore Japan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

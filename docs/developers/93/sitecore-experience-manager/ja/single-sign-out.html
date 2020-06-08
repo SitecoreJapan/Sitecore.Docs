@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>シングルサインアウト &mdash; Sitecore Experience Manager  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="クライアントアプリケーションで bearer トークンを使用する" href="use-bearer-tokens-in-client-applications.html" />
+    <link rel="prev" title="Sitecoreの認証動作の変化を理解する" href="understanding-sitecore-authentication-behavior-changes.html" />
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153234118-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-153234118-2');
+</script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Sitecore Experience Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="sitecore-identity.html">Sitecore Identity</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sitecore-identity-structure.html">Sitecore Identity の構造</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sitecore-identity-server-authentication.html">Sitecore Identityサーバー認証</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configure-a-sitecore-instance-and-sitecore-identity-server.html">SitecoreインスタンスとSitecore Identityサーバーを設定する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="understanding-sitecore-authentication-behavior-changes.html">Sitecoreの認証動作の変化を理解する</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">シングルサインアウト</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">ユーザーがサインアウトするとクライアントに通知</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">クライアントのサインアウトエンドポイント</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sitecore">Sitecoreホストアプリケーションのサインアウトエンドポイント</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="use-bearer-tokens-in-client-applications.html">クライアントアプリケーションで bearer トークンを使用する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="use-the-sitecore-identity-server-as-a-federation-gateway.html">フェデレーションゲートウェイとしてSitecore Identityサーバーを使用する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="localize-the-ui.html">UI のローカライズ</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sitecore Experience Manager</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sitecore-identity.html">Sitecore Identity</a> &raquo;</li>
+        
+      <li>シングルサインアウト</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/single-sign-out.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>シングルサインアウト<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>認証クッキーを削除することで、ユーザーを Sitecore Identity サーバー (SI サーバー) からサインアウトする。ただし、完全な統合サインアウトは、クライアントアプリケーション (およびおそらくアップストリームの ID プロバイダ) からユーザーをサインアウトすることも考慮する必要があることを意味する。</p>
+<div class="section" id="id2">
+<h2>ユーザーがサインアウトするとクライアントに通知<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>SI サーバは、サーバサイドクライアント (MVC アプリケーションなど) のフロントチャネル仕様をサポートしています。これを使用して、クライアント・アプリケーションにユーザーがサインアウトしたことを確実に知らせることができます。</p>
+<p>フロントチャネル仕様を介してサーバサイドのクライアントアプリケーションからユーザをサインアウトするには、SI サーバのサインアウトページは、ユーザがサインアウトしたことをクライアントに通知するための &lt;iframe&gt; をレンダリングする必要があります。通知したいクライアントは、コンフィグレーションで指定したFrontChannelLogoutUrisの設定値を持っている必要があります。</p>
+<p>設定では、サインアウトのエンドポイント URI を定義します。複数のサブノードを使用して複数の URI を定義したり、ノード内で URI を区切るために | 記号を使用したりできます。また、{AllowedCorsOrigin}テンプレートを使用して構成を簡素化することもできます。このテンプレートを使用すると、すべてのオリジン（ホスト）にサインアウトが通知されます。</p>
+<p>サインアウトのエンドポイントをオンまたはオフにするには、FrontChannelLogoutSessionRequired 設定を使用します。</p>
+<p>これは設定の例です。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;Settings&gt;</span>
+<span class="nt">&lt;Sitecore&gt;</span>
+    <span class="nt">&lt;IdentityServer&gt;</span>
+    <span class="nt">&lt;Clients&gt;</span>
+        <span class="nt">&lt;DefaultClient&gt;</span>
+        <span class="nt">&lt;FrontChannelLogoutUris&gt;</span>
+            <span class="nt">&lt;DefaultFrontChannelLogoutUri&gt;</span>{AllowedCorsOrigin}/sitecore/shell/FrontChannelLogout|https://service/extraLogoutEndpoint<span class="nt">&lt;/DefaultFrontChannelLogoutUri&gt;</span>
+        <span class="nt">&lt;/FrontChannelLogoutUris&gt;</span>
+        <span class="nt">&lt;FrontChannelLogoutSessionRequired&gt;</span>true<span class="nt">&lt;/FrontChannelLogoutSessionRequired&gt;</span>
+        <span class="nt">&lt;/DefaultClient&gt;</span>
+    <span class="nt">&lt;/Clients&gt;</span>
+    <span class="nt">&lt;/IdentityServer&gt;</span>
+<span class="nt">&lt;/Sitecore&gt;</span>
+<span class="nt">&lt;/Settings&gt;</span>
+</pre></div>
+</div>
+<p>SI サーバは、ユーザがどのクライアントにサインインしたかを追跡し、IIdentityServerInteractionService サービス上で API GetLogoutContextAsync を提供します。この API は、サインアウトページを &lt;iframe&gt; にレンダリングしなければならない SignOutIFrameUrl プロパティを持つ LogoutRequest オブジェクトを返します。</p>
+</div>
+<div class="section" id="id3">
+<h2>クライアントのサインアウトエンドポイント<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>サインアウト処理を行うためには、クライアントはSIサーバからのリクエストを処理するエンドポイントを実装する必要があります。Sitecoreインスタンスは、&lt;Sitecoreインスタンスホスト名&gt;/sitecore/shell/FrontChannelLogoutエンドポイントに実装されています。</p>
+</div>
+<div class="section" id="sitecore">
+<h2>Sitecoreホストアプリケーションのサインアウトエンドポイント<a class="headerlink" href="#sitecore" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Sitecore.Plugin.Authentication.OpenIdConnectプラグインには、サインアウトエンドポイントが含まれています。デフォルトでは、&lt;アプリケーションホスト名&gt;/sitecore/shell/FrontChannelLogoutとなっていますが、設定で別のアドレスを指定することができます。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+
+<span class="nt">&lt;Settings&gt;</span>
+<span class="nt">&lt;Sitecore&gt;</span>
+    <span class="nt">&lt;Authentication&gt;</span>
+    <span class="nt">&lt;OpenIdConnectOptions&gt;</span>
+        <span class="nt">&lt;FrontChannelLogoutEndpoint&gt;</span>/sitecore/shell/FrontChannelLogout<span class="nt">&lt;/FrontChannelLogoutEndpoint&gt;</span>
+    <span class="nt">&lt;/OpenIdConnectOptions&gt;</span>
+    <span class="nt">&lt;/Authentication&gt;</span>
+<span class="nt">&lt;/Sitecore&gt;</span>
+<span class="nt">&lt;/Settings&gt;</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p>英語版 <a class="reference external" href="https://doc.sitecore.com/developers/93/sitecore-experience-manager/en/single-sign-out.html">https://doc.sitecore.com/developers/93/sitecore-experience-manager/en/single-sign-out.html</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="use-bearer-tokens-in-client-applications.html" class="btn btn-neutral float-right" title="クライアントアプリケーションで bearer トークンを使用する" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="understanding-sitecore-authentication-behavior-changes.html" class="btn btn-neutral float-left" title="Sitecoreの認証動作の変化を理解する" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sitecore Japan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
