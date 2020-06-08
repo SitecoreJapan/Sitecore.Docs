@@ -1,0 +1,455 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sitecoreの認証動作の変化を理解する &mdash; Sitecore Experience Manager  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="シングルサインアウト" href="single-sign-out.html" />
+    <link rel="prev" title="SitecoreインスタンスとSitecore Identityサーバーを設定する" href="configure-a-sitecore-instance-and-sitecore-identity-server.html" />
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153234118-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-153234118-2');
+</script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Sitecore Experience Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="sitecore-identity.html">Sitecore Identity</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sitecore-identity-structure.html">Sitecore Identity の構造</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sitecore-identity-server-authentication.html">Sitecore Identityサーバー認証</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configure-a-sitecore-instance-and-sitecore-identity-server.html">SitecoreインスタンスとSitecore Identityサーバーを設定する</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Sitecoreの認証動作の変化を理解する</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">認証範囲の設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#urlsitecore">新しいログインページURLでSitecoreにアクセスする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sitecore-login">sitecore/login ページを取得</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sitecore-identity">Sitecore Identityを無効にする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">ユーザーサインアウトの実装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">ユーザーロックアウトの設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">認証クッキーの有効期限を指定する</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="single-sign-out.html">シングルサインアウト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="use-bearer-tokens-in-client-applications.html">クライアントアプリケーションで bearer トークンを使用する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="use-the-sitecore-identity-server-as-a-federation-gateway.html">フェデレーションゲートウェイとしてSitecore Identityサーバーを使用する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="localize-the-ui.html">UI のローカライズ</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sitecore Experience Manager</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sitecore-identity.html">Sitecore Identity</a> &raquo;</li>
+        
+      <li>Sitecoreの認証動作の変化を理解する</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/understanding-sitecore-authentication-behavior-changes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sitecore">
+<h1>Sitecoreの認証動作の変化を理解する<a class="headerlink" href="#sitecore" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Sitecore Identity (SI) は、Sitecore 9.0 で導入された連携認証機能を使用しています。これらの機能は、OWIN 認証ミドルウェアをベースにしています。ただし、Sitecore 9.0では、OWIN認証の統合と連携認証はデフォルトで無効になっています。</p>
+<p>Sitecore 9.1 以降では、Sitecore Identity はデフォルトで有効になっています。OWIN認証と連携認証は、SIで必要とされているため、有効になっています。</p>
+<p>このトピックでは、Sitecore認証の動作の変更点と、その方法の概要について説明します。</p>
+<div class="section" id="id1">
+<h2>認証範囲の設定<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>デフォルトでは、SitecoreはSIサーバーのプロバイダがSitecoreクライアントサイトの認証を処理するように設定されています。これは、SIサーバを経由してシェルで認証した場合、Webサイトはそのユーザーを受け入れず、Webサイト内では匿名となることを意味します。また、GetSignInUrlInfoPipelineパイプラインを使用してWebサイト上でサインインリンクを生成した場合、SIサーバでサインインするためのログインリンクが不意にそこに表示されないことを意味します。</p>
+<p>認証スコープを設定するには</p>
+<ul class="simple">
+<li><p>sitecore/federatedAuthentication/identityProvidersPerSites/ ノードの下にある mapEntry ノードで、許可したいサイトと ID プロバイダの組み合わせを指定します。</p></li>
+</ul>
+<p>Sitecore には、定義済みのサイトリストを持ついくつかの mapEntry ノードが用意されています。すべてのノードは、意味のある値を持つ name 属性を持っています。</p>
+<ul class="simple">
+<li><p>すべてのサイト</p></li>
+<li><p>ウェブデータベースを持つサイト</p></li>
+<li><p>コアと不特定多数のデータベースを持つサイト</p></li>
+<li><p>エクストラネットドメインを持つサイト</p></li>
+<li><p>管理者サイト</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>これらの定義済みの mapEntry ノードは動的に作成され、独自の mapEntry の mapEntry/sites セクションで特別な式を使用できることを示しています。詳細は Config.Authentication.Owin.Authentication.config ファイルを確認してください。</p>
+</div>
+<p>デフォルトでは、SI サーバー プロバイダーは、コアと未指定のデータベース mapEntry ノードを持つサイトに配置されます。</p>
+</div>
+<div class="section" id="urlsitecore">
+<h2>新しいログインページURLでSitecoreにアクセスする<a class="headerlink" href="#urlsitecore" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>SI以前は、/sitecore/loginと/sitecore/admin/login.aspx URLを使用して、それぞれシェルサイトと管理サイトにログインしていました。これらのURLは、Sitecore Identityでは使用されません。</p>
+<p>Sitecoreにアクセスするには、/sitecoreまたは/sitecore/admin URLを使用し、ログアウトボタンを使用してサインアウトしたり、別のユーザーに変更したりすることをお勧めします。</p>
+<p>Sitecore Federated Authenticationは、新しいログインページエンドポイントを提供します。これにより、Sitecoreはユーザーを外部のIDプロバイダのログインページに直接リダイレクトし（Sitecoreにログインページを表示せずに）、ユーザーが対応するボタンをクリックするまで待ちます。</p>
+<p>この新しいログインエンドポイントのURLは、次のような形式になっています。</p>
+<ul class="simple">
+<li><p>(loginPath) は構成変数です ($(identityProcessingPathPrefix)login = /identity/login)。</p></li>
+<li><p>{site_name}は、loginPage属性値が設定されているサイトノードの名前属性値です。</p></li>
+<li><p>identity_provider} は、ユーザーをリダイレクトさせたいログイン・ページの ID プロバイダの名前です。</p></li>
+<li><p>inner_identity_provider} はオプションです。 これは identity_provider 内の内部プロバイダの名前です。この値を設定すると、ユーザーは直ちに inner_identity_provider ログイン・ページに直接リダイレクトされます。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>inner_identity_provider identity provider は、identity_provider identity provider に acr_value = idp:inner_identity_provider として送信される。そのため、identity_provider identity provider は acr_value をサポートしなければなりません。</p>
+</div>
+<p>SIサーバープロバイダはSitecoreのSitecoreIdentityServer名で設定されており、Sitecore.Owin.Authentication.IdentityServer.configファイルには以下のように記述されています。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sites&gt;</span>
+<span class="nt">&lt;site</span> <span class="na">name=</span><span class="s">&quot;shell&quot;</span> <span class="na">set:loginPage=</span><span class="s">&quot;$(loginPath)shell/SitecoreIdentityServer&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;site</span> <span class="na">name=</span><span class="s">&quot;admin&quot;</span> <span class="na">set:loginPage=</span><span class="s">&quot;$(loginPath)admin/SitecoreIdentityServer&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/sites&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>クロスオリジンの問題を防ぐために、サイトの loginPage 属性値に相対 URL が含まれていることを確認する必要があります。</p>
+<p>identity/login/... エンドポイントは、内部的に GetSignInUrlInfoPipeline パイプライン・パイプラインを使用して、選択した外部プロバイダへの適切なサインイン・リンクを生成し、必要なすべてのデータをそこに渡します。このログイン・ページ・フォーマットは、サイト・ノードの loginPage 属性にのみ使用し、GetSignInUrlInfoPipeline パイプライン・パイプラインは、プレゼンテーション・レイヤーの特定のサイトの外部サインイン URL を取得するために使用します。</p>
+</div>
+</div>
+<div class="section" id="sitecore-login">
+<h2>sitecore/login ページを取得<a class="headerlink" href="#sitecore-login" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Sitecore 9.0では、以前に設定した外部IDプロバイダのログインボタンを復活させることができます。</p>
+<p>Sitecore.Owin.Authentication.IdentityServer.config設定ファイルは、シェルサイトとadminサイトのloginPage属性を、Sitecoreが扱う新しい特別なエンドポイントにパッチします。</p>
+<p>SI が有効なときに /sitecore/login ページにアクセスしようとすると、シェルサイトで指定されたログインページにリダイレクトされます。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>この動作は、InterceptLegacyShellLoginPageプロセッサが担当しています。</p>
+</div>
+<p>SI サーバーにアクセスできず、Sitecore が初期メタデータを取得できない場合、ユーザーは /sitecore/login?fbc=1 ページで終了します。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>IdentityProviderIsInaccessibleプロセッサとその構成を確認してください。</p>
+</div>
+<p>連携認証を使用してシェルでユーザーにサインインするように外部の ID プロバイダをすでに構成している場合は、SI サーバーのログインページにはこれらの余分なログインボタンが表示されないため、/sitecore/ログインページを使用する必要があります。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>SIサーバーに外部のIDプロバイダを追加する場合は、「Federation Gateway」を参照してください。</p>
+</div>
+<p>Sitecore がユーザーを sitecore/login ページからリダイレクトさせないようにするには。</p>
+<ol class="arabic simple">
+<li><p>シェルログインページを /sitecore/login に戻すか、/sitecore/login に URL パラメータ (?fbc=1) を追加してリクエストします。</p></li>
+<li><p>または、InterceptLegacyShellLoginPage プロセッサの legacyShellLoginPage プロパティをランダムな値にパッチします。</p></li>
+</ol>
+<p>これらのアクションのいずれかを実行することで、Sitecore がユーザーを /sitecore/login ページからリダイレクトさせないようにします。SIサーバーは、Sitecoreの通常の外部IDプロバイダとして設定されており、/sitecore/loginページにサインインボタンが表示されていることを意味します。キャプションは「Go to login」です。</p>
+</div>
+<div class="section" id="sitecore-identity">
+<h2>Sitecore Identityを無効にする<a class="headerlink" href="#sitecore-identity" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Sitecore インスタンスは SI クライアントですが、9.1 以前のバージョンでは SI サーバーがなくても Sitecore が動作するように、SI を無効にすることができます。</p>
+<p>デフォルトでは、Sitecore が起動した後の最初のサインイン時に、Sitecore インスタンスが SI サーバーに到達できない場合、/sitecore/login ページをログインページのフォールバックとして使用します。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>認証フォールバックが発生しても、OWIN.Authentication.Enabled設定で有効になっているため、OWIN認証ミドルウェアが使用されます。</p>
+</div>
+<p>SIサーバーを全く使用しない場合。</p>
+<ul>
+<li><dl>
+<dt>この設定ファイルを有効にします。</dt><dd><p>App_ConfigIncludeExamplesSitecore.Owin.Authentication.IdentityServer.Disabler.config.example. このファイルは、以下のことを行う。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>SitecoreIdentityServer プロバイダの Enabled プロパティを false に設定します。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>sitecore/federatedAuthentication/identityProviders で設定されたすべての外部 ID プロバイダには、個々の ID プロバイダが Sitecore に登録されないようにするために使用する Enabled プロパティがあります。</p>
+</div>
+<ul class="simple">
+<li><p>シェルサイトと管理サイトのloginPage属性を初期値（/sitecore/loginと/sitecore/admin/login.aspx）にパッチします。</p></li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+</li>
+</ul>
+<p>OWIN と連携認証を無効にするには、この設定ファイルを有効にします。</p>
+<ul>
+<li><p>この設定ファイルを有効にします。
+App_ConfigIncludeExamplesSitecore.Owin.Authentication.Disabler.config.example. このファイルは、以下のことを行います。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Owin.Authentication.Enabled および FederatedAuthentication.Enabled を false に設定します。</p></li>
+<li><p>シェルサイトと管理サイトの loginPage 属性を初期値（/sitecore/login と /sitecore/admin/login.aspx）にパッチします。</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>この設定を web.config ファイルに追加します。</p></li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">&quot;owin:AutomaticAppStartup&quot;</span> <span class="na">value=</span><span class="s">&quot;false&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>web.configファイル内の元のauthenticatiomノードを復元します。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;authentication</span> <span class="na">mode=</span><span class="s">&quot;Forms&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;forms</span> <span class="na">name=</span><span class="s">&quot;.ASPXAUTH&quot;</span> <span class="na">cookieless=</span><span class="s">&quot;UseCookies&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/authentication&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>ユーザーサインアウトの実装<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Sitecore 9.1では、フェデレート認証が拡張されました。ユーザーがSitecoreからサインアウトする際に、外部のIDプロバイダからのサインアウトをより簡単に実装できるようになりました。</p>
+<p>ユーザーが外部の ID プロバイダからサインアウトすると、Sitecore Identity はユーザーをこの ID プロバイダのログアウトページにリダイレクトし、その後 Sitecore に戻ります。通常、Sitecore と基礎となる ID プロバイダの両方から完全なサインアウトを 1 回のリクエストで行うことはできない。しかし、AuthenticationManager.Logout() メソッドを使用すると、Sitecore Identity がすべてを自動的に処理する。</p>
+<p>この機能は、SI サーバープロバイダ（構成では SitecoreIdentityServer）に対してのみデフォルトでオンになっています。sitecore/federatedAuthentication/identityProviders/identityProvider[id=SitecoreIdentityServer]/triggerExternalSignOut は、デフォルトでは true になっています。</p>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>この機能は、認証ミドルウェアの ID プロバイダに対して postLogoutRedirectUri を正しく構成し、ID プロバイダ自身に対して postLogoutRedirectUri を許可する必要があります。Sitecore は、外部サインアウトが発生したことを確実にするために、これに依存しています。postLogoutRedirectUriを正しく設定しないと、ユーザーはサインアウト後にSitecoreにアクセスしようとするたびに、外部プロバイダのサインアウトページにリダイレクトされます。ユーザーはこれを避けるために、1分待つか、Sitecoreのクッキーをクリーンアップすることができます。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>ユーザーロックアウトの設定<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ユーザーアカウントのロックアウトは、ブルートフォース攻撃として知られるパスワード推測攻撃を回避するのに役立ちます。ブルートフォース攻撃とは、文字、数字、記号の可能な組み合わせをすべて系統的に試して、正しい組み合わせが見つかるまでパスワードを発見しようとする攻撃です。</p>
+<p>ユーザー アカウントのロックアウトを設定するには</p>
+<ol class="arabic simple">
+<li><p>MaxInvalidPasswordAttempts と PasswordAttemptWindow を、Sitecore:IdentityServer:SitecoreMembershipOptions:MaxInvalidPasswordAttempts と Sitecore:IdentityServer:SitecoreMembershipOptions:PasswordAttemptWindow の設定で構成します。</p></li>
+<li><p>または、Sitecore インスタンスの Web.config ファイルで、MaxInvalidPasswordAttempts と PasswordAttemptWindow を指定します。これは、Sitecore Identityサーバーが無効になっているか、identityServer.xmlのパスワードポリシーパラメータが指定されていない場合にのみ機能します。</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>SI サーバールート <a class="reference external" href="https:/">https:/</a>/{si_server}/ と <a class="reference external" href="https:/">https:/</a>/{si_server}/account/login URL へのアクセスを組織外で制限する必要があります。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>認証クッキーの有効期限を指定する<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>クッキーには2種類あります。</p>
+<ul class="simple">
+<li><p>セッションクッキー（非永続的） - これらは一時的なクッキーファイルです。ブラウザを閉じると消去されます。</p></li>
+<li><p>永続的クッキー - あなたが手動で削除するか、ブラウザが削除するまで、ブラウザはこれらのクッキーファイルを保存し、永続的クッキーファイル自体に指定された寿命に基づいて削除します。</p></li>
+</ul>
+<p>最近のブラウザは、適切なブラウザオプションがオンになっていると、ブラウザセッション間でセッションクッキーを保存する傾向があります。これにより、セッションクッキーが永続的なものと同じように動作することがよくあります。OWIN認証では、クッキーの寿命値をクッキー値自体に保存することができます。つまり、クッキーの有効期限が切れていても、ブラウザはサーバにクッキーを送信しますが、ウェブアプリケーションはクッキーを有効期限切れとして扱います。</p>
+<p>認証クッキーの有効期限を指定するには</p>
+<ul>
+<li><p>以下のパッチスニペットを使用して、デフォルトのクッキーの有効期限を指定したり、有効期限のスライドを有効にしたり無効にしたりします。</p>
+<blockquote>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;configuration&gt;</span>
+<span class="nt">&lt;sitecore&gt;</span>
+    <span class="nt">&lt;pipelines&gt;</span>
+    <span class="nt">&lt;owin.initialize&gt;</span>
+        <span class="nt">&lt;processor</span> <span class="na">name=</span><span class="s">&quot;CookieAuthentication&quot;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- Controls how much time the cookie will remain valid from the point it is created.</span>
+<span class="c">            Format: d:hh:mm:ss</span>
+
+<span class="c">            No matter the cookie is persistent or not, OWIN authentication will not pass the expired cookie.</span>
+<span class="c">            ExpireTimeSpan could be overwritten by the http://www.sitecore.net/identity/claims/cookieExp claim where</span>
+<span class="c">            the claim value is Unix time expressed as the number of seconds that have elapsed since 1970-01-01T00:00:00Z. --&gt;</span>
+        <span class="nt">&lt;ExpireTimeSpan&gt;</span>00:30:00<span class="nt">&lt;/ExpireTimeSpan&gt;</span>
+        <span class="nt">&lt;SlidingExpiration&gt;</span>true<span class="nt">&lt;/SlidingExpiration&gt;</span>
+        <span class="nt">&lt;/processor&gt;</span>
+        ...
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p>Web アプリケーションは、ユーザーが [記憶する] オプションを選択すると、永続的な認証クッキーを作成します。統合認証による認証では、永続的でないクッキーのみが生成されます。</p>
+<p>たとえば、外部 ID プロバイダで Remember me オプションを選択せずに外部 ID プロバイダを介してサインインした場合、ブラウザ セッションが終了した後に再度サインインする必要があります。</p>
+<p>外部の ID プロバイダを経由してサインインした場合、そのプロバイダで Remember me オプションを選択すると、ブラウザセッションの有効期限が切れると Sitecore 認証クッキーが失われます。 しかし、IDプロバイダに素早く自動リダイレクトして戻ってくると、再び自動的にSitecoreにサインインしたことになります。</p>
+<p>特定のIDプロバイダのCookie ExpireTimeSpan設定をオーバーライドするには、以下の手順に従います。</p>
+<ul class="simple">
+<li><p>1970-01-01T0:0:0Z から日付/時刻までの UTC で測定した秒数を指定する値で <a class="reference external" href="http://www.sitecore.net/identity/claims/cookieExp">http://www.sitecore.net/identity/claims/cookieExp</a> クレームを追加する ID プロバイダのクレーム変換を指定します。</p></li>
+</ul>
+<p>この値は、ブラウザによる処理のために認証クッキーを受け入れてはならない時間を示します。</p>
+<p>Sitecore は、この目的のために Sitecore Identity サーバープロバイダの exp クレーム値を使用する。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>&lt;sitecore&gt;
+&lt;federatedAuthentication&gt;
+    &lt;identityProviders&gt;
+    &lt;identityProvider id=&quot;SitecoreIdentityServer&quot;  ...&gt;
+        &lt;transformations ...&gt;
+            &lt;!-- owin.cookieAuthentication.signIn pipeline uses http://www.sitecore.net/identity/claims/cookieExp claim to override authentication cookie expiration.
+                &#39;exp&#39; claim value can be configured on Sitecore Identity server on the client configuration by IdentityTokenLifetimeInSeconds setting.
+                Note: Claim value is Unix time expressed as the number of seconds that have elapsed since 1970-01-01T00:00:00Z --&gt;
+            &lt;transformation name=&quot;use exp claim for authentication cookie expiration&quot; type=&quot;Sitecore.Owin.Authentication.Services.DefaultTransformation, Sitecore.Owin.Authentication&quot;&gt;
+            &lt;sources hint=&quot;raw:AddSource&quot;&gt;
+                &lt;claim name=&quot;exp&quot;/&gt;
+            &lt;/sources&gt;
+            &lt;targets hint=&quot;raw:AddTarget&quot;&gt;
+                &lt;claim name=&quot;http://www.sitecore.net/identity/claims/cookieExp&quot;/&gt;
+            &lt;/targets&gt;
+            &lt;keepSource&gt;true&lt;/keepSource&gt;
+            &lt;/transformation&gt;
+            ...
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p>英語版 <a class="reference external" href="https://doc.sitecore.com/developers/93/sitecore-experience-manager/en/understanding-sitecore-authentication-behavior-changes.html">https://doc.sitecore.com/developers/93/sitecore-experience-manager/en/understanding-sitecore-authentication-behavior-changes.html</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="single-sign-out.html" class="btn btn-neutral float-right" title="シングルサインアウト" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="configure-a-sitecore-instance-and-sitecore-identity-server.html" class="btn btn-neutral float-left" title="SitecoreインスタンスとSitecore Identityサーバーを設定する" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sitecore Japan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

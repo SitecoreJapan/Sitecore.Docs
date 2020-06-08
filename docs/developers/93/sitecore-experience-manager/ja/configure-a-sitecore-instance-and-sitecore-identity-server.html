@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SitecoreインスタンスとSitecore Identityサーバーを設定する &mdash; Sitecore Experience Manager  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="Sitecoreの認証動作の変化を理解する" href="understanding-sitecore-authentication-behavior-changes.html" />
+    <link rel="prev" title="Sitecore Identityサーバー認証" href="sitecore-identity-server-authentication.html" />
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153234118-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-153234118-2');
+</script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Sitecore Experience Manager
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="sitecore-identity.html">Sitecore Identity</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sitecore-identity-structure.html">Sitecore Identity の構造</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sitecore-identity-server-authentication.html">Sitecore Identityサーバー認証</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SitecoreインスタンスとSitecore Identityサーバーを設定する</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sitecore">Sitecoreインスタンスを設定する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sitecore-identity">Sitecore Identityサーバーを設定する</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="understanding-sitecore-authentication-behavior-changes.html">Sitecoreの認証動作の変化を理解する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="single-sign-out.html">シングルサインアウト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="use-bearer-tokens-in-client-applications.html">クライアントアプリケーションで bearer トークンを使用する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="use-the-sitecore-identity-server-as-a-federation-gateway.html">フェデレーションゲートウェイとしてSitecore Identityサーバーを使用する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="localize-the-ui.html">UI のローカライズ</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sitecore Experience Manager</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sitecore-identity.html">Sitecore Identity</a> &raquo;</li>
+        
+      <li>SitecoreインスタンスとSitecore Identityサーバーを設定する</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/configure-a-sitecore-instance-and-sitecore-identity-server.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sitecoresitecore-identity">
+<h1>SitecoreインスタンスとSitecore Identityサーバーを設定する<a class="headerlink" href="#sitecoresitecore-identity" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Sitecore Identity (SI) サーバー認証を使用するために Sitecore インスタンスを構成するには、以下の手順を実行する必要があります。</p>
+<div class="section" id="sitecore">
+<h2>Sitecoreインスタンスを設定する<a class="headerlink" href="#sitecore" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Sitecore インスタンスを設定するには</p>
+<ol class="arabic">
+<li><p>以下の内容で、SIサーバー認証を持つすべてのSitecoreインスタンスを有効にします。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>SIサーバーの絶対URL（OpenId Connect用語ではAuthority）。これは、設定変数 $(identityServerAuthority) で設定します。これは展開プロセスで指定されます。</p></li>
+<li><p>登録されているクライアントの ID です。Sitecoreには、SIサーバーにID Sitecoreというデフォルトのクライアントが設定されています。SitecoreはこのIDを
+FederatedAuthentication.IdentityServer.ClientId 設定。</p></li>
+<li><p>カスタムResource Owner Passwordフロー用の専用クライアントのID。Sitecore は、内部目的のためにカスタム Resource Owner パスワードフローを使用する。FederatedAuthentication.IdentityServer.ResourceOwnerClientId 設定は、このクライアントの ID を指定する。デフォルト値は SitecorePassword です。</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Sitecoreインスタンス内のsitecoreidentity.secret接続文字列に格納するクライアントシークレットを設定し、ここにPasswordClientクライアントのシークレットリストでSIサーバーで表現されるクライアントシークレットを設定します。Sitecore:IdentityServer:Client:PasswordClient:ClientSecrets:...</p></li>
+</ol>
+<p>Sitecoreは、連携認証の設定に従ってSIサーバに接続します。</p>
+</div>
+<div class="section" id="sitecore-identity">
+<h2>Sitecore Identityサーバーを設定する<a class="headerlink" href="#sitecore-identity" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>SI サーバーには、そのすべてのクライアントの構成が含まれている必要があります（IdentityServer4 クライアントを参照）。</p>
+<p>Sitecore Identityサーバーを構成するには</p>
+<ol class="arabic">
+<li><p>Sitecore:IdentityServer:Client セクションを使用してクライアントを構成するか、依存性注入を使用する。
+各クライアント構成ノードには、IdentityServer4.Models.Client クラスのプロパティにバインドされた多数のプロパ ティが含まれています。ほとんどの場合、クラスプロパティと構成プロパティの名前が一致します。または、依存性注入を使用して、IdentityServer4 オプションの全セットにアクセスすることもできます。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>Sitecore (Sitecore:IdentityServer:Client:DefaultClient)という定義済みのクライアントがある。</p>
+</div>
+</li>
+<li><p>デフォルトの Sitecore クライアント宣言を再利用するには、許可されている RedirectUris、PostLogoutRedirectUris、および AllowedCorsOrigins 値のリストを拡張して、アプリケーションに適切な値を含める。
+以下の例のように、RedirectUris リストと PostLogoutRedirectUris リストで {AllowedCorsOrigin} スペシャルトークンを使用できます。</p></li>
+</ol>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;Settings&gt;</span>
+<span class="nt">&lt;Sitecore&gt;</span>
+    <span class="nt">&lt;IdentityServer&gt;</span>
+    <span class="nt">&lt;Clients&gt;</span>
+        <span class="nt">&lt;DefaultClient&gt;</span>
+        ...
+        <span class="nt">&lt;RedirectUris&gt;</span>
+            <span class="nt">&lt;RedirectUri1&gt;</span>{AllowedCorsOrigin}/identity/signin<span class="nt">&lt;/RedirectUri1&gt;</span>
+            <span class="nt">&lt;RedirectUri2&gt;</span>{AllowedCorsOrigin}/signin-oidc<span class="nt">&lt;/RedirectUri2&gt;</span>
+        <span class="nt">&lt;/RedirectUris&gt;</span>
+        <span class="nt">&lt;PostLogoutRedirectUris&gt;</span>
+            <span class="nt">&lt;PostLogoutRedirectUri1&gt;</span>{AllowedCorsOrigin}/identity/postexternallogout<span class="nt">&lt;/PostLogoutRedirectUri1&gt;</span>
+            <span class="nt">&lt;PostLogoutRedirectUri2&gt;</span>{AllowedCorsOrigin}/signout-callback-oidc<span class="nt">&lt;/PostLogoutRedirectUri2&gt;</span>
+        <span class="nt">&lt;/PostLogoutRedirectUris&gt;</span>
+        ...
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>AllowedCorsOrigins セクションで URL の protocol+domain+port 部分のみを指定するには、{AllowedCorsOrigin} トークンを使用します。</p></li>
+</ol>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;Settings&gt;</span>
+<span class="nt">&lt;Sitecore&gt;</span>
+    <span class="nt">&lt;IdentityServer&gt;</span>
+    <span class="nt">&lt;Clients&gt;</span>
+        <span class="nt">&lt;DefaultClient&gt;</span>
+        ...
+        <span class="nt">&lt;AllowedCorsOrigins&gt;</span>
+            <span class="nt">&lt;AllowedCorsOriginsGroup1&gt;</span>https://host1|http://host1<span class="nt">&lt;/AllowedCorsOriginsGroup1&gt;</span>
+            <span class="nt">&lt;AllowedCorsOriginsGroup2&gt;</span>https://host2<span class="nt">&lt;/AllowedCorsOriginsGroup2&gt;</span>
+            <span class="nt">&lt;AllowedCorsOriginsGroup3&gt;</span>https://host3<span class="nt">&lt;/AllowedCorsOriginsGroup3&gt;</span>
+        <span class="nt">&lt;/AllowedCorsOrigins&gt;</span>
+        ...
+</pre></div>
+</div>
+<p>Sitecoreは、RedirectUri*とPostLogoutRedirectUri*のノード値を{AllowedCorsOrigin}トークンで展開し、AllowedCorsOriginsリストで指定されたすべてのオリジンに対して許可されるようにします。</p>
+<div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p>英語版 <a class="reference external" href="https://doc.sitecore.com/developers/93/sitecore-experience-manager/en/configure-a-sitecore-instance-and-sitecore-identity-server.html">https://doc.sitecore.com/developers/93/sitecore-experience-manager/en/configure-a-sitecore-instance-and-sitecore-identity-server.html</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="understanding-sitecore-authentication-behavior-changes.html" class="btn btn-neutral float-right" title="Sitecoreの認証動作の変化を理解する" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sitecore-identity-server-authentication.html" class="btn btn-neutral float-left" title="Sitecore Identityサーバー認証" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sitecore Japan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
