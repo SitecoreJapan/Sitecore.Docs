@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>エンタイトルメントサービス &mdash; Sitecore Experience Commerce  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="エンタイトルメントの概要" href="entitlement-overview.html" />
+    <link rel="prev" title="コマース開発者リファレンス" href="commerce-developer-reference.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Sitecore Experience Commerce
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="commerce-developer-reference.html">コマース開発者リファレンス</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">エンタイトルメントサービス</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="entitlement-overview.html">エンタイトルメントの概要</a></li>
+<li class="toctree-l3"><a class="reference internal" href="entitlement-views.html">エンタイトルメントビュー</a></li>
+<li class="toctree-l3"><a class="reference internal" href="entitlements-actions-commands-and-pipelines.html">エンタイトルメント アクション、コマンド、パイプライン</a></li>
+<li class="toctree-l3"><a class="reference internal" href="entitlements-policies.html">エンタイトルメントポリシー</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sitecore Experience Commerce</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="commerce-developer-reference.html">コマース開発者リファレンス</a> &raquo;</li>
+        
+      <li>エンタイトルメントサービス</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/entitlements-service.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>エンタイトルメントサービス<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>エンタイトルメントサービスは、Sitecore.Commerce.Plugin.Entitlementsプラグインによって提供されます。</p>
+<p>エンタイトルメントは、追跡可能な所有権またはライセンスの単位を表し、顧客や周囲の活動によって変化する単位量を追跡する機能を備えています。これにより、デジタル製品にアクセスする権利と、顧客に代わってアクティビティを追跡する権利の間で、懸念事項を分離することができます。</p>
+<p>エンタイトルメントの例としては、以下のようなものがあります。</p>
+<ul class="simple">
+<li><p>ギフトカード</p></li>
+<li><p>保証</p></li>
+<li><p>インストールサービス</p></li>
+<li><p>デジタルプロダクト</p></li>
+<li><p>ロイアリティ会員</p></li>
+</ul>
+<p>エンタイトルメント機能には以下が含まれます。</p>
+<ul class="simple">
+<li><p>発注時のエンタイトルメントのための別個のプロビジョニングプロセス</p></li>
+<li><p>プロビジョニングの原因となった元の注文から、顧客の現在の権利を別個に追跡すること</p></li>
+<li><p>ギフトカードの現在の価値や蓄積されたポイントの現在の数など、エンタイトルメントに関連するエンタイトルメントの量を追跡する能力</p></li>
+<li><p>顧客からの権利削除能力</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">ちなみに</p>
+<p>英語版 <a class="reference external" href="https://doc.sitecore.com/developers/93/sitecore-experience-commerce/en/entitlements-service.html">https://doc.sitecore.com/developers/93/sitecore-experience-commerce/en/entitlements-service.html</a></p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="entitlement-overview.html" class="btn btn-neutral float-right" title="エンタイトルメントの概要" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="commerce-developer-reference.html" class="btn btn-neutral float-left" title="コマース開発者リファレンス" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Sitecore Japan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
