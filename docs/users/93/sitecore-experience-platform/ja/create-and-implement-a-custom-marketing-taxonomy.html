@@ -184,13 +184,62 @@
             
   <div class="section" id="id1">
 <h1>カスタムマーケティングタクソノミの作成と実装<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Sitecore Experience Platformでは、タクソノミーとはアイテムを整理するための方法です。タクソノミタグを適用して、キャンペーン、参照チャネル、その他のマーケティング活動に関する情報を識別します。これにより、さまざまなマーケティング活動間の関係性を特定して追跡することができ、キャンペーンの効果やコンタクト先がブランドとどのように相互作用しているかについて、より深い洞察を得ることができます。</p>
+<p>Sitecore XPにはチャネル、キャンペーン、アセットのタクソノミが含まれていますが、ビジネスニーズに基づいてカスタムマーケティングタクソノミを定義することもできます。異なるビジネス市場、ビジネスユニット、地理的ユニット、組織内の個々のブランドなどを識別するカスタムタクソノミを作成することができます。</p>
+<div class="section" id="id2">
+<h2>カスタムマーケティングタクソノミを作成する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>カスタムマーケティングタクソノミーを作成するには</p>
+<ol class="arabic">
+<li><p>マーケティングコントロールパネルのコンテンツツリーで、タクソノミーノードを展開し、使用するタクソノミーを選択します。</p>
+<p>例えば、[キャンペーンファセット1]を選択します。</p>
+</li>
+<li><p>コンテンツ領域の警告で、[アイテムの保護解除]をクリックして、タクソノミーのアイテムを編集できるようにします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a20c7b5c.png"><img alt="カスタムマーケティングタクソノミを作成する" class="align-center" src="_images/15ed64a20c7b5c.png" style="width: 400px;" /></a>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>特定のアクセス権を持つユーザーのみがアイテムの保護を解除することができます。</p>
 </div>
+<ol class="arabic simple" start="3">
+<li><p>[ホーム] タブで [表示名] をクリックし、新しいタクソノミーに名前を付けて [OK] をクリックします。</p></li>
+<li><p>アイテムを再び保護するには、[構成] タブをクリックし、[属性] グループで [アイテムの保護] をクリックします。</p></li>
+<li><p>保存をクリックします。</p></li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>新しいタクソノミグループと新しいタクソノミタグを作成する<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>マーケティングタクソノミーを作成したら、独自のタクソノミーグループとタグを作成することができます。</p>
+<p>新しいタクソノミーグループとタグを作成するには、以下の手順に従います。</p>
+<ol class="arabic simple">
+<li><p>マーケティングコントロールパネルのコンテンツツリーで、前の手順で名前を変更したタクソノミーを選択します（例：ビジネスマーケットタクソノミー）。</p></li>
+<li><p>[ホーム] タブの [挿入] グループで、[カスタム グループ] をクリックします。</p></li>
+<li><p>表示されるメッセージダイアログボックスで、新しいタクソノミーグループの名前を入力して、[OK]をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a20cc934.png"><img alt="新しいタクソノミグループと新しいタクソノミタグを作成する" class="align-center" src="_images/15ed64a20cc934.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>[保存] をクリックして、新しいタクソノミグループを保存します。</p></li>
+<li><p>新しいタクソノミタグを作成するには、コンテンツツリーで、新しいタグが属するタクソノミグループを右クリックし、[挿入]をクリックし、[カスタムタクソノミタグ]をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a20d0e3b.png"><img alt="新しいタクソノミグループと新しいタクソノミタグを作成する" class="align-center" src="_images/15ed64a20d0e3b.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="6">
+<li><p>[メッセージ］ダイアログボックスで、タグの新しい名前を入力し、［OK］をクリックします。</p></li>
+<li><p>[保存] をクリックして、新しいタクソノミタグを保存します。</p></li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2>マーケティングタクソノミを展開する<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>新しいマーケティングタクソノミーを作成し、既存のタクソノミーに新しいタグを追加する場合は、新しいタクソノミーのタグにキャンペーンの関連付けを開始する前に <a class="reference internal" href="deploy-marketing-definitions-and-taxonomies.html"><span class="doc">タクソノミーを展開</span></a> する必要があります。</p>
+<p>マーケティング タクソノミーを展開するには</p>
+<ol class="arabic simple">
+<li><p>コンテンツ ツリーで、新規または変更したタクソノミーのルート ノード、例えばビジネス マーケット タクソノミーを選択します。</p></li>
+<li><p>タクソノミータブで、デプロイをクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a20d728c.png"><img alt="マーケティングタクソノミを展開する" class="align-center" src="_images/15ed64a20d728c.png" style="width: 400px;" /></a>
+<p>カスタムタクソノミーを展開したら、新しいタグをキャンペーンに適用することができます。これにより、キャンペーンを分類し、エクスペリエンスアナリティクスでキャンペーンの側面をトラッキングすることができます。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p><a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/create-and-implement-a-custom-marketing-taxonomy.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/create-and-implement-a-custom-marketing-taxonomy.html</a></p>
+</div>
 </div>
 </div>
 

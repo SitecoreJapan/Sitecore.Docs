@@ -195,9 +195,44 @@
             
   <div class="section" id="id1">
 <h1>オンラインキャンペーンにキャンペーンコードを適用する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>キャンペーン活動とは、ウェブサイトへの訪問を促すために設計されたプロモーションや広告活動のことです。キャンペーンは、定義された時間のために実行されます。キャンペーンを使用して、訪問者にウェブサイト上で特定のアクションを実行してもらうことができます。</p>
+<p>キャンペーンを作成すると、キャンペーン クリエイターはキャンペーン トラッキング コードを生成します。このコードを適用して、電子メールキャンペーンや外部のウェブソースからのトラフィックなどの外部インタラクションを追跡します。これにより、<a class="reference internal" href="experience-analytics.html"><span class="doc">Experience Analytics</span></a> のダッシュボードを使用して、キャンペーンのトラフィックや効率性に関するより詳細な情報を収集することができます。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p><a class="reference internal" href="create-and-edit-a-campaign-activity.html"><span class="doc">新しいキャンペーンアクティビティ</span></a> を作成する場合、キャンペーンクリエーターがキャンペーンコードを生成する前に、キャンペーンアクティビティを保存する必要があります。</p>
+</div>
+<p>オンラインキャンペーンにキャンペーンコードを適用するには</p>
+<ol class="arabic">
+<li><p>Sitecore Launchpadから、Campaign Creatorを開きます。</p></li>
+<li><p>ランディングページで、オンラインアクティビティに関連付けるキャンペーンアクティビティをクリックします。</p></li>
+<li><p>キャンペーンアクティビティパネルの「キャンペーンの実行」の下の「キャンペーンリンク」フィールドで、キャンペーンリンクを選択します。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a215bbb7.png"><img alt="キャンペーン活動の作成と編集" class="align-center" src="_images/15ed64a215bbb7.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>適当なところでウェブサイトのURLにキャンペーンリンクを追加してください。これはウェブサイトによって異なる場合があります。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a2160764.png"><img alt="キャンペーン活動の作成と編集" class="align-center" src="_images/15ed64a2160764.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>この例では、ウェブサイトの URL は www.sitecore.net/default.aspx です。</p>
+<blockquote>
+<div><p>このキャンペーンで提供されるクエリ文字列は</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sc_camp</span><span class="o">=</span><span class="mi">0</span><span class="n">ED397C4784E4FA1834897A35461992A</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>クエリ文字列を挿入した後、これはキャンペーンのリンクフィールドには含まれていないため、パスを完成させるためにクエスチョンマークを挿入する必要があります。</p>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>この例では、新しいクエリ文字列は次のようになります。</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>www.sitecore.net/default.aspx?sc_camp=0ED397C4784E4FA1834897A35461992A
+</pre></div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
