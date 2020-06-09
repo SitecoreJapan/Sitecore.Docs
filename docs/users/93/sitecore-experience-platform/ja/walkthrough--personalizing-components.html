@@ -185,13 +185,157 @@
             
   <div class="section" id="walkthrough">
 <h1>Walkthrough: コンポーネントのパーソナライズ<a class="headerlink" href="#walkthrough" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>パーソナライズすることで、訪問者にターゲットを絞ったコンテンツを配信することができます。たとえば、訪問者の閲覧行動や蓄積されたプロファイル値に基づいて、パーソナライズされたコンテンツを訪問者に表示するルールを実装することができます。</p>
+<p>エクスペリエンス エディタでは、異なるサイト訪問者にどのコンテンツを表示するかを決定するルールを作成することができます。これらは、パーソナライズ ルールまたは条件付きレンダリングと呼ばれます。</p>
+<p>目標、キャンペーン、エンゲージメントバリューポイント、プロファイルバリューポイント、エンゲージメントプランなど、さまざまな基準に基づいてパーソナライズルールを作成できます。ウェブサイトは、特定のコンテンツを表示したり、コンテンツを非表示にしたり、コンポーネントの動作を調整したりすることで、パーソナライゼーション ルールにリアルタイムで反応します。</p>
+<p>この例では、訪問者がパンフレットをダウンロードするためのリンクを表示したときに決定するルールを作成する方法を示しています。</p>
+<p><strong>* シナリオ*</strong></p>
+<p>ウェブサイトでは、ホームページを除くすべてのページにパンフレットをダウンロードするためのリンクを表示しています。パーソナライゼーションルールでは、「当社のサービス」ページのパンフレットリンクは、リードスコアが50以上の訪問者にのみ表示されるように指定されています。</p>
+<div class="section" id="id1">
+<h2>パーソナライズルールを作成する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>パーソナライズルールを作成するには、例えばリードスコアが50以上の訪問者に特定のパンフレットを表示するなど、満たすべき条件を指定します。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>パーソナライズ ルールを作成する前に、パーソナライズ ルールに関連付けるすべてのコンテンツを準備しておく必要があります。パーソナライズされたコンポーネントのレイアウトを変更する場合は、関連するレンダリング アイテムも準備しておく必要があります。</p>
 </div>
+<p>パーソナライズ ルールを作成するには</p>
+<ol class="arabic simple">
+<li><p>エクスペリエンス エディタで、[表示] タブをクリックし、[有効化] グループで [デザイン] チェックボックスを選択してデザイン機能を有効にします。</p></li>
+<li><p>パーソナライズ ルールを実装するページに移動します。この例では、サービス ページを編集します。</p></li>
+<li><p>サイドバーで、[詳細情報が必要] セクションをクリックし、表示されるフローティング ツールバーで、[このコンポーネントのパーソナライゼーションを作成または編集する] をクリックします。 <img alt="icon1" src="_images/15ed64a2222528.png" /></p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a2225f9b.png"><img alt="パーソナライズルールを作成する" class="align-center" src="_images/15ed64a2225f9b.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="4">
+<li><p>[コンポーネントの個人設定]ダイアログボックスで、[個人設定ルールの追加] <img alt="icon2" src="_images/15ed64a222ad5c.png" /> をクリックします。</p></li>
+</ol>
+<ol class="arabic simple" start="5">
+<li><p>新しい条件には適切な名前を付けてください。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a2238988.png"><img alt="パーソナライズルールを作成する" class="align-center" src="_images/15ed64a2238988.png" style="width: 400px;" /></a>
+<p>Sitecoreは、Personalize the componentダイアログボックスに表示された順番で、パーソナライズルールを評価します。訪問者が条件で指定されたルールを満たさない場合、Sitecoreは次の条件に移動し、訪問者がいずれかの条件を満たすまで、次の条件に移動します。訪問者が他の条件を満たしていない場合は、デフォルトの条件が使用されます。</p>
+<ol class="arabic" start="6">
+<li><p>新しいコンポーネントの条件を定義するには、[ルールの編集]をクリックし、<a class="reference internal" href="the-rule-set-editor.html"><span class="doc">[ルールの作成]ダイアログボックス</span></a> の[条件の選択]フィールドで、1つまたは複数の条件を選択します。</p>
+<p>この例では、[検索] フィールドに検索ワード プロファイル キーを入力します。次の条件をクリックします。</p>
+<p>ここで、インタラクション プロファイルの特定のプロファイル キーの値が特定の値と比較されます。</p>
+<p>条件は、ルールの編集セクションに表示されます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a223dc46.png"><img alt="パーソナライズルールを作成する" class="align-center" src="_images/15ed64a223dc46.png" style="width: 400px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>行動が特定のパターンカードにマッピングされている訪問者にのみ適用されるパーソナライズルールを作成するには、現在の訪問が特定のプロファイルの特定のパターンカードと一致する条件をクリックします。</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>条件の値を編集します。これを行うには、[ルールの編集] フィールドのリンクをクリックします。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>最初のリンクには、when または where という単語が含まれています。このリンクをクリックすると、Sitecoreは条件を反転させ、whenとwhen以外の条件、またはwhereとwhere以外の条件を交互に表示します。</p></li>
+<li><p>2つ目のリンクには、specificという単語が含まれています。このリンクをクリックすると、ダイアログボックスが表示され、使用する項目やプロファイルを選択することができます。</p></li>
+<li><p>その他のリンクには、比較や数値を含めることができます。これらのリンクをクリックすると、リンクに関連するオプションから選択できるダイアログボックスが表示されます。</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>この例では、リードスコアが50以上蓄積されている訪問者のみにパンフレットダウンロードリンクを表示させたいとします。ルールの編集]フィールドで[特定の]をクリックし、[プロファイルキーの選択]ダイアログボックスで、[スコア]を展開し、[リード]をクリックします。OKをクリックします。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a2242413.png"><img alt="パーソナライズルールを作成する" class="align-center" src="_images/15ed64a2242413.png" style="width: 400px;" /></a>
+</div></blockquote>
+<ol class="arabic" start="8">
+<li><p>このルールの比較を選択するには、[ルールの編集]フィールドで、[比較先]をクリックします。比較の選択] ダイアログ ボックスで、[以上] または [等しい] をクリックし、[OK] をクリックします。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a2247465.png"><img alt="パーソナライズルールを作成する" class="align-center" src="_images/15ed64a2247465.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>訪問者のリードプロファイルスコアが50以上の場合に「当社のサービス」ページにパンフレットダウンロードリンクを表示するには、特定の値をクリックして50と入力し、[OK]をクリックします。OK]をクリックして、[ルールの作成]ダイアログボックスを閉じます。これで、[コンポーネントのパーソナライズ]ダイアログボックスは次のように表示されます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a224d2bb.png"><img alt="パーソナライズルールを作成する" class="align-center" src="_images/15ed64a224d2bb.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>コンテンツをパーソナライズする<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>パーソナライズルールを作成したら、ルール内の条件が満たされたときにページやコンポーネントに表示させるコンテンツを指定できます。コンテンツの非表示や表示、Web コントロールの動作や表示を調整することができます。</p>
+<p>コンテンツを非表示または表示にするには</p>
+<ol class="arabic">
+<li><p>[コンポーネントのカスタマイズ] ダイアログ ボックスで、コンテンツを非表示にするルールの [非表示] をクリックします。この例では、[デフォルト] 条件が適用されている場合にコンポーネントを非表示にします。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a225494f.png"><img alt="コンテンツをパーソナライズする" class="align-center" src="_images/15ed64a225494f.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+</ol>
+<p>この例では、訪問者が「当社のサービス」ページに来たときに、リードスコアが50以上の場合にのみ「Office Coreパンフレットのダウンロード」リンクが表示されます。デフォルトの状態は、訪問者のプロファイル値が 50 になるまで表示され、コンテンツが非表示になります。</p>
+<ol class="arabic simple" start="2">
+<li><p>ルールの異なるコンテンツを表示するには、[コンテンツ]フィールドで、<img alt="icon3" src="_images/15ed64a225a689.png" /> をクリックします。</p></li>
+</ol>
+<ol class="arabic" start="3">
+<li><p>関連付けられたコンテンツの選択 ダイアログ ボックスで、コンテンツ ツリーをナビゲートするか、条件が満たされたときに表示するアイテムを検索します。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a225e073.png"><img alt="コンテンツをパーソナライズする" class="align-center" src="_images/15ed64a225e073.png" style="width: 400px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>そのアイテムは、現在のレンダリングアイテムと互換性がある必要があります。たとえば、Web フォームの項目には Web フォームのレンダリングを使用する必要があります。</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>パーソナライズするコンテンツの選択が終わったら、OKをクリックします。</p></li>
+</ol>
+<p>ページを公開すると、パーソナライズルールの条件に基づいてパーソナライズされたコンテンツがWebサイトに表示されます。</p>
+</div>
+<div class="section" id="id3">
+<h2>コンポーネントのレイアウトをパーソナライズする<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>また、Webページでのコンポーネントの表示方法をパーソナライズすることもできます。</p>
+<p>コンポーネントのレイアウトをパーソナライズするには</p>
+<ol class="arabic">
+<li><p>コンポーネントの個人設定ダイアログボックスで、コンポーネントの表示を個人設定を有効にします。これにより、[プレゼンテーション]フィールドが表示されます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a2263cda.png"><img alt="コンポーネントのレイアウトをパーソナライズする" class="align-center" src="_images/15ed64a2263cda.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>[プレゼンテーション］フィールドで <img alt="icon3" src="_images/15ed64a225a689.png" /> をクリックし、［レンダリングの選択］ダイアログボックスで、このパーソナライゼーションルールに関連付けられたコンテンツに使用するレンダリングを選択してから、［選択］をクリックします。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a226991e.png"><img alt="コンポーネントのレイアウトをパーソナライズする" class="align-center" src="_images/15ed64a226991e.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>The new rendering must be compatible with the component.</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>パーソナライゼーション効果のトラッキングを有効または無効にする<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>パーソナライズ効果トラッキング機能を利用することで、Sitecoreはパーソナライズテストを実行することなく、パーソナライズルールの効果を計算することができます。トラッキングを有効にすると、コンポーネントへのトラフィックの10%が効果追跡に割り当てられます。これは、パーソナライズ対象グループに属する訪問者の5%が、コンポーネントのデフォルトバージョンを見ることを意味します。</p>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>コンポーネントでパーソナライゼーションテストを開始する場合は、パーソナライゼーション効果のトラッキングを無効にする必要があります。</p>
+</div>
+<p>パーソナライゼーション効果の追跡を無効にするには</p>
+<ul class="simple">
+<li><p>[コンポーネントのパーソナライズ］ダイアログボックスで、［このコンポーネントのパーソナライゼーションの効果を追跡する］チェックボックスをオフにします。</p></li>
+<li><p>[OK] をクリックします。</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>パーソナライズされたコンポーネントのプレビュー<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>パーソナライズされたコンテンツをプレビューするには、エクスペリエンス エディタで、パーソナライズを追加したコンポーネントをクリックします。表示されるフローティング メニューで矢印をクリックすると、現在の条件の詳細が表示され、別の条件をクリックすると、そのコンポーネントに設定した他のコンテンツが表示されます。</p>
+<p>この例では、訪問者のリードスコアが50以上の場合、コンポーネントにはパンフレットが表示されます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a226e389.png"><img alt="パーソナライズされたコンポーネントのプレビュー" class="align-center" src="_images/15ed64a226e389.png" style="width: 400px;" /></a>
+</div></blockquote>
+<p>訪問者のリードスコアが50点以下の場合は、パンフレットが隠れてしまいます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a2272915.png"><img alt="パーソナライズされたコンポーネントのプレビュー" class="align-center" src="_images/15ed64a2272915.png" style="width: 400px;" /></a>
+</div></blockquote>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>あなたのウェブサイトで使用する前にルールを公開する必要があります。</p>
+</div>
+<p>パーソナライズされたバリアントがライブのウェブサイト上でしばらく実行された後、 <a class="reference internal" href="analyzing-the-effect-of-personalization-on-a-component.html"><span class="doc">コンポーネントに対するパーソナライズの効果</span></a> や <a class="reference internal" href="the-personalized-experience-dialog-box.html"><span class="doc">ページ全体に対するパーソナライズの効果</span></a> を分析することができます。また、 <a class="reference internal" href="using-the-personalization-dashboard.html"><span class="doc">パーソナライゼーションのダッシュボード</span></a> または <a class="reference internal" href="using-the-active-personalized-experiences-list.html"><span class="doc">アクティブなパーソナライズされた経験のリスト</span></a> で、全ページのパーソナライゼーションデータを見ることができます。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/walkthrough--personalizing-components.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/walkthrough--personalizing-components.html</a></p>
+</div>
 </div>
 </div>
 

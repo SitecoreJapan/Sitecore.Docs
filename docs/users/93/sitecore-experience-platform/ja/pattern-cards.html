@@ -104,7 +104,7 @@
 <li class="toctree-l3"><a class="reference internal" href="campaigns.html">キャンペーン</a></li>
 <li class="toctree-l3"><a class="reference internal" href="goals.html">ゴール</a></li>
 <li class="toctree-l3"><a class="reference internal" href="events.html">イベント</a></li>
-<li class="toctree-l3"><a class="reference internal" href="outcomes.html">結果</a></li>
+<li class="toctree-l3"><a class="reference internal" href="outcomes.html">成果</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="content-profiling.html">コンテンツプロファイリング</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="create-a-profile-key-or-persona.html">プロファイルキーまたはペルソナを作成する</a></li>
 <li class="toctree-l4"><a class="reference internal" href="assign-a-custom-profile-value-to-an-item.html">アイテムにカスタムプロファイル値を割り当てる</a></li>
@@ -195,15 +195,29 @@
             
   <div class="section" id="id1">
 <h1>パターンカード<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳準備中</p>
+<p>パターンカードを使用して、プロファイル値を特定のタイプの訪問者にマッピングし、パーソナライズルールを実装します。これらのパーソナライズルールにより、ウェブサイト上での訪問者の行動に基づいて異なるコンテンツを表示することができます。</p>
+<p>Sitecoreは、訪問者の行動とパターンカードをリアルタイムで比較するため、訪問者を迅速かつ一貫して分類することができます。</p>
+<p>通常、パターンカードは次のような目的で使用します。</p>
+<ol class="arabic simple">
+<li><p>1つまたは複数のパターンカードに基づいたパーソナライゼーションルールの実装</p></li>
+<li><p>訪問者の行動がパターンカードと一致したときに効果を発揮するエンゲージメントプランのステップを定義する</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a2213cdd.png"><img alt="パターンカード" class="align-center" src="_images/15ed64a2213cdd.png" style="width: 400px;" /></a>
+<div class="section" id="id2">
+<h2>パターンカードの仕組み<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>訪問者がウェブサイトをナビゲートすると、訪問者がリクエストしたすべてのページやリソースのプロファイル値が蓄積されます。Sitecoreは、各プロファイルに対して訪問者が蓄積した平均スコアを計算し、最も近いパターンカードに訪問者をマッピングします。</p>
+<p>訪問者は、プロファイルごとに一度に1つのパターンカードにしかマッピングできません。ただし、訪問者があなたの Web サイトをナビゲートすると、さまざまなアイテムやリソースとのやりとりに応じて、マップされるパターン カードが変わることがあります。</p>
+<p>パーソナライズ ルール エンジンを使用して、パターン カードに基づくルールを実装することができ、訪問者が最もマッチするパターン カードに基づいて異なるコンテンツを表示します。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="planning-your-pattern-card-strategy.html">パターンカードの戦略を練る</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configure-pattern-matching.html">パターンマッチングの設定</a></li>
+</ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/pattern-cards.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/pattern-cards.html</a></p>
 </div>
-<div class="toctree-wrapper compound">
 </div>
 </div>
 

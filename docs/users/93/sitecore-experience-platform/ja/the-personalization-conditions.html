@@ -185,13 +185,922 @@
             
   <div class="section" id="id1">
 <h1>パーソナライズの条件<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このトピックでは、Sitecore Experience Platform (XP) と Sitecore Experience Manager (XM) で利用可能なパーソナライゼーション条件をリストアップします。</p>
+<p>完全に設定されたSitecore XPのインストールでは、Rule Set Editorのすべてのパーソナライゼーション条件を使用することができ、ヒストリカルパーソナライゼーションとセッション内パーソナライゼーションを実装することができます。</p>
+<p>しかし、Sitecore XMのインストールでは、Sitecore XMのインストール方法によって使用できるパーソナライゼーション条件が異なります。</p>
+<ul class="simple">
+<li><p>Sitecore XP トポロジーパッケージ（XP Scaled または XP Single）を使用して Sitecore XP をインストールし、CMS 専用モードで実行するように設定した場合、パーソナライゼーション条件の一部が利用可能で、セッション内パーソナライゼーションを実装することができます。</p></li>
+<li><p>Sitecore XM Scaled トポロジーパッケージを使用して Sitecore XM をインストールした場合、パーソナライゼーション条件は利用できず、パーソナライゼーションを実装することはできません。</p></li>
+</ul>
+<p>Commerce Connectをインストールした場合は、Commerce Connect用のパーソナライゼーション条件が追加でインストールされます。</p>
+<p>ルールセットエディタでは、パーソナライゼーション条件はカテゴリごとに整理されています。カテゴリは以下の通りです。</p>
+<ul class="simple">
+<li><p>キャンペーン</p></li>
+<li><p>チャンネル</p></li>
+<li><p>日付</p></li>
+<li><p>デバイス</p></li>
+<li><p>フィールド</p></li>
+<li><p>IP Geolocation</p></li>
+<li><p>アイテム海藻</p></li>
+<li><p>アイテム情報</p></li>
+<li><p>アイテムバージョン</p></li>
+<li><p>マーケティングオートメーション</p></li>
+<li><p>セキュリティ</p></li>
+<li><p>Sitecore クエリ</p></li>
+<li><p>システム</p></li>
+<li><p>トラッキング</p></li>
+<li><p>会場</p></li>
+<li><p>訪問</p></li>
+<li><p>訪問者</p></li>
+<li><p>xDB</p></li>
+</ul>
+<p>以下の表のルールはすべてXPで使用できます。XMで使用できる条件は、互換性がある(Yes)、またはサポートされていない(No)とマークされています。</p>
+<ul class="simple">
+<li><p>XM-1 Sitecore XMトポロジーパッケージと一緒にインストール</p></li>
+<li><p>XM-2 Sitecore XPをCMSオンリーモードで実行するように設定されています。</p></li>
+</ul>
+<div class="section" id="id2">
+<h2>定義済みのルール<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 60%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 11%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>定義済みのルールが真の場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h2>キャンペーン<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 4%" />
+<col style="width: 28%" />
+<col style="width: 3%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>現在のインタラクションのキャンペーンのカスタムファセットフィールドが、指定されたカスタムグループに分類されている場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes - セッション内パーソナライゼーションのみ対応</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h2>チャンネル<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 81%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>現在のインタラクションが指定されたチャンネル上にある場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>現在のインタラクションが指定されたチャンネルグループ内のチャンネル上にある場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>現在のインタラクションが、指定されたチャンネルタイプのチャンネル上にある場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h2>日付<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 64%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 9%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>日にちが経過した場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>現在の月の日と数字を比較した場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>現在の日が曜日の場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>現在の月が月の場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id6">
+<h2>デバイス<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>デバイスブラウザが特定の値と比較する場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>ブラウザがHTML 5のオーディオをサポートしている場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>ブラウザがHTML 5の動画をサポートしている場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>ブラウザがJavaScriptをサポートしている場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>デバイスがボットになっている場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>デバイスのハードウェアモデルが特定の値と比較される場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>デバイスのプロパティが特定の値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>デバイスのオペレーティングシステムが特定の値と比較する場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>デバイス・オペレーティング・システム・ベンダーが特定の値と比較している場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>デバイスがタッチスクリーンをサポートしている場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>デバイスタイプがリストのいずれかである場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>デバイスベンダーが特定の値と比較しているところ</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>ハードウェア画面の高さと数字の比較</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>ハードウェアの画面幅と数値の比較</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id7">
+<h2>フィールド<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>特定のフィールドが特定の値と比較される場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>特定のフィールドが空の場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>項目に特定のフィールドタイプと比較するフィールドタイプが含まれている場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ip-geolocation">
+<h2>IP Geolocation<a class="headerlink" href="#ip-geolocation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 68%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 8%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>市外局番が特定の値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>事業名と特定の値を比較する場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>特定の都市と比較した場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>特定の国と比較しているところ</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>DNSアドレスが特定の値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>IP アドレスが特定の値と比較される場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>ISP名と特定の値を比較する場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>緯度が特定の値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>経度が特定の値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>メトロコードが特定の値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>郵便番号が特定の値と比較される場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>地域が特定の値と比較しているところ</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id8">
+<h2>アイテム階層<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 77%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 7%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>アイテムが特定の項目またはその祖先のいずれかである場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>アイテムが特定の項目またはその子孫のいずれかである場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>項目のレベルと数を比較する場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>アイテムのパスがパスと比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>親の名前が値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>親テンプレートが特定のテンプレートの場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id9">
+<h2>アイテム情報<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 74%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 8%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>アイテムIDが値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>アイテム名と値が比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>アイテムテンプレートが特定のテンプレートの場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id10">
+<h2>アイテムバージョン<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 65%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 10%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>項目の言語が値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id11">
+<h2>マーケティングオートメーション<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 86%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 4%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>コンタクトが以前に特定のオートメーションキャンペーンに参加していて、開始日と終了日の間に終了した場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>コンタクトが現在特定のオートメーションキャンペーンに参加している場所</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>コンタクトが現在、特定のオートメーションキャンペーンの特定の活動に登録され、待機している場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id12">
+<h2>セキュリティ<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 6%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>現在のユーザが匿名の場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>現在のユーザードメイン名が値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>ユーザープロファイルに有効なメールアドレスが含まれている場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>現在のユーザー名が値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>ユーザープロファイルの特定のフィールドが値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>ユーザープロファイルの特定のフィールドが空でない場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>ユーザープロファイルの特定の数値フィールドの値が数値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>現在のユーザーが特定のロールのメンバーである場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sitecore">
+<h2>Sitecore クエリ<a class="headerlink" href="#sitecore" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 65%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 10%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>式のクエリの結果が存在する場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id13">
+<h2>システム<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 8%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>特定のスクリプトの呼び出しが真を返す場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>特定のルールの条件が真の場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>コンテンツ検索機能が有効な場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>現在のドメイン名が値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>アイテムバケット機能が有効な場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>真の場合 (アクションは常に実行されます)</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>アナリティクスが有効な条件は、Sitecore 8.1で廃止されました。これは、TrackingカテゴリのTrackingが有効な条件に置き換えられ、xDBカテゴリのxDBが有効な条件に置き換えられました。</p>
 </div>
+</div>
+<div class="section" id="id14">
+<h2>トラッキング<a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 54%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 14%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>トラッキングが有効</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id15">
+<h2>会場<a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 80%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 6%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>現在のインタラクションが指定された会場にある場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>現在のインタラクションが指定された会場グループ内の会場にある場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>現在のインタラクションが指定された会場タイプの会場にある場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id16">
+<h2>訪問<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>訪問者グループの条件は、現在の訪問者と過去の訪問者の両方のデータに基づいています。訪問者の過去の行動のみを考慮した条件については、訪問者グループを参照してください。</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 91%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>現在の訪問中に、リスト内のキャンペーンのうち少なくとも1つがトリガーされた場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>過去または現在のインタラクション中に特定のキャンペーンがトリガーされた場合、経過日数が数値と比較され、過去のインタラクション数が数値と比較される場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>過去または現在のインタラクション中に特定のキャンペーンがトリガーされ、経過日数が数値と比較され、過去のインタラクション数が数値と比較され、カスタムデータが数値と比較された場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>過去または現在のインタラクションが特定のチャンネル上にあり、その経過日数が数値と比較される場合、および過去のインタラクション数が数値と比較される場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>過去または現在のインタラクションが特定のチャンネル上にあり、経過日数が数値と比較され、過去のインタラクション数が数値と比較され、カスタムデータが値と比較される場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>エンゲージメントバリューポイントの数と比較した場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>現在の訪問中に特定の目標が発動した場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>過去または現在のインタラクション中に特定の目標がトリガーされた場合、経過日数が数値と比較され、過去のインタラクション数が数値と比較された場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>過去または現在のインタラクション中に特定のゴールがトリガーされ、経過日数が数値と比較され、過去のインタラクション数が数値と比較され、カスタムデータが数値と比較された場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>現在の訪問が特定のプロファイルの特定のパターンカードと一致する場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>特定の結果が過去または現在の相互作用中に登録された場合、経過日数が数値と比較され、過去の相互作用数が数値と比較された場合に、特定の結果が登録される。</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>特定のページイベントが過去または現在のインタラクション中にトリガーされた場合、経過日数が数値と比較され、過去のインタラクション数が数値と比較される場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>特定のページイベントが過去または現在のインタラクション中にトリガーされ、経過日数が数値と比較され、過去のインタラクション数が数値と比較され、カスタムデータが値と比較された場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>ページインデックスと数字を比較した場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>現在の訪問中に特定のページが訪問された場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>相互作用プロファイルの特定のプロファイルキーの値が、特定の値と比較される場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>検索キーワードが特定の値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>サイト名と値が比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>トラフィックタイプが数と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>過去または現在の交流が特定の会場で行われている場合で、経過日数が数と比較される場合、過去の交流数が数と比較される場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>過去または現在のインタラクションが特定の会場上にあり、経過日数が数値と比較され、過去のインタラクション数が数値と比較され、カスタムデータが値と比較される場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>リストのどのページから訪問を開始したか</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>開始日と日付を比較する場所</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>参照元が特定の値と比較する場合</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id17">
+<h2>訪問者<a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>訪問者グループの条件は、コンタクトのプロファイルに蓄積された履歴データに基づいており、複数の訪問からのデータを含めることができます。コンタクトのプロファイルでカバーされるデフォルトの最大期間は30日です。現在の訪問での訪問者の行動を見る条件については、訪問者グループを参照してください。</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 82%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>コンタクトの現在のエンゲージメントバリューポイントの数と比較した場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>現在の連絡先が指定された連絡先リストにある場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>訪問番号と比較した場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>訪問者の特定タグが空でない場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>ISP名と特定の値を比較する場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>現在の連絡先がリストのプロフィールパターンカードの少なくとも1つと一致する場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>接触行動プロファイルの特定のプロファイルキーの値が特定の値と比較される場合</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>ユーザープロファイルの特定の数値フィールドの値が数値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>訪問者の識別が特定の値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>訪問者の特定のタグが値と比較される場所</p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xdb">
+<h2>xDB<a class="headerlink" href="#xdb" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 17%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件</p></td>
+<td><p>XM-1</p></td>
+<td><p>XM-2</p></td>
+<td><p>XP</p></td>
+</tr>
+<tr class="row-even"><td><p>xDB が有効</p></td>
+<td><p>No</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-personalization-conditions.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-personalization-conditions.html</a></p>
+</div>
 </div>
 </div>
 
