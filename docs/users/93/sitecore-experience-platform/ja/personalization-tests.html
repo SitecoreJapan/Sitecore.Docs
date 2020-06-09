@@ -192,13 +192,129 @@
             
   <div class="section" id="id1">
 <h1>パーソナライゼーションテスト<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>コンポーネントのバリアントにパーソナライズルールを適用した後、パーソナライズの効果をテストすることができます。デフォルトでは、Sitecore のすべてのテストは Subgroup Round Robin Sticky テスト戦略を使用します。このトピックでは、コンタクトがサイトを訪問したときに何を見るかを理解できるように、パーソナライズテストとデフォルトのテスト戦略がどのように機能するかを説明します。</p>
+<div class="section" id="id2">
+<h2>コンテンツが特定のグループに与える影響を評価する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>特定のターゲットグループに対する新しいコンテンツの効果を評価するには、同じターゲットグループに対するデフォルトのコンテンツの効果と比較する必要があります。</p>
+<p>単純なA/Bコンテンツテストでは、コンタクトの半分がオリジナルコンテンツを、半分が新バージョンを見ています。</p>
+<p>パーソナライゼーションテストでは</p>
+<ul class="simple">
+<li><p>パーソナライゼーションの基準を満たしていないすべてのコンタクトは、オリジナルのコンテンツを見ます。</p></li>
+<li><p>パーソナライゼーションルールの基準を満たしているコンタクトのうち、半数が新しいバージョンを、半数がオリジナルコンテンツを見ます。</p></li>
+</ul>
+<div class="section" id="id3">
+<h3>1つのパーソナライゼーション条件を持つテストの例<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>テストするページには、オリジナル（デフォルト）のバージョンと、「現在の日が日曜日の場合」という条件付きのバージョンの2つのバージョンがあります。</p>
+<ul class="simple">
+<li><p>月曜日から土曜日にサイトを訪問したすべてのコンタクトは、デフォルトバージョンのバリアントを見ます。</p></li>
+<li><p>日曜日にサイトを訪問した連絡先の半分はパーソナライズされたバージョンのコンテンツを見て、残りの半分はデフォルトバージョンを見ています。</p></li>
+</ul>
 </div>
+</div>
+<div class="section" id="id4">
+<h2>複数のパーソナライズ条件をテストする<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>パーソナライゼーションテストは、同じコンポーネントに適用される複数の条件を含むことができる。その場合、ラウンドロビン戦略は、コンタクトのグループに適用されるすべての条件が、そのグループに対して等しい頻度で提示されることを確実にするために使用される。</p>
+<div class="section" id="id5">
+<h3>複数の条件を設定したパーソナライゼーションテストの例<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>以下の表では、デフォルトの条件の他に2つの条件を持つパーソナライズされたコンポーネントについて説明します。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 52%" />
+<col style="width: 28%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>条件名</p></td>
+<td><p>ルール</p></td>
+<td><p>エクスペリエンス</p></td>
+</tr>
+<tr class="row-even"><td><p>Condition 2</p></td>
+<td><p>現在の日が月曜日の場合</p></td>
+<td><p>Experience 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Condition 1</p></td>
+<td><p>その月の現在の日が1になった場合</p></td>
+<td><p>Experience 1</p></td>
+</tr>
+<tr class="row-even"><td><p>Default</p></td>
+<td><p>常に適用されます。</p></td>
+<td><p>Default</p></td>
+</tr>
+</tbody>
+</table>
+<p>コンポーネントの個人設定ダイアログでは、条件は次のようになっています。</p>
+<a class="reference internal image-reference" href="_images/15ed64a259c7cf.png"><img alt="複数の条件を設定したパーソナライゼーションテストの例" class="align-center" src="_images/15ed64a259c7cf.png" style="width: 400px;" /></a>
+<p>ウェブサイトを訪問した連絡先は、どの条件を満たしているかによって、4つのグループのいずれかに属する。以下の表は、4つのグループを示しており、各グループにどのような体験を提供するかを説明しています。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 36%" />
+<col style="width: 17%" />
+<col style="width: 39%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>グループ</p></td>
+<td><p>概要</p></td>
+<td><p>マッチング条件</p></td>
+<td><p>グループからの訪問者に示されたエクスペリエンス</p></td>
+</tr>
+<tr class="row-even"><td><p>Group 1</p></td>
+<td><p>月曜ではない日に訪問する訪問者は</p></td>
+<td><p>Condition 2 = False
+Condition 1 = False
+Default = True</p></td>
+<td><p>このグループのすべての訪問者は、デフォルトの</p></td>
+</tr>
+<tr class="row-odd"><td><p>Group 2</p></td>
+<td><p>日が月曜日の時に訪問する訪問者は</p></td>
+<td><p>Condition 2 = True
+Condition 1 = False
+Default = True</p></td>
+<td><p>Contact 1 - Experience 2
+Contact 2 - Default
+Contact 3 - Experience 2
+Contact 4 - Default
+Contact 5 - Experience 2</p></td>
+</tr>
+<tr class="row-even"><td><p>Group 3</p></td>
+<td><p>月曜ではない日に訪問する訪問者は</p></td>
+<td><p>Condition 2 = False
+Condition 1 = True
+Default = True</p></td>
+<td><p>Contact 1 - Experience 1
+Contact 2 - Default
+Contact 3 - Experience 1
+Contact 4 - Default
+Contact 5 - Experience 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Group 4</p></td>
+<td><p>月曜になるとサイトを訪問してくれる訪問者と</p></td>
+<td><p>Condition 2 = True
+Condition 1 = True
+Default = True</p></td>
+<td><p>Contact 1 - Experience 2
+Contact 2 - Experience 1
+Contact 3 - Default
+Contact 4 - Experience 2
+Contact 5 - Experience 1</p></td>
+</tr>
+</tbody>
+</table>
+<p>表に示すように、各グループのコンタクトは、デフォルトの経験を含めて、そのグループに適用される経験を参照しています。例えば、グループ4は、月の1日にサイトを訪問するコンタクトで構成されています。これらのコンタクトは条件1と条件2の両方を満たしているので、これらのコンタクトの3分の1は経験1を、3分の1は経験2を、3分の1はデフォルトの経験を見ています。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>複数のパーソナライズされたコンポーネントでページをテストする<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>パーソナライズ条件を持つ複数のコンポーネントを含むページで、パーソナライズ テストを実行できます。デフォルトの条件を含め、連絡先のグループに適用されるすべての条件は、そのグループに対して同じ頻度で提示されます。</p>
+<p>たとえば、デフォルトに加えて 2 つの条件を持つ 2 つのコンポーネントがある場合、合計 9 つの経験があります。テストの経験数が多いほど、結果が統計的に有意/妥当であるためには、テストを実行するために必要なコンタクトのサンプルが大きくなります。</p>
+</div>
+<div class="section" id="id7">
+<h2>すでにテスト済みのパーソナライゼーションルールでコンポーネントをテストする<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>すでにテスト済みのルールが1つ以上あるコンポーネントに、新しいパーソナライズルールを追加したい場合があります。すでにテストされたルールは、再度テストされることはありません。コンタクトがすでにテストされたエクスペリエンスを表示すると、そのコンタクトがデフォルトの状態を表示したかのように、テストはその訪問をカウントします。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/personalization-tests.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/personalization-tests.html</a></p>
+</div>
 </div>
 </div>
 

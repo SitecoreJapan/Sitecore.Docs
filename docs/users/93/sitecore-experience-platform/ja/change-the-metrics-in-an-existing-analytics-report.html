@@ -184,9 +184,30 @@
             
   <div class="section" id="id1">
 <h1>既存の分析レポートのメトリクスを変更する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Experience Analyticsでは、開発者はカスタムメトリクスを使って、カスタムアナリティクスレポートをゼロから作成することができます。ただし、既存のレポートでは、デフォルトのメトリクスが自分に合わない場合は変更することもできます。</p>
+<p>Sitecoreでは、ディメンションと組み合わせてメトリクスを使用してレポートを作成します。メトリクスとは、ディメンジョンに対して追跡される特性の値、測定値、またはカウントのことです。メトリクスは、コンバージョンやバウンドなどの共通の基準に基づいて、レポートをさらに分解することができます。</p>
+<p>ディメンションは、インタラクションやトリガーされたキャンペーンなど、レポートで使用されるデータをグループ化します。Experience Analyticsには、いくつかのデフォルトのメトリクスとディメンションが用意されています。</p>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>Experience Analyticsに付属している標準レポートを変更またはカスタマイズしたい場合は、既存のレポートをコピーしてカスタマイズした後、名前を変更するのが最善の方法です。これは、Sitecoreの将来のバージョンで標準レポートが変更される可能性があるためです。</p>
+</div>
+<p>既存のレポートのメトリクスを変更するには</p>
+<ol class="arabic simple">
+<li><p>Core データベースのコンテンツ エディタで、ダッシュボード項目（/sitecore/Client/Applications/ExperienceAnalytics/Dashboard）に移動して展開し、カスタマイズしたいレポートがあるサブ項目を展開します。例えば、「Audience」タブで</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a24651f3.png"><img alt="既存の分析レポートのメトリクスを変更する" class="align-center" src="_images/15ed64a24651f3.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>レポートが配置されているサブアイテムを展開し、その PageSettings 項目を展開します。例えば、「デバイス」、「ページ設定」。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a246a023.png"><img alt="既存の分析レポートのメトリクスを変更する" class="align-center" src="_images/15ed64a246a023.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>カスタマイズしたいレポートをクリックします。たとえば、訪問者別のトップデバイスの種類などです。</p></li>
+<li><p>右側のペインの [データ] セクションの [メトリック] フィールドで、ドロップダウン矢印をクリックして、レポートに表示するメトリックを選択します。たとえば、「訪問ごとの値」などです。</p></li>
+<li><p>[保存] をクリックして変更を保存します。</p></li>
+</ol>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>このような場合には、「Element Import Import」という名前を使用して、「Element Import」を選択してください。</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>

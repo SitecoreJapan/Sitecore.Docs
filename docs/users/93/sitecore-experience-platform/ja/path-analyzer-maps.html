@@ -37,7 +37,7 @@
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
     <link rel="next" title="パス・アナライザーのマップ・タイプ" href="path-analyzer-map-types.html" />
-    <link rel="prev" title="Path アナライザー用語集" href="path-analyzer-glossary.html" />
+    <link rel="prev" title="Path アナライザーの用語集" href="path-analyzer-glossary.html" />
  
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153234118-2"></script>
@@ -99,7 +99,7 @@
 <li class="toctree-l2"><a class="reference internal" href="experience-analytics.html">エクスペリエンス アナリティクス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experience-optimization.html">エクスペリエンス オプティマイゼーション</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="the-path-analyzer.html">Path アナライザー</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="path-analyzer-glossary.html">Path アナライザー用語集</a></li>
+<li class="toctree-l3"><a class="reference internal" href="path-analyzer-glossary.html">Path アナライザーの用語集</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Path アナライザーのマップ</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="path-analyzer-map-types.html">パス・アナライザーのマップ・タイプ</a></li>
 <li class="toctree-l4"><a class="reference internal" href="create-and-configure-a-new-path-analyzer-map.html">新しいPath アナライザーマップの作成と設定</a></li>
@@ -180,15 +180,92 @@
             
   <div class="section" id="path">
 <h1>Path アナライザーのマップ<a class="headerlink" href="#path" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>パスアナライザーのマップは、コンタクトがウェブサイトを通過する際のパスを視覚的に表現したものです。マップは、3 つの基本的な要素で構成されています。</p>
+<ul class="simple">
+<li><p>ノード</p></li>
+<li><p>パス</p></li>
+<li><p>ツリー</p></li>
+</ul>
+<p>ノードは、ページ、目標、または他のマーケティング活動を表すことができます。各ノードは、マップ上では円として描かれています。</p>
+<p>パスは、コンタクトが特定のチャネルやキャンペーンから特定の目標やイベントに至るまでの過程で、コンタクトが相互作用した ノードのシーケンスで構成されています。マップにパスを含めるには、2 つ以上のコンタクトが同じ相互作用のシーケンスを持っていなければなりません。</p>
+<p>ツリーは Path Analyzer マップの基本構造です。ツリーは、マップの中心ノードから放射状に広がる多数のパスまたは枝から構成されます。この中心ノードは、ツリー ノードとも呼ばれます。</p>
+<p>マップを表示するときは、以下の表示モードを切り替えることができます。半径方向、垂直方向、水平方向、表、ダッシュボード。</p>
+<p>次のスクリーンショットは、放射状モードのマップを示しています。</p>
+<a class="reference internal image-reference" href="_images/15ed64a25e111a.png"><img alt="Path アナライザーのマップ" class="align-center" src="_images/15ed64a25e111a.png" style="width: 400px;" /></a>
+<div class="section" id="id1">
+<h2>マップの凡例<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ノードには、ノードに関する情報を提供する2つの視覚的なプロパティがあります：サイズと色です。</p>
+<p>ノードのサイズは、そのノードとその子孫のすべてのエンゲージメントの合計値を示します。言い換えれば、ノードが大きいほど、総エンゲージメント値が大きいことを表します。</p>
+<p>円の色は、ノードの親の1回の訪問あたりの値と比較して、ノードの1回の訪問あたりの値を示しており、パスをさらに下に見たときに、このメトリックの変化を発見するのに役立ちます。円の色が赤の場合、このノードでは1回の訪問あたりの値が減少しています。円の色が親よりも緑が多い場合、このノードでは1回の訪問あたりの値が増加しています。円の色は、兄弟ノード間の訪問当たりの値メトリックを比較して、あるノードからの訪問当たりの値が最も高いパスがどこに続いているかを判断するのにも役立ちます。</p>
+<p>太い濃い灰色の境界線を持つ円は、重要度の低いノードの集合体を表します。このタイプのノードは、他のノードとラベル付けされています。</p>
+<p>ノードAとノードBの間の接続線の太さは、ノードAからノードBに移動するトラフィックの量を、ノードBの兄弟ノードと比較して示しています。これは、線の太さの違いがわかりにくい場合に情報の視認性を高めるためです。</p>
+<p>このようにトラフィックとエンゲージメントの価値を可視化することで、どこに力を入れるべきかを判断することができます。例えば、多くのトラフィックを受信しているがエンゲージメント値があまり発生していないノードは、より詳細な検討と最適化の候補となります。</p>
+<a class="reference internal image-reference" href="_images/15ed64a25e5c51.png"><img alt="マップの凡例" class="align-center" src="_images/15ed64a25e5c51.png" style="width: 400px;" /></a>
 </div>
+<div class="section" id="id2">
+<h2>パスと効率<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>パス アナライザーのマップを使用して、ウェブサイトの効率を測定することができます。マップ上では、マップに沿ってノードが表示され、特定のページの相対的なエンゲージメント値が表示されます。ノードの色は、濃い赤から濃い緑まであります。パスに沿ったノードが緑色であるほど、エンゲージメント値の生成効率が高くなります。赤色のノードを含むパスは、そのページのエンゲージメント価値が低いことを示しており、最適化の候補になる可能性があります。</p>
+<p>パスの効率性を理解するもう一つの鍵は、ノードサイズです。ノードのサイズは、ノードを通過するコンタクトによって生成されるエンゲージメント値が大きくなるほど大きくなります。例えば、暗赤色のノードを持つトラフィックの多いパスを持つパスアナライザのマップを見ることができます。これは、そのパスが多くのコンタクト トラフィックを受けているが、エンゲージメント値レベルが低いことを示しています。従業員の経歴など、特定のタイプのページを含む他のパスは、使用頻度の高いパスよりも高いコンバージョン率につながることがわかります。</p>
+<p>ウェブサイトで何が有効かを調べ、最も効率的なパスに訪問者を誘導することで、より多くのエンゲージメント価値を生み出す可能性が高まります。これにより、ウェブサイトとマーケティング戦略をより効率的なものにすることができます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a25ea11b.png"><img alt="Path アナライザーのマップ" class="align-center" src="_images/15ed64a25ea11b.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id3">
+<h2>メトリクスとレポート<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Path Analyzer マップの右側のペインでは、分析の詳細を表示できます。レポート] タブで、さまざまなタイプの Path Analyzer レポートを表示できます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a25ee7ba.png"><img alt="メトリクスとレポート" class="align-center" src="_images/15ed64a25ee7ba.png" style="width: 400px;" /></a>
+<p>[Metrics]パネルには、次のカテゴリが含まれています。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>アイテム</p></td>
+<td><p>説明</p></td>
+</tr>
+<tr class="row-even"><td><p>訪問数</p></td>
+<td><p>この Path の訪問回数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>バリュー</p></td>
+<td><p>この Path を訪れたコンタクトが蓄積したエンゲージメントバリューポイントの合計。</p></td>
+</tr>
+<tr class="row-even"><td><p>バリュー / 訪問数</p></td>
+<td><p>この Path への1回の訪問あたりの平均的なエンゲージメントバリューポイント。</p></td>
+</tr>
+<tr class="row-odd"><td><p>離脱</p></td>
+<td><p>このノードでウェブサイトを去った訪問者の数。</p></td>
+</tr>
+<tr class="row-even"><td><p>離脱バリュー</p></td>
+<td><p>このノードを終了する前にコンタクトが獲得したエンゲージメント値ポイントの合計。</p></td>
+</tr>
+<tr class="row-odd"><td><p>1回の訪問ごとの終了値</p></td>
+<td><p>このノードでウェブサイトから退出したコンタクトの1回の訪問あたりの平均エンゲージメント価値ポイント。</p></td>
+</tr>
+<tr class="row-even"><td><p>離脱の可能性</p></td>
+<td><p>パスが最適化によって得られる可能性のあるエンゲージメント値。
+計算は以下のようになります。出口価値潜在値 = (1 回あたりの訪問価値 - 1 回あたりの出口価値) * 出口数</p></td>
+</tr>
+<tr class="row-odd"><td><p>平均滞在時間 (sec)</p></td>
+<td><p>コンタクトがノードに費やした平均時間。</p></td>
+</tr>
+<tr class="row-even"><td><p>成果</p></td>
+<td><p>子孫ノードからの結果も含めて、このパスで実現した結果の数。</p></td>
+</tr>
+<tr class="row-odd"><td><p>貨幣価値</p></td>
+<td><p>この Path で得た金銭的価値の合計。</p></td>
+</tr>
+<tr class="row-even"><td><p>平均貨幣価値</p></td>
+<td><p>この Path で得られる平均的な貨幣価値。</p></td>
+</tr>
+</tbody>
+</table>
+<p>このような場合は、「Metric」パネルには、インターネット ルート ノードに関する情報が表示されます。新しいノードを選択するには、ノードの上にカーソルを置くか、クリックします。これにより、ノードとノードに至るまでのパスの両方について、訪問数や値などの分析情報が表示されます。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/path-analyzer-maps.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/path-analyzer-maps.html</a></p>
 </div>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -203,7 +280,7 @@
         <a href="path-analyzer-map-types.html" class="btn btn-neutral float-right" title="パス・アナライザーのマップ・タイプ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="path-analyzer-glossary.html" class="btn btn-neutral float-left" title="Path アナライザー用語集" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="path-analyzer-glossary.html" class="btn btn-neutral float-left" title="Path アナライザーの用語集" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
