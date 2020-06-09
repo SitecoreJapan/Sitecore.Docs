@@ -184,13 +184,62 @@
             
   <div class="section" id="id1">
 <h1>カスタムレポートフィルタとセグメントの作成<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Experience Analyticsでは、ディメンジョンとセグメントを使用して、レポートで使用するチャートを作成します。</p>
+<p>ディメンジョンとセグメントは、レポートで利用可能なデータを定義するために連携します。ディメンジョンは訪問の分析方法を決定し、セグメントはどの訪問を分析するかを制御します。たとえば、「目標別」という名前のディメンジョンと、「目標別のすべての訪問」という名前のセグメントを持つことができます。</p>
+<p>Experience Analyticsには、いくつかのデフォルトのディメンジョンとセグメントが用意されていますが、必要に応じて独自のディメンジョンを作成することもできます。ディメンジョンとフィルタを組み合わせてセグメントを作成します。</p>
+<div class="section" id="id2">
+<h2>カスタムフィルタの作成<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>コンテンツエディタでは、セグメントで使用するカスタムフィルタを作成することができます。これを行うには、Sitecore で新しいアイテムを作成してから、ルールを作成します。</p>
+<p>新しいフィルター項目を作成するには</p>
+<ol class="arabic simple">
+<li><p>コンテンツエディタで、Filtersフォルダ（/sitecore/System/Marketing Control Panel/Experience Analytics/Filters）に移動してクリックします。</p></li>
+<li><p>リボンの［ホーム］タブの［挿入］グループで、［フィルタ］をクリックします。</p></li>
+</ol>
+<p>3 [メッセージ］ダイアログボックスで、［マイフィルタ］などのフィルタの名前を入力し、［OK］をクリックします。</p>
+<ol class="arabic simple" start="4">
+<li><p>[保存] をクリックします。</p></li>
+<li><p>新しいフィルタ項目を設定するには、右ペインの [データ] セクションで、[ルールの編集] をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a246e804.png"><img alt="カスタムフィルタの作成" class="align-center" src="_images/15ed64a246e804.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="6">
+<li><p>[ルールの作成] ダイアログ ボックスの [条件の選択] フィールドで、関連する条件を検索するか、リストをスクロールダウンしてから、条件をクリックします。たとえば、ウェブサイトからパンフレットをダウンロードした連絡先の統計情報を表示するフィルタ用のルールを作成するには、「アセット」を検索してから、「アセットがダウンロードされた場所」というルールを選択します。</p></li>
+<li><p>ルールのオプションを設定および構成するには、[ルールの編集] セクションで下線部の単語をクリックして値を入力するか、代替キーワードを選択するか、または値を選択します。
+たとえば、アセットを選択するには、[ルールの編集]セクションの[ルール 1]フィールドで、下線付きの単語[アセット]をクリックします。アイテムの選択 ダイアログ ボックスの [参照] タブで、アセットを保存しているフォルダに移動し、関連するアセットを選択します。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a247383e.png"><img alt="カスタムフィルタの作成" class="align-center" src="_images/15ed64a247383e.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="8">
+<li><p>ルールの設定が完了したら、[OK] をクリックします。</p></li>
+<li><p>[保存] をクリックします。</p></li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>カスタムセグメントを作成してフィルタにリンクする<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>カスタムフィルタを作成したら、新しいフィルタにリンクするセグメント項目を作成します。</p>
+<p>カスタムフィルタのセグメントを作成するには</p>
+<ol class="arabic simple">
+<li><p>コンテンツ エディタのコンテンツ ツリーで、ディメンション フォルダ（/sitecore/System/Marketing Control Panel/Experience Analytics/Dimensions）を展開し、ディメンションを保存しているフォルダを展開します。例えば、Pagesフォルダ。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a247809d.png"><img alt="カスタムセグメントを作成してフィルタにリンクする" class="align-center" src="_images/15ed64a247809d.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>カスタム・セグメント定義項目を作成するには、関連するディメンジョンをクリックします。例えば、[エントリ・ページ別] ディメンジョンなどです。</p></li>
+<li><p>カスタム・セグメント項目を作成するには、リボンの [ホーム] タブの [挿入] グループで [セグメント] をクリックします。</p></li>
+<li><p>[メッセージ] ダイアログ・ボックスで、カスタム・セグメントの名前を入力し、[マイ・セグメント] などと入力してから [OK] をクリックします。</p></li>
+<li><p>カスタムセグメントをカスタムフィルタにリンクするには、右ペインの [データ] セクションの [フィルタ] フィールドでドロップダウン矢印をクリックして、カスタムフィルタ (例: My Filter) を選択し、[保存] をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a247d7e0.png"><img alt="カスタムセグメントを作成してフィルタにリンクする" class="align-center" src="_images/15ed64a247d7e0.png" style="width: 400px;" /></a>
+<ol class="arabic" start="6">
+<li><p>変更を保存して、このセグメントのデータ収集を開始するには、リボンの [レビュー] タブの [ワークフロー] グループで [配置] をクリックします。</p>
+<p>デフォルトでは、デプロイ後 30 分後にデータ収集が開始されます。</p>
+</li>
+</ol>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>新しいセグメントをデプロイしてデータ収集を開始したら、収集したデータに矛盾が生じる可能性があるため、セグメントを変更することはできません。</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/create-a-custom-report-filter-and-segment.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/create-a-custom-report-filter-and-segment.html</a></p>
+</div>
 </div>
 </div>
 

@@ -180,9 +180,18 @@
             
   <div class="section" id="id1">
 <h1>パーソナライゼーション効果のトラッキング<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><a class="reference internal" href="personalization-tests.html"><span class="doc">パーソナライズテスト</span></a> を実行すると、特定のオーディエンスに表示された場合に、パーソナライズされたコンテンツがデフォルトのコンテンツと比較してどのようなパフォーマンスを示すかについての情報を得ることができます。ウェブサイトのトラフィックの最大 100% をテストに割り当てることができます。テストに割り当てられたトラフィックのうち、ルールのオーディエンスの 50% がパーソナライズされたコンテンツを表示し、50% がデフォルトのコンテンツを表示します。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p><a class="reference internal" href="preview-and-start-a-content-test.html"><span class="doc">パーソナライゼーションテストを開始する前に</span></a> 、テストしたいコンポーネントのパーソナライゼーション効果のトラッキングを無効にする必要があります。</p>
+</div>
+<p>パーソナライゼーション ルールを適用した後、その効果を継続して監視したいと思うかもしれません。しかし、ターゲットグループの全員がパーソナライズされたコンテンツを見てしまうと、結果を比較する対照グループがなくなります。そのため、パーソナライゼーション効果追跡機能を使用するとよいでしょう。</p>
+<p>コンポーネントでパーソナライズ効果追跡を有効にすると、コンポーネントへのトラフィックの 10% が効果追跡に割り当てられます。効果追跡グループ内では、各パーソナライゼーション ルールの対象グループの半分がパーソナライズされたコンポーネントを表示し、残りの半分がデフォルトのコンポーネントを表示します。これら2つのグループの末尾の値/訪問が比較されます。これにより、Sitecore は、例えば、Personalize a component ダイアログボックスや、Active personalized experiences リストなどで、各エクスペリエンスの効果データを表示することができます。</p>
+<p><a class="reference internal" href="walkthrough--personalizing-components.html"><span class="doc">パーソナライズコンポーネント</span></a> ダイアログで、パーソナライズの効果追跡を有効にします。</p>
+<p>コンポーネントの効果追跡データは、ページのコンテンツを変更した場合や、コンポーネントの個人設定ダイアログで変更を加えた場合にリセットされます。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>効果追跡のためのデフォルトのトラフィック割り当ては 10% です。システム管理者は、コンテンツ テスト設定ファイルでトラフィックの割り当てを変更することができます。</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
