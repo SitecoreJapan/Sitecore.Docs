@@ -192,13 +192,164 @@
             
   <div class="section" id="id1">
 <h1>コンテンツテストの結果<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Sitecoreは、コンテンツ制作者が開始したテストが終了すると、コンテンツ制作者にメールメッセージを送信します。メールメッセージには、クリックしてテスト結果を見ることができるリンクが含まれています。また、エクスペリエンスエディタのページに移動して、エクスペリエンスエディタのリボンの最適化タブからテスト結果を開くこともできます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a253c2de.png"><img alt="コンテンツテストの結果" class="align-center" src="_images/15ed64a253c2de.png" style="width: 400px;" /></a>
+<p>タブの赤い点は、そのページにアクティブなテストがあることを示しています。以下は、最適化タブのリボンの例です。</p>
+<a class="reference internal image-reference" href="_images/15ed64a25417eb.png"><img alt="コンテンツテストの結果" class="align-center" src="_images/15ed64a25417eb.png" style="width: 400px;" /></a>
+<p>アクティブなテストがある場合、ステータスは、テストが終了するまでに何人の訪問者が必要かを示します。この例では、ステータスはテストを終了するのにさらに5450人の訪問者が必要であることを示しています。十分な履歴データがある場合、ステータスは代わりに、テストが終了するまでにかかる日数を示します。</p>
+<a class="reference internal image-reference" href="_images/15ed64a2546c07.png"><img alt="コンテンツテストの結果" class="align-center" src="_images/15ed64a2546c07.png" style="width: 400px;" /></a>
+<div class="section" id="id2">
+<h2>テスト結果<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>エクスペリエンス エディタ リボンで、最適化タブのテスト結果をクリックすると、そのページの現在のテスト結果レポートを見ることができます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a254c662.png"><img alt="テスト結果" class="align-center" src="_images/15ed64a254c662.png" style="width: 400px;" /></a>
+<p>概要に示されています。</p>
+<ul class="simple">
+<li><p>最高の体験効果 - 最高の体験のパフォーマンス。元の体験とテストの最高の体験の1回の訪問あたりの後続値との間のパーセンテージの差として計算されます。</p></li>
+<li><p>信頼度 - テストが到達した統計的信頼度。</p></li>
+<li><p>スコア - 得られたエンゲージメント値とテストページの重要度に基づいて、テストの作成者に割り当てられるテストスコア。</p></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>元の経験が訪問ごとに最も高い末尾の値を持つ場合、効果はなく、したがってスコアは計算されません。次に、最高の経験の効果とスコアのフィールドには、-が表示されます。</p>
+<p>訪問回数が100回未満の場合、信頼度は0で、フィールドには-が表示されます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a2551df5.png"><img alt="テスト結果" class="align-center" src="_images/15ed64a2551df5.png" style="width: 400px;" /></a>
 </div>
+<p>エンゲージメント値、コンバージョン率、変数タブには、テストしたエクスペリエンスの棒グラフが表示されます。エクスペリエンスを1つ選択すると、詳細パネルにそのエクスペリエンスの詳細が表示されます。</p>
+<p>詳細パネルの下には、現在選択されている体験に関する詳細情報を表示する3つの拡張可能なセクションがあります。</p>
+</div>
+<div class="section" id="id3">
+<h2>エンゲージメントバリュー<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>エンゲージメント値タブには、エンゲージメント値で測定されたテストの経験をパフォーマンスの高い順に並べたグラフが含まれています。エンゲージメント値が最も高い体験には100の値が割り当てられ、チャートのバーは残りの体験の相対的なパフォーマンスを示しています。</p>
+<p>バーの長さは、その体験の相対的なエンゲージメント価値を示しており、次のように計算されます。</p>
+<p>(その体験のエンゲージメントバリュー/最もパフォーマンスの高い体験のエンゲージメント値)×100</p>
+<p>バーの色は以下のことを示しています。</p>
+<ul class="simple">
+<li><p>グレー - オリジナルの体験。</p></li>
+<li><p>緑 - 元の体験よりもパフォーマンスが高い体験。</p></li>
+<li><p>赤 - 元のエクスペリエンスよりもパフォーマンスが低いエクスペリエンス。</p></li>
+</ul>
+<p>エクスペリエンスを選択すると、[詳細] パネルにこの情報が表示されます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a2555a4b.png"><img alt="エンゲージメントバリュー" class="align-center" src="_images/15ed64a2555a4b.png" style="width: 400px;" /></a>
+</div></blockquote>
+<p>選択されたエクスペリエンスには、一般的に2つの測定値があります。</p>
+<ul class="simple">
+<li><p>追跡値/訪問 - 訪問者がテスト対象のページに遭遇した後に発生したページビューのみをカウントしたエンゲージメントの合計値を、体験にさらされた訪問者数で割ったもの。</p></li>
+<li><p>体験効果 - ネガティブ、ポジティブ、またはニュートラルな体験効果の合計。これは、選択したエクスペリエンスの後続値/訪問数とデフォルトのエクスペリエンスとの間のパーセンテージの差です。</p></li>
+</ul>
+<p>詳細パネルには、エクスペリエンスのプレビューも表示されます。プレビューをクリックして、選択した経験を編集することができます。</p>
+<p>1回の訪問での末尾の値の例
+==========================-=</p>
+<p>例えば、あるブラウザ セッションでは、訪問者は次のようなことをします。</p>
+<ul class="simple">
+<li><p>テストされているコンポーネントのあるページを表示します。この訪問者には、コンポーネントのバリアント B が表示されます。</p></li>
+<li><p>訪問者がパンフレットをダウンロードするページへのリンクをクリックします。パンフレットのダウンロードは、値が 10 のゴールです。</p></li>
+<li><p>サイト上のいくつかの他のページを閲覧しました。これらのページにはトラッキング目的で関連するページイベントがありますが、これらのイベントに割り当てられたエンゲージメント値は0です。</p></li>
+<li><p>訪問者が見積もりを依頼するページに移動しました。これは値50のゴールです。</p></li>
+<li><p>ブラウザを閉じます。</p></li>
+</ul>
+<p>この訪問のバリアント B の末尾の値は 60 (10+50) です。</p>
+<p>トレイリング値/訪問は、訪問者がコンポーネントのバリアントBを閲覧したすべての訪問のトレイリング値の平均です。</p>
+<p>詳細パネルには、エクスペリエンスのプレビューも表示されます。プレビューをクリックして、選択したエクスペリエンスを編集することができます。</p>
+</div>
+<div class="section" id="id4">
+<h2>コンバージョン率<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>コンバージョン率タブには、すべてのエクスペリエンスのコンバージョン率が表示されます。[ゴール] ドロップダウンリストからゴールを選択すると、ゴールが何回トリガーされたかを確認できます。レート］フィールドは、選択したエクスペリエンスのコンバージョン率を、選択したエクスペリエンスが表示された訪問数に対する割合で表します。1回の訪問につき1回以上のコンバージョンがある場合は、100%を超えます。</p>
+<p>棒グラフは、コンバージョン率で測定されたパフォーマンスの順に体験を一覧表示します。</p>
+<p>テストの各エクスペリエンスには2つのバーがあります。</p>
+<ul>
+<li><p>最初のバーは、最もパフォーマンスの高い体験と比較した体験の相対的なコンバージョン率を示しています。コンバージョン率が最も高い経験には100の値が割り当てられます。バーの色は以下を示します。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ライトグレー - オリジナルの体験。</p></li>
+<li><p>緑 - 元の体験よりもパフォーマンスが高い体験。</p></li>
+<li><p>赤 - 元の体験よりもパフォーマンスが低い体験。</p></li>
+</ul>
+</div></blockquote>
+<p>バーの値は次のように計算されます。</p>
+<p>(その体験の1回の訪問あたりのコンバージョン数 / 最もパフォーマンスの高い体験の1回の訪問あたりのコンバージョン数) x 100.</p>
+</li>
+<li><p>2 番目のバーは、最高のパフォーマンスを発揮したエクスペリエンスと比較したエクスペリエンスの相対的なエンゲージメント値を示しています。このバーは常に濃いグレーです。</p></li>
+</ul>
+<p>目標がバリエーションに対してトリガーされなかった場合、バーの代わりに「NO DATA」というテキストが表示されます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a255bb31.png"><img alt="コンバージョン率" class="align-center" src="_images/15ed64a255bb31.png" style="width: 400px;" /></a>
+<p>バーチャートで経験を選択すると、詳細パネルには、訪問ごとの後続値と経験効果に加えて、選択した経験のコンバージョン率パーセンテージが表示されます。</p>
+</div>
+<div class="section" id="id5">
+<h2>変数<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>変数タブには、テストの各変数のエンゲージメント値を示すグラフが表示されます。</p>
+<p>詳細パネルには、訪問ごとのトレーリング値とエクスペリエンス効果が表示されます。</p>
+</div>
+<div class="section" id="id6">
+<h2>コンバージョン達成済みトップゴール<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>コンバージョンされたトップゴールのセクションを展開して、選択した経験のゴールコンバージョン結果を確認します。</p>
+<a class="reference internal image-reference" href="_images/15ed64a25609a9.png"><img alt="コンバージョン達成済みトップゴール" class="align-center" src="_images/15ed64a25609a9.png" style="width: 400px;" /></a>
+<p>表は以下のメトリクスを示しています。</p>
+<ul class="simple">
+<li><p>ゴール - テストに晒された訪問者によって引き起こされたゴール。</p></li>
+<li><p>コンバージョン - コンバージョン数。</p></li>
+<li><p>率 - 選択したエクスペリエンスを表示した後のゴールコンバージョン数を訪問者数で割ったものに100を乗じたもの。</p></li>
+<li><p>変化 - オリジナルのエクスペリエンスと選択されたエクスペリエンスの間の変化。</p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h2>ページへのトップクリック<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>[ページへのトップクリック]セクションを展開して、選択したエクスペリエンスのトップクリック数を確認できます。</p>
+<p>表には、以下のメトリクスが表示されます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a256563a.png"><img alt="ページへのトップクリック" class="align-center" src="_images/15ed64a256563a.png" style="width: 400px;" /></a>
+<ul class="simple">
+<li><p>Page - セッションでクリックされた次のページの名前。</p></li>
+<li><p>クリック数 - ページへのクリック数の合計。</p></li>
+<li><p>レート - 選択したエクスペリエンスを表示した後のページへのクリック数を訪問数で割ったものに 100 を乗じたもの。</p></li>
+<li><p>変化 - 元のエクスペリエンスと選択されたエクスペリエンスの間の変化。</p></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2>サイトのご利用について<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>[サイト使用状況] セクションを展開して、選択したエクスペリエンスのサイト使用状況のサマリーを表示します。</p>
+<a class="reference internal image-reference" href="_images/15ed64a256abc8.png"><img alt="サイトのご利用について" class="align-center" src="_images/15ed64a256abc8.png" style="width: 400px;" /></a>
+<p>表には、以下のメトリクスが示されています。</p>
+<ul>
+<li><p>タイプは2列目の値を定義します。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Bounce rate (%) - このページを訪問した訪問者のうち、他のページを閲覧せずにサイトを去っていく訪問者の割合。</p></li>
+<li><p>ページ上の平均滞在時間（秒/分単位の数値） - 訪問者がページ上に滞在する平均時間。</p></li>
+<li><p>平均訪問時間（秒/分単位の数値） - 訪問者がサイトに滞在する平均時間。</p></li>
+<li><p>訪問ごとのページビュー数（ページビュー数） - 訪問者が1回の訪問で見るさまざまなページの平均数。</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>変化は、元の測定値と比較して、この測定値の変化を示しています。</p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h2>インプレッション<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>インプレッションには、この経験を含んだ訪問数と、この訪問数が全体の訪問数に占める割合が記載されています。</p>
+<a class="reference internal image-reference" href="_images/15ed64a2570889.png"><img alt="インプレッション" class="align-center" src="_images/15ed64a2570889.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id10">
+<h2>テストの勝者<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>テストを作成したユーザーは、テスト結果ダイアログボックスで経験値を選択し、「勝者として選ぶ」をクリックしてテストを終了し、経験値をテストの勝者として宣言することができます。これは、テストに定義されたテストの目的を上書きします。そうでなければ、Sitecore は勝者を見つけます。</p>
+<p>テストの勝者が見つかると、Test Summary ダイアログボックスが表示されます。</p>
+<p>インプレッションには、この経験を含んだ訪問数と、この訪問数が全体の訪問数に占める割合が記載されています。</p>
+<a class="reference internal image-reference" href="_images/15ed64a2575bd0.png"><img alt="テストの勝者" class="align-center" src="_images/15ed64a2575bd0.png" style="width: 400px;" /></a>
+<p>テスト勝者タブには、パーソナライゼーションによってターゲットにされていないすべての訪問者のデフォルトのエクスペリエンスとなるエクスペリエンスのプレビューが含まれています。また、テスト結果には、テスト勝者とは異なる体験に対してより良い反応を示す特定の訪問者セグメントに関する情報も含まれています。パーソナライゼーションの提案] タブをクリックして、提案されたパーソナライゼーションのルールを確認して適用します。</p>
+</div>
+<div class="section" id="id11">
+<h2>パーソナライゼーションの提案<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>コンポーネントテストの間、Sitecoreはデータを収集し、Sitecore CortexTM機械学習を適用して、テストの勝者とは異なる体験に対してより良い反応を示すセグメントがあるかどうかを判断します。</p>
+<p>パーソナライゼーションの提案タブには、ページに推奨されるパーソナライゼーションルールのリストがあります。ここでは、提案されたパーソナライゼーションルールを表示し、適用することができます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a257ad7e.png"><img alt="パーソナライゼーションの提案" class="align-center" src="_images/15ed64a257ad7e.png" style="width: 400px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>テストがコンポーネントテストではない場合（例えば、基本的なコンテンツテストやページテストなど）、Sitecore はテストサマリーダイアログボックスを表示しますが、Personalization suggestions タブは表示しません。</p>
+</div>
+<p>個人設定の提案を適用せずにテスト サマリー ダイアログ ボックスを閉じるには、[今はしない] をクリックします。最適化リボンから <a class="reference internal" href="view-and-apply-personalization-suggestions-for-a-page.html"><span class="doc">パーソナライズの提案ダイアログボックスを開く</span></a> ことで、後で提案を適用することができます。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/content-test-results.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/content-test-results.html</a></p>
+</div>
 </div>
 </div>
 

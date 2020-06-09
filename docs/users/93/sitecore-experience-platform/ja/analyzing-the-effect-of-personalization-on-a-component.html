@@ -37,7 +37,7 @@
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
     <link rel="next" title="パーソナライゼーション効果のトラッキング" href="personalization-effect-tracking.html" />
-    <link rel="prev" title="マーケティング タクソノミー" href="test-personalized-components.html" />
+    <link rel="prev" title="パーソナライズされたコンポーネントのテスト" href="test-personalized-components.html" />
  
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153234118-2"></script>
@@ -103,7 +103,7 @@
 <li class="toctree-l3"><a class="reference internal" href="creating-and-running-tests.html">テストの作成と実行</a></li>
 <li class="toctree-l3"><a class="reference internal" href="analyzing-and-optimizing-tests.html">テストの分析と最適化</a></li>
 <li class="toctree-l3"><a class="reference internal" href="personalization-suggestions.html">パーソナライゼーションの提案</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="test-personalized-components.html">マーケティング タクソノミー</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="test-personalized-components.html">パーソナライズされたコンポーネントのテスト</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">パーソナライゼーションがコンポーネントに与える影響の分析</a></li>
 </ul>
 </li>
@@ -162,7 +162,7 @@
         
           <li><a href="experience-optimization.html">エクスペリエンス オプティマイゼーション</a> &raquo;</li>
         
-          <li><a href="test-personalized-components.html">マーケティング タクソノミー</a> &raquo;</li>
+          <li><a href="test-personalized-components.html">パーソナライズされたコンポーネントのテスト</a> &raquo;</li>
         
       <li>パーソナライゼーションがコンポーネントに与える影響の分析</li>
     
@@ -185,10 +185,20 @@
             
   <div class="section" id="id1">
 <h1>パーソナライゼーションがコンポーネントに与える影響の分析<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>コンポーネントの個人設定ダイアログボックスでは、コンポーネントの各バージョンの訪問と効果を表示することができます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a25c8881.png"><img alt="パーソナライゼーションの提案を適用する" class="align-center" src="_images/15ed64a25c8881.png" style="width: 400px;" /></a>
+<ul class="simple">
+<li><p>訪問数は、コンポーネントを含むすべての訪問のうち、条件を満たした訪問の割合を示します。ルールがアクティブなテストにある場合は、テストの期間に応じて計算されます。ルールがアクティブなテストに含まれていない場合は、過去 30 日間分が計算されます。</p></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>ルールがアクティブなテストにある場合、条件を満たす訪問者の半分だけがパーソナライズされたコンポーネントを表示します。残りの半分はデフォルトバージョンのコンポーネントを見ます。パーソナライズ ルールが効果追跡を有効にして実装されている場合、条件を満たす訪問者の5%がデフォルト バージョンに割り当てられます。</p>
 </div>
+<ul class="simple">
+<li><p>効果は、条件を満たした訪問者のパーソナライズされたエクスペリエンスの 1 訪問あたりの追跡値 (TVV) とデフォルトのエクスペリエンスの TVV との間のパーセントの差として計算されます。
+デフォルトのバリアントの効果は常に0であるため、デフォルトのバリアントでは効果フィールドは表示されません。</p></li>
+</ul>
+<p>現在のページのすべてのパーソナライズされたコンポーネントの統計情報は、 <a class="reference internal" href="the-personalized-experience-dialog-box.html"><span class="doc">パーソナライズされた体験ダイアログボックス</span></a> で見ることができます。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/analyzing-the-effect-of-personalization-on-a-component.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/analyzing-the-effect-of-personalization-on-a-component.html</a></p>
@@ -206,7 +216,7 @@
         <a href="personalization-effect-tracking.html" class="btn btn-neutral float-right" title="パーソナライゼーション効果のトラッキング" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="test-personalized-components.html" class="btn btn-neutral float-left" title="マーケティング タクソノミー" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="test-personalized-components.html" class="btn btn-neutral float-left" title="パーソナライズされたコンポーネントのテスト" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

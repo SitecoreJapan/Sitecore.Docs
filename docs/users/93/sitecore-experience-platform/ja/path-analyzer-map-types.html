@@ -99,7 +99,7 @@
 <li class="toctree-l2"><a class="reference internal" href="experience-analytics.html">エクスペリエンス アナリティクス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experience-optimization.html">エクスペリエンス オプティマイゼーション</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="the-path-analyzer.html">Path アナライザー</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="path-analyzer-glossary.html">Path アナライザー用語集</a></li>
+<li class="toctree-l3"><a class="reference internal" href="path-analyzer-glossary.html">Path アナライザーの用語集</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="path-analyzer-maps.html">Path アナライザーのマップ</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">パス・アナライザーのマップ・タイプ</a></li>
 <li class="toctree-l4"><a class="reference internal" href="create-and-configure-a-new-path-analyzer-map.html">新しいPath アナライザーマップの作成と設定</a></li>
@@ -182,13 +182,51 @@
             
   <div class="section" id="id1">
 <h1>パス・アナライザーのマップ・タイプ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>マップ タイプには、マップの構築に使用するデータが記述されます。ルール セット エディタから条件を使用してマップをフィルタリングできます。</p>
+<p>新しいマップを作成するときに、マップの種類を選択します。既定では、次のマップ タイプが使用できます。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 91%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>カテゴリー</p></td>
+<td><p>説明</p></td>
+</tr>
+<tr class="row-even"><td><p>ページマップ</p></td>
+<td><p>特定のインタラクション内でのページ訪問のシーケンスから作成されるマップ。ページマップにはデフォルトでいくつかのサブタイプがあり、特定のインタラクション属性に焦点を当てたページマップを作成することができます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>ゴールマップ</p></td>
+<td><p>特定のゴールを変換することを中心に構成されたマップ。これは、選択したゴールにつながるインタラクションのマップを見たいユーザーにとって便利です。ゴール マップは、特定のゴールに到達した後に訪問されたページを無視します。</p></td>
+</tr>
+<tr class="row-even"><td><p>アセットマップ</p></td>
+<td><p>PDF ファイルやビデオなどの特定のデジタル資産をダウンロードしたり、その資産と対話したりするためにコンタクトが取るパスを表示するように構成されたマップ。アセット マップでは、特定のアセットがダウンロードされた後に訪問されたページは無視されます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>キャンペーンマップ</p></td>
+<td><p>特定のキャンペーンから来たコンタクトの経路体験を表示するマップ。</p></td>
+</tr>
+<tr class="row-even"><td><p>チャネルマップ</p></td>
+<td><p>チャンネル マップを使用すると、特定のチャンネルからのすべてのインタラクションのページ マップを作成できます。</p></td>
+</tr>
+<tr class="row-odd"><td><p>エクスペリエンスマップ</p></td>
+<td><p>エクスペリエンスマップには、チャネル、キャンペーン、目標、イベント、成果などの他のインタラクション属性を含めることができます。また、より詳細なページマップよりも、より高度なパス分析に焦点を当てることができます。</p></td>
+</tr>
+<tr class="row-even"><td><p>成果マップ</p></td>
+<td><p>結果マップを使用すると、特定の結果につながるページ マップを作成できます。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id2">
+<h2>サイト固有のマップ<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>マップは、グローバルまたはサイト固有のものを使用できます。これは、マーケティング・コントロール・パネルの Path Analyzer のコンテンツ・ツリー内のマップの位置によって決まります。グローバル マップはすべて /Maps/Default maps/Global maps フォルダに、サイト固有のマップはすべて /Maps/Default maps/Site maps フォルダに配置されます。</p>
 </div>
+<div class="section" id="id3">
+<h2>カスタムマップ<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>カスタム マップは、デフォルトのマップ タイプに基づいていないマップです。カスタム マップは開発者によって作成され、/Maps/Custom maps フォルダに配置されます。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/path-analyzer-map-types.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/path-analyzer-map-types.html</a></p>
+</div>
 </div>
 </div>
 
