@@ -104,7 +104,7 @@
 <li class="toctree-l3"><a class="reference internal" href="campaigns.html">キャンペーン</a></li>
 <li class="toctree-l3"><a class="reference internal" href="goals.html">ゴール</a></li>
 <li class="toctree-l3"><a class="reference internal" href="events.html">イベント</a></li>
-<li class="toctree-l3"><a class="reference internal" href="outcomes.html">結果</a></li>
+<li class="toctree-l3"><a class="reference internal" href="outcomes.html">成果</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="content-profiling.html">コンテンツプロファイリング</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="create-a-profile-key-or-persona.html">プロファイルキーまたはペルソナを作成する</a></li>
 <li class="toctree-l4"><a class="reference internal" href="assign-a-custom-profile-value-to-an-item.html">アイテムにカスタムプロファイル値を割り当てる</a></li>
@@ -197,10 +197,23 @@
             
   <div class="section" id="id1">
 <h1>パターンマッチングの設定<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>パターンカードは、特定のタイプのコンタクトの行動や興味をウェブサイトに反映させるために作成するカードです。パターンカードにプロファイル値を割り当て、それを使用して、さまざまなタイプの典型的なウェブサイトのアクティビティを識別します。パターンカードを使用して、パーソナライズルールを実装することもできます。</p>
+<p>Sitecoreは、N-Dimensional Euclidean Distanceと呼ばれる測定値を使用して、コンタクトの蓄積されたプロファイル値がどのパターンカードに最も似ているかを計算し、マッピングする必要があります。</p>
+<p>パターンマッチング機能を設定する場合、Sitecore が累積プロファイルスコアをパターンカードにマップする前に、コンタクトが何個のプロファイリングされたコンテンツアイテムとインタラクトする必要があるかを指定する必要があります。</p>
+<p>パターンマッチングを設定するには、以下の手順に従います。</p>
+<ol class="arabic simple">
+<li><p>Sitecore build numberに移動して、Sitecore.Analytics.Tracking.configファイルを開きます。</p></li>
+<li><p>configuration/sitecore/settings セクションで、次の行を追加します。</p></li>
+</ol>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;setting</span> <span class="na">name=</span><span class="s">&quot;Analytics.Patterns.MinimalProfileScoreCount&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
 </div>
+<p>これは、コンタクトが3ページ以上リクエストした場合に、Sitecoreがコンタクトの行動をパターンカードにマッピングし始めることを意味します。</p>
+<ol class="arabic" start="3">
+<li><p>ページリクエストの適切な数だと思う値に変更してください。</p>
+<p>使用する値は、ウェブサイトの理解度、ウェブサイトのサイズ、プロファイル値を割り当てるページ数に基づいて設定する必要があります。</p>
+</li>
+</ol>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p><a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/configure-pattern-matching.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/configure-pattern-matching.html</a></p>

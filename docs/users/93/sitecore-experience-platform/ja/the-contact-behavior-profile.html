@@ -104,7 +104,7 @@
 <li class="toctree-l3"><a class="reference internal" href="campaigns.html">キャンペーン</a></li>
 <li class="toctree-l3"><a class="reference internal" href="goals.html">ゴール</a></li>
 <li class="toctree-l3"><a class="reference internal" href="events.html">イベント</a></li>
-<li class="toctree-l3"><a class="reference internal" href="outcomes.html">結果</a></li>
+<li class="toctree-l3"><a class="reference internal" href="outcomes.html">成果</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="content-profiling.html">コンテンツプロファイリング</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="create-a-profile-key-or-persona.html">プロファイルキーまたはペルソナを作成する</a></li>
 <li class="toctree-l4"><a class="reference internal" href="assign-a-custom-profile-value-to-an-item.html">アイテムにカスタムプロファイル値を割り当てる</a></li>
@@ -195,13 +195,20 @@
             
   <div class="section" id="id1">
 <h1>コンタクト行動プロファイル<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>コンタクトの行動プロファイルには、コンタクトの過去のプロファイルマッチに関する情報が含まれています。これには、マッチしたプロファイル、プロファイルカード、ペルソナなどの <a class="reference internal" href="content-profiling.html"><span class="doc">コンテンツプロファイリング</span></a> 情報が含まれます。コンテンツのプロファイリングにより、コンタクトの組織との相互作用をより深く理解した上で、コンタクトに関連性のあるパーソナライズされたコンテンツを提供することができます。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>CMSのみのモードでExperience Managementを実行し、Xdb.Enabledをfalseに設定している場合、コンタクトの動作プロファイルは機能せず、xDB内の共有セッションにデータは保存されません。</p>
 </div>
+<div class="section" id="id2">
+<h2>接触行動プロファイルの使用<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>マーケティングコントロールパネルでは、減衰率を設定することで、個々のプロファイルまたはパターンカードが接触行動プロファイルにどれくらいの期間関連しているかを制御することができます。減衰率は、そのプロファイルが時間の経過とともにどれだけ関連性を維持するかを表すパーセンテージです。</p>
+<a class="reference internal image-reference" href="_images/15ed64a2218e2a.png"><img alt="接触行動プロファイルの使用" class="align-center" src="_images/15ed64a2218e2a.png" style="width: 400px;" /></a>
+<p>コンタクトの行動プロファイルの値に基づいて <a class="reference internal" href="the-rule-set-editor.html"><span class="doc">パーソナライズルール</span></a> を実装し、現在のプロファイルの一致ではなく、過去のプロファイルの一致に基づいてパーソナライズされたコンテンツを表示することができます。これにより、連絡先と組織との関係の中で、より関連性の高い情報を連絡先に提供することができます。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p><a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-contact-behavior-profile.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-contact-behavior-profile.html</a></p>
+</div>
 </div>
 </div>
 
