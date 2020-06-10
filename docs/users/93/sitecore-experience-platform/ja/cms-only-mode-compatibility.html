@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CMS専用モードの互換性 &mdash; ユーザーガイド ( Sitecore 9.3 )  ドキュメント</title>
+  <title>CMSオンリーモードの互換性 &mdash; ユーザーガイド ( Sitecore 9.3 )  ドキュメント</title>
   
 
   
@@ -97,14 +97,14 @@
 <li class="toctree-l1 current"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="digital-marketing-glossary.html">デジタルマーケティング用語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketing-automation.html">マーケティング オートメーション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sitecore-forms.html">Sitecore Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sitecore-forms.html">Sitecore フォーム</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketing-taxonomies.html">マーケティング タクソノミー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketing-operations.html">マーケティング オペレーション</a></li>
 <li class="toctree-l2"><a class="reference internal" href="personalization.html">パーソナライズ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="experience-profile.html">エクスペリエンス プロファイル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="list-manager.html">リスト マネージャー</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="experience-manager.html">Experience Manager</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">CMS専用モードの互換性</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">CMSオンリーモードの互換性</a></li>
 </ul>
 </li>
 </ul>
@@ -159,7 +159,7 @@
         
           <li><a href="experience-manager.html">Experience Manager</a> &raquo;</li>
         
-      <li>CMS専用モードの互換性</li>
+      <li>CMSオンリーモードの互換性</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -179,14 +179,57 @@
            <div itemprop="articleBody">
             
   <div class="section" id="cms">
-<h1>CMS専用モードの互換性<a class="headerlink" href="#cms" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<h1>CMSオンリーモードの互換性<a class="headerlink" href="#cms" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>CMSオンリーモードでは、エクスペリエンスデータベース（xDB）を有効にしたり、xDBライセンスを購入しなくてもSitecoreを実行することができます。</p>
+<p>CMSオンリーモードでは、データ収集に依存する機能はすべて利用できなくなり、多くのアプリケーションが動作しません。</p>
+<div class="section" id="id1">
+<h2>ＣＭＳオンリーモード<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>CMSのみのモードでは、Sitecore XPのアプリケーションと機能は以下のように分類されます。</p>
+<ul class="simple">
+<li><p>完全互換性</p></li>
+<li><p>限られた機能に対応</p></li>
+<li><p>互換性のない</p></li>
+</ul>
 </div>
+<div class="section" id="id2">
+<h2>完全な互換性<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以下の機能は、そのままCMSオンリーモードで動作します。</p>
+<ul class="simple">
+<li><p>エクスペリエンスエディタでのコンテンツ編集</p></li>
+<li><p>デバイス検出</p></li>
+<li><p>IPジオロケーション検出</p></li>
+<li><p>コマースコネクト</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>限られた機能に対応<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以下の機能は、制限付きでCMSのみのモードで実行されます。</p>
+<ul class="simple">
+<li><p>Campaign Creator - アナリティクス機能なしで動作します。</p></li>
+<li><p>パーソナライゼーション - セッション内のパーソナライゼーションは機能しますが、履歴データに基づくパーソナライゼーションは利用できません。</p></li>
+<li><p>マーケターのためのウェブフォーム。</p></li>
+<li><p>Sitecore フォーム - アナリティクス機能なしで動作します。</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>互換性のない<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以下の機能はCMSオンリーモードとは互換性がありません。</p>
+<ul class="simple">
+<li><p>コンテンツテスト</p></li>
+<li><p>Email Experience Manager</p></li>
+<li><p>エクスペリエンスアナリティクス</p></li>
+<li><p>エクスペリエンスエクスプローラー</p></li>
+<li><p>エクスペリエンスプロファイル</p></li>
+<li><p>フェデレーテッド・エクスペリエンス・マネージャー</p></li>
+<li><p>リストマネージャー</p></li>
+<li><p>Path アナライザー</p></li>
+<li><p>セグメンテーション</p></li>
+<li><p>マーケティングオートメーション</p></li>
+</ul>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/cms-only-mode-compatibility.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/cms-only-mode-compatibility.html</a></p>
+</div>
 </div>
 </div>
 

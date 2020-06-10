@@ -11,7 +11,7 @@
    :width: 400px
    :alt: メディアアイテムのExifデータ
 
-JPEG画像項目のテンプレートには、JPEG画像に固有のメタデータフィールドを追加したEXIFセクションが含まれています。
+JPEG画像アイテムのテンプレートには、JPEG画像に固有のメタデータフィールドを追加したEXIFセクションが含まれています。
 
 .. image:: images/15eafd35851130.png
    :align: center

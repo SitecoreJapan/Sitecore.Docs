@@ -195,13 +195,113 @@
             
   <div class="section" id="id1">
 <h1>コンタクトリストまたはセグメント化されたリストを作成する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>リスト マネージャでは、セグメント化されたリストと連絡先リストの 2 種類のリストを作成できます。それぞれのリスト タイプに対して、異なるリスト ソースを含むリストを作成することができます。</p>
+<ul>
+<li><p>連絡先リスト</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>既存のリストからの連絡先リスト - 既存の連絡先リストから新しい連絡先リストを作成します。</p></li>
+<li><p>空の連絡先リスト - 連絡先が含まれていない連絡先リストを作成します。例えば、空のリストを使用して、ウェブサイトのニュースレターにサインアップした訪問者やメッセージのトリガーとなる訪問者を収集します。</p></li>
+<li><p>ファイルからリストを作成 - CSVファイルから連絡先をインポートし、インポートしたすべての連絡先を含む連絡先リストを作成します。</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>セグメント化されたリスト</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>すべての連絡先からセグメント化されたリスト - Sitecoreのすべての連絡先からリストを作成し、セグメント化します。</p></li>
+<li><p>既存のリストからセグメント化されたリスト - 既存の連絡先リストからリストを作成し、セグメント化します。</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="section" id="id2">
+<h2>コンタクトリストまたはセグメント化されたリストを作成する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>リストを作成するには</p>
+<ol class="arabic">
+<li><p>リスト マネージャで [作成] をクリックし、表示されるメニューの [リストの作成] セクションで、作成するリストの種類をクリックします。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a234c813.png"><img alt="リストを作成するには" class="align-center" src="_images/15ed64a234c813.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+</ol>
+<ul>
+<li><p>[ファイルからリストを作成] をクリックした場合は、[連絡先のインポート] ウィザードで新しい連絡先をインポートします。</p></li>
+<li><p>既存のリストから連絡先リストを作成] または [既存のリストから分割リストを作成] をクリックした場合は、[リストの選択] ダイアログ ボックスで、新しいリストに含めるリストを検索し、[OK] をクリックします。</p></li>
+<li><p>新しいリストのソースとして使用できるのは、連絡先リストのみです。リストの作成が完了したら、追加のリストを追加したり除外したりすることができます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a2350cf5.png"><img alt="リストを作成するには" class="align-center" src="_images/15ed64a2350cf5.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+</ul>
+<ol class="arabic" start="2">
+<li><p>[一般情報] セクションで、リストの名前を入力し、[保存] をクリックします。関連する場合は、説明やリストの所有者を追加することもできます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a2355a5c.png"><img alt="リストを作成するには" class="align-center" src="_images/15ed64a2355a5c.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>新しいリストでは、追加のリスト ソースを追加または除外できるようになりました。新しいリストに連絡先リストを追加または除外するには、[含まれるリスト]セクションで、ドロップダウン矢印 <img alt="icon1" src="_images/15ed64a235a249.png" /> をクリックします。</p></li>
+</ol>
+<ul class="simple">
+<li><p>別の連絡先リストを追加するには、[ソースの追加] をクリックします。</p></li>
+<li><p>連絡先リストを除外するには、[ソースの除外] をクリックします。</p></li>
+<li><p>セグメント化されたリストの場合、すべての連絡先をソースとして使用してセグメント化するには、[すべての連絡先をソースとして使用] をクリックします。</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/15ed64a235ea99.png"><img alt="リストを作成するには" class="align-center" src="_images/15ed64a235ea99.png" style="width: 400px;" /></a>
+<ol class="arabic" start="4">
+<li><p>リストの選択 ダイアログ ボックスで、関連するリストを検索するか、該当するリストに移動して OK をクリックします。必要な数のリストソースを追加または除外することができますが、一度に1つだけです。</p></li>
+<li><p>変更を保存します。</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>複数のソースを持つリストを作成した後、重複する連絡先をリストから削除して、各連絡先がリストに一度しか表示されないようにする必要があります。</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>既存の連絡先リストのリストソースに新しい連絡先を追加しても、それに応じて連絡先リストは更新されません。ただし、既存の連絡先リストのリストソースを追加または削除すると、連絡先リストが再構築されます。リストに含まれる連絡先の数にもよりますが、これにはかなりの時間がかかります。</p>
+</div>
+<div class="section" id="id3">
+<h2>セグメント化されたリストに含まれる連絡先をセグメント化する<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>セグメント化されたリストを作成すると、既存のセグメントを追加したり、新しいセグメントを作成してリストに追加したりして、含まれるリスト ソース内の連絡先をさらにセグメント化することができます。</p>
+<p>セグメント化されたリストにセグメントを追加するには</p>
+<ol class="arabic">
+<li><p>[リストのセグメント] セクションで、ドロップダウン矢印 <img alt="icon1" src="_images/15ed64a235a249.png" /> をクリックします。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a236797e.png"><img alt="セグメント化されたリストに含まれる連絡先をセグメント化する" class="align-center" src="_images/15ed64a236797e.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>ドロップダウンメニューで</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>新しいセグメントを作成するには、[新しいセグメントの作成] をクリックします。セグメントの作成] ダイアログ ボックスで、名前とセグメントに関連するルールを追加して、新しいセグ メントを作成します。</p></li>
+<li><p>保存されたセグメントを追加するには、[既存のセグメントの追加] をクリックします。セグメントの選択ダイアログボックスで、リストに追加するセグメントをクリックし、OK をクリックします。</p></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>検索を使用して、関連するセグメントをすばやく見つけることができます。</p>
 </div>
+</div></blockquote>
+</li>
+<li><p>[リストのセグメント] セクションで、セグメント化されたリストの連絡先をセグメント化するために使用されるルールと条件を確認します。</p></li>
+<li><p>現在の連絡先リストの中で、指定した条件を満たす連絡先のみを表示するように連絡先セクションを更新するには、[保存] をクリックします。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a236b920.png"><img alt="セグメント化されたリストに含まれる連絡先をセグメント化する" class="align-center" src="_images/15ed64a236b920.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>このリストからセグメントを編集したり削除したりすることはいつでもできます。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>このリストからセグメントのみを削除するには、セグメントの削除をクリックします。</p></li>
+<li><p>セグメントを編集するには、セグメントの編集をクリックします。セグメントを編集すると、そのセグメントは Sitecore で使用されているすべての場所で更新されます。</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/create-a-contact-list-or-a-segmented-list.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/create-a-contact-list-or-a-segmented-list.html</a></p>
+</div>
 </div>
 </div>
 

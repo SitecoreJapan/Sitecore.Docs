@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
-    <link rel="next" title="カスタムマーケティングタクソノミの作成と実装" href="create-and-implement-a-custom-marketing-taxonomy.html" />
+    <link rel="next" title="カスタムマーケティングタクソノミーの作成と実装" href="create-and-implement-a-custom-marketing-taxonomy.html" />
     <link rel="prev" title="フォームのロボット検出との連携" href="work-with-robot-detection-for-forms.html" />
  
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -97,10 +97,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="digital-marketing-glossary.html">デジタルマーケティング用語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketing-automation.html">マーケティング オートメーション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sitecore-forms.html">Sitecore Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sitecore-forms.html">Sitecore フォーム</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">マーケティング タクソノミー</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="create-and-implement-a-custom-marketing-taxonomy.html">カスタムマーケティングタクソノミの作成と実装</a></li>
-<li class="toctree-l3"><a class="reference internal" href="deploy-marketing-definitions-and-taxonomies.html">マーケティングの定義とタクソノミを展開</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create-and-implement-a-custom-marketing-taxonomy.html">カスタムマーケティングタクソノミーの作成と実装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="deploy-marketing-definitions-and-taxonomies.html">マーケティングの定義とタクソノミーを展開</a></li>
 <li class="toctree-l3"><a class="reference internal" href="classify-a-media-item-as-a-digital-marketing-asset.html">メディアアイテムをデジタルマーケティングアセットとして分類する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="channels.html">チャンネル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="venues.html">ベニュー</a></li>
@@ -182,7 +182,7 @@
             
   <div class="section" id="id1">
 <h1>マーケティング タクソノミー<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>タクソノミーとは、情報を識別して整理するために使用できる階層構造のことです。Sitecore Experience Platformでは、キャンペーン、ゴール、イベントなどのマーケティング活動を分類するためにタクソノミーを使用することができます。マーケティングコントロールパネルで、これらのアイテムにタクソノミタグを適用することができます。</p>
+<p>タクソノミーとは、情報を識別して整理するために使用できる階層構造のことです。Sitecore Experience Platformでは、キャンペーン、ゴール、イベントなどのマーケティング活動を分類するためにタクソノミーを使用することができます。マーケティングコントロールパネルで、これらのアイテムにタクソノミータグを適用することができます。</p>
 <p>マーケティングタクソノミーの基本的なタイプは以下の4つです。</p>
 <ul class="simple">
 <li><p>チャネル</p></li>
@@ -190,18 +190,18 @@
 <li><p>アセット</p></li>
 <li><p>ベニュー</p></li>
 </ul>
-<p>マーケティングタクソノミによって、ウェブサイトの活動をより詳細に追跡することができ、コンタクトがコンテンツとどのように相互作用しているかについてより深い洞察を得ることができます。この情報は、マーケティング戦略の最適化と改善に役立ちます。</p>
+<p>マーケティングタクソノミーによって、ウェブサイトの活動をより詳細に追跡することができ、コンタクトがコンテンツとどのように相互作用しているかについてより深い洞察を得ることができます。この情報は、マーケティング戦略の最適化と改善に役立ちます。</p>
 <a class="reference internal image-reference" href="_images/15eafd35ca9a8b.png"><img alt="マーケティング タクソノミー" class="align-center" src="_images/15eafd35ca9a8b.png" style="width: 400px;" /></a>
 <div class="section" id="id2">
-<h2>マーケティングタクソノミの利用<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>タクソノミタグは、あなたのマーケティング活動を整理するための明確で一貫性のある方法を提供します。タクソノミタグでコンテンツをタグ付けすることで、コンタクトがコンテンツとどのように相互作用したかを追跡することができます。コンテンツにタグを付けたら、 <a class="reference internal" href="experience-analytics.html"><span class="doc">エクスペリエンスアナリティクス</span></a> を使用して、キャンペーングループや個々のキャンペーン活動のトラフィック、エンゲージメントの価値、訪問1回あたりの価値を測定することができます。また、トラフィックとエンゲージメントのレベルがマーケティングチャネル全体でどのように変化しているかについてのレポートを表示することもできます。</p>
-<p>また、マーケティングタクソノミを使用して、キャンペーングループ、インタラクション会場、またはコンタクトがウェブサイトを訪問するために使用するチャネルに基づいて、コンポーネントの条件付きレンダリングを実装するパーソナライゼーションルールを作成することもできます。これにより、コンタクトのウェブサイトへの訪問を取り巻く詳細に基づいた、ターゲットを絞った関連性の高いコンテンツをコンタクトに提供することができます。</p>
+<h2>マーケティングタクソノミーの利用<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>タクソノミータグは、あなたのマーケティング活動を整理するための明確で一貫性のある方法を提供します。タクソノミータグでコンテンツをタグ付けすることで、コンタクトがコンテンツとどのように相互作用したかを追跡することができます。コンテンツにタグを付けたら、 <a class="reference internal" href="experience-analytics.html"><span class="doc">エクスペリエンスアナリティクス</span></a> を使用して、キャンペーングループや個々のキャンペーン活動のトラフィック、エンゲージメントの価値、訪問1回あたりの価値を測定することができます。また、トラフィックとエンゲージメントのレベルがマーケティングチャネル全体でどのように変化しているかについてのレポートを表示することもできます。</p>
+<p>また、マーケティングタクソノミーを使用して、キャンペーングループ、インタラクション会場、またはコンタクトがウェブサイトを訪問するために使用するチャネルに基づいて、コンポーネントの条件付きレンダリングを実装するパーソナライゼーションルールを作成することもできます。これにより、コンタクトのウェブサイトへの訪問を取り巻く詳細に基づいた、ターゲットを絞った関連性の高いコンテンツをコンタクトに提供することができます。</p>
 </div>
 <div class="section" id="id3">
 <h2>カスタムタクソノミーの作成<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Sitecore XPにはチャネル、キャンペーン、アセットのタクソノミが含まれていますが、ビジネスニーズに応じてカスタムマーケティングタクソノミを定義することもできます。これらのカスタムタクソノミを使用することで、ロケーション、チャネル、および異なるタイプのキャンペーンを整理することができ、キャンペーン活動を追跡して整理する方法をよりコントロールできるようになります。</p>
-<p><a class="reference internal" href="create-and-implement-a-custom-marketing-taxonomy.html"><span class="doc">カスタムマーケティングタクソノミ</span></a> は、マーケティングコントロールパネルとキャンペーンクリエーターで作成することができます。</p>
-<p>マーケティングタクソノミを使用して、キャンペーン、目標、資産の側面を記述するカスタムファセットを作成することもできます。これらのファセットを使用してマーケティング活動を特定し、xAnalyticsでコンタクトがこれらの活動とどのように相互作用しているかを追跡することができます。</p>
+<p>Sitecore XPにはチャネル、キャンペーン、アセットのタクソノミーが含まれていますが、ビジネスニーズに応じてカスタムマーケティングタクソノミーを定義することもできます。これらのカスタムタクソノミーを使用することで、ロケーション、チャネル、および異なるタイプのキャンペーンを整理することができ、キャンペーン活動を追跡して整理する方法をよりコントロールできるようになります。</p>
+<p><a class="reference internal" href="create-and-implement-a-custom-marketing-taxonomy.html"><span class="doc">カスタムマーケティングタクソノミー</span></a> は、マーケティングコントロールパネルとキャンペーンクリエーターで作成することができます。</p>
+<p>マーケティングタクソノミーを使用して、キャンペーン、目標、アセットの側面を記述するカスタムファセットを作成することもできます。これらのファセットを使用してマーケティング活動を特定し、xAnalyticsでコンタクトがこれらの活動とどのように相互作用しているかを追跡することができます。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/marketing-taxonomies.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/marketing-taxonomies.html</a></p>
@@ -219,7 +219,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="create-and-implement-a-custom-marketing-taxonomy.html" class="btn btn-neutral float-right" title="カスタムマーケティングタクソノミの作成と実装" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="create-and-implement-a-custom-marketing-taxonomy.html" class="btn btn-neutral float-right" title="カスタムマーケティングタクソノミーの作成と実装" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="work-with-robot-detection-for-forms.html" class="btn btn-neutral float-left" title="フォームのロボット検出との連携" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

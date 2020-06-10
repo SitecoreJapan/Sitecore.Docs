@@ -9,7 +9,7 @@ Google マップのエラーを解決するには
 1. ブラウザで、次のページを開きます:
    https://developers.google.com/maps/documentation/javascript/get-api-key。
 2. ページの指示に従って、API キーを取得します。
-3. コンテンツ エディタで、/sitecore/system/Modules/Experience Explorer/Map Settings/Google の項目で、API キーフィールドにキーを入力します。
+3. コンテンツ エディタで、/sitecore/system/Modules/Experience Explorer/Map Settings/Google のアイテムで、API キーフィールドにキーを入力します。
 4. ブラウザのキャッシュをクリアします。
 
 .. note:: キャッシュのクリア方法がわからない場合は、ブラウザのヘルプを参照してください。
