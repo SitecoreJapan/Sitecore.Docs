@@ -22,7 +22,7 @@
 The Launchpad
 ==================
 
-Media Libraryに移動するには、Sitecore LaunchpadでMedia Libraryアイコンをクリックします。
+メディアライブラリに移動するには、スタート画面でメディアライブラリアイコンをクリックします。
 
 .. image:: images/15eafd35790cb5.png
    :align: center
@@ -44,7 +44,7 @@ Media Libraryに移動するには、Sitecore LaunchpadでMedia Libraryアイコ
 デスクトップ
 ==================
 
-Media Libraryを開くには、Sitecore Startボタンをクリックし、Media Libraryをクリックします。
+メディアライブラリを開くには、Sitecore Startボタンをクリックし、メディアライブラリをクリックします。
 
 .. image:: images/15eafd3579d413.png
    :align: center

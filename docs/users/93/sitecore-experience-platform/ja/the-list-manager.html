@@ -183,13 +183,49 @@
             
   <div class="section" id="id1">
 <h1>リスト マネージャー<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>メールマーケティングでは、誰にメールを送るかは、何を送るかと同じくらい重要です。リストマネージャーを使用して、コンタクトリストを管理し、セグメントを使用して、プロフィールやエンゲージメントデータに基づいて特定のオーディエンスをターゲットにした受信者リストを作成します。次に、メールエクスペリエンスマネージャーを使用して、受信者に関連性があり、個人的な内容のメールキャンペーンを作成することができます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a233abc6.png"><img alt="リスト マネージャー" class="align-center" src="_images/15ed64a233abc6.png" style="width: 400px;" /></a>
+<p>スタート画面からリストマネージャーを開きます。</p>
+<a class="reference internal image-reference" href="_images/15ed64a233ecdd.png"><img alt="リスト マネージャー" class="align-center" src="_images/15ed64a233ecdd.png" style="width: 400px;" /></a>
+<div class="section" id="id2">
+<h2>リストタイプ<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>リストマネージャーでは、2種類のリストがあります。</p>
+<ul>
+<li><p>連絡先リスト - 連絡先がメンバーになることができる標準リスト。1 つの連絡先は、1 つまたは複数の連絡先リストのメンバーになることができます。</p>
+<p>新しい連絡先リストを作成する際には、既存の連絡先リストを新しいリストの構成要素として使用することができます。例えば、既存の 2 つのコンタクト・リストから「北米 - 顧客」というリストを作成することができます。US - 顧客」と「CA - 顧客」という名前のリストを作成することができます。</p>
+</li>
+<li><p>セグメント化されたリスト - 1 つ以上の選択された連絡先リストをフィルタリングしたリスト。セグメント化されたリストの連絡先は、実際にはリストのメンバーではなく、リストのソース (選択された連絡先リスト) にあり、定義した条件を満たしている場合にのみリストに表示されます。</p>
+<p>セグメント化されたリストは、リストのソース内の連絡先が定義された条件を満たすと、継続的に更新される動的リストです。</p>
+<p>セグメント化されたリストを新しい連絡先リストに変換することができます。これにより、セグメント化されたリストの「スナップショット」を取得し、変換時に定義された条件を満たす連絡先で新しい連絡先リストを作成することができます。</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>リストソース<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>リスト マネージャでリストを作成する場合、空の連絡先リストを作成するか、リストのソースを選択できます。</p>
+<ul class="simple">
+<li><p>コンタクトリストの場合、リストのソースには、既存のコンタクトリストを使用できます。</p></li>
+<li><p>セグメント化されたリストの場合、リストのソースは、すべてのSitecoreコンタクトまたは既存のコンタクトリストにすることができます。</p></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>リストソースとして使用できるのは、連絡先リストのみです。セグメント化されたリストをリスト ソースとして使用する場合は、まず、セグメント化されたリストをコンタクト リストに変換する必要があります。</p>
+</div>
+<div class="section" id="id4">
+<h3>除外事項<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>リストソースを修正するために、特定のコンタクトリストをソースから除外することも可能です。これにより、ターゲットグループをさらに絞り込むことができます。例えば、カナダの顧客リストを除外することで、北米リストの米国の顧客をターゲットにすることができます。</p>
+<p>また、品質保証の目的で、購読していない顧客を除外するなどの目的で除外機能を使用することもできます。</p>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>コンタクトリストの定義は、Marketing Operations API を使用してアクティブ化された場合、またはアクティブ化フラグが True に設定されて保存された場合にのみインデックスに表示されます。</p>
+<p>manager.SaveAsync(contactList, true);</p>
+<p>あるいは、コンタクトリストが作成されているがアクティブ化されていない場合は、Draft 状態を Deployed に変更することで、ワークフローの一部としてアクティブ化することができます。</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-list-manager.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/the-list-manager.html</a></p>
+</div>
+</div>
 </div>
 </div>
 

@@ -37,7 +37,7 @@
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
     <link rel="next" title="Experience Manager" href="experience-manager.html" />
-    <link rel="prev" title="リストの作成" href="creating-lists.html" />
+    <link rel="prev" title="連絡先のインポートウィザードにカスタムコンタクトファセットを含めるように設定します" href="configure-the-import-contacts-wizard-to-include-custom-contact-facets.html" />
  
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153234118-2"></script>
@@ -97,7 +97,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="digital-marketing-glossary.html">デジタルマーケティング用語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketing-automation.html">マーケティング オートメーション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sitecore-forms.html">Sitecore Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sitecore-forms.html">Sitecore フォーム</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketing-taxonomies.html">マーケティング タクソノミー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketing-operations.html">マーケティング オペレーション</a></li>
 <li class="toctree-l2"><a class="reference internal" href="personalization.html">パーソナライズ</a></li>
@@ -183,10 +183,48 @@
             
   <div class="section" id="id1">
 <h1>セグメントを作成する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>セグメント化されたリストを作成する場合、保存されたセグメントをリストに追加することで、含まれるリストソースの連絡先をさらにセグメント化することができます。たとえば、電子メール キャンペーンで定期的にスカンジナビアの連絡先をターゲットにしたい場合は、データベース内のスカンジナビアの国の連絡先をすべて含むセグメントを作成して保存することができます。</p>
+<p>リスト マネージャでは、非常に特定のターゲットオーディエンスを含むリストをセグメント化するために使用する新しいセグメントを作成して保存することができます。</p>
+<p>新しいセグメントを作成して保存するには</p>
+<ol class="arabic">
+<li><p>リスト マネージャで、[作成] メニューをクリックし、[セグメントの作成] をクリックします。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a2342ee0.png"><img alt="セグメントを作成する" class="align-center" src="_images/15ed64a2342ee0.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>セグメント]ページの[一般情報]セクションで、セグメントの名前と説明を入力します。</p></li>
+<li><p>エクスペリエンス アナリティクスで生成するレポートでセグメントをフィルタとして使用するには、[分析フィルタとして使用する]チェックボックスを有効にします。</p></li>
+<li><p>[セグメント]セクションで、[新しいルールの追加 <img alt="icon1" src="_images/15ed64a23c59e5.png" /> ]をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a23cc0bd.png"><img alt="セグメントを作成する" class="align-center" src="_images/15ed64a23cc0bd.png" style="width: 400px;" /></a>
+<ol class="arabic" start="5">
+<li><p>新しいルールでは、[ルールの編集]をクリックして、含まれる連絡先をセグメント化する条件を指定します。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a23d1b08.png"><img alt="セグメントを作成する" class="align-center" src="_images/15ed64a23d1b08.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>[ルールの作成] ダイアログの [条件を選択] フィールドで、連絡先をセグメント化するための関連する条件を選択します。たとえば、連絡先を都市別にセグメント化するには、連絡先の希望する住所の国コードが特定の値と比較される場所をクリックします。</p>
+<p>または、検索ワードを入力して特定の条件を検索することもできます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a23d656b.png"><img alt="セグメントを作成する" class="align-center" src="_images/15ed64a23d656b.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>[ルールの編集] フィールドで、下線の値をクリックして、選択した条件のアクションを指定します。</p></li>
+</ol>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>ルールの説明フィールドには、必要な数だけ条件を追加することができます。</p>
 </div>
+<ol class="arabic" start="8">
+<li><p>条件やルールの設定が終わったら、「OK」をクリックします。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/15ed64a23db53b.png"><img alt="セグメントを作成する" class="align-center" src="_images/15ed64a23db53b.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>[保存] をクリックしてセグメントを保存します。</p>
+<p>ルールを追加してセグメントをさらに絞り込むことも、既存のルールを編集または削除することもできます。</p>
+</li>
+</ol>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/create-a-segment.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/create-a-segment.html</a></p>
@@ -204,7 +242,7 @@
         <a href="experience-manager.html" class="btn btn-neutral float-right" title="Experience Manager" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="creating-lists.html" class="btn btn-neutral float-left" title="リストの作成" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="configure-the-import-contacts-wizard-to-include-custom-contact-facets.html" class="btn btn-neutral float-left" title="連絡先のインポートウィザードにカスタムコンタクトファセットを含めるように設定します" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

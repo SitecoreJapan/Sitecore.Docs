@@ -11,7 +11,7 @@
 
 パフォーマンスレポートを見るには
 
-1. Sitecore Launchpadを開き、Experience Optimizationをクリックし、Reports、Performance Reportをクリックします。
+1. スタート画面を開き、Experience Optimizationをクリックし、Reports、Performance Reportをクリックします。
 2. デフォルトの設定（前のスクリーンショットに示す）は、月ごとの時間分解能、すべての指標（スコア、推測、効果、アクティビティ）の表示、全ユーザーのスコアの平均化です。
 3. 「前へ」と「次へ」をクリックして、時間を前後に移動します。
 

@@ -195,10 +195,24 @@
             
   <div class="section" id="id1">
 <h1>カスタムソース定義の作成<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>カスタム ソース定義を作成し、リスト マネージャを使用してそれらを管理することができます。リストとソースの間の関連付けは、少なくとも 1 つの連絡先がそのソースを使用してリストに追加されると自動的に作成されます。</p>
+<p>カスタムソース定義を作成するには、以下の手順に従います。</p>
+<ol class="arabic simple">
+<li><p>スタート画面で、コンテンツエディタをクリックします。</p></li>
+<li><p>Sitecore/System/Marketing Control Panel/Subscriptionsに移動します。</p></li>
+<li><p>ツリービューで、サブスクリプションを右クリックし、テンプレートから挿入をクリックします。</p></li>
+<li><p>Templates/System/Analytics フォルダを展開し、サブスクリプションのアイテムをクリックして、[挿入] をクリックします。</p></li>
+<li><p>[コンテンツ] タブの [名前] フィールドに、連絡先リストのページに表示する名前を入力します。</p></li>
+<li><p>複数の連絡先リストにまたがってサブスクリプションを使用するには、[タグ] フィールドで共有値を定義します。このような場合は、ユーザーは、そのユーザーの名前を入力して、そのユーザーの名前を入力します。</p></li>
+<li><p>作成したサブスクリプション定義アイテムを展開します。</p></li>
+</ol>
+<p>以下のAPIを使用して、カスタムのサブスクリプションソースを持つリストにコンタクトをサブスクライブすることができます。</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="kt">var</span> <span class="n">contacts</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Contact</span><span class="p">&gt;();</span> <span class="c1">// List of contacts</span>
+<span class="kt">var</span> <span class="n">subscriptionService</span> <span class="p">=</span> <span class="n">ServiceLocator</span><span class="p">.</span><span class="n">ServiceProvider</span><span class="p">.</span><span class="n">GetService</span><span class="p">&lt;</span><span class="n">ISubscriptionService</span><span class="p">&gt;();</span>
+<span class="n">subscriptionService</span><span class="p">.</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">contactListId</span><span class="p">,</span> <span class="n">contacts</span><span class="p">,</span> <span class="n">subscriptionSourceId</span><span class="p">);</span>
+</pre></div>
 </div>
+<p>subscriptionSourceId は、サブスクリプション定義アイテムの ID である。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/create-a-custom-source-definition.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/create-a-custom-source-definition.html</a></p>

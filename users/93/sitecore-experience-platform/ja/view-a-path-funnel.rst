@@ -6,7 +6,7 @@ Path ファネルを見る
 
 パスファネルを表示するには
 
-1. Sitecore Launchpadから、Path Analyzerを開きます。
+1. スタート画面から、Path Analyzerを開きます。
 2. ドロップダウンメニューからサイトマップを選択します。
 
 .. image:: images/15ed64a260c381.png

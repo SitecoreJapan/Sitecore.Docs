@@ -14,7 +14,7 @@
 
 キャンペーンアクティビティを作成するには
 
-1. Sitecore Launchpadで、Campaign Creatorをクリックします。
+1. スタート画面で、Campaign Creatorをクリックします。
 
     .. image:: images/15ed64a2135175.png
         :align: center

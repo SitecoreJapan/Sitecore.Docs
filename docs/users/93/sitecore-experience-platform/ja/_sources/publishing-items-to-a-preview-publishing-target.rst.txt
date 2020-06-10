@@ -56,7 +56,7 @@
         :width: 400px
         :alt: ワークフロー状態のアイテムをプレビューパブリッシング対象にパブリッシュする
 
-.. note:: プレビュー公開対象に公開しても、項目に設定されている公開制限は有効です。
+.. note:: プレビュー公開対象に公開しても、アイテムに設定されている公開制限は有効です。
 
 .. tip:: 英語版 https://doc.sitecore.com/users/93/sitecore-experience-platform/en/publishing-items-to-a-preview-publishing-target.html
 

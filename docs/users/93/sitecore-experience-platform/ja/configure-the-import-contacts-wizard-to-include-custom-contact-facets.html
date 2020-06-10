@@ -195,13 +195,235 @@
             
   <div class="section" id="id1">
 <h1>連絡先のインポートウィザードにカスタムコンタクトファセットを含めるように設定します<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>リストマネージャーでは、CSVファイルから連絡先をインポートする際に、インポートしたファイルのフィールドを以下のデフォルトのSitecoreフィールドにマッピングすることができます。</p>
+<ul class="simple">
+<li><p>識別子</p></li>
+<li><p>識別子のソース</p></li>
+<li><p>メールアドレス</p></li>
+<li><p>ファーストネーム</p></li>
+<li><p>苗字</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/15ed64a23b09c5.png"><img alt="連絡先のインポートウィザード" class="align-center" src="_images/15ed64a23b09c5.png" style="width: 400px;" /></a>
+<p>インポートしたファイルフィールドをマッピングするために、追加のSitecoreフィールドが必要な場合は、連絡先のイン ポートウィザードを拡張して追加することができます。</p>
+<ul>
+<li><p>定義済みコンタクトファセット - 連絡先のインポートウィザードに追加できる定義済みコンタクトファセットは以下の通りです。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>個人情報</p></li>
+<li><p>電子メールアドレスリスト</p></li>
+<li><p>アドレスリスト</p></li>
+<li><p>電話番号リスト</p></li>
+<li><p>同意情報</p></li>
+<li><p>リストサブスクリプション</p></li>
+<li><p>オートメーションプラン終了</p></li>
+<li><p>オートメーションプラン登録キャッシュ</p></li>
+<li><p>アバター</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>新しいカスタム連絡先ファセット - カスタムファセットを作成し、モデル構成を更新して連絡先のインポートウィザードに含めることができます。</p></li>
+</ul>
+<div class="section" id="id2">
+<h2>定義済みのファセットをマッピングフィールドとして追加する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>リスト マネージャには、定義済みの連絡先マッピング フィールドのリストがあります。連絡先のインポート ウィザードを拡張するには、コア データベースでブランチを使用して、利用可能なマッピング フィールドの 1 つを追加します。</p>
+<p>定義済みのマッピング フィールドを追加するには</p>
+<ol class="arabic simple">
+<li><p>Core データベースのコンテンツ エディタで、/sitecore/client/Applications/List Manager/Dialogs/ImportWizardDialog/PageSettings/TabControl Parameters/Map/ImportModel フォルダに移動します。</p></li>
+<li><p>ImportModelフォルダを右クリックし、[挿入]をクリックしてから、事前に定義された連絡先マッピングフィールドの1つをクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a23b6916.png"><img alt="定義済みのファセットをマッピングフィールドとして追加する" class="align-center" src="_images/15ed64a23b6916.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="id3">
+<h2>マッピングフィールドとして新しいファセットを追加する<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>連絡先のインポートウィザードを拡張して、定義済みのファセットをSitecoreマッピングフィールドとして表示するには、コンテンツエディタで定義済みのファセットのインポートモデルフィールドを新規に作成します。</p>
+<p>新しいファセットをマッピングフィールドとして追加するには、以下の手順に従います。</p>
+<ol class="arabic simple">
+<li><p>Coreデータベースで、Content Editorで、/sitecore/client/Applications/List Manager/Dialogs/ImportWizardDialog/PageSettings/TabControl Parameters/Map/ImportModel フォルダに移動します。</p></li>
+<li><p>/sitecore/client/Applications/List Manager/Templates/ImportModelField テンプレートに基づいて、新しいImportモデルフィールドアイテムを作成します。これを行うには、ImportModelフォルダ内で、既存のアイテムの1つを複製します。</p></li>
+<li><p>新しいアイテムを変更するには、FieldNameフィールドで、Import contactsウィザードで表示するSitecoreマッピングフィールドの名前を指定します。</p></li>
+<li><p>DataField フィールドでは、インポートされた値を格納する場所の xConnect ファセット プロパティを認識するために Facet Mapper が使用するキーを指定します。例えば、Personal_Suffix という名前を付け、後でこのキーを使用して Personal ファセットの Suffix フィールドを埋めるようにします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a23bb203.png"><img alt="マッピングフィールドとして新しいファセットを追加する" class="align-center" src="_images/15ed64a23bb203.png" style="width: 400px;" /></a>
+<p>必須フィールドは、連絡先のインポート ウィザードのマップ タブでフィールド マッピングを指定する必要があるかどうかを指定します。これはUIの検証のみです。マッピングフィールドを必須フィールドとしてマークしたい場合は、Sitecore.ListManagement.Import.RequiredFieldsの設定で、Sitecore.ListManagement.Configファイルの必須フィールドのリストにマッピングフィールドを追加する必要があります。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- REQUIRED MAPPING FIELDSThe list of the required mapping fields.</span>
+<span class="c">    If at least one of these fields is missing in a CSV fileor is not mapped properly,</span>
+<span class="c">    the entire contact is skipped and not imported.Please note that</span>
+<span class="c">    the field names below should correspond to the Import Dialog</span>
+<span class="c">    mapping fields configured in the &#39;core&#39; database</span>
+<span class="c">    (you may use predefined Branches to add new mapping fields):</span>
+<span class="c">    &#39;/sitecore/client/Applications/List Manager/Dialogs/ImportWizardDialog/PageSettings/TabControl Parameters/Map/ImportModel&#39;--&gt;</span>
+
+    <span class="nt">&lt;setting</span> <span class="na">name=</span><span class="s">&quot;ListManagement.Import.RequiredFields&quot;</span> <span class="na">value=</span><span class="s">&quot;Identifier|PreferredEmail_SmtpAddress|Personal_FirstName|Personal_LastName&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>インポート中、必須フィールドが空の場合、インポート ファイルからの行全体がスキップされます。リスト マネージャのデフォルトの必須フィールドは以下の通りです。識別子、電子メール、姓、名。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>既存のインポートマッパーを拡張する<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>リストマネージャは、デフォルトのファセットマッパーの範囲を提供していますが、必要に応じて、これらのファセットマッパーを拡張することができます。例えば、EmailAddressList ファセットには、Others と呼ばれる電子メールの高度な辞書が含まれています。</p>
+<p>次の例では、既存の PreferredEmailMapper クラスを装飾して、個人用および仕事用の電子メールを EmailAddressList.Others 辞書に追加できるようにしています。</p>
+<p>既存のImportマッパーを拡張するには</p>
+<ol class="arabic simple">
+<li><p>既存の PreferredEmailFacetMapper クラスを装飾するために、ExtendedEmailFacetMapperSample クラスを作成して実装します。</p></li>
+</ol>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">class</span> <span class="nc">ExtendedEmailFacetMapperSample</span> <span class="p">:</span> <span class="n">IFacetMapper</span>
+<span class="p">{</span>
+<span class="k">private</span> <span class="k">readonly</span> <span class="n">PreferredEmailFacetMapper</span> <span class="n">mapper</span><span class="p">;</span>
+<span class="c1">// Decorate the existing PreferredEmailMapper</span>
+<span class="k">public</span> <span class="nf">ExtendedEmailFacetMapperSample</span><span class="p">(</span>
+    <span class="n">PreferredEmailFacetMapper</span> <span class="n">mapper</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">mapper</span> <span class="p">=</span> <span class="n">mapper</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="n">MappingResult</span> <span class="nf">Map</span><span class="p">(</span>
+    <span class="kt">string</span> <span class="n">facetKey</span><span class="p">,</span>
+    <span class="n">Facet</span> <span class="n">facet</span><span class="p">,</span>
+    <span class="n">ContactMappingInfo</span> <span class="n">mappings</span><span class="p">,</span>
+    <span class="kt">string</span><span class="p">[]</span> <span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Call the existing email mapper to map all the basic email fields</span>
+    <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">mapper</span><span class="p">.</span><span class="n">Map</span><span class="p">(</span><span class="n">facetKey</span><span class="p">,</span> <span class="n">facet</span><span class="p">,</span> <span class="n">mappings</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+    <span class="kt">var</span> <span class="n">facetMappedResult</span> <span class="p">=</span> <span class="n">result</span> <span class="k">as</span> <span class="n">FacetMapped</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">facetMappedResult</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">var</span> <span class="n">partiallyMappedFacet</span> <span class="p">=</span> <span class="n">facetMappedResult</span><span class="p">.</span><span class="n">Facet</span> <span class="k">as</span> <span class="n">EmailAddressList</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">partiallyMappedFacet</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// Set Personal email</span>
+    <span class="kt">var</span> <span class="n">personalEmail</span> <span class="p">=</span> <span class="n">mappings</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="s">&quot;Emails_Others_Personal&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">personalEmail</span><span class="p">))</span>
+    <span class="p">{</span>
+    <span class="n">partiallyMappedFacet</span><span class="p">.</span><span class="n">Others</span><span class="p">[</span><span class="s">&quot;Personal&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="n">EmailAddress</span><span class="p">(</span><span class="n">personalEmail</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// Set Work email</span>
+    <span class="kt">var</span> <span class="n">workEmail</span> <span class="p">=</span> <span class="n">mappings</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="s">&quot;Emails_Others_Work&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">workEmail</span><span class="p">))</span>
+    <span class="p">{</span>
+    <span class="n">partiallyMappedFacet</span><span class="p">.</span><span class="n">Others</span><span class="p">[</span><span class="s">&quot;Work&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="n">EmailAddress</span><span class="p">(</span><span class="n">workEmail</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Sitecore.ListManagement.config ファイルの sitecore/import/facetMapper セクションにファセットマッパーを登録します。</p></li>
+</ol>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;configuration</span> <span class="na">xmlns:patch=</span><span class="s">&quot;http://www.sitecore.net/xmlconfig/&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;sitecore&gt;</span>
+    <span class="nt">&lt;import&gt;</span>
+    <span class="nt">&lt;facetMapper</span> <span class="na">type=</span><span class="s">&quot;Sitecore.ListManagement.XConnect.Web.Import.CompositeFacetMapperCollection, Sitecore.ListManagement.XConnect.Web&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;param</span> <span class="na">resolve=</span><span class="s">&quot;true&quot;</span> <span class="na">type=</span><span class="s">&quot;Sitecore.Abstractions.BaseLog, Sitecore.Kernel&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;facetMappers</span> <span class="na">hint=</span><span class="s">&quot;list:Add&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;facetMapper</span> <span class="na">type=</span><span class="s">&quot;Sitecore.ListManagement.XConnect.Web.Import.ListSubscriptionMapper, Sitecore.ListManagement.XConnect.Web&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;facetMapper</span> <span class="na">type=</span><span class="s">&quot;Sitecore.ListManagement.XConnect.Web.Import.PreferredAddressFacetMapper, Sitecore.ListManagement.XConnect.Web&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;facetMapper</span> <span class="na">type=</span><span class="s">&quot;Sitecore.ListManagement.XConnect.Web.Import.PreferredEmailFacetMapper, Sitecore.ListManagement.XConnect.Web&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;facetMapper</span> <span class="na">type=</span><span class="s">&quot;Sitecore.ListManagement.XConnect.Web.Import.PersonalInformationFacetMapper, Sitecore.ListManagement.XConnect.Web&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/facetMappers&gt;</span>
+    <span class="nt">&lt;/facetMapper&gt;</span>
+    <span class="nt">&lt;/import&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>新しいインポートマッパーを作成します<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>既存のインポートマッパーを使用できない場合は、カスタムのインポートマッパー、例えば PreferredAddressFacetMapper を作成することができます。</p>
+<p>新しいインポートマッパーを作成するには</p>
+<ol class="arabic simple">
+<li><p>Sitecore.ListManagement.XConnect.Web.Import.IFacetMapperSitecore.ListManagement.Import.IFacetMapper を実装した新しい PreferredAddressFacetMapper を作成します。</p></li>
+</ol>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">class</span> <span class="nc">PreferredAddressFacetMapper</span> <span class="p">:</span> <span class="n">IFacetMapper</span>
+<span class="p">{</span>
+<span class="k">public</span> <span class="nf">PreferredAddressFacetMapper</span><span class="p">()</span>
+    <span class="p">:</span> <span class="k">this</span><span class="p">(</span><span class="n">CollectionModel</span><span class="p">.</span><span class="n">FacetKeys</span><span class="p">.</span><span class="n">AddressList</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="nf">PreferredAddressFacetMapper</span><span class="p">(</span><span class="kt">string</span> <span class="n">facetName</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Assert</span><span class="p">.</span><span class="n">ArgumentNotNull</span><span class="p">(</span><span class="n">facetName</span><span class="p">,</span> <span class="n">nameof</span><span class="p">(</span><span class="n">facetName</span><span class="p">));</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">FacetName</span> <span class="p">=</span> <span class="n">facetName</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="kt">string</span> <span class="n">FacetName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">public</span> <span class="n">MappingResult</span> <span class="nf">Map</span><span class="p">(</span>
+    <span class="kt">string</span> <span class="n">facetKey</span><span class="p">,</span>
+    <span class="n">Facet</span> <span class="n">source</span><span class="p">,</span>
+    <span class="n">ContactMappingInfo</span> <span class="n">mappings</span><span class="p">,</span>
+    <span class="kt">string</span><span class="p">[]</span> <span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">facetKey</span> <span class="p">!=</span> <span class="k">this</span><span class="p">.</span><span class="n">FacetName</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nf">NoMatch</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="kt">var</span> <span class="n">preferredAddress</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Address</span><span class="p">();</span>
+    <span class="kt">var</span> <span class="n">addressLine1</span> <span class="p">=</span> <span class="n">mappings</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">preferredAddress</span><span class="p">.</span><span class="n">AddressLine1</span><span class="p">),</span> <span class="n">data</span><span class="p">);</span>
+    <span class="kt">var</span> <span class="n">addressLine2</span> <span class="p">=</span> <span class="n">mappings</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">preferredAddress</span><span class="p">.</span><span class="n">AddressLine2</span><span class="p">),</span> <span class="n">data</span><span class="p">);</span>
+    <span class="kt">var</span> <span class="n">addressLine3</span> <span class="p">=</span> <span class="n">mappings</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">preferredAddress</span><span class="p">.</span><span class="n">AddressLine3</span><span class="p">),</span> <span class="n">data</span><span class="p">);</span>
+    <span class="kt">var</span> <span class="n">addressLine4</span> <span class="p">=</span> <span class="n">mappings</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">preferredAddress</span><span class="p">.</span><span class="n">AddressLine4</span><span class="p">),</span> <span class="n">data</span><span class="p">);</span>
+    <span class="kt">var</span> <span class="n">city</span> <span class="p">=</span> <span class="n">mappings</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">preferredAddress</span><span class="p">.</span><span class="n">City</span><span class="p">),</span> <span class="n">data</span><span class="p">);</span>
+    <span class="kt">var</span> <span class="n">country</span> <span class="p">=</span> <span class="n">mappings</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">preferredAddress</span><span class="p">.</span><span class="n">CountryCode</span><span class="p">),</span> <span class="n">data</span><span class="p">);</span>
+    <span class="kt">var</span> <span class="n">postalCode</span> <span class="p">=</span> <span class="n">mappings</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">preferredAddress</span><span class="p">.</span><span class="n">PostalCode</span><span class="p">),</span> <span class="n">data</span><span class="p">);</span>
+    <span class="kt">var</span> <span class="n">stateProvince</span> <span class="p">=</span> <span class="n">mappings</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">preferredAddress</span><span class="p">.</span><span class="n">StateOrProvince</span><span class="p">),</span> <span class="n">data</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">addressLine1</span><span class="p">))</span> <span class="p">{</span> <span class="n">preferredAddress</span><span class="p">.</span><span class="n">AddressLine1</span> <span class="p">=</span> <span class="n">addressLine1</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">addressLine2</span><span class="p">))</span> <span class="p">{</span> <span class="n">preferredAddress</span><span class="p">.</span><span class="n">AddressLine2</span> <span class="p">=</span> <span class="n">addressLine1</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">addressLine3</span><span class="p">))</span> <span class="p">{</span> <span class="n">preferredAddress</span><span class="p">.</span><span class="n">AddressLine3</span> <span class="p">=</span> <span class="n">addressLine1</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">addressLine4</span><span class="p">))</span> <span class="p">{</span> <span class="n">preferredAddress</span><span class="p">.</span><span class="n">AddressLine4</span> <span class="p">=</span> <span class="n">addressLine1</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">city</span><span class="p">))</span> <span class="p">{</span> <span class="n">preferredAddress</span><span class="p">.</span><span class="n">City</span> <span class="p">=</span> <span class="n">city</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">country</span><span class="p">))</span> <span class="p">{</span> <span class="n">preferredAddress</span><span class="p">.</span><span class="n">CountryCode</span> <span class="p">=</span> <span class="n">country</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">postalCode</span><span class="p">))</span> <span class="p">{</span> <span class="n">preferredAddress</span><span class="p">.</span><span class="n">PostalCode</span> <span class="p">=</span> <span class="n">postalCode</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">stateProvince</span><span class="p">))</span> <span class="p">{</span> <span class="n">preferredAddress</span><span class="p">.</span><span class="n">StateOrProvince</span> <span class="p">=</span> <span class="n">stateProvince</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">var</span> <span class="n">facet</span> <span class="p">=</span> <span class="n">source</span> <span class="k">as</span> <span class="n">AddressList</span> <span class="p">??</span> <span class="k">new</span> <span class="n">AddressList</span><span class="p">(</span><span class="n">preferredAddress</span><span class="p">,</span> <span class="s">&quot;Preferred&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nf">FacetMapped</span><span class="p">(</span><span class="n">facetKey</span><span class="p">,</span> <span class="n">facet</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Sitecore.ListManagement.config ファイルの sitecore/import/facetMapper セクションで、マッパーを登録します。</p></li>
+</ol>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;configuration</span> <span class="na">xmlns:patch=</span><span class="s">&quot;http://www.sitecore.net/xmlconfig/&quot;</span><span class="nt">&gt;</span>  <span class="nt">&lt;sitecore&gt;</span>
+    <span class="nt">&lt;import&gt;</span>
+    <span class="nt">&lt;facetMapper</span> <span class="na">type=</span><span class="s">&quot;Sitecore.ListManagement.XConnect.Web.Import.CompositeFacetMapperCollection, Sitecore.ListManagement.XConnect.Web&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;param</span> <span class="na">resolve=</span><span class="s">&quot;true&quot;</span> <span class="na">type=</span><span class="s">&quot;Sitecore.Abstractions.BaseLog, Sitecore.Kernel&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;facetMappers</span> <span class="na">hint=</span><span class="s">&quot;list:Add&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;facetMapper</span> <span class="na">type=</span><span class="s">&quot;Sitecore.ListManagement.XConnect.Web.Import.ListSubscriptionMapper, Sitecore.ListManagement.XConnect.Web&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;facetMapper</span> <span class="na">type=</span><span class="s">&quot;Sitecore.ListManagement.XConnect.Web.Import.PreferredAddressFacetMapper, Sitecore.ListManagement.XConnect.Web&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;facetMapper</span> <span class="na">type=</span><span class="s">&quot;Sitecore.ListManagement.XConnect.Web.Import.PreferredEmailFacetMapper, Sitecore.ListManagement.XConnect.Web&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;facetMapper</span> <span class="na">type=</span><span class="s">&quot;Sitecore.ListManagement.XConnect.Web.Import.PersonalInformationFacetMapper, Sitecore.ListManagement.XConnect.Web&quot;</span> <span class="nt">/&gt;</span>
+        <span class="c">&lt;!-- New extended address mapper registration --&gt;</span>
+        <span class="nt">&lt;facetMapper</span> <span class="na">type=</span><span class="s">&quot;MyProject.PreferredAddressFacetMapper, MyProject&quot;</span> <span class="nt">/&gt;</span>
+        <span class="c">&lt;!-- New extended address mapper registration --&gt;</span>
+        <span class="nt">&lt;/facetMappers&gt;</span>
+    <span class="nt">&lt;/facetMapper&gt;</span>
+    <span class="nt">&lt;/import&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Sitecore.ListManagement.configファイルにAddressesファセット名を追加して、マッピング先のファセットリストを拡張します。</p></li>
+</ol>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!--  FACETS TO MAP</span>
+<span class="c">    The list of contact facets retrieved from XConnect to map data from a CSV file.</span>
+<span class="c">    Only fields that belong to facets listed here are mapped. All other fields are skipped.</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;setting</span> <span class="na">name=</span><span class="s">&quot;ListManagement.Import.FacetsToMap&quot;</span> <span class="na">value=</span><span class="s">&quot;Emails|Personal|Addresses&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>この例では、コンテンツ・エディタの DataField セクションの PreferredAddressFacetMapper アイテムには、AddressList ファセットのプロパティの 1 つに関連するキー、例えば、City、AddressLine1、CountryCode などが含まれている必要があります。</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/configure-the-import-contacts-wizard-to-include-custom-contact-facets.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/configure-the-import-contacts-wizard-to-include-custom-contact-facets.html</a></p>
+</div>
 </div>
 </div>
 
