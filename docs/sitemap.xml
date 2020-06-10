@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<!--  created with free sitemap generation system www.sitemapxml.jp  --> 
+<url>
+  <loc>https://doc.sitecorejp.net/</loc>
+  <priority>1.0</priority>
+  <lastmod>2020-06-10T12:41:52+09:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://doc.sitecorejp.net/users/</loc>
+  <priority>0.8</priority>
+  <lastmod>2020-06-10T12:41:53+09:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://doc.sitecorejp.net/developers/</loc>
+  <priority>0.8</priority>
+  <lastmod>2020-06-10T12:41:52+09:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://doc.sitecorejp.net/users/93/sitecore-experience-platform/ja/</loc>
+  <priority>0.8</priority>
+  <lastmod>2020-06-10T12:41:52+09:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://doc.sitecorejp.net/users/sxa/93/sitecore-experience-accelerator/ja/</loc>
+  <priority>0.7</priority>
+  <lastmod>2020-06-10T12:41:52+09:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://doc.sitecorejp.net/developers/93/sitecore-experience-manager/ja/</loc>
+  <priority>0.7</priority>
+  <lastmod>2020-06-10T12:41:52+09:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://doc.sitecorejp.net/developers/93/sitecore-experience-platform/ja/</loc>
+  <priority>0.6</priority>
+  <lastmod>2020-06-10T12:41:52+09:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://doc.sitecorejp.net/developers/93/sitecore-experience-commerce/ja/</loc>
+  <priority>0.6</priority>
+  <lastmod>2020-06-10T12:41:52+09:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://doc.sitecorejp.net/developers/93/platform-administration-and-architecture/ja/</loc>
+  <priority>0.6</priority>
+  <lastmod>2020-06-10T12:41:52+09:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+
+</urlset>
