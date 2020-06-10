@@ -97,7 +97,7 @@
 <li class="toctree-l2"><a class="reference internal" href="horizon.html">Horizon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="the-editing-tools.html">編集ツール</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="creating-and-editing-items.html">アイテムの作成と編集</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="create-an-item-in-the-content-editor.html">コンテンツエディタで項目を作成する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create-an-item-in-the-content-editor.html">コンテンツエディタでアイテムを作成する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="create-a-page-in-the-experience-editor.html">エクスペリエンス エディターでページを作成する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="copy-or-duplicate-an-item.html">アイテムをコピーまたは複製する</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="editing.html">編集</a><ul class="current">
@@ -197,13 +197,75 @@
             
   <div class="section" id="id1">
 <h1>アイテムのレイアウトを編集する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Sitecoreでは、アイテムのすべてのバージョン、すべての言語で共有されたプレゼンテーションの詳細を指定することができ、アイテムの個別のバージョンごと、言語ごとに異なるプレゼンテーションの詳細を指定することができます。</p>
+<p>このように、アイテムのバージョンや言語によってレイアウトの構成を変えて提示することができます。例えば、多言語ソリューションでは、特定の言語にのみ関連する異なるマーケティング戦略やプロモーションオファーがある場合、すべての言語で同じ構成要素を表示することに制限されません。</p>
+<p>各項目について、表示の詳細を指定することができます。</p>
+<ul class="simple">
+<li><p>共有レイアウト - すべての言語でアイテムのすべてのバージョンで共有されているプレゼンテーションの詳細を保存します。これらのプレゼンテーションの詳細は、アイテムのベースとなっているテンプレートの標準値に基づいています。</p></li>
+<li><p>最終レイアウト - 選択したバージョンのアイテムのプレゼンテーションの詳細と共有レイアウトのプレゼンテーションの詳細の組み合わせを保存します。これは、あなたの訪問者があなたのウェブサイト上で見るレイアウトです。</p></li>
+</ul>
+<div class="section" id="id2">
+<h2>アイテムのレイアウト詳細を編集する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アイテムの共有レイアウトや最終レイアウトを編集することができます。</p>
+<p>アイテムバージョンの共有レイアウトまたは最終レイアウトを編集するには、以下の手順に従います。</p>
+<ol class="arabic simple">
+<li><p>コンテンツ エディタまたはエクスペリエンス エディタで、レイアウトを編集するアイテムまたはページに移動します。</p></li>
+</ol>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>翻訳中</p>
+<p>アイテムまたはページの最終的なレイアウトを編集するには、関連するバージョンのアイテムを選択する必要があります。</p>
 </div>
+<ol class="arabic simple" start="2">
+<li><p>リボンの [プレゼンテーション] タブの [レイアウト] グループで [詳細] をクリックします。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a1b243fc.png"><img alt="アイテムのレイアウト詳細を編集する" class="align-center" src="_images/15ed64a1b243fc.png" style="width: 400px;" /></a>
+<ol class="arabic" start="3">
+<li><p>[レイアウトの詳細］ダイアログボックスで、［共有レイアウト］タブをクリックします。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>[共有レイアウト］タブをクリックして、アイテムのすべてのバージョンに適用されるプレゼンテーションの詳細を編集します。共有レイアウト］タブに追加したプレゼンテーションの詳細は、アイテムのすべてのバージョンの［最終レイアウト］タブにも表示されます。</p></li>
+<li><p>アイテムの現在のバージョンのプレゼンテーションの詳細を編集するには、［最終レイアウト］タブをクリックします。最終レイアウト］タブに追加したプレゼンテーションの詳細は、アイテムの現在選択されているバージョンと言語バージョンにのみ適用されます。</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a1b2860c.png"><img alt="アイテムのレイアウト詳細を編集する" class="align-center" src="_images/15ed64a1b2860c.png" style="width: 400px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>エクスペリエンスエディタで、リボン上の［最終レイアウト］タブ、［バージョン］タブが表示されない場合は、［すべてのバージョンを編集］のチェックボックスをオフにします。</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>該当するデバイス（例えば、Default や Print など）の下で、Edit をクリックします。デバイスエディタダイアログで、レイアウトを指定し、関連するコントロールとプレースホルダの設定を追加します。</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/15ed64a1b2c6d2.png"><img alt="アイテムのレイアウト詳細を編集する" class="align-center" src="_images/15ed64a1b2c6d2.png" style="width: 400px;" /></a>
+<ol class="arabic simple" start="5">
+<li><p>レイアウトの指定が終わったら、OKをクリックします。</p></li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>アイテムのレイアウトをリセットする<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アイテムのレイアウトを、そのアイテムが元になっているテンプレートで指定されている標準値にリセットすることができます。共有レイアウトの詳細、最終的なレイアウトの詳細、またはその両方をリセットすることができます。</p>
+<p>アイテムのレイアウトをリセットするには</p>
+<ol class="arabic">
+<li><p>コンテンツ エディタまたはエクスペリエンス エディタで、レイアウトをリセットする項目またはページに移動します。</p></li>
+<li><p>リボンの [プレゼンテーション] タブの [レイアウト] グループで [リセット] をクリックします。</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>最終的なレイアウトを編集している場合は、[レイアウトのリセット]ダイアログボックスで、関連するオプションを選択し、[OK]をクリックします。</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/15ed64a1b30b8b.png"><img alt="アイテムのレイアウトをリセットする" class="align-center" src="_images/15ed64a1b30b8b.png" style="width: 400px;" /></a>
+<ul class="simple">
+<li><p>共有レイアウトを編集している場合（[バージョン]タブの[すべてのバージョンを編集]チェックボックスが選択されている場合）、代わりに次のような通知が表示されます。共有レイアウトをリセットするには、[OK]をクリックします。</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/15ed64a1b3508a.png"><img alt="アイテムのレイアウトをリセットする" class="align-center" src="_images/15ed64a1b3508a.png" style="width: 400px;" /></a>
+</div></blockquote>
+</li>
+<li><p>変更内容を保存します。</p></li>
+</ol>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
 <p>英語版 <a class="reference external" href="https://doc.sitecore.com/users/93/sitecore-experience-platform/en/edit-the-layout-of-an-item.html">https://doc.sitecore.com/users/93/sitecore-experience-platform/en/edit-the-layout-of-an-item.html</a></p>
+</div>
 </div>
 </div>
 

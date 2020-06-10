@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>カスタムマーケティングタクソノミの作成と実装 &mdash; ユーザーガイド ( Sitecore 9.3 )  ドキュメント</title>
+  <title>カスタムマーケティングタクソノミーの作成と実装 &mdash; ユーザーガイド ( Sitecore 9.3 )  ドキュメント</title>
   
 
   
@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
-    <link rel="next" title="マーケティングの定義とタクソノミを展開" href="deploy-marketing-definitions-and-taxonomies.html" />
+    <link rel="next" title="マーケティングの定義とタクソノミーを展開" href="deploy-marketing-definitions-and-taxonomies.html" />
     <link rel="prev" title="マーケティング タクソノミー" href="marketing-taxonomies.html" />
  
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -97,10 +97,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="digital-marketing.html">デジタルマーケティング</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="digital-marketing-glossary.html">デジタルマーケティング用語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="marketing-automation.html">マーケティング オートメーション</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sitecore-forms.html">Sitecore Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sitecore-forms.html">Sitecore フォーム</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="marketing-taxonomies.html">マーケティング タクソノミー</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">カスタムマーケティングタクソノミの作成と実装</a></li>
-<li class="toctree-l3"><a class="reference internal" href="deploy-marketing-definitions-and-taxonomies.html">マーケティングの定義とタクソノミを展開</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">カスタムマーケティングタクソノミーの作成と実装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="deploy-marketing-definitions-and-taxonomies.html">マーケティングの定義とタクソノミーを展開</a></li>
 <li class="toctree-l3"><a class="reference internal" href="classify-a-media-item-as-a-digital-marketing-asset.html">メディアアイテムをデジタルマーケティングアセットとして分類する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="channels.html">チャンネル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="venues.html">ベニュー</a></li>
@@ -163,7 +163,7 @@
         
           <li><a href="marketing-taxonomies.html">マーケティング タクソノミー</a> &raquo;</li>
         
-      <li>カスタムマーケティングタクソノミの作成と実装</li>
+      <li>カスタムマーケティングタクソノミーの作成と実装</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -183,11 +183,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>カスタムマーケティングタクソノミの作成と実装<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Sitecore Experience Platformでは、タクソノミーとはアイテムを整理するための方法です。タクソノミタグを適用して、キャンペーン、参照チャネル、その他のマーケティング活動に関する情報を識別します。これにより、さまざまなマーケティング活動間の関係性を特定して追跡することができ、キャンペーンの効果やコンタクト先がブランドとどのように相互作用しているかについて、より深い洞察を得ることができます。</p>
-<p>Sitecore XPにはチャネル、キャンペーン、アセットのタクソノミが含まれていますが、ビジネスニーズに基づいてカスタムマーケティングタクソノミを定義することもできます。異なるビジネス市場、ビジネスユニット、地理的ユニット、組織内の個々のブランドなどを識別するカスタムタクソノミを作成することができます。</p>
+<h1>カスタムマーケティングタクソノミーの作成と実装<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Sitecore Experience Platformでは、タクソノミーとはアイテムを整理するための方法です。タクソノミータグを適用して、キャンペーン、参照チャネル、その他のマーケティング活動に関する情報を識別します。これにより、さまざまなマーケティング活動間の関係性を特定して追跡することができ、キャンペーンの効果やコンタクト先がブランドとどのように相互作用しているかについて、より深い洞察を得ることができます。</p>
+<p>Sitecore XPにはチャネル、キャンペーン、アセットのタクソノミーが含まれていますが、ビジネスニーズに基づいてカスタムマーケティングタクソノミーを定義することもできます。異なるビジネス市場、ビジネスユニット、地理的ユニット、組織内の個々のブランドなどを識別するカスタムタクソノミーを作成することができます。</p>
 <div class="section" id="id2">
-<h2>カスタムマーケティングタクソノミを作成する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>カスタムマーケティングタクソノミーを作成する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>カスタムマーケティングタクソノミーを作成するには</p>
 <ol class="arabic">
 <li><p>マーケティングコントロールパネルのコンテンツツリーで、タクソノミーノードを展開し、使用するタクソノミーを選択します。</p>
@@ -195,7 +195,7 @@
 </li>
 <li><p>コンテンツ領域の警告で、[アイテムの保護解除]をクリックして、タクソノミーのアイテムを編集できるようにします。</p></li>
 </ol>
-<a class="reference internal image-reference" href="_images/15ed64a20c7b5c.png"><img alt="カスタムマーケティングタクソノミを作成する" class="align-center" src="_images/15ed64a20c7b5c.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/15ed64a20c7b5c.png"><img alt="カスタムマーケティングタクソノミーを作成する" class="align-center" src="_images/15ed64a20c7b5c.png" style="width: 400px;" /></a>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <p>特定のアクセス権を持つユーザーのみがアイテムの保護を解除することができます。</p>
@@ -207,7 +207,7 @@
 </ol>
 </div>
 <div class="section" id="id3">
-<h2>新しいタクソノミグループと新しいタクソノミタグを作成する<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>新しいタクソノミーグループと新しいタクソノミータグを作成する<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>マーケティングタクソノミーを作成したら、独自のタクソノミーグループとタグを作成することができます。</p>
 <p>新しいタクソノミーグループとタグを作成するには、以下の手順に従います。</p>
 <ol class="arabic simple">
@@ -215,26 +215,26 @@
 <li><p>[ホーム] タブの [挿入] グループで、[カスタム グループ] をクリックします。</p></li>
 <li><p>表示されるメッセージダイアログボックスで、新しいタクソノミーグループの名前を入力して、[OK]をクリックします。</p></li>
 </ol>
-<a class="reference internal image-reference" href="_images/15ed64a20cc934.png"><img alt="新しいタクソノミグループと新しいタクソノミタグを作成する" class="align-center" src="_images/15ed64a20cc934.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/15ed64a20cc934.png"><img alt="新しいタクソノミーグループと新しいタクソノミータグを作成する" class="align-center" src="_images/15ed64a20cc934.png" style="width: 400px;" /></a>
 <ol class="arabic simple" start="4">
-<li><p>[保存] をクリックして、新しいタクソノミグループを保存します。</p></li>
-<li><p>新しいタクソノミタグを作成するには、コンテンツツリーで、新しいタグが属するタクソノミグループを右クリックし、[挿入]をクリックし、[カスタムタクソノミタグ]をクリックします。</p></li>
+<li><p>[保存] をクリックして、新しいタクソノミーグループを保存します。</p></li>
+<li><p>新しいタクソノミータグを作成するには、コンテンツツリーで、新しいタグが属するタクソノミーグループを右クリックし、[挿入]をクリックし、[カスタムタクソノミータグ]をクリックします。</p></li>
 </ol>
-<a class="reference internal image-reference" href="_images/15ed64a20d0e3b.png"><img alt="新しいタクソノミグループと新しいタクソノミタグを作成する" class="align-center" src="_images/15ed64a20d0e3b.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/15ed64a20d0e3b.png"><img alt="新しいタクソノミーグループと新しいタクソノミータグを作成する" class="align-center" src="_images/15ed64a20d0e3b.png" style="width: 400px;" /></a>
 <ol class="arabic simple" start="6">
 <li><p>[メッセージ］ダイアログボックスで、タグの新しい名前を入力し、［OK］をクリックします。</p></li>
-<li><p>[保存] をクリックして、新しいタクソノミタグを保存します。</p></li>
+<li><p>[保存] をクリックして、新しいタクソノミータグを保存します。</p></li>
 </ol>
 </div>
 <div class="section" id="id4">
-<h2>マーケティングタクソノミを展開する<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>マーケティングタクソノミーを展開する<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>新しいマーケティングタクソノミーを作成し、既存のタクソノミーに新しいタグを追加する場合は、新しいタクソノミーのタグにキャンペーンの関連付けを開始する前に <a class="reference internal" href="deploy-marketing-definitions-and-taxonomies.html"><span class="doc">タクソノミーを展開</span></a> する必要があります。</p>
 <p>マーケティング タクソノミーを展開するには</p>
 <ol class="arabic simple">
 <li><p>コンテンツ ツリーで、新規または変更したタクソノミーのルート ノード、例えばビジネス マーケット タクソノミーを選択します。</p></li>
 <li><p>タクソノミータブで、デプロイをクリックします。</p></li>
 </ol>
-<a class="reference internal image-reference" href="_images/15ed64a20d728c.png"><img alt="マーケティングタクソノミを展開する" class="align-center" src="_images/15ed64a20d728c.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/15ed64a20d728c.png"><img alt="マーケティングタクソノミーを展開する" class="align-center" src="_images/15ed64a20d728c.png" style="width: 400px;" /></a>
 <p>カスタムタクソノミーを展開したら、新しいタグをキャンペーンに適用することができます。これにより、キャンペーンを分類し、エクスペリエンスアナリティクスでキャンペーンの側面をトラッキングすることができます。</p>
 <div class="admonition tip">
 <p class="admonition-title">ちなみに</p>
@@ -251,7 +251,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="deploy-marketing-definitions-and-taxonomies.html" class="btn btn-neutral float-right" title="マーケティングの定義とタクソノミを展開" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="deploy-marketing-definitions-and-taxonomies.html" class="btn btn-neutral float-right" title="マーケティングの定義とタクソノミーを展開" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="marketing-taxonomies.html" class="btn btn-neutral float-left" title="マーケティング タクソノミー" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

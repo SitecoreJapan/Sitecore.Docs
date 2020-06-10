@@ -6,7 +6,7 @@
 
 .. note:: 
 
-  デフォルトでは、Sitecore Formsには、すべてのフォーム要素のための基本的な.cshtml Razorファイルが付属しています。Website/Views/FormBuilder/FieldTemplates/に移動して、.cshtmlファイルを編集して、要件にマッチするようにしたり、新しいものを追加したりしてください。
+  デフォルトでは、Sitecore フォームには、すべてのフォーム要素のための基本的な.cshtml Razorファイルが付属しています。Website/Views/FormBuilder/FieldTemplates/に移動して、.cshtmlファイルを編集して、要件にマッチするようにしたり、新しいものを追加したりしてください。
 
 .. toctree::
     :titlesonly:
